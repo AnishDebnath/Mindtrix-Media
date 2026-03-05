@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                             <span className="material-symbols-rounded text-lg">movie_edit</span>
                         </div>
                         <span className="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white hidden sm:block">
-                            CreatorFlow
+                            Mindtrix Media
                         </span>
                     </Link>
 

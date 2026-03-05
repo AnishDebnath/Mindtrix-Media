@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                                 <span className="material-symbols-rounded text-white text-xl">movie_edit</span>
                             </div>
-                            <span className="text-3xl font-display font-bold text-white tracking-tight">CreatorFlow</span>
+                            <span className="text-3xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                         </Link>
                         <h3 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">Do you like what you see?</h3>
                         <p className="text-slate-400 text-lg max-w-sm mb-10 leading-relaxed">Let’s work together to turn your dream project into reality.</p>
@@ -89,10 +89,10 @@ const Footer: React.FC = () => {
                 {/* Bottom */}
                 <div className="relative mt-auto pt-24 pb-8">
                     <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end pointer-events-none select-none">
-                        <h1 className="text-[20vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Agency</h1>
+                        <h1 className="text-[20vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
                     </div>
                     <div className="relative z-10 text-center">
-                        <p className="text-slate-500 text-sm font-medium">© All Right Reserved by CreatorFlow - 2025</p>
+                        <p className="text-slate-500 text-sm font-medium">© All Right Reserved by Mindtrix Media - 2025</p>
                     </div>
                 </div>
             </motion.div>

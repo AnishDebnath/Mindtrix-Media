@@ -11,7 +11,7 @@ const teamMembers = [
             twitter: "https://twitter.com",
             linkedin: "https://linkedin.com",
             instagram: "https://instagram.com",
-            website: "https://creatorflow.com"
+            website: "https://mindtrixmedia.com"
         }
     },
     {
@@ -22,7 +22,7 @@ const teamMembers = [
             twitter: "https://twitter.com",
             linkedin: "https://linkedin.com",
             instagram: "https://instagram.com",
-            website: "https://creatorflow.com"
+            website: "https://mindtrixmedia.com"
         }
     },
     {
@@ -33,7 +33,7 @@ const teamMembers = [
             twitter: "https://twitter.com",
             linkedin: "https://linkedin.com",
             instagram: "https://instagram.com",
-            website: "https://creatorflow.com"
+            website: "https://mindtrixmedia.com"
         }
     },
     {
@@ -44,7 +44,7 @@ const teamMembers = [
             twitter: "https://twitter.com",
             linkedin: "https://linkedin.com",
             instagram: "https://instagram.com",
-            website: "https://creatorflow.com"
+            website: "https://mindtrixmedia.com"
         }
     }
 ];
