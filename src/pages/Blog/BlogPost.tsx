@@ -58,7 +58,7 @@ const BlogPost: React.FC = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight"
+                        className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight"
                     >
                         {article.title}
                     </motion.h1>
@@ -67,7 +67,7 @@ const BlogPost: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium"
+                        className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium"
                     >
                         {article.desc}
                     </motion.p>
@@ -76,7 +76,7 @@ const BlogPost: React.FC = () => {
                 {/* Hero Image */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-2xl mb-16 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
                 </motion.div>
@@ -90,7 +90,7 @@ const BlogPost: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
-                            className="text-lg md:text-xl leading-relaxed text-slate-700 dark:text-slate-300 font-normal mb-8"
+                            className="text-base md:text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-normal mb-8"
                         >
                             {paragraph}
                         </motion.p>
@@ -107,7 +107,7 @@ const BlogPost: React.FC = () => {
                         viewport={{ once: true }}
                         className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        <h2 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
                             Read <span className="text-primary">Next</span>
                         </h2>
                         <Link to="/blog" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">

@@ -58,7 +58,7 @@ import { FAQ, CTA } from '../../components';
 
 const BlogPage: React.FC = () => {
     return (
-        <div className="pt-25 pb-0 relative min-h-screen">
+        <div className="pt-20 md:pt-24 pb-0 relative min-h-screen">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -67,10 +67,10 @@ const BlogPage: React.FC = () => {
                 }}>
             </div>
 
-            <div className="py-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="py-8 md:py-10 lg:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20 relative z-10">
                 <BlogHeader />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                     {articles.map((article, index) => (
                         <ArticleCard key={index} article={article} delay={index * 0.1} />
                     ))}

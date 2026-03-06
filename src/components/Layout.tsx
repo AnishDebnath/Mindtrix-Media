@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="relative min-h-screen bg-[#FAFAFA] dark:bg-background-dark transition-colors duration-500 flex flex-col">
             <PageBackground pathname={location.pathname} />
 
-            <div className="relative z-10 flex flex-col flex-grow">
+            <div className="w-full max-w-[1440px] mx-auto relative z-10 flex flex-col flex-grow">
                 <main className="flex-grow">
                     {children}
                 </main>

@@ -29,9 +29,9 @@ const featuredWork = [
 
 const FeaturedWork: React.FC = () => {
     return (
-        <section className="py-25 bg-transparent" id="featured-work">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
+        <section className="py-16 2xl:py-24 bg-transparent" id="featured-work">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20">
+                <div className="text-center mb-10 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -44,7 +44,7 @@ const FeaturedWork: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
                     >
                         Work that speaks for itself
                     </motion.h2>
@@ -53,13 +53,13 @@ const FeaturedWork: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
                     >
                         Here's a glimpse of what our digital solutions have brought to life for our clients.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
                     {featuredWork.map((work, idx) => (
                         <motion.div
                             key={idx}
@@ -68,10 +68,10 @@ const FeaturedWork: React.FC = () => {
                             whileHover="hover"
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="group bg-white dark:bg-slate-900/50 rounded-[3rem] p-4 pb-8 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500"
+                            className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-2.5 pb-5 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500"
                         >
                             {/* Image Frame */}
-                            <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-black mb-8 border border-slate-100 dark:border-slate-800">
+                            <div className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-black mb-4 md:mb-5 border border-slate-100 dark:border-slate-800">
                                 <img
                                     src={work.img}
                                     alt={work.title}
@@ -79,7 +79,7 @@ const FeaturedWork: React.FC = () => {
                                 />
 
                                 {work.featured && (
-                                    <div className="absolute top-6 right-6 px-5 py-2 bg-gradient-to-r from-[#FF4D4D] to-[#FF0000] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg z-10 border border-white/20">
+                                    <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#FF4D4D] to-[#FF0000] text-white text-[8px] font-black uppercase tracking-widest rounded-full shadow-lg z-10 border border-white/20">
                                         Featured
                                     </div>
                                 )}
@@ -88,21 +88,21 @@ const FeaturedWork: React.FC = () => {
                             {/* Info Area */}
                             <div className="px-6 flex justify-between items-end">
                                 <div>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 font-display">{work.title}</h3>
-                                    <p className="text-slate-500 dark:text-slate-400 font-medium text-lg">{work.category}</p>
+                                    <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-slate-900 dark:text-white mb-1 font-display">{work.title}</h3>
+                                    <p className="text-slate-500 dark:text-slate-400 font-medium text-xs md:text-sm 2xl:text-base">{work.category}</p>
                                 </div>
                                 <motion.div
-                                    className="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden"
+                                    className="w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
                                 >
                                     <motion.span
                                         variants={{
-                                            initial: { x: 0, y: 0 },
-                                            hover: { x: 5, y: -5 }
+                                            initial: { rotate: 0 },
+                                            hover: { rotate: 45 }
                                         }}
-                                        initial="initial"
-                                        className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors"
+                                        transition={{ duration: 0.3 }}
+                                        className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors text-xl md:text-2xl 2xl:text-3xl"
                                     >
-                                        north_east
+                                        arrow_outward
                                     </motion.span>
                                 </motion.div>
                             </div>

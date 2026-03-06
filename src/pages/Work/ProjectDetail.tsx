@@ -49,7 +49,7 @@ const ProjectDetail: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="max-w-3xl"
                         >
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
                                 {project.title.split(":")[0]}
                             </h1>
                             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
@@ -108,7 +108,7 @@ const ProjectDetail: React.FC = () => {
                 {/* Main Hero Image with Parallax */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-2xl mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover will-change-transform" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -130,7 +130,7 @@ const ProjectDetail: React.FC = () => {
                                         <span className="w-6 h-[1px] bg-primary"></span>
                                         <h3 className="text-primary text-[10px] font-bold uppercase tracking-widest">{block.title}</h3>
                                     </div>
-                                    <p className="text-lg md:text-xl leading-relaxed text-slate-800 dark:text-slate-200">
+                                    <p className="text-base md:text-lg leading-relaxed text-slate-800 dark:text-slate-200">
                                         {block.body}
                                     </p>
                                 </motion.div>
@@ -142,7 +142,7 @@ const ProjectDetail: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className={`w-full rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
+                                    className={`w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
                                 >
                                     <img src={block.src} alt={block.alt} className="w-full h-auto" />
                                 </motion.div>
@@ -157,7 +157,7 @@ const ProjectDetail: React.FC = () => {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true, margin: "-50px" }}
                                             transition={{ delay: i * 0.2 }}
-                                            className="rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 dark:ring-white/10 aspect-square"
+                                            className="rounded-[1.2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 dark:ring-white/10 aspect-square"
                                         >
                                             <img src={img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                                         </motion.div>
@@ -179,7 +179,7 @@ const ProjectDetail: React.FC = () => {
                         viewport={{ once: true }}
                         className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        <h2 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
                             More <span className="text-primary">Work</span>
                         </h2>
                         <Link to="/work" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
@@ -197,11 +197,11 @@ const ProjectDetail: React.FC = () => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-3 pb-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500"
+                                className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-3 pb-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500"
                             >
                                 <div
                                     onClick={() => navigate(`/work/${p.id}`)}
-                                    className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-black mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
+                                    className="relative aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-black mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
                                 >
                                     <img
                                         src={p.image}
@@ -215,7 +215,7 @@ const ProjectDetail: React.FC = () => {
 
                                 <div className="px-4 flex justify-between items-end">
                                     <div>
-                                        <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-1 font-display leading-tight">{p.title.split(':')[0]}</h3>
+                                        <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1 font-display leading-tight">{p.title.split(':')[0]}</h3>
                                         <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">{p.client}</p>
                                     </div>
                                     <div className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">

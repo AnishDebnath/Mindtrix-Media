@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 const FreePrototype: React.FC = () => {
     return (
-        <section className="py-25 relative overflow-hidden">
+        <section className="py-10 2xl:py-16 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl rounded-[3rem] border border-slate-200 dark:border-slate-800 p-8 md:p-16 overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
+                <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl rounded-[2rem] border border-slate-200 dark:border-slate-800 p-6 md:p-12 overflow-hidden relative">
                     {/* Grid Pattern Overlay */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-16 items-center relative z-10">
                         {/* Content */}
                         <div>
                             <motion.div
@@ -33,7 +33,7 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-6 leading-tight"
+                                className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 leading-[1.1]"
                             >
                                 See It Before <br />
                                 We <span className="text-primary">Build It.</span>
@@ -44,7 +44,7 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed"
+                                className="text-sm md:text-base 2xl:text-lg text-slate-600 dark:text-slate-300 mb-8 md:mb-10 leading-relaxed"
                             >
                                 We believe in earning your trust first. That's why we design a
                                 <strong> free, high-fidelity prototype</strong> of your website before you sign any contract or pay a single cent.
@@ -56,12 +56,12 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="flex flex-wrap gap-4"
+                                className="flex flex-col sm:flex-row sm:flex-nowrap gap-4 md:gap-6"
                             >
-                                <Link to="/free-prototype" className="px-8 py-4 rounded-full bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
+                                <Link to="/free-prototype" className="px-8 py-3.5 rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/25">
                                     Get Your Free Prototype
                                 </Link>
-                                <Link to="/process" className="px-8 py-4 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                <Link to="/process" className="px-8 py-3.5 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 font-bold text-sm md:text-base hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                                     How It Works
                                 </Link>
                             </motion.div>
@@ -83,7 +83,7 @@ const FreePrototype: React.FC = () => {
                                 <div className="absolute top-4 right-4 inset-0 bg-slate-200 dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 transform rotate-3 opacity-80" />
 
                                 {/* Front Card (Main Visual) */}
-                                <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col p-6">
+                                <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col p-4 md:p-6">
                                     {/* Mock UI Header */}
                                     <div className="flex items-center gap-4 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
                                         <div className="flex gap-2">
@@ -103,7 +103,7 @@ const FreePrototype: React.FC = () => {
                                                 <div className="h-4 w-5/6 bg-slate-50 dark:bg-slate-800/50 rounded" />
                                             </div>
                                             <div className="w-1/3 bg-primary/10 rounded-xl flex items-center justify-center">
-                                                <span className="material-symbols-rounded text-primary text-4xl">design_services</span>
+                                                <span className="material-symbols-rounded text-primary text-2xl md:text-4xl">design_services</span>
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-3 gap-3 pt-4">
@@ -118,7 +118,7 @@ const FreePrototype: React.FC = () => {
                                             whileInView={{ opacity: 1, scale: 1, rotate: -15 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: 1, type: "spring", bounce: 0.5 }}
-                                            className="absolute md:bottom-[5rem] md:right-[6rem] bottom-6 right-6 border-4 border-green-500 text-green-500 font-black text-xl md:text-3xl px-4 py-2 rounded-lg uppercase tracking-widest opacity-80"
+                                            className="absolute md:bottom-[4rem] md:right-[5rem] bottom-4 right-4 border-2 md:border-4 border-green-500 text-green-500 font-black text-xs md:text-lg 2xl:text-xl px-2 md:px-4 py-1.5 md:py-2 rounded-lg uppercase tracking-widest opacity-80"
                                             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}
                                         >
                                             Free Prototype

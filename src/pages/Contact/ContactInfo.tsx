@@ -67,15 +67,15 @@ const ContactInfo: React.FC = () => {
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-8 leading-tight"
+                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 leading-tight"
             >
                 Let's start a <br />
-                <span className="flex items-center gap-3">
+                <span className="flex items-center gap-4">
                     <motion.span
                         initial={{ width: 0, opacity: 0 }}
                         animate={{ width: 'auto', opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="relative inline-flex h-12 w-20 md:h-14 md:w-24 lg:h-12 lg:w-22 xl:h-14 xl:w-28 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shrink-0"
+                        className="relative inline-flex h-10 w-18 md:h-14 md:w-24 lg:h-12 lg:w-20 2xl:h-16 2xl:w-28 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20 shrink-0"
                     >
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Collaboration" />
                     </motion.span>
@@ -86,23 +86,23 @@ const ContactInfo: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-xl"
+                className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-8 md:mb-10 leading-relaxed max-w-xl"
             >
                 Ready to take your content to the next level? Fill out the form or send us an email, and we'll get back to you within 24 hours.
             </motion.p>
 
             <div className="space-y-6">
                 {contactInfo.map((info, i) => (
-                    <div key={i} className="flex items-center gap-4 group">
-                        <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${info.color === 'blue'
+                    <div key={i} className="flex items-center gap-3 group">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${info.color === 'blue'
                             ? 'bg-blue-100/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                             : 'bg-orange-100/50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
                             }`}>
-                            <span className="material-symbols-rounded text-[22px]">{info.icon}</span>
+                            <span className="material-symbols-rounded text-[18px]">{info.icon}</span>
                         </div>
                         <div>
-                            <h3 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{info.title}</h3>
-                            <p className="text-lg font-bold text-slate-900 dark:text-white">{info.value}</p>
+                            <h3 className="text-xs 2xl:text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{info.title}</h3>
+                            <p className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white">{info.value}</p>
                         </div>
                     </div>
                 ))}
@@ -131,10 +131,10 @@ const ContactInfo: React.FC = () => {
                         <motion.div
                             key={i}
                             animate={{
-                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -20),
+                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -4 : -16),
                                 zIndex: i,
                             }}
-                            className="relative rounded-full border-[4px] border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-12 h-12 shadow-sm"
+                            className="relative rounded-full border-[3px] border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-10 h-10 shadow-sm"
                         >
                             <img className="w-full h-full object-cover" src={src} alt="Client" />
                         </motion.div>
@@ -146,7 +146,7 @@ const ContactInfo: React.FC = () => {
                             <span key={i} className="material-symbols-rounded text-[#FFC107] text-[16px]">star</span>
                         ))}
                     </div>
-                    <p className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                    <p className="text-sm md:text-base 2xl:text-lg font-bold text-slate-700 dark:text-slate-300">
                         Trusted by <CountUp val={100} />+ clients
                     </p>
                 </div>

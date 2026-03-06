@@ -43,7 +43,7 @@ const StatItem: React.FC<{ stat: Stat; idx: number; isLast: boolean }> = ({ stat
         <motion.div
             ref={ref}
             whileHover="hover"
-            className={`flex flex-col items-center justify-center py-8 md:py-10 px-4 ${!isLast ? 'md:border-r border-slate-200/50 dark:border-white/5' : ''
+            className={`flex flex-col items-center justify-center py-5 md:py-6 px-4 ${!isLast ? 'md:border-r border-slate-200/50 dark:border-white/5' : ''
                 } group relative overflow-hidden transition-all duration-500`}
         >
             {/* Glossy Hover Highlight */}
@@ -56,22 +56,22 @@ const StatItem: React.FC<{ stat: Stat; idx: number; isLast: boolean }> = ({ stat
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 className="flex flex-col items-center"
             >
-                <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-4 shadow-sm border border-slate-100 dark:border-white/5 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
+                <div className="w-8 h-8 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center text-primary mb-2.5 shadow-sm border border-slate-100 dark:border-white/5 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
                     <motion.span
                         variants={{
                             hover: { rotate: 12, scale: 1.1 }
                         }}
-                        className="material-symbols-rounded text-2xl"
+                        className="material-symbols-rounded text-xl"
                     >
                         {stat.icon}
                     </motion.span>
                 </div>
 
-                <div className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-1.5 tracking-tighter group-hover:text-primary transition-colors duration-300">
+                <div className="text-lg md:text-xl font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tighter group-hover:text-primary transition-colors duration-300">
                     {getFormattedCount()}
                 </div>
 
-                <div className="text-slate-500 dark:text-slate-400 font-bold text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-center opacity-80 group-hover:opacity-100 transition-opacity">
+                <div className="text-slate-500 dark:text-slate-400 font-bold text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-center opacity-80 group-hover:opacity-100 transition-opacity">
                     {stat.label}
                 </div>
             </motion.div>
@@ -99,7 +99,7 @@ const AboutStats: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative overflow-hidden bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] shadow-xl shadow-black/5 border border-slate-200/60 dark:border-white/10 max-w-4xl mx-auto"
+                className="relative overflow-hidden bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[1.5rem] md:rounded-[2rem] shadow-xl shadow-black/5 border border-slate-200/60 dark:border-white/10 max-w-4xl mx-auto"
             >
                 <div className="grid grid-cols-2 lg:grid-cols-4">
                     {stats.map((stat, idx) => (

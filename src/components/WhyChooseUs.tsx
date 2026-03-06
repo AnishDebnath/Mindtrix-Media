@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const WhyChooseUs: React.FC = () => {
     return (
-        <section className="py-25 bg-transparent relative overflow-hidden">
+        <section className="py-10 2xl:py-16 bg-transparent relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -12,8 +12,8 @@ const WhyChooseUs: React.FC = () => {
                 }}>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
+                <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -27,7 +27,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-display font-extrabold mt-4 mb-6 text-slate-900 dark:text-white"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mt-4 mb-4 text-slate-900 dark:text-white"
                     >
                         Why businesses choose us
                     </motion.h2>
@@ -36,23 +36,23 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-500 dark:text-slate-400"
+                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
                     >
                         There's a reason businesses keep choosing us - we deliver exceptional digital solutions that drive real growth and make a lasting impact.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                     {/* Card 1: Bold and purposeful */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] h-[270px] mb-8 relative overflow-hidden flex items-center justify-center p-8 border border-slate-100 dark:border-slate-800">
-                            <div className="grid grid-cols-3 gap-6 opacity-30 absolute inset-0 p-8 place-content-center">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden flex items-center justify-center p-5 border border-slate-100 dark:border-slate-800">
+                            <div className="grid grid-cols-3 gap-4 opacity-30 absolute inset-0 p-6 place-content-center">
                                 {[...Array(9)].map((_, i) => (
                                     <div key={i} className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 mx-auto"></div>
                                 ))}
@@ -61,12 +61,12 @@ const WhyChooseUs: React.FC = () => {
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                 className="w-24 h-24 bg-gradient-to-br from-primary to-orange-600 rounded-2xl shadow-2xl shadow-primary/40 relative z-10 flex items-center justify-center text-white"
                             >
-                                <span className="material-symbols-rounded text-5xl">movie</span>
+                                <span className="material-symbols-rounded text-3xl md:text-4xl">movie</span>
                             </motion.div>
                         </div>
-                        <div className="px-2 pb-4">
-                            <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Strategic & Purposeful</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed">Our solutions are crafted with intention, every design choice and technical decision made to achieve your business goals.</p>
+                        <div className="px-4 pb-6">
+                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Strategic & Purposeful</h3>
+                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">Our solutions are crafted with intention, every design choice and technical decision made to achieve your business goals.</p>
                         </div>
                     </motion.div>
 
@@ -76,9 +76,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-[#0A0A0A] rounded-[2.5rem] h-[270px] mb-8 relative overflow-hidden border border-slate-800 flex select-none">
+                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden border border-slate-800 flex select-none">
                             <div className="hidden sm:flex w-16 h-full border-r border-white/10 flex-col p-3 gap-3 shrink-0">
                                 <div className="flex gap-1.5 mb-2">
                                     <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
@@ -115,9 +115,9 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="px-2 pb-4">
-                            <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Fully Customizable</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed">We tailor every project to fit your brand, goals, and vision, ensuring your digital presence feels uniquely yours from start to finish.</p>
+                        <div className="px-4 pb-6">
+                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fully Customizable</h3>
+                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">We tailor every project to fit your brand, goals, and vision, ensuring your digital presence feels uniquely yours from start to finish.</p>
                         </div>
                     </motion.div>
 
@@ -127,9 +127,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] h-[270px] mb-8 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-8 border border-slate-100 dark:border-slate-800">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800">
                             {[
                                 { d: 2, l: 'Discovery' },
                                 { d: 6, l: 'Development' },
@@ -146,19 +146,19 @@ const WhyChooseUs: React.FC = () => {
                                             ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner'
                                             : 'bg-transparent text-slate-900 dark:text-white'}
                              `}>
-                                        <span className="text-4xl font-bold tracking-tight">
+                                        <span className="text-xl md:text-2xl font-bold tracking-tight">
                                             {item.d.toString().padStart(2, '0')}
                                         </span>
                                     </div>
                                     <div className="text-center py-2">
-                                        <div className={`text-xs font-medium ${item.highlight ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-400'}`}>{item.l}</div>
+                                        <div className={`text-[8px] md:text-[10px] font-medium ${item.highlight ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-400'}`}>{item.l}</div>
                                     </div>
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="px-2 pb-4">
-                            <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Fast delivery time</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed">We work efficiently without compromising quality, ensuring your project is delivered on time and with care.</p>
+                        <div className="px-4 pb-6">
+                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fast delivery time</h3>
+                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">We work efficiently without compromising quality, ensuring your project is delivered on time and with care.</p>
                         </div>
                     </motion.div>
                 </div>

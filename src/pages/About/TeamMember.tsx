@@ -25,9 +25,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
             transition={{ delay, duration: 0.6, ease: "easeOut" }}
             className="group"
         >
-            <div className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[2.5rem] border border-slate-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 p-3 h-full flex flex-col">
+            <div className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] border border-slate-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 p-2.5 h-full flex flex-col">
                 {/* Image Container - Nested with large rounded corners to match other cards */}
-                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 rounded-[2rem] mb-3 border border-slate-100 dark:border-white/5">
+                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 rounded-[1rem] mb-3 border border-slate-100 dark:border-white/5">
                     <img
                         src={member.image}
                         alt={member.name}
@@ -39,10 +39,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                 {/* Content Area - Compacted Spacing */}
                 <div className="p-4 pt-1 flex flex-col flex-1 relative bg-white/50 dark:bg-transparent">
                     <div className="mb-2.5">
-                        <h3 className="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-base font-display font-extrabold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">
                             {member.name}
                         </h3>
-                        <p className="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
+                        <p className="text-slate-500 dark:text-slate-400 text-[8px] md:text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
                             <span className="w-6 h-[2px] bg-primary/30 rounded-full group-hover:w-8 group-hover:bg-primary transition-all duration-300"></span>
                             {member.role}
                         </p>

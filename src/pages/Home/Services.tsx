@@ -39,7 +39,7 @@ const services = [
 
 const Services: React.FC = () => {
     return (
-        <section className="py-25 bg-transparent relative overflow-hidden" id="services">
+        <section className="py-16 2xl:py-24 bg-transparent relative overflow-hidden" id="services">
             {/* Subtle Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
                 style={{
@@ -47,8 +47,8 @@ const Services: React.FC = () => {
                     backgroundSize: '40px 40px'
                 }}>
             </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
+                <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
                     >
                         What We Do Best
                     </motion.h2>
@@ -70,13 +70,13 @@ const Services: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed"
+                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed"
                     >
                         We deliver comprehensive digital solutions that transform your business. From stunning websites to powerful SaaS products, we've got you covered.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 max-w-7xl mx-auto">
                     {services.map((service, idx) => {
                         const isEvenRow = Math.floor(idx / 2) % 2 === 0;
                         const isFirstInRow = idx % 2 === 0;
@@ -96,7 +96,7 @@ const Services: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                                 whileHover={{ y: -5 }}
-                                className={`group relative overflow-hidden rounded-[2.5rem] bg-[#121212] p-8 md:p-10 lg:p-10 xl:p-12 flex flex-col justify-between min-h-[380px] md:min-h-[420px] shadow-2xl border border-white/5 ${colSpan}`}
+                                className={`group relative overflow-hidden rounded-[1.5rem] bg-[#121212] p-4 md:p-5 2xl:p-6 flex flex-col justify-between min-h-[180px] md:min-h-[200px] 2xl:min-h-[240px] shadow-2xl border border-white/5 ${colSpan}`}
                             >
                                 <div className="absolute inset-0 opacity-30 pointer-events-none"
                                     style={{
@@ -107,14 +107,14 @@ const Services: React.FC = () => {
                                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
                                 <div className="relative z-10 text-left">
-                                    <h3 className="text-3xl font-bold text-white mb-4 font-display">{service.title}</h3>
-                                    <p className="text-slate-400 text-lg leading-relaxed">{service.desc}</p>
+                                    <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-white mb-2 font-display">{service.title}</h3>
+                                    <p className="text-slate-400 text-sm md:text-base 2xl:text-lg leading-relaxed">{service.desc}</p>
                                 </div>
 
-                                <div className="relative z-10 flex flex-wrap gap-3 mt-12 mb-2">
+                                <div className="relative z-10 flex flex-wrap gap-2 mt-6 md:mt-8 mb-1">
                                     {service.tags.map((tag, i) => (
-                                        <div key={i} className="flex items-center gap-2 bg-[#1A1A1A] border border-white/10 rounded-full px-5 py-2.5 text-white text-xs font-bold uppercase tracking-wider group-hover:border-primary/30 transition-colors">
-                                            <span className="material-symbols-rounded text-primary text-base">{tag.icon}</span>
+                                        <div key={i} className="flex items-center gap-1.5 bg-[#1A1A1A] border border-white/10 rounded-full px-2.5 py-1 text-white text-[10px] 2xl:text-xs font-bold uppercase tracking-wider group-hover:border-primary/30 transition-colors">
+                                            <span className="material-symbols-rounded text-primary text-sm md:text-base">{tag.icon}</span>
                                             {tag.text}
                                         </div>
                                     ))}

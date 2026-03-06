@@ -31,8 +31,8 @@ import { FAQ, Process, WhyChooseUs, CTA } from '../../components';
 
 const ServicesPage: React.FC = () => {
     return (
-        <div className="pt-25 pb-0 relative">
-            <div className="pt-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-20 md:pt-24 pb-0 relative">
+            <div className="pt-8 md:pt-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20">
                 <ServicesHeader />
 
                 <div className="flex flex-col mb-16">

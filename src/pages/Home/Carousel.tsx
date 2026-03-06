@@ -81,8 +81,8 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                 {/* Floating Glass Content Card */}
                                 <div className="absolute bottom-4 left-4 right-4 px-5 py-3.5 rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between z-10 transition-transform duration-300 group-hover:scale-[1.02]">
                                     <div>
-                                        <h3 className="text-lg font-display font-bold text-white mb-0 tracking-tight group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                                        <p className="text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider">{item.category}</p>
+                                        <h3 className="text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                                        <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider">{item.category}</p>
                                     </div>
 
                                     <button

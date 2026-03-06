@@ -51,8 +51,8 @@ const teamMembers = [
 
 const AboutTeam: React.FC = () => {
     return (
-        <section className="py-25 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section className="py-16 2xl:py-24 px-4 md:px-8 bg-transparent relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 <div className="text-center mb-12 md:mb-16">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -68,7 +68,7 @@ const AboutTeam: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-6"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
                     >
                         Meet the <span className="text-primary">creative</span> minds.
                     </motion.h2>
@@ -77,7 +77,7 @@ const AboutTeam: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto"
+                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto"
                     >
                         The talented individuals behind every frame, cut, and creative decision.
                     </motion.p>

@@ -9,7 +9,7 @@ import { WhyChooseUs, WorkTestimonials, BrandShowcase, CTA } from '../../compone
 
 const AboutPage: React.FC = () => {
     return (
-        <div className="pt-25 pb-0 relative">
+        <div className="pt-20 md:pt-24 pb-0 relative">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -18,9 +18,9 @@ const AboutPage: React.FC = () => {
                 }}>
             </div>
 
-            <div className="py-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="py-8 md:py-10 lg:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20 relative z-10">
                 <AboutHeader />
-                <div className="mb-20 -mx-4 sm:-mx-6 lg:-mx-8">
+                <div className="mb-10 md:mb-12">
                     <BrandShowcase />
                 </div>
                 <AboutHeroImage />

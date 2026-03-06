@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const AboutValues: React.FC = () => {
     return (
-        <section className="py-25 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-16 md:mb-20">
+        <section className="py-10 2xl:py-16 px-4 md:px-8 bg-transparent relative overflow-hidden">
+            <div className="max-w-5xl mx-auto relative z-10">
+                <div className="text-center mb-10 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -20,7 +20,7 @@ const AboutValues: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-6"
+                        className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
                     >
                         Our <span className="text-primary">Mission</span> & <span className="text-primary">Vision.</span>
                     </motion.h2>
@@ -29,7 +29,7 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto"
+                        className="text-xs md:text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto"
                     >
                         The principles that define who we are and where we're headed.
                     </motion.p>
@@ -43,19 +43,19 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="lg:col-span-2 bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
+                        className="lg:col-span-2 bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-8 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
                     >
-                        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
                             <div className="flex-shrink-0">
                                 <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-lg group-hover:bg-primary/10 transition-colors duration-300">
                                     <span className="material-symbols-rounded text-primary text-3xl">rocket_launch</span>
                                 </div>
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
+                                <h3 className="text-lg md:text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
                                     Our Mission
                                 </h3>
-                                <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                                <p className="text-slate-600 dark:text-slate-400 text-[10px] md:text-xs leading-relaxed">
                                     Empowering creators to scale their impact through high-retention, conversion-focused video editing that converts viewers into fans.
                                 </p>
                             </div>
@@ -68,17 +68,17 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900/60 dark:to-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
+                        className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900/60 dark:to-slate-900/40 backdrop-blur-xl rounded-[1.5rem] p-6 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
                     >
                         <div className="mb-6">
                             <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                                 <span className="material-symbols-rounded text-primary text-2xl">visibility</span>
                             </div>
                         </div>
-                        <h3 className="text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
+                        <h3 className="text-base md:text-lg font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
                             Our Vision
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                        <p className="text-slate-600 dark:text-slate-400 text-[10px] md:text-xs leading-relaxed">
                             Setting the global standard for creative post-production where every frame serves a purpose.
                         </p>
                     </motion.div>
@@ -89,7 +89,7 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[2rem] overflow-hidden border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
+                        className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] overflow-hidden border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-500"
                     >
                         <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
                             <img
@@ -104,11 +104,11 @@ const AboutValues: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-6">
-                            <h3 className="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
+                        <div className="p-5">
+                            <h3 className="text-base md:text-lg font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">
                                 Our Strategy
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <p className="text-slate-600 dark:text-slate-400 text-[10px] md:text-xs leading-relaxed">
                                 Merging human creative intuition with hyper-efficient workflows.
                             </p>
                         </div>
@@ -120,7 +120,7 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="lg:col-span-2 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 dark:from-slate-900 dark:via-slate-950 dark:to-black rounded-[2rem] p-8 md:p-10 border border-slate-700/50 dark:border-slate-800/50 shadow-xl shadow-black/30 group hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
+                        className="lg:col-span-2 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 dark:from-slate-900 dark:via-slate-950 dark:to-black rounded-[1.5rem] p-6 md:p-8 border border-slate-700/50 dark:border-slate-800/50 shadow-xl shadow-black/30 group hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
                     >
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-[0.03]">
@@ -145,10 +145,10 @@ const AboutValues: React.FC = () => {
                                     <div className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-sm border border-white/10" />
                                 </div>
                             </div>
-                            <h3 className="text-3xl md:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                            <h3 className="text-lg md:text-xl font-display font-extrabold text-white mb-3 tracking-tight">
                                 Our Culture
                             </h3>
-                            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                            <p className="text-slate-300 text-[10px] md:text-xs leading-relaxed mb-6 md:mb-8">
                                 A results-obsessed collective of artists and strategists dedicated to the long-term success and scaling of the creators we serve.
                             </p>
                             <div className="flex gap-3 flex-wrap">

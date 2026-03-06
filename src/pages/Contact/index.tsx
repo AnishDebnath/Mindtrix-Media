@@ -7,15 +7,15 @@ const ContactPage: React.FC = () => {
     return (
         <div className="flex flex-col">
             {/* Contact Section */}
-            <div className="relative min-h-[85vh] flex items-center justify-center py-25 overflow-hidden">
+            <div className="relative min-h-[85vh] flex items-center justify-center pt-20 md:pt-24 pb-12 overflow-hidden">
                 {/* Background elements to fill space */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                     <div className="absolute top-[10%] -left-[5%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[120px] animate-blob" />
                     <div className="absolute bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-blue-500/5 rounded-full blur-[120px] animate-blob animation-delay-2000" />
                 </div>
 
-                <div className="pt-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <div className="pt-8 md:pt-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20 relative z-10 w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                         <div className="lg:sticky lg:top-32">
                             <ContactInfo />
                         </div>

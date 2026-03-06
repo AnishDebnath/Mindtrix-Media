@@ -10,15 +10,15 @@ interface WorkFilterProps {
 
 const WorkFilter: React.FC<WorkFilterProps> = ({ activeCategory, setActiveCategory }) => {
     return (
-        <div className="flex justify-center mb-16 px-4">
-            <div className="inline-flex flex-wrap items-center bg-white/80 dark:bg-black/10 backdrop-blur-xl p-1.5 rounded-[2rem] border border-slate-200 dark:border-white/5 shadow-xl shadow-black/5 dark:shadow-black/20">
+        <div className="flex justify-center mb-10 md:mb-12 px-4">
+            <div className="inline-flex flex-wrap items-center bg-white/80 dark:bg-black/10 backdrop-blur-xl p-1.5 rounded-full border border-slate-200 dark:border-white/5 shadow-xl shadow-black/5 dark:shadow-black/20">
                 {categories.map((cat, i) => (
                     <motion.button
                         key={i}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setActiveCategory(cat)}
-                        className={`relative px-6 py-2.5 rounded-full text-sm font-bold tracking-tight transition-all duration-300 ${activeCategory === cat
+                        className={`relative px-4 md:px-5 py-2 rounded-full text-[10px] md:text-xs font-bold tracking-tight transition-all duration-300 ${activeCategory === cat
                             ? 'text-white'
                             : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                             }`}

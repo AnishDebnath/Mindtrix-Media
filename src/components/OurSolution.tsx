@@ -36,7 +36,7 @@ const OurSolution: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-6"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
                     >
                         Why Most Businesses Struggle Online
                     </motion.h2>
@@ -47,7 +47,7 @@ const OurSolution: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="flex flex-col items-center gap-6"
                     >
-                        <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
                             A quick side-by-side of the challenges you shouldn't have to face and how we solve them for you.
                         </p>
 
@@ -88,7 +88,7 @@ const OurSolution: React.FC = () => {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: idx * 0.1 }}
-                                            className="flex items-center gap-5 text-slate-600 dark:text-slate-400 font-medium text-lg"
+                                            className="flex items-center gap-5 text-slate-600 dark:text-slate-400 font-medium text-base 2xl:text-lg"
                                         >
                                             <div className="flex-shrink-0 w-7 h-7 rounded-full border border-red-500/20 bg-red-500/5 flex items-center justify-center">
                                                 <span className="material-symbols-rounded text-red-500 text-sm font-bold">close</span>
@@ -117,7 +117,7 @@ const OurSolution: React.FC = () => {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: idx * 0.1 }}
-                                            className="flex items-center gap-5 text-white/90 font-medium text-lg"
+                                            className="flex items-center gap-5 text-white/90 font-medium text-base 2xl:text-lg"
                                         >
                                             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40">
                                                 <span className="material-symbols-rounded text-white text-sm font-bold">check</span>

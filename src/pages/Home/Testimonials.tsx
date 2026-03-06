@@ -69,10 +69,10 @@ const Testimonials: React.FC = () => {
     };
 
     return (
-        <section className="py-25 bg-transparent relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-6 2xl:py-10 bg-transparent relative">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 {/* Header Section */}
-                <div className="text-center max-w-4xl mx-auto mb-20">
+                <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -85,14 +85,14 @@ const Testimonials: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-extrabold text-slate-900 dark:text-white mb-8 tracking-tight flex justify-center items-center gap-x-4 whitespace-nowrap"
+                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight flex justify-center items-center gap-x-3 whitespace-nowrap"
                     >
                         <span>Kind words from</span>
                         <motion.div
                             whileHover={{ rotate: 10, scale: 1.1 }}
-                            className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl shadow-xl flex items-center justify-center transform rotate-[10deg] border-t border-white/20 relative top-2"
+                            className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl shadow-xl flex items-center justify-center transform rotate-[10deg] border-t border-white/20 relative top-1.5"
                         >
-                            <span className="material-symbols-rounded text-white text-3xl md:text-4xl drop-shadow-md">sentiment_satisfied</span>
+                            <span className="material-symbols-rounded text-white text-lg md:text-xl drop-shadow-md">sentiment_satisfied</span>
                         </motion.div>
                         <span>clients</span>
                     </motion.h2>
@@ -101,7 +101,7 @@ const Testimonials: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
                     >
                         We've partnered with creators, founders, and studios who value editing that works, here's what they had to say.
                     </motion.p>
@@ -111,14 +111,14 @@ const Testimonials: React.FC = () => {
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-stretch">
 
                     {/* Left Column - Featured Card + Marquee */}
-                    <div className="w-full lg:flex-1 flex flex-col gap-6 lg:gap-8 min-w-0">
+                    <div className="w-full lg:flex-1 flex flex-col gap-4 lg:gap-5 min-w-0">
 
                         {/* Featured Testimonial Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[400px] rounded-[2.5rem] overflow-hidden group"
+                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[220px] 2xl:h-[260px] rounded-[1.5rem] overflow-hidden group"
                         >
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -141,13 +141,13 @@ const Testimonials: React.FC = () => {
                             </AnimatePresence>
 
                             {/* Content */}
-                            <div className="absolute inset-0 p-8 md:p-8 flex flex-col justify-between">
+                            <div className="absolute inset-0 p-6 md:p-8 2xl:p-10 flex flex-col justify-between">
                                 {/* Top: Counter */}
                                 <div>
-                                    <span className="text-white/60 font-bold mb-2 block">
+                                    <span className="text-white/60 font-bold mb-1.5 text-[10px] md:text-xs block">
                                         {(currentIndex + 1).toString().padStart(2, '0')} / {imageTestimonials.length.toString().padStart(2, '0')}
                                     </span>
-                                    <div className="h-0.5 w-12 bg-white/30" />
+                                    <div className="h-0.5 w-10 bg-white/30" />
                                 </div>
 
                                 {/* Bottom: Quote + Author */}
@@ -160,7 +160,7 @@ const Testimonials: React.FC = () => {
                                             exit={{ opacity: 0, x: -20 }}
                                             transition={{ duration: 0.4, ease: "easeOut" }}
                                         >
-                                            <blockquote className="text-2xl md:text-3xl lg:text-2xl xl:text-4xl font-bold text-white leading-tight min-h-[4.5em] md:min-h-[3.5em]">
+                                            <blockquote className="text-sm md:text-lg 2xl:text-xl font-bold text-white leading-tight min-h-[3em] md:min-h-[2.5em]">
                                                 "{featuredTestimonial.text}"
                                             </blockquote>
                                         </motion.div>
@@ -175,8 +175,8 @@ const Testimonials: React.FC = () => {
                                                 exit={{ opacity: 0 }}
                                                 className="text-white"
                                             >
-                                                <p className="font-bold text-lg">{featuredTestimonial.name}</p>
-                                                <p className="text-white/60 text-sm">
+                                                <p className="font-bold text-base 2xl:text-lg">{featuredTestimonial.name}</p>
+                                                <p className="text-white/60 text-xs 2xl:text-sm">
                                                     {featuredTestimonial.title}
                                                 </p>
                                             </motion.div>
@@ -185,15 +185,15 @@ const Testimonials: React.FC = () => {
                                         <div className="flex gap-2 relative z-20">
                                             <button
                                                 onClick={handlePrev}
-                                                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all active:scale-95"
+                                                className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all active:scale-95"
                                             >
-                                                <span className="material-symbols-rounded text-xl">arrow_back</span>
+                                                <span className="material-symbols-rounded text-base">arrow_back</span>
                                             </button>
                                             <button
                                                 onClick={handleNext}
-                                                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all active:scale-95"
+                                                className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all active:scale-95"
                                             >
-                                                <span className="material-symbols-rounded text-xl">arrow_forward</span>
+                                                <span className="material-symbols-rounded text-base">arrow_forward</span>
                                             </button>
                                         </div>
                                     </div>
@@ -209,21 +209,21 @@ const Testimonials: React.FC = () => {
                                 className="flex gap-5 w-max"
                             >
                                 {[...marqueeTestimonials, ...marqueeTestimonials, ...marqueeTestimonials].map((item, i) => (
-                                    <div key={i} className="flex-shrink-0 w-[400px] h-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1.5rem] p-6 mr-4 shadow-xl shadow-black/5">
-                                        <div className="flex flex-col gap-4">
-                                            <div className="flex items-center gap-3">
+                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] h-[100px] md:h-[115px] bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1rem] p-4 md:p-5 mr-4 shadow-xl shadow-black/5">
+                                        <div className="flex flex-col gap-2">
+                                            <div className="flex items-center gap-2.5">
                                                 <div className="flex-shrink-0 relative">
-                                                    <img src={item.avatar} alt={item.handle} className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
+                                                    <img src={item.avatar} alt={item.handle} className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
                                                     <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900">
                                                         <span className="material-symbols-rounded text-[8px] text-white">verified</span>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <p className="font-bold text-slate-900 dark:text-white text-sm leading-tight">{item.name || item.handle}</p>
-                                                    <p className="text-primary font-bold text-[10px] tracking-wider uppercase">{item.handle}</p>
+                                                    <p className="text-primary font-bold text-[10px] 2xl:text-xs tracking-wider uppercase">{item.handle}</p>
                                                 </div>
                                             </div>
-                                            <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed font-medium line-clamp-3">
+                                            <p className="text-slate-600 dark:text-slate-300 text-[11px] md:text-xs 2xl:text-sm leading-relaxed font-medium line-clamp-2">
                                                 "{item.text}"
                                             </p>
                                         </div>
@@ -237,52 +237,54 @@ const Testimonials: React.FC = () => {
                     </div>
 
                     {/* Right Column - Sticky CTA Card */}
-                    <div className="w-full lg:w-[420px] flex-shrink-0 flex flex-col">
+                    <div className="w-full lg:w-[280px] 2xl:w-[340px] flex-shrink-0 flex flex-col">
                         <div className="h-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-[#111] text-white rounded-[2.5rem] p-8 md:p-10 text-center relative overflow-hidden shadow-2xl h-full min-h-[500px] flex flex-col justify-center"
+                                className="bg-[#111] text-white rounded-[1.5rem] p-6 md:p-7 text-center relative overflow-hidden shadow-2xl h-full min-h-[280px] 2xl:min-h-[320px] flex flex-col items-center justify-between"
                             >
-                                <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/10 bg-white/5 relative z-10">
-                                    <img
-                                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
-                                        alt="Avatar"
-                                        className="w-full h-full object-cover"
-                                    />
-                                    {/* Stress/Busy indicator just for fun/detail if requested, else plain */}
-                                </div>
-
-                                <h3 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight relative z-10">
-                                    Book a 15-min call
-                                </h3>
-
-                                <Link
-                                    to="/contact"
-                                    className="inline-flex items-center justify-center gap-3 bg-white text-black pl-8 pr-2 py-2 rounded-full font-bold text-lg hover:scale-105 transition-transform group mb-10 w-full max-w-xs mx-auto relative z-10"
-                                >
-                                    Book a Call
-                                    <div className="w-10 h-10 bg-[#FF5C00] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300">
-                                        <span className="material-symbols-rounded">arrow_forward</span>
+                                <div className="flex flex-col items-center gap-3 relative z-10 w-full">
+                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-[3px] border-white/10 bg-white/5 shadow-inner">
+                                        <img
+                                            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                                            alt="Avatar"
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
-                                </Link>
-
-                                <div className="mb-10 relative z-10">
-                                    <p className="text-slate-400 text-sm font-bold mb-1">Prefer to Email?</p>
-                                    <a
-                                        href="mailto:ajoy.sayhello@gmail.com"
-                                        className="text-slate-200 hover:text-white transition-colors"
-                                    >
-                                        ajoy.sayhello@gmail.com
-                                    </a>
+                                    <h3 className="text-xl md:text-2xl 2xl:text-3xl font-display font-bold leading-tight">
+                                        Book a 15-min call
+                                    </h3>
                                 </div>
 
-                                <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 relative z-10">
+                                <div className="w-full flex flex-col items-center gap-5 relative z-10">
+                                    <Link
+                                        to="/contact"
+                                        className="inline-flex items-center justify-center gap-2 bg-white text-black pl-5 pr-1.5 py-1.5 rounded-full font-bold text-sm hover:scale-105 transition-transform group w-full max-w-[200px] shadow-lg shadow-black/10"
+                                    >
+                                        Book a Call
+                                        <div className="w-8 h-8 md:w-9 md:h-9 bg-[#FF5C00] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300">
+                                            <span className="material-symbols-rounded text-base">arrow_forward</span>
+                                        </div>
+                                    </Link>
+
+                                    <div className="flex flex-col items-center gap-0.5">
+                                        <p className="text-slate-400 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest">Prefer to Email?</p>
+                                        <a
+                                            href="mailto:ajoy.sayhello@gmail.com"
+                                            className="text-slate-200 hover:text-white transition-colors text-sm font-medium border-b border-white/10"
+                                        >
+                                            ajoy.sayhello@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center gap-1.5 relative z-10 w-full">
                                     {['Collaboration', 'Business Inquiry', 'Want My Videos Edited', 'Send Me Samples'].map((tag, i) => (
                                         <span
                                             key={i}
-                                            className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-slate-300 hover:bg-white/10 transition-colors cursor-default"
+                                            className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] 2xl:text-[10px] font-bold text-slate-400 hover:bg-white/10 transition-colors cursor-default whitespace-nowrap"
                                         >
                                             {tag}
                                         </span>
@@ -297,7 +299,7 @@ const Testimonials: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

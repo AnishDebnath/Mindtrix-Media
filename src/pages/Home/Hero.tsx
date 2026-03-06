@@ -19,23 +19,23 @@ const Hero: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
     return (
-        <header className="pt-32 lg:pt-48 relative flex flex-col items-center justify-center">
+        <header className="pt-20 md:pt-24 2xl:pt-32 relative flex flex-col items-center justify-center">
 
             {/* Main Hero Content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pb-20">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 text-center pb-12 md:pb-16">
                 {/* Available for New Projects Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="flex justify-center mb-8"
+                    className="flex justify-center mb-6 md:mb-8"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
-                        <span className="relative flex h-2 w-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
+                        <span className="relative flex h-1.5 w-1.5">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                         </span>
-                        <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                        <span className="text-[10px] md:text-xs font-medium text-emerald-700 dark:text-emerald-400">
                             Available for New Projects
                         </span>
                     </div>
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                             }
                         }
                     }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mb-8 md:mb-10"
                 >
                     <div
                         className="flex items-center h-16 cursor-pointer"
@@ -76,11 +76,11 @@ const Hero: React.FC = () => {
                                     show: { opacity: 1, x: 0, scale: 1 }
                                 }}
                                 animate={{
-                                    marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -20),
+                                    marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -18),
                                     zIndex: i,
                                 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                                className="relative rounded-full border-[4px] border-[#FAFAFA] dark:border-background-dark overflow-hidden w-14 h-14 shadow-sm"
+                                className="relative rounded-full border-[2px] border-[#FAFAFA] dark:border-background-dark overflow-hidden w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 shadow-sm"
                             >
                                 <img
                                     className="w-full h-full object-cover"
@@ -97,20 +97,20 @@ const Hero: React.FC = () => {
                         }}
                         className="text-center sm:text-left"
                     >
-                        <div className="flex items-center justify-center sm:justify-start gap-1 mb-1">
+                        <div className="flex items-center justify-center sm:justify-start gap-1 mb-0.5">
                             {[1, 2, 3, 4, 5].map((_, i) => (
                                 <motion.span
                                     key={i}
                                     initial={{ opacity: 0, scale: 0, rotate: -45 }}
                                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                     transition={{ delay: 0.8 + (i * 0.1), type: "spring", stiffness: 300, damping: 15 }}
-                                    className="material-symbols-rounded text-[#FFC107] text-[18px]"
+                                    className="material-symbols-rounded text-[#FFC107] text-[14px] md:text-[16px]"
                                 >
                                     star
                                 </motion.span>
                             ))}
                         </div>
-                        <p className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center sm:justify-start gap-1">
+                        <p className="text-[10px] md:text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center sm:justify-start gap-1">
                             Trusted by <CountUp val={100} />+ clients
                         </p>
                     </motion.div>
@@ -118,38 +118,41 @@ const Hero: React.FC = () => {
 
                 {/* Heading */}
                 <motion.h1
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.05] text-[#111] dark:text-white"
+                    className="text-3xl md:text-6xl 2xl:text-[5.5rem] font-display font-extrabold tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
                 >
-                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-x-6">
+                    {/* Row 1 */}
+                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-2">
                         <span>Premium</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: -2 }}
-                            className="relative inline-flex w-16 h-10 md:w-20 md:h-14 lg:w-20 lg:h-12 xl:w-32 xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner"
+                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner"
                         >
                             <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Digital" />
                         </motion.span>
-                        <span className="text-[#FF5C00]">Digital</span>
+                        <span className="text-primary">Digital</span>
                     </div>
 
-                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-x-6 mt-2">
+                    {/* Row 2 */}
+                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-2">
                         <span className="text-slate-400">Solutions for</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: 2 }}
-                            className="relative inline-flex w-16 h-10 md:w-20 md:h-14 lg:w-20 lg:h-12 xl:w-32 xl:h-20 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
+                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
                         >
                             <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Business" />
                         </motion.span>
-                        <span>Modern Businesses</span>
+                        <span>Businesses</span>
                     </div>
 
-                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-x-6 mt-2">
+                    {/* Row 3 */}
+                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6">
                         <span className="text-slate-400">based in London,</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: -2 }}
-                            className="relative inline-flex w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-24 xl:h-24 rounded-full overflow-hidden items-center justify-center bg-blue-100 align-middle shadow-inner border-4 border-white dark:border-slate-800"
+                            className="relative inline-flex w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 2xl:w-24 2xl:h-24 rounded-full overflow-hidden items-center justify-center bg-blue-100 align-middle shadow-inner border-[2px] border-white dark:border-slate-800"
                         >
                             <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="London" />
                         </motion.span>
@@ -162,7 +165,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-10 leading-relaxed font-medium"
+                    className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium"
                 >
                     We build stunning websites, powerful SaaS products, and deliver exceptional social media services that help your business grow and thrive in the digital world.
                 </motion.p>
@@ -176,14 +179,14 @@ const Hero: React.FC = () => {
                 >
                     <Link
                         to="/contact"
-                        className="inline-flex items-center gap-4 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-8 pr-2 py-2 rounded-full font-bold text-lg hover:scale-105 transition-all group shadow-xl"
+                        className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-2 py-2 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
                     >
                         Book a Call
                         <div className="w-10 h-10 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                            <span className="material-symbols-rounded">arrow_forward</span>
+                            <span className="material-symbols-rounded text-xl">arrow_forward</span>
                         </div>
                     </Link>
-                    <p className="mt-4 text-sm text-slate-500 font-medium">No pressure, just possibilities.</p>
+                    <p className="mt-4 text-xs md:text-sm text-slate-500 font-medium tracking-tight">No pressure, just possibilities.</p>
                 </motion.div>
             </div>
         </header>

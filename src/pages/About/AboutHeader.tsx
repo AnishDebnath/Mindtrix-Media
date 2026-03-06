@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutHeader: React.FC = () => {
     return (
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-10 md:mb-12">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -18,13 +18,13 @@ const AboutHeader: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold tracking-tighter leading-tight text-[#111] dark:text-white mb-8"
+                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-tight text-[#111] dark:text-white mb-6"
             >
-                <div className="flex flex-wrap justify-center items-center gap-x-3 md:gap-x-4">
+                <div className="flex flex-wrap justify-center items-center gap-x-2.5 md:gap-x-3.5">
                     <span>We’re the</span>
                     <motion.span
                         whileHover={{ scale: 1.05, rotate: -2 }}
-                        className="relative inline-flex w-16 h-10 md:w-20 md:h-11 lg:w-20 lg:h-11 xl:w-28 xl:h-14 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner"
+                        className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20"
                     >
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Magic" />
                     </motion.span>
@@ -37,7 +37,7 @@ const AboutHeader: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium px-4"
+                className="text-base md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium px-4"
             >
                 Founded in 2021, we started with a simple mission: to help creators reclaim their time so they can focus on what they do best—creating.
             </motion.p>

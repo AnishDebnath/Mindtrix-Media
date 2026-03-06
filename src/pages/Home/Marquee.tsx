@@ -30,10 +30,10 @@ const Marquee: React.FC = () => {
                     {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm border border-slate-200/50 dark:border-slate-800/50 shadow-sm whitespace-nowrap min-w-max group hover:border-primary/20 transition-colors duration-300"
+                            className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm border border-slate-200/50 dark:border-slate-800/50 shadow-sm whitespace-nowrap min-w-max group hover:border-primary/20 transition-colors duration-300"
                         >
                             <span className="text-xl text-primary animate-pulse">✦</span>
-                            <span className="font-display font-bold text-slate-700 dark:text-slate-300 text-lg tracking-tight uppercase">
+                            <span className="font-display font-bold text-slate-700 dark:text-slate-300 text-base md:text-lg tracking-tight uppercase">
                                 {text}
                             </span>
                         </div>

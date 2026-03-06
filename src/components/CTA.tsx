@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const CTA: React.FC = () => {
     return (
-        <section className="py-24 px-4 bg-transparent relative z-10">
+        <section className="py-16 2xl:py-24 px-4 bg-transparent relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-6xl mx-auto relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-[#FFC682] via-[#FFD6A5] to-[#FFC682] p-8 md:p-16 shadow-2xl"
+                className="max-w-6xl mx-auto relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#FFC682] via-[#FFD6A5] to-[#FFC682] p-8 md:p-12 2xl:p-16 shadow-2xl"
             >
                 {/* Decorative Circles */}
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
@@ -21,7 +21,7 @@ const CTA: React.FC = () => {
                     <circle cx="50" cy="120" r="40" stroke="black" strokeWidth="0.5" fill="none" />
                 </svg>
 
-                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Side */}
                     <div className="text-left">
                         <motion.span
@@ -29,7 +29,7 @@ const CTA: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-xs font-bold tracking-[0.2em] text-slate-800/70 uppercase mb-4 block"
+                            className="text-sm font-bold tracking-[0.2em] text-slate-800/70 uppercase mb-4 block"
                         >
                             Let's build something great
                         </motion.span>
@@ -38,7 +38,7 @@ const CTA: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-extrabold text-slate-900 leading-[1.1] mb-8"
+                            className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 leading-[1.1] mb-8 md:mb-12"
                         >
                             Ready to transform your digital presence?
                         </motion.h2>
@@ -49,7 +49,7 @@ const CTA: React.FC = () => {
                             transition={{ delay: 0.4 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-slate-950 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
+                            className="bg-slate-950 text-white px-10 py-4.5 md:py-5 rounded-2xl font-bold text-base md:text-lg 2xl:text-xl shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
                         >
                             Get started
                         </motion.button>
@@ -63,21 +63,21 @@ const CTA: React.FC = () => {
                             whileHover={{ rotate: 0, scale: 1.02 }}
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
-                            className="bg-white/90 backdrop-blur-xl p-8 rounded-[2rem] shadow-2xl w-full max-w-md relative border border-white/50"
+                            className="bg-white/90 backdrop-blur-xl p-4 md:p-5 2xl:p-6 rounded-[1.2rem] shadow-2xl w-full max-w-sm relative border border-white/50"
                         >
-                            <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-4">
-                                <span className="relative flex h-3 w-3">
+                            <div className="flex items-center gap-2.5 mb-5 md:mb-6 border-b border-slate-100 pb-2.5">
+                                <span className="relative flex h-2.5 w-2.5">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
                                 </span>
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Available for Project</span>
+                                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Available for Project</span>
                             </div>
 
-                            <div className="flex items-center gap-4 mb-6 relative">
+                            <div className="flex items-center gap-3 mb-5 md:mb-6 relative">
                                 <div className="flex items-center gap-2">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
                                     <span className="text-slate-400 font-bold">+</span>
-                                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-white text-xs font-bold shadow-sm">You</div>
+                                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-white text-[9px] font-bold shadow-sm">You</div>
                                 </div>
                                 <motion.div
                                     animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
@@ -93,10 +93,10 @@ const CTA: React.FC = () => {
                                 </motion.div>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-slate-900 mb-2">Quick 15-minute call</h3>
-                            <p className="text-slate-500 mb-8">Pick a time that works for you.</p>
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Quick 15-minute call</h3>
+                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Pick a time that works for you.</p>
 
-                            <Link to="/contact" className="block w-full bg-[#FF5C00] hover:bg-[#E04F00] text-white text-center py-4 rounded-xl font-bold shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                            <Link to="/contact" className="block w-full bg-[#FF5C00] hover:bg-[#E04F00] text-white text-center py-3 md:py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                 Book a free call
                             </Link>
                         </motion.div>
