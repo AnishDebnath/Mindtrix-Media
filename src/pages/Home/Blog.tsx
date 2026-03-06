@@ -25,7 +25,7 @@ const homeArticles = [
 
 const Blog: React.FC = () => {
     return (
-        <section className="py-16 2xl:py-24 bg-transparent">
+        <section className="py-8 md:py-12 2xl:py-16 bg-transparent">
             <div className="max-w-5xl mx-auto px-4 md:px-8">
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-10">

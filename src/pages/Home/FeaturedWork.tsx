@@ -29,7 +29,7 @@ const featuredWork = [
 
 const FeaturedWork: React.FC = () => {
     return (
-        <section className="py-16 2xl:py-24 bg-transparent" id="featured-work">
+        <section className="py-8 md:py-12 2xl:py-16 bg-transparent" id="featured-work">
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20">
                 <div className="text-center mb-10 md:mb-12">
                     <motion.div

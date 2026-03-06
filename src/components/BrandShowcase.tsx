@@ -12,7 +12,7 @@ const brands = [
 
 const BrandShowcase: React.FC = () => {
     return (
-        <div className="py-6 px-8 overflow-hidden">
+        <div className="py-8 md:py-12 2xl:py-16 px-8 overflow-hidden">
             <div className="relative flex items-center">
                 <motion.div
                     animate={{

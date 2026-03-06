@@ -69,7 +69,7 @@ const Testimonials: React.FC = () => {
     };
 
     return (
-        <section className="py-6 2xl:py-10 bg-transparent relative">
+        <section className="py-8 md:py-12 2xl:py-16 bg-transparent relative">
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 {/* Header Section */}
                 <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10">

@@ -29,7 +29,7 @@ const footerLinks = [
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-transparent px-4 md:px-6 2xl:px-8 pb-4 md:pb-6 2xl:pb-6 pt-0 transition-colors duration-500 relative z-10 mt-10 md:mt-16">
+        <footer className="bg-transparent px-4 md:px-6 2xl:px-8 pb-4 md:pb-6 2xl:pb-6 pt-0 transition-colors duration-500 relative z-10 mt-2 md:mt-4">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}

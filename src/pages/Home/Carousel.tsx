@@ -48,7 +48,7 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
     const marqueeItems = [...carouselItems, ...carouselItems, ...carouselItems];
 
     return (
-        <div className="w-full relative z-20 pb-12 md:pb-20 pt-0 overflow-hidden bg-transparent">
+        <div className="w-full relative z-20 pb-8 md:pb-12 2xl:pb-16 pt-0 overflow-hidden bg-transparent">
             {/* Fade Filters */}
             <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-background-light dark:from-background-dark to-transparent z-30 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-background-light dark:from-background-dark to-transparent z-30 pointer-events-none" />
