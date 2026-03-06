@@ -67,10 +67,10 @@ const BlogPage: React.FC = () => {
                 }}>
             </div>
 
-            <div className="py-8 md:py-10 lg:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20 relative z-10">
+            <div className="py-8 md:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 <BlogHeader />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {articles.map((article, index) => (
                         <ArticleCard key={index} article={article} delay={index * 0.1} />
                     ))}

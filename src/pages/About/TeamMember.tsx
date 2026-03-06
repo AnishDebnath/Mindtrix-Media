@@ -39,10 +39,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                 {/* Content Area - Compacted Spacing */}
                 <div className="p-4 pt-1 flex flex-col flex-1 relative bg-white/50 dark:bg-transparent">
                     <div className="mb-2.5">
-                        <h3 className="text-base font-display font-extrabold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">
                             {member.name}
                         </h3>
-                        <p className="text-slate-500 dark:text-slate-400 text-[8px] md:text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
+                        <p className="text-slate-500 dark:text-slate-400 text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                             <span className="w-6 h-[2px] bg-primary/30 rounded-full group-hover:w-8 group-hover:bg-primary transition-all duration-300"></span>
                             {member.role}
                         </p>

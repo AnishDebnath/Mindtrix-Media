@@ -60,7 +60,7 @@ const ContactInfo: React.FC = () => {
             <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block"
+                className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-6 block"
             >
                 Contact Us
             </motion.span>
@@ -75,7 +75,7 @@ const ContactInfo: React.FC = () => {
                         initial={{ width: 0, opacity: 0 }}
                         animate={{ width: 'auto', opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="relative inline-flex h-10 w-18 md:h-14 md:w-24 lg:h-12 lg:w-20 2xl:h-16 2xl:w-28 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20 shrink-0"
+                        className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20 shrink-0"
                     >
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Collaboration" />
                     </motion.span>
@@ -101,7 +101,7 @@ const ContactInfo: React.FC = () => {
                             <span className="material-symbols-rounded text-[18px]">{info.icon}</span>
                         </div>
                         <div>
-                            <h3 className="text-xs 2xl:text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{info.title}</h3>
+                            <h3 className="text-[10px] md:text-[11px] 2xl:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{info.title}</h3>
                             <p className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white">{info.value}</p>
                         </div>
                     </div>

@@ -78,46 +78,46 @@ const PrototypeForm: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="relative space-y-5 z-0" onClick={() => isDropdownOpen && setIsDropdownOpen(false)}>
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Full Name <span className="text-primary">*</span></label>
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Full Name <span className="text-primary">*</span></label>
                     <input
                         required
                         type="text"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
                         placeholder="John Doe"
                     />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email </label>
+                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email </label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
                             placeholder="name@company.com"
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Phone No <span className="text-primary">*</span></label>
+                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Phone No <span className="text-primary">*</span></label>
                         <input
                             required
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
                             placeholder="+1 (555) 000-0000"
                         />
                     </div>
                 </div>
 
                 <div className="space-y-2 relative">
-                    <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Project Type <span className="text-primary">*</span></label>
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Project Type <span className="text-primary">*</span></label>
                     <div className="relative">
                         <button
                             type="button"
@@ -125,7 +125,7 @@ const PrototypeForm: React.FC = () => {
                                 e.stopPropagation();
                                 setIsDropdownOpen(!isDropdownOpen);
                             }}
-                            className={`w-full text-left bg-slate-50/50 dark:bg-slate-800/50 border rounded-2xl px-5 py-4 flex items-center justify-between outline-none transition-all ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 dark:border-slate-700 hover:border-primary/50'}`}
+                            className={`w-full text-left bg-slate-50/50 dark:bg-slate-800/50 border rounded-2xl px-5 py-4 flex items-center justify-between text-sm 2xl:text-base outline-none transition-all ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 dark:border-slate-700 hover:border-primary/50'}`}
                         >
                             <span className={formData.projectType ? "text-slate-900 dark:text-white" : "text-slate-400"}>
                                 {formData.projectType ? projectTypes.find(t => t.value === formData.projectType)?.label : "Select a project type"}
@@ -167,26 +167,26 @@ const PrototypeForm: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Current Website <span className="text-slate-400 font-normal text-xs ml-1">(Optional)</span></label>
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Current Website <span className="text-slate-400 font-normal text-[10px] ml-1">(Optional)</span></label>
                     <input
                         type="url"
                         name="website"
                         value={formData.website}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
                         placeholder="https://www.yourbrandsite.com"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Project Description <span className="text-primary">*</span></label>
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Project Description <span className="text-primary">*</span></label>
                     <textarea
                         required
                         rows={3}
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400"
+                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400"
                         placeholder="Tell us about the problem you want to solve..."
                     />
                 </div>

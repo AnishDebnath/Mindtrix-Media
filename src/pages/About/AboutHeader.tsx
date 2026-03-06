@@ -9,7 +9,7 @@ const AboutHeader: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
             >
-                <span className="text-primary font-bold tracking-widest uppercase text-xs flex items-center gap-2">
+                <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm flex items-center gap-2">
                     <span className="material-symbols-rounded text-sm">rocket_launch</span> Our Mission
                 </span>
             </motion.div>
@@ -18,7 +18,7 @@ const AboutHeader: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-tight text-[#111] dark:text-white mb-6"
+                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-[#111] dark:text-white mb-6"
             >
                 <div className="flex flex-wrap justify-center items-center gap-x-2.5 md:gap-x-3.5">
                     <span>We’re the</span>
@@ -37,7 +37,7 @@ const AboutHeader: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-base md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium px-4"
+                className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
             >
                 Founded in 2021, we started with a simple mission: to help creators reclaim their time so they can focus on what they do best—creating.
             </motion.p>

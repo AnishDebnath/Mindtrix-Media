@@ -40,22 +40,22 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
                     <div className="px-4 pb-4 flex flex-col flex-1">
                         <div className="flex flex-wrap gap-1.5 mb-2.5">
                             {article.tags.map((tag, index) => (
-                                <span key={index} className="px-2 py-0.5 text-[7px] font-bold uppercase tracking-widest bg-slate-100 dark:bg-white/5 text-primary rounded-lg border border-slate-200/50 dark:border-white/5">
+                                <span key={index} className="px-2 py-0.5 text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-widest bg-slate-100 dark:bg-white/5 text-primary rounded-lg border border-slate-200/50 dark:border-white/5">
                                     {tag}
                                 </span>
                             ))}
                         </div>
 
-                        <h2 className="text-sm md:text-base font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                        <h2 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
                             {article.title}
                         </h2>
 
-                        <p className="text-slate-500 dark:text-slate-400 text-[9px] md:text-[10px] leading-relaxed mb-4 line-clamp-2">
+                        <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed mb-4 line-clamp-2">
                             {article.desc}
                         </p>
 
                         <div className="mt-auto pt-3 border-t border-slate-100 dark:border-white/5 flex items-center justify-between group/link">
-                            <span className="text-[10px] font-bold text-slate-900 dark:text-white group-hover/link:text-primary transition-colors">
+                            <span className="text-[9px] md:text-[10px] 2xl:text-xs font-bold text-slate-900 dark:text-white group-hover/link:text-primary transition-colors">
                                 Read More
                             </span>
                             <motion.div

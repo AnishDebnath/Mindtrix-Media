@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
                 }}>
             </div>
 
-            <div className="py-8 md:py-10 lg:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 2xl:px-20 relative z-10">
+            <div className="py-8 md:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 <AboutHeader />
                 <div className="mb-10 md:mb-12">
                     <BrandShowcase />

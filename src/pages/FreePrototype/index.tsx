@@ -20,14 +20,14 @@ const FreePrototypePage: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
     return (
         <div className="flex flex-col">
-            <div className="relative min-h-[90vh] flex items-center justify-center py-25 overflow-hidden">
+            <div className="relative min-h-[90vh] flex items-center justify-center pt-24 md:pt-32 pb-12 overflow-hidden">
                 {/* Background elements to fill space */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                     <div className="absolute top-[10%] -left-[5%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[120px] animate-blob" />
                     <div className="absolute bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-purple-500/5 rounded-full blur-[120px] animate-blob animation-delay-2000" />
                 </div>
 
-                <div className="pt-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="py-8 md:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                         {/* Info Section */}
                         <div className="lg:sticky lg:top-32">
@@ -64,7 +64,7 @@ const FreePrototypePage: React.FC = () => {
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-5xl md:text-7xl font-display font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.3] tracking-tight"
+                                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight"
                             >
                                 See It Before <br />
                                 <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -72,7 +72,7 @@ const FreePrototypePage: React.FC = () => {
                                         initial={{ width: 0, opacity: 0 }}
                                         animate={{ width: 'auto', opacity: 1 }}
                                         transition={{ delay: 0.4, duration: 0.6 }}
-                                        className="relative inline-flex h-11 w-20 md:h-16 md:w-32 rounded-3xl overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-xl shrink-0 -mt-2"
+                                        className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-xl shrink-0 -mt-2"
                                     >
                                         <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Design Prototype" />
                                         <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
@@ -85,7 +85,7 @@ const FreePrototypePage: React.FC = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-xl text-slate-500 dark:text-slate-400 mb-12 leading-relaxed max-w-xl"
+                                className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-12 leading-relaxed max-w-xl"
                             >
                                 We're so confident in our design skills that we'll design a high-fidelity prototype of your new website for <strong className="text-slate-900 dark:text-white underline decoration-primary/30 decoration-4 underline-offset-4">free</strong>. No strings attached.
                             </motion.p>
@@ -110,8 +110,8 @@ const FreePrototypePage: React.FC = () => {
                                             <span className="material-symbols-rounded text-[22px]">{item.icon}</span>
                                         </div>
                                         <div>
-                                            <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{item.title}</h3>
-                                            <p className="text-lg font-bold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
+                                            <h3 className="text-[10px] md:text-[11px] 2xl:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{item.title}</h3>
+                                            <p className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
                                         </div>
                                     </motion.div>
                                 ))}

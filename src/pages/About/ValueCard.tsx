@@ -23,10 +23,10 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, delay }) => {
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <span className="material-symbols-rounded text-2xl">{value.icon}</span>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors">
+            <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors">
                 {value.title}
             </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">
+            <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed font-medium">
                 {value.desc}
             </p>
         </motion.div>

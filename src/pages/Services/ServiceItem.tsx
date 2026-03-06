@@ -52,7 +52,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                         {service.title}
                     </h3>
 
-                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 md:mb-8 font-medium max-w-xl">
+                    <p className="text-xs md:text-sm 2xl:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6 md:mb-8 font-medium max-w-xl">
                         {service.description}
                     </p>
 
@@ -61,7 +61,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                         {service.tags.map((tag, idx) => (
                             <div key={idx} className="flex items-center gap-2 bg-slate-100 dark:bg-white/5 rounded-full px-3 py-1.5 border border-slate-200 dark:border-white/5 group hover:border-primary/30 transition-colors">
                                 <div className="w-1 h-1 rounded-full bg-primary group-hover:scale-150 transition-transform" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                                <span className="text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                                     {tag}
                                 </span>
                             </div>
@@ -72,7 +72,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                     <div className="flex flex-wrap gap-4 w-full sm:w-auto">
                         <Link
                             to="/free-prototype"
-                            className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 py-2.5 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                            className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 py-2.5 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
                         >
                             Free Prototype
                             <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
@@ -80,7 +80,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
 
                         <Link
                             to="/work"
-                            className="group flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                            className="group flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             View Work
                             <span className="w-6 h-6 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
