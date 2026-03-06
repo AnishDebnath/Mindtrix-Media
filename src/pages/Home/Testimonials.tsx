@@ -209,21 +209,21 @@ const Testimonials: React.FC = () => {
                                 className="flex gap-5 w-max"
                             >
                                 {[...marqueeTestimonials, ...marqueeTestimonials, ...marqueeTestimonials].map((item, i) => (
-                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] h-[100px] md:h-[115px] bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1rem] p-4 md:p-5 mr-4 shadow-xl shadow-black/5">
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex items-center gap-2.5">
+                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1rem] md:rounded-[1.2rem] p-4 md:p-5 mr-4 shadow-xl shadow-black/5">
+                                        <div className="flex flex-col gap-2 md:gap-3">
+                                            <div className="flex items-center gap-3">
                                                 <div className="flex-shrink-0 relative">
-                                                    <img src={item.avatar} alt={item.handle} className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
-                                                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900">
-                                                        <span className="material-symbols-rounded text-[8px] text-white">verified</span>
+                                                    <img src={item.avatar} alt={item.handle} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
+                                                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900">
+                                                        <span className="material-symbols-rounded text-[6px] md:text-[8px] text-white">verified</span>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p className="font-bold text-slate-900 dark:text-white text-sm leading-tight">{item.name || item.handle}</p>
-                                                    <p className="text-primary font-bold text-[10px] 2xl:text-xs tracking-wider uppercase">{item.handle}</p>
+                                                    <p className="font-bold text-slate-900 dark:text-white text-xs md:text-sm leading-tight">{item.name || item.handle}</p>
+                                                    <p className="text-primary font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
                                                 </div>
                                             </div>
-                                            <p className="text-slate-600 dark:text-slate-300 text-[11px] md:text-xs 2xl:text-sm leading-relaxed font-medium line-clamp-2">
+                                            <p className="text-slate-500 dark:text-slate-400 text-[11px] md:text-xs leading-relaxed font-medium line-clamp-2">
                                                 "{item.text}"
                                             </p>
                                         </div>

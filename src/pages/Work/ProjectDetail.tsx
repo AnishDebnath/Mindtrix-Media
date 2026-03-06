@@ -30,7 +30,7 @@ const ProjectDetail: React.FC = () => {
     const moreWork = projects.filter(p => p.id !== project.id).slice(0, 2);
 
     return (
-        <div className="pt-25 pb-0 relative">
+        <div className="pt-24 md:pt-32 pb-0 relative">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
@@ -188,7 +188,7 @@ const ProjectDetail: React.FC = () => {
                         </Link>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                         {moreWork.map((p, idx) => (
                             <motion.div
                                 key={p.id}
@@ -201,7 +201,7 @@ const ProjectDetail: React.FC = () => {
                             >
                                 <div
                                     onClick={() => navigate(`/work/${p.id}`)}
-                                    className="relative aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-black mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
+                                    className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-black mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
                                 >
                                     <img
                                         src={p.image}
