@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="w-full max-w-7xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-2 pl-6 pr-2 transition-all duration-300"
+                    className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-2 pl-6 pr-2 transition-all duration-300"
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2 group">
