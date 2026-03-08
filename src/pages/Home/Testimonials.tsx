@@ -243,7 +243,7 @@ const Testimonials: React.FC = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-[#111] text-white rounded-[1.5rem] p-6 md:p-7 text-center relative overflow-hidden shadow-2xl h-full min-h-[280px] 2xl:min-h-[320px] flex flex-col items-center justify-between"
+                                className="bg-[#111] text-white rounded-[1.5rem] p-8 md:p-10 lg:p-8 2xl:p-10 text-center relative overflow-hidden shadow-2xl h-full lg:min-h-[300px] 2xl:min-h-[340px] flex flex-col items-center justify-between gap-8 md:gap-10 lg:gap-8 2xl:gap-0"
                             >
                                 <div className="flex flex-col items-center gap-3 relative z-10 w-full">
                                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-[3px] border-white/10 bg-white/5 shadow-inner">

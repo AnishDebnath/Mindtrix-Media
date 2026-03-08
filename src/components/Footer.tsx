@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-full bg-[#000000] rounded-[1.5rem] px-5 py-10 md:p-12 2xl:p-14 relative overflow-hidden flex flex-col justify-between"
+                className="w-full bg-[#000000] rounded-[1.5rem] px-5 pt-7 pb-10 md:pt-10 md:pb-12 2xl:p-14 relative overflow-hidden flex flex-col justify-between"
             >
                 <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-between">
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                                 <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
                                     <span className="material-symbols-rounded text-xl">movie_edit</span>
                                 </div>
-                                <span className="text-xl md:text-2xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
+                                <span className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                             </Link>
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-bold text-white mb-4 md:mb-5 leading-tight">Do you like what you see?</h3>
                             <p className="text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">Let’s work together to turn your dream project into reality.</p>
@@ -96,9 +96,9 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Bottom */}
-                    <div className="relative mt-auto pt-12 md:pt-16 pb-4">
+                    <div className="relative mt-auto pt-6 md:pt-8 lg:pt-16 pb-4">
                         <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end pointer-events-none select-none">
-                            <h1 className="text-[12vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
+                            <h1 className="text-[20vw] md:text-[18vw] lg:text-[16vw] 2xl:text-[14vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
                         </div>
                         <div className="relative z-10 text-center">
                             <p className="text-slate-500 text-xs md:text-sm font-medium">© All Right Reserved by Mindtrix Media - 2025</p>
