@@ -68,10 +68,10 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                     {marqueeItems.map((item, index) => (
                         <div
                             key={`${item.id}-${index}`}
-                            className="relative flex-shrink-0 w-[85vw] sm:w-[500px] bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col gap-4"
+                            className="relative flex-shrink-0 w-[320px] sm:w-[500px] bg-white dark:bg-slate-900/50 rounded-[2rem] sm:rounded-[2.5rem] p-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col gap-4"
                         >
                             {/* Image & Content Container */}
-                            <div className="w-full h-[400px] rounded-[2rem] overflow-hidden relative isolate group/image">
+                            <div className="w-full h-[280px] sm:h-[400px] rounded-[1.6rem] sm:rounded-[2rem] overflow-hidden relative isolate group/image">
                                 <img
                                     src={item.img}
                                     alt={item.title}
@@ -79,16 +79,16 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                 />
 
                                 {/* Floating Glass Content Card */}
-                                <div className="absolute bottom-4 left-4 right-4 px-5 py-3.5 rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between z-10 transition-transform duration-300 group-hover:scale-[1.02]">
+                                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between z-10 transition-transform duration-300 group-hover:scale-[1.02]">
                                     <div>
-                                        <h3 className="text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                                        <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">{item.title}</h3>
                                         <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider">{item.category}</p>
                                     </div>
 
                                     <button
-                                        className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
+                                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
                                     >
-                                        <span className="material-symbols-rounded text-[20px]">arrow_outward</span>
+                                        <span className="material-symbols-rounded text-[16px] sm:text-[20px]">arrow_outward</span>
                                     </button>
                                 </div>
                             </div>
