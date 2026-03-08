@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
     return (
-        <header className="pt-28 md:pt-36 lg:pt-24 2xl:pt-32 relative flex flex-col items-center justify-center">
+        <header className="pt-28 md:pt-36 2xl:pt-40 relative flex flex-col items-center justify-center">
 
             {/* Main Hero Content */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 text-center pb-12 md:pb-16">
