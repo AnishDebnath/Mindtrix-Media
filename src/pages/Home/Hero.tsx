@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-3xl md:text-6xl 2xl:text-[5.5rem] font-display font-extrabold tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
+                    className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
                 >
                     {/* Row 1 */}
                     <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-2">
@@ -165,7 +165,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium"
+                    className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium"
                 >
                     We build stunning websites, powerful SaaS products, and deliver exceptional social media services that help your business grow and thrive in the digital world.
                 </motion.p>

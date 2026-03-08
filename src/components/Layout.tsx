@@ -15,11 +15,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="relative min-h-screen bg-[#FAFAFA] dark:bg-background-dark transition-colors duration-500 flex flex-col">
             <PageBackground pathname={location.pathname} />
 
-            <div className="w-full max-w-[1440px] mx-auto relative z-10 flex flex-col flex-grow">
+            <div className="w-full relative z-10 flex flex-col flex-grow overflow-x-hidden">
+
                 <main className="flex-grow">
                     {children}
                 </main>
-                <Footer />
+                <div className="w-full max-w-[1440px] mx-auto">
+                    <Footer />
+                </div>
             </div>
         </div>
     );
