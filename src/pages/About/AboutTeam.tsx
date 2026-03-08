@@ -4,7 +4,7 @@ import TeamMember from './TeamMember';
 
 const teamMembers = [
     {
-        name: "Alex Rivera",
+        name: "Preetam Chakraborty",
         role: "Founder & Lead Editor",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
         socials: {
@@ -53,7 +53,7 @@ const AboutTeam: React.FC = () => {
     return (
         <section className="py-16 2xl:py-24 px-4 md:px-8 bg-transparent relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <div className="text-center mb-12 md:mb-16">
+                <div className="text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}

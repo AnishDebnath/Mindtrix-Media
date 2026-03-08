@@ -67,11 +67,11 @@ const StatItem: React.FC<{ stat: Stat; idx: number; isLast: boolean }> = ({ stat
                     </motion.span>
                 </div>
 
-                <div className="text-lg md:text-xl font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tighter group-hover:text-primary transition-colors duration-300">
+                <div className="text-xl md:text-2xl 2xl:text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tighter group-hover:text-primary transition-colors duration-300">
                     {getFormattedCount()}
                 </div>
 
-                <div className="text-slate-500 dark:text-slate-400 font-bold text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-center opacity-80 group-hover:opacity-100 transition-opacity">
+                <div className="text-slate-500 dark:text-slate-400 font-bold text-[9px] md:text-[10px] 2xl:text-[11px] uppercase tracking-[0.2em] text-center opacity-80 group-hover:opacity-100 transition-opacity">
                     {stat.label}
                 </div>
             </motion.div>

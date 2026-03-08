@@ -51,7 +51,7 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.3 }}
                         className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden flex items-center justify-center p-5 border border-slate-100 dark:border-slate-800">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden flex items-center justify-center p-5 border border-slate-100 dark:border-slate-800">
                             <div className="grid grid-cols-3 gap-4 opacity-30 absolute inset-0 p-6 place-content-center">
                                 {[...Array(9)].map((_, i) => (
                                     <div key={i} className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 mx-auto"></div>
@@ -64,9 +64,9 @@ const WhyChooseUs: React.FC = () => {
                                 <span className="material-symbols-rounded text-3xl md:text-4xl">movie</span>
                             </motion.div>
                         </div>
-                        <div className="px-4 pb-6">
+                        <div className="px-4 pb-5">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Strategic & Purposeful</h3>
-                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">Our solutions are crafted with intention, every design choice and technical decision made to achieve your business goals.</p>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our solutions are crafted with intention, every design choice and technical decision made to achieve your business goals.</p>
                         </div>
                     </motion.div>
 
@@ -78,7 +78,7 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.4 }}
                         className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden border border-slate-800 flex select-none">
+                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden border border-slate-800 flex select-none">
                             <div className="hidden sm:flex w-16 h-full border-r border-white/10 flex-col p-3 gap-3 shrink-0">
                                 <div className="flex gap-1.5 mb-2">
                                     <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
@@ -115,9 +115,9 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="px-4 pb-6">
+                        <div className="px-4 pb-5">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fully Customizable</h3>
-                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">We tailor every project to fit your brand, goals, and vision, ensuring your digital presence feels uniquely yours from start to finish.</p>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We tailor every project to fit your brand, goals, and vision, ensuring your digital presence feels uniquely yours from start to finish.</p>
                         </div>
                     </motion.div>
 
@@ -129,7 +129,7 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.5 }}
                         className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-5 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800">
                             {[
                                 { d: 2, l: 'Discovery' },
                                 { d: 6, l: 'Development' },
@@ -156,9 +156,9 @@ const WhyChooseUs: React.FC = () => {
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="px-4 pb-6">
+                        <div className="px-4 pb-5">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fast delivery time</h3>
-                            <p className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed">We work efficiently without compromising quality, ensuring your project is delivered on time and with care.</p>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We work efficiently without compromising quality, ensuring your project is delivered on time and with care.</p>
                         </div>
                     </motion.div>
                 </div>

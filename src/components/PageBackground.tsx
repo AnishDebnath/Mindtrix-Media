@@ -14,6 +14,7 @@ const PageBackground: React.FC<PageBackgroundProps> = ({ pathname }) => {
         if (pathname.startsWith('/work')) return 'work';
         if (pathname.startsWith('/blog')) return 'blog';
         if (pathname.startsWith('/contact')) return 'contact';
+        if (pathname.startsWith('/free-prototype')) return 'prototype';
         return 'default';
     };
 
@@ -76,9 +77,17 @@ const PageBackground: React.FC<PageBackgroundProps> = ({ pathname }) => {
 
                     {variant === 'contact' && (
                         <>
-                            <div className="absolute top-[-5%] left-[-5%] w-[60%] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px]"></div>
-                            <div className="absolute top-[15%] right-[-5%] w-[60%] h-[800px] bg-orange-400/5 dark:bg-orange-400/10 rounded-full blur-[120px]"></div>
-                            <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[80%] h-[600px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[140px]"></div>
+                            <div className="absolute top-[-10%] left-[-20%] w-[60%] h-[800px] bg-primary/5 dark:bg-primary/8 rounded-full blur-[140px]"></div>
+                            <div className="absolute top-[10%] right-[-20%] w-[55%] h-[700px] bg-blue-500/5 dark:bg-blue-500/8 rounded-full blur-[120px]"></div>
+                            <div className="absolute bottom-[25%] left-1/2 -translate-x-1/2 w-[70%] h-[600px] bg-purple-500/3 dark:bg-purple-500/5 rounded-full blur-[150px]"></div>
+                        </>
+                    )}
+
+                    {variant === 'prototype' && (
+                        <>
+                            <div className="absolute top-[-10%] right-[-20%] w-[60%] h-[900px] bg-amber-500/5 dark:bg-amber-500/8 rounded-full blur-[130px]"></div>
+                            <div className="absolute top-[20%] left-[-20%] w-[65%] h-[800px] bg-primary/5 dark:bg-primary/8 rounded-full blur-[140px]"></div>
+                            <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[70%] h-[500px] bg-orange-500/3 dark:bg-orange-500/5 rounded-full blur-[150px]"></div>
                         </>
                     )}
 
@@ -89,7 +98,7 @@ const PageBackground: React.FC<PageBackgroundProps> = ({ pathname }) => {
                     )}
 
                     {/* Central Ambient Glow (Shared but can be modified) */}
-                    <div className="absolute top-[10%] left-[50%] translate-x-[-50%] w-[80%] h-[1500px] bg-slate-500/[0.02] dark:bg-slate-500/[0.05] rounded-full blur-[150px]"></div>
+                    <div className="absolute top-[10%] left-[50%] translate-x-[-50%] w-[80%] h-[1500px] bg-slate-500/[0.01] dark:bg-slate-500/[0.03] rounded-full blur-[160px]"></div>
                 </motion.div>
             </AnimatePresence>
         </div>

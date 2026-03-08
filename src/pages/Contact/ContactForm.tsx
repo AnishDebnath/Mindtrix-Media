@@ -44,13 +44,10 @@ const ContactForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-6 md:p-8 2xl:p-10 rounded-[2rem] shadow-2xl border border-white/20 dark:border-slate-800/50"
+            className="relative h-full overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-6 md:p-8 2xl:p-10 rounded-[2rem] shadow-2xl border border-white/20 dark:border-slate-800/50"
         >
-            {/* Decorative gradient blobs */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <form onSubmit={handleSubmit} className="relative space-y-5">
+            <form onSubmit={handleSubmit} className="relative h-full flex flex-col space-y-5">
                 <div className="space-y-2">
                     <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Full Name <span className="text-primary">*</span></label>
                     <input
@@ -103,47 +100,25 @@ const ContactForm: React.FC = () => {
                     />
                 </div>
 
-                <div className="space-y-2">
+                <div className="flex-1 flex flex-col space-y-2">
                     <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Message / Details <span className="text-primary">*</span></label>
                     <textarea
                         required
-                        rows={4}
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400"
+                        className="flex-1 w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400 min-h-[120px]"
                         placeholder="Tell us about your inquiry..."
                     />
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-between pt-2">
-                    <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 px-2 lg:px-4">
-                        {status === 'success' ? (
-                            <p className="text-sm md:text-base font-bold text-emerald-500 flex items-center gap-1">
-                                <span className="material-symbols-rounded text-lg md:text-xl">check_circle</span>
-                                Message sent successfully!
-                            </p>
-                        ) : status === 'error' ? (
-                            <p className="text-sm md:text-base font-bold text-red-500 flex items-center gap-1">
-                                <span className="material-symbols-rounded text-lg md:text-xl">error</span>
-                                Failed to send message.
-                            </p>
-                        ) : (
-                            <>
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                                </span>
-                                <p className="text-xs md:text-sm font-medium italic">We respond within 24 hours</p>
-                            </>
-                        )}
-                    </div>
+                <div className="flex flex-col items-center pt-2 gap-4">
                     <button
                         disabled={status === 'sending'}
-                        className="w-full sm:w-auto sm:min-w-[180px] group flex items-center justify-center gap-4 bg-[#111] dark:bg-white text-white dark:text-[#111] py-4 px-8 rounded-full font-bold text-base md:text-lg hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full group flex items-center justify-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] py-3.5 px-8 rounded-full font-bold text-base md:text-lg hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
                     >
                         <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
-                        <div className="w-10 h-10 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
+                        <div className="w-8 h-8 flex-shrink-0 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
                             {status === 'sending' ? (
                                 <div className="w-5 h-5 border-2 border-[#111] dark:border-white border-t-transparent rounded-full animate-spin" />
                             ) : (
@@ -151,6 +126,28 @@ const ContactForm: React.FC = () => {
                             )}
                         </div>
                     </button>
+
+                    <div className="flex items-center justify-center min-h-[24px] w-full px-2">
+                        {status === 'success' ? (
+                            <p className="text-sm md:text-base font-bold text-emerald-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">check_circle</span>
+                                Message sent successfully!
+                            </p>
+                        ) : status === 'error' ? (
+                            <p className="text-sm md:text-base font-bold text-red-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">error</span>
+                                Failed to send message.
+                            </p>
+                        ) : (
+                            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                <p className="text-xs md:text-sm font-medium italic whitespace-nowrap">We respond within 24 hours</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </form>
         </motion.div>

@@ -19,12 +19,14 @@ const CountUp: React.FC<{ val: number }> = ({ val }) => {
 const FreePrototypePage: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
     return (
-        <div className="flex flex-col">
-            <div className="relative min-h-[90vh] flex items-center justify-center pt-24 md:pt-32 pb-12 overflow-hidden">
-                {/* Background elements to fill space */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                    <div className="absolute top-[10%] -left-[5%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[120px] animate-blob" />
-                    <div className="absolute bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-purple-500/5 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+        <div className="flex flex-col pt-20 md:pt-24">
+            <div className="relative min-h-[90vh] flex items-center justify-center pb-12 overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{
+                        backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
+                        backgroundSize: '24px 24px'
+                    }}>
                 </div>
 
                 <div className="py-8 md:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 w-full">

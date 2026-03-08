@@ -46,7 +46,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
                             ))}
                         </div>
 
-                        <h2 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                        <h2 className="text-base md:text-lg 2xl:text-[22px] font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
                             {article.title}
                         </h2>
 
