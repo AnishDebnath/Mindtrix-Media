@@ -44,8 +44,12 @@ const ContactForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative h-full overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-6 md:p-8 2xl:p-10 rounded-[2rem] shadow-2xl border border-white/20 dark:border-slate-800/50"
+            className="relative h-full overflow-hidden bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-[#0A0A0A]/95 backdrop-blur-2xl p-6 md:p-8 2xl:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white dark:border-white/10"
         >
+            {/* Decorative background gradients */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
 
             <form onSubmit={handleSubmit} className="relative h-full flex flex-col space-y-5">
                 <div className="space-y-2">

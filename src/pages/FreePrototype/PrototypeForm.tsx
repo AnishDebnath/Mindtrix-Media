@@ -65,12 +65,14 @@ const PrototypeForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-6 md:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-slate-800/50"
+            className="relative overflow-hidden bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-[#0A0A0A]/95 backdrop-blur-2xl p-6 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white dark:border-white/10"
         >
+
             {/* Decorative Ribbon */}
-            <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-orange-600 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-10 rotate-45 translate-x-[25%] translate-y-[40%] shadow-lg z-10">
+            <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-orange-600 text-white text-[12px] md:text-[13px] font-black uppercase tracking-[0.15em] py-1.5 px-12 rotate-45 translate-x-[28%] translate-y-[45%] shadow-xl z-10 border-b border-white/10">
                 Free
             </div>
+
 
             {/* Decorative gradient blobs */}
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />

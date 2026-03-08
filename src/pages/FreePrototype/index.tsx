@@ -20,14 +20,8 @@ const FreePrototypePage: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
     return (
         <div className="flex flex-col pt-20 md:pt-24">
-            <div className="relative min-h-[90vh] flex items-center justify-center pb-12 overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                    style={{
-                        backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
-                        backgroundSize: '24px 24px'
-                    }}>
-                </div>
+            <div className="relative">
+
 
                 <div className="py-8 md:py-12 2xl:py-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -166,13 +160,12 @@ const FreePrototypePage: React.FC = () => {
 
                         {/* Form Section */}
                         <div className="relative h-full flex flex-col justify-center">
-                            {/* Blob behind form */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/10 to-purple-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
                             <PrototypeForm />
                         </div>
                     </div>
                 </div>
             </div>
+
 
             {/* FAQ Section */}
             <div>

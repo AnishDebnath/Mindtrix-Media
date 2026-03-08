@@ -40,15 +40,15 @@ const Footer: React.FC = () => {
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
                         {/* Branding */}
                         <div className="lg:col-span-5 flex flex-col items-start">
-                            <Link to="/" className="flex items-center gap-2 mb-6 group">
-                                <div className="w-7 h-7 bg-primary rounded-full flex items-center justify-center">
-                                    <span className="material-symbols-rounded text-white text-sm">movie_edit</span>
+                            <Link to="/" className="flex items-center gap-3 mb-6 group">
+                                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
+                                    <span className="material-symbols-rounded text-xl">movie_edit</span>
                                 </div>
-                                <span className="text-lg md:text-xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
+                                <span className="text-xl md:text-2xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                             </Link>
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-bold text-white mb-4 md:mb-5 leading-tight">Do you like what you see?</h3>
-                            <p className="text-slate-400 text-xs md:text-sm max-w-sm mb-5 md:mb-6 leading-relaxed">Let’s work together to turn your dream project into reality.</p>
-                            <Link to="/contact" className="inline-flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group text-xs md:text-sm">
+                            <p className="text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">Let’s work together to turn your dream project into reality.</p>
+                            <Link to="/contact" className="inline-flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group text-sm md:text-base">
                                 Let's Talk with Us
                                 <span className="material-symbols-rounded scale-75 group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </Link>
@@ -58,10 +58,18 @@ const Footer: React.FC = () => {
                         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:pl-12 pt-0 md:pt-4">
                             {footerLinks.map((col, idx) => (
                                 <div key={idx}>
-                                    <h4 className="text-white font-bold mb-5 md:mb-6 text-xs md:text-sm">{col.title}</h4>
-                                    <ul className="space-y-2.5 text-[10px] md:text-xs text-slate-400 font-medium">
+                                    <h4 className="text-white font-bold mb-5 md:mb-6 text-sm md:text-base">{col.title}</h4>
+                                    <ul className="space-y-3 text-xs md:text-sm text-slate-400 font-medium">
                                         {col.links.map((link, lIdx) => (
-                                            <li key={lIdx}><Link to={link.path} className="hover:text-white transition-colors">{link.name}</Link></li>
+                                            <li key={lIdx}>
+                                                <Link
+                                                    to={link.path}
+                                                    className="hover:text-white transition-all duration-300 flex items-center gap-0 hover:gap-2 group/link"
+                                                >
+                                                    <div className="w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover/link:w-1.5 group-hover/link:h-1.5" />
+                                                    <span className="transition-transform duration-300 group-hover/link:translate-x-1">{link.name}</span>
+                                                </Link>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
@@ -69,8 +77,8 @@ const Footer: React.FC = () => {
 
                             {/* Socials */}
                             <div>
-                                <h4 className="text-white font-bold mb-5 md:mb-6 text-xs md:text-sm">Get In Touch</h4>
-                                <p className="text-slate-400 mb-4 text-[10px] md:text-xs">Connect with us via our socials</p>
+                                <h4 className="text-white font-bold mb-5 md:mb-6 text-sm md:text-base">Get In Touch</h4>
+                                <p className="text-slate-400 mb-4 text-xs md:text-sm">Connect with us via our socials</p>
                                 <div className="flex gap-3">
                                     {footerSocials.map((social, i) => (
                                         <a
@@ -93,7 +101,7 @@ const Footer: React.FC = () => {
                             <h1 className="text-[12vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
                         </div>
                         <div className="relative z-10 text-center">
-                            <p className="text-slate-500 text-[10px] md:text-xs font-medium">© All Right Reserved by Mindtrix Media - 2025</p>
+                            <p className="text-slate-500 text-xs md:text-sm font-medium">© All Right Reserved by Mindtrix Media - 2025</p>
                         </div>
                     </div>
                 </div>
