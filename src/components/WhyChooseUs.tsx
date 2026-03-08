@@ -42,16 +42,16 @@ const WhyChooseUs: React.FC = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-5">
                     {/* Card 1: Bold and purposeful */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden flex items-center justify-center p-5 border border-slate-100 dark:border-slate-800">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800 shrink-0">
                             <div className="grid grid-cols-3 gap-4 opacity-30 absolute inset-0 p-6 place-content-center">
                                 {[...Array(9)].map((_, i) => (
                                     <div key={i} className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 mx-auto"></div>
@@ -64,7 +64,7 @@ const WhyChooseUs: React.FC = () => {
                                 <span className="material-symbols-rounded text-3xl md:text-4xl">movie</span>
                             </motion.div>
                         </div>
-                        <div className="px-4 pb-5">
+                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Strategic & Purposeful</h3>
                             <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our solutions are crafted with intention, every design choice and technical decision made to achieve your business goals.</p>
                         </div>
@@ -76,9 +76,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden border border-slate-800 flex select-none">
+                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-800 flex select-none shrink-0">
                             <div className="hidden sm:flex w-16 h-full border-r border-white/10 flex-col p-3 gap-3 shrink-0">
                                 <div className="flex gap-1.5 mb-2">
                                     <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
@@ -115,7 +115,7 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="px-4 pb-5">
+                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fully Customizable</h3>
                             <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We tailor every project to fit your brand, goals, and vision, ensuring your digital presence feels uniquely yours from start to finish.</p>
                         </div>
@@ -127,9 +127,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800">
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-slate-800 shrink-0">
                             {[
                                 { d: 2, l: 'Discovery' },
                                 { d: 6, l: 'Development' },
@@ -138,25 +138,25 @@ const WhyChooseUs: React.FC = () => {
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -5 }}
-                                    className="bg-white dark:bg-slate-900 p-2 md:p-2.5 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 w-[28%] min-w-[90px] md:w-28 aspect-[3/4] flex flex-col"
+                                    className="bg-white dark:bg-slate-900 p-2 md:p-2.5 lg:p-1 xl:p-2.5 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 w-[28%] min-w-[70px] md:w-28 lg:w-[70px] xl:w-28 aspect-[3/4] flex flex-col"
                                 >
                                     <div className={`
-                                flex-1 flex items-center justify-center rounded-xl mb-1
+                                flex-1 flex items-center justify-center rounded-xl mb-0.5 xl:mb-1
                                 ${item.highlight
                                             ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner'
                                             : 'bg-transparent text-slate-900 dark:text-white'}
                              `}>
-                                        <span className="text-xl md:text-2xl font-bold tracking-tight">
+                                        <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
                                             {item.d.toString().padStart(2, '0')}
                                         </span>
                                     </div>
-                                    <div className="text-center py-2">
-                                        <div className={`text-[8px] md:text-[10px] font-medium ${item.highlight ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-400'}`}>{item.l}</div>
+                                    <div className="text-center py-1.5 lg:py-0.5 xl:py-2">
+                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-medium ${item.highlight ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-400'}`}>{item.l}</div>
                                     </div>
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="px-4 pb-5">
+                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Fast delivery time</h3>
                             <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We work efficiently without compromising quality, ensuring your project is delivered on time and with care.</p>
                         </div>
