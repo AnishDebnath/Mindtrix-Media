@@ -41,20 +41,21 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-2 pl-6 pr-2 transition-all duration-300"
+                    className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-1.5 md:p-2 transition-all duration-300"
                 >
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2 group">
-                        <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-                            <span className="material-symbols-rounded text-base">movie_edit</span>
+                    <Link to="/" className="flex items-center gap-2.5 group ml-4">
+                        <div className="w-8 h-8 md:w-9 md:h-9 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
+                            <span className="material-symbols-rounded text-lg md:text-xl">movie_edit</span>
                         </div>
-                        <span className="font-display font-bold text-base md:text-lg tracking-tight text-slate-900 dark:text-white hidden sm:block">
+                        <span className="font-display font-bold text-base md:text-xl tracking-tight text-slate-900 dark:text-white">
                             Mindtrix Media
                         </span>
                     </Link>
 
+
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center bg-slate-100/80 dark:bg-white/5 rounded-full p-1 border border-slate-200 dark:border-white/5">
+                    <div className="hidden lg:flex items-center bg-slate-100/80 dark:bg-white/5 rounded-full p-1 border border-slate-200 dark:border-white/5">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -74,10 +75,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5 md:gap-3 mr-4">
                         <button
                             onClick={toggleTheme}
-                            className="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            className="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                             aria-label="Toggle Theme"
                         >
                             <span className="material-symbols-rounded block dark:hidden text-xl">dark_mode</span>
@@ -86,8 +87,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
                         <Link
                             to="/free-prototype"
-                            className="hidden sm:flex bg-[#111] dark:bg-white text-white dark:text-[#111] pl-4 pr-1.5 py-1.5 rounded-full font-bold text-xs md:text-sm items-center gap-2.5 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
+                            className="hidden lg:flex bg-[#111] dark:bg-white text-white dark:text-[#111] pl-4 pr-1.5 py-1.5 rounded-full font-bold text-xs md:text-sm items-center gap-2.5 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
                         >
+
                             Free Prototype
                             <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
                                 <span className="material-symbols-rounded text-lg">arrow_outward</span>
@@ -96,11 +98,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                            className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-black dark:hover:bg-slate-200 shadow-lg shadow-black/10 transition-all active:scale-90"
                         >
-                            <span className="material-symbols-rounded text-xl">{isOpen ? 'close' : 'menu'}</span>
+                            <span className="material-symbols-rounded text-2xl">{isOpen ? 'close' : 'menu'}</span>
                         </button>
                     </div>
+
                 </motion.nav>
             </div>
 
@@ -113,38 +116,73 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-sm z-40 md:hidden"
+                            className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-sm z-40 lg:hidden"
                         />
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                            transition={{ type: "spring", bounce: 0.3 }}
-                            className="fixed top-24 left-4 right-4 z-50 bg-white dark:bg-[#111] rounded-[1.5rem] p-6 shadow-2xl border border-slate-100 dark:border-slate-800 md:hidden overflow-hidden"
+                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            className="fixed top-[5.5rem] left-4 right-4 z-50 bg-white/98 dark:bg-[#0A0A0A]/98 backdrop-blur-3xl rounded-[2.5rem] p-5 shadow-[0_30px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-slate-200/50 dark:border-white/10 lg:hidden overflow-hidden"
                         >
-                            <nav className="flex flex-col space-y-2">
-                                {navLinks.map((link) => (
-                                    <Link
+                            <nav className="flex flex-col space-y-1.5">
+                                {navLinks.map((link, i) => (
+                                    <motion.div
                                         key={link.name}
-                                        to={link.path}
-                                        className={`flex items-center justify-between p-4 rounded-2xl transition-all ${isActive(link.path) ? 'bg-slate-50 dark:bg-slate-800 text-primary font-bold' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: i * 0.05 + 0.1 }}
                                     >
-                                        <span className="text-lg">{link.name}</span>
-                                        {isActive(link.path) && <span className="material-symbols-rounded text-primary">arrow_back</span>}
-                                    </Link>
+                                        <Link
+                                            to={link.path}
+                                            className={`flex items-center justify-between px-6 py-4 rounded-[1.5rem] group transition-all duration-300 ${isActive(link.path)
+                                                ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold'
+                                                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'
+                                                }`}
+                                        >
+                                            <span className="text-base font-semibold tracking-tight">{link.name}</span>
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive(link.path) ? 'bg-primary text-white scale-110' : 'bg-slate-100 dark:bg-white/10 text-slate-400 group-hover:bg-primary group-hover:text-white'}`}>
+                                                <span className="material-symbols-rounded text-lg">
+                                                    {isActive(link.path) ? 'check' : 'arrow_forward'}
+                                                </span>
+                                            </div>
+                                        </Link>
+                                    </motion.div>
                                 ))}
-                                <hr className="border-slate-100 dark:border-slate-800 my-2" />
-                                <Link
-                                    to="/free-prototype"
-                                    className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] p-2 pl-6 rounded-2xl font-bold text-lg flex items-center justify-between group"
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4 }}
+                                    className="pt-6 pb-2 px-2"
                                 >
-                                    Free Prototype
-                                    <div className="w-12 h-12 bg-white dark:bg-[#111] rounded-xl flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                        <span className="material-symbols-rounded text-2xl">arrow_outward</span>
+                                    <Link
+                                        to="/free-prototype"
+                                        className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] py-2.5 pl-6 pr-2.5 rounded-full font-bold text-base flex items-center justify-between group shadow-xl shadow-black/10 active:scale-[0.98] transition-all"
+                                    >
+                                        Claim Free Prototype
+                                        <div className="w-10 h-10 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center text-white dark:text-[#111] group-hover:rotate-45 transition-transform duration-300">
+                                            <span className="material-symbols-rounded text-xl">rocket_launch</span>
+                                        </div>
+                                    </Link>
+                                </motion.div>
+
+                                {/* Mini Footer in Menu */}
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="px-6 py-4 flex items-center justify-center border-t border-slate-100 dark:border-white/5 mt-4"
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Available for projects</span>
                                     </div>
-                                </Link>
+
+                                </motion.div>
                             </nav>
                         </motion.div>
+
                     </>
                 )}
             </AnimatePresence>

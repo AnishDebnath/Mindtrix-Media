@@ -121,7 +121,6 @@ const FreePrototype: React.FC = () => {
                                             className="absolute top-1/2 left-1/2 border-2 md:border-4 border-green-500 text-green-500 font-black text-lg md:text-2xl 2xl:text-3xl px-5 md:px-8 py-2.5 md:py-4 rounded-xl uppercase tracking-widest opacity-80 z-20 whitespace-nowrap"
                                             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}
                                         >
-
                                             Free Prototype
                                         </motion.div>
                                     </div>
