@@ -109,9 +109,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-black dark:hover:bg-slate-200 shadow-lg shadow-black/10 transition-all active:scale-90"
+                            className="lg:hidden w-8 h-8 rounded-xl flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-black dark:hover:bg-slate-200 shadow-lg shadow-black/10 transition-all active:scale-90"
                         >
-                            <span className="material-symbols-rounded text-2xl">{isOpen ? 'close' : 'menu'}</span>
+                            <span className="material-symbols-rounded text-xl">{isOpen ? 'close' : 'menu'}</span>
                         </button>
                     </div>
 

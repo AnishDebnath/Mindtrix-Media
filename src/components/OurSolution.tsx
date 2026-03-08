@@ -74,7 +74,7 @@ const OurSolution: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-slate-900/40 rounded-[3rem] p-2 md:p-4 border border-slate-100 dark:border-slate-800 shadow-2xl relative overflow-hidden"
+                        className="bg-white dark:bg-slate-900/40 rounded-[2rem] p-2 md:p-4 border border-slate-100 dark:border-slate-800 shadow-2xl relative overflow-hidden"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
                             {/* Problems Column */}
@@ -101,7 +101,7 @@ const OurSolution: React.FC = () => {
 
                             {/* Solutions Column */}
                             <motion.div
-                                className="flex flex-col bg-[#121212] rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden transition-all duration-500"
+                                className="flex flex-col bg-[#121212] rounded-[1.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden transition-all duration-500"
                                 animate={{
                                     opacity: highlightSolution ? 1 : 0.3,
                                     scale: highlightSolution ? 1 : 0.98,
