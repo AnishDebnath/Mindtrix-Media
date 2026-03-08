@@ -40,29 +40,31 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-5 md:p-6 border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300"
+                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
                     >
-                        <div className="flex justify-between items-start mb-6 md:mb-8">
-                            <span className="text-sm font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">01</span>
-                        </div>
-                        <div className="h-32 md:h-40 flex items-center justify-center relative mb-6 md:mb-8">
-                            <svg className="absolute w-64 h-32 pointer-events-none" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                                <path d="M 40 40 Q 128 40 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
-                                <path d="M 40 90 Q 128 90 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
-                                <path d="M 216 64 L 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
-                            </svg>
-                            <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-orange-400 shadow-lg shadow-primary/30 flex items-center justify-center animate-pulse">
-                                <span className="material-symbols-rounded text-white text-2xl">auto_awesome</span>
+                        <div className="aspect-[16/10] flex items-center justify-center relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 shrink-0 mx-auto w-full p-8 md:p-10">
+                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">01</span>
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                <svg className="absolute w-full h-full max-w-[240px] max-h-[120px] pointer-events-none opacity-40 md:opacity-100" viewBox="0 0 256 128">
+                                    <path d="M 40 40 Q 128 40 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
+                                    <path d="M 40 90 Q 128 90 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
+                                    <path d="M 216 64 L 128 64" fill="none" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="6 6" className="dark:stroke-slate-700" />
+                                </svg>
+                                <div className="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-tr from-primary to-orange-400 shadow-lg shadow-primary/30 flex items-center justify-center animate-pulse">
+                                    <span className="material-symbols-rounded text-white text-2xl">auto_awesome</span>
+                                </div>
+                                <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[15%] left-[15%] w-10 h-10 md:w-12 md:h-12 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center p-2 md:p-2.5 z-20">
+                                    <img src="https://cdn.simpleicons.org/dropbox/0061FF" alt="Dropbox" className="w-full h-full object-contain" />
+                                </motion.div>
+                                <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute bottom-[15%] left-[25%] w-8 h-8 md:w-10 md:h-10 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center p-2 z-20">
+                                    <img src="https://cdn.simpleicons.org/googledrive" alt="Drive" className="w-full h-full object-contain" />
+                                </motion.div>
                             </div>
-                            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 left-12 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center p-2.5 z-20">
-                                <img src="https://cdn.simpleicons.org/dropbox/0061FF" alt="Dropbox" className="w-full h-full object-contain" />
-                            </motion.div>
-                            <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute bottom-6 left-24 w-10 h-10 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center p-2 z-20">
-                                <img src="https://cdn.simpleicons.org/googledrive" alt="Drive" className="w-full h-full object-contain" />
-                            </motion.div>
                         </div>
-                        <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Share Your Vision</h3>
-                        <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Tell us about your project goals, target audience, and requirements through our simple onboarding process.</p>
+                        <div className="px-4 pb-5">
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Share Your Vision</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Tell us about your project goals, target audience, and requirements through our simple onboarding process.</p>
+                        </div>
                     </motion.div>
 
                     {/* Step 02 */}
@@ -71,12 +73,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-5 md:p-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300"
+                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
                     >
-                        <div className="flex justify-between items-start mb-6 md:mb-8">
-                            <span className="text-sm font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">02</span>
-                        </div>
-                        <div className="h-32 md:h-40 flex items-center justify-center gap-4 md:gap-6 relative mb-6 md:mb-8">
+                        <div className="aspect-[16/10] flex items-center justify-center gap-4 md:gap-6 relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 shrink-0 p-6 md:p-8">
+                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">02</span>
                             <motion.div whileHover={{ scale: 1.1, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 bg-black rounded-xl p-2.5 shadow-xl transform -translate-y-4">
                                 <img src="https://cdn.simpleicons.org/capcut/white" alt="CapCut" className="w-full h-full object-contain" />
                             </motion.div>
@@ -87,8 +87,10 @@ const Process: React.FC = () => {
                                 <img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="Premiere" className="w-full h-full object-contain" />
                             </motion.div>
                         </div>
-                        <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">We Build & Design</h3>
-                        <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our expert team designs, develops, and tests your digital solution using industry-leading tools and best practices.</p>
+                        <div className="px-4 pb-5">
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">We Build & Design</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our expert team designs, develops, and tests your digital solution using industry-leading tools and best practices.</p>
+                        </div>
                     </motion.div>
 
                     {/* Step 03 */}
@@ -97,34 +99,36 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-5 md:p-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300"
+                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
                     >
-                        <div className="flex justify-between items-start mb-6 md:mb-8">
-                            <span className="text-sm font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">03</span>
+                        <div className="aspect-[16/10] flex flex-col items-center justify-center relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 shrink-0 p-6 md:p-8">
+                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">03</span>
+                            <div className="w-full h-full flex flex-col items-center justify-center relative">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="bg-slate-100 dark:bg-slate-800 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm mb-4 self-center md:self-start ml-2 md:ml-12 relative max-w-[80%]"
+                                >
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="absolute -left-9 top-0 w-7 h-7 rounded-full border-2 border-white dark:border-slate-900" alt="Client" />
+                                    <p className="text-[13px] font-medium text-slate-700 dark:text-slate-300">Requested a Revision</p>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.8, type: "spring" }}
+                                    className="bg-primary text-white rounded-2xl rounded-br-none px-5 py-2.5 shadow-lg shadow-primary/30 self-center md:self-end mr-0 md:mr-10 transform rotate-1 max-w-[80%]"
+                                >
+                                    <p className="text-[13px] font-bold flex items-center gap-2">
+                                        Revision is in progress! <span className="material-symbols-rounded text-sm">check_circle</span>
+                                    </p>
+                                </motion.div>
+                            </div>
                         </div>
-                        <div className="h-32 md:h-40 flex flex-col items-center justify-center relative mb-6 md:mb-8">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.5 }}
-                                className="bg-slate-100 dark:bg-slate-800 rounded-2xl rounded-tl-none px-5 py-3 shadow-sm mb-4 self-start ml-8 relative"
-                            >
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="absolute -left-10 top-0 w-8 h-8 rounded-full border-2 border-white dark:border-slate-900" alt="Client" />
-                                <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Requested a Revision</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.8, type: "spring" }}
-                                className="bg-primary text-white rounded-2xl rounded-br-none px-6 py-3 shadow-lg shadow-primary/30 self-end mr-8 transform rotate-1"
-                            >
-                                <p className="text-sm font-bold flex items-center gap-2">
-                                    Revision is in progress! <span className="material-symbols-rounded text-base">check_circle</span>
-                                </p>
-                            </motion.div>
+                        <div className="px-4 pb-5">
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Review & Refine</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We present the work for your feedback and make revisions until you're completely satisfied with the result.</p>
                         </div>
-                        <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Review & Refine</h3>
-                        <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We present the work for your feedback and make revisions until you're completely satisfied with the result.</p>
                     </motion.div>
 
                     {/* Step 04 */}
@@ -133,12 +137,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-5 md:p-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300"
+                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
                     >
-                        <div className="flex justify-between items-start mb-6 md:mb-8">
-                            <span className="text-sm font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">04</span>
-                        </div>
-                        <div className="h-32 md:h-40 flex flex-col items-center justify-center relative mb-6 md:mb-8">
+                        <div className="aspect-[16/10] flex flex-col items-center justify-center relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 shrink-0 p-6 md:p-8">
+                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">04</span>
                             <motion.div whileHover={{ y: -5 }} className="bg-slate-900 text-white rounded-xl px-4 py-2 flex items-center gap-3 shadow-lg mb-4 transform -rotate-2">
                                 <span className="material-symbols-rounded text-orange-400">movie</span>
                                 <div className="flex flex-col">
@@ -154,8 +156,10 @@ const Process: React.FC = () => {
                                 </div>
                             </motion.div>
                         </div>
-                        <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Launch & Support</h3>
-                        <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We deliver your final product ready to launch, with ongoing support to ensure continued success.</p>
+                        <div className="px-4 pb-5">
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Launch & Support</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We deliver your final product ready to launch, with ongoing support to ensure continued success.</p>
+                        </div>
                     </motion.div>
                 </div>
             </div>
