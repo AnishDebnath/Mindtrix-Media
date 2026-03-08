@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
     return (
-        <header className="pt-20 md:pt-24 2xl:pt-32 relative flex flex-col items-center justify-center">
+        <header className="pt-28 md:pt-36 lg:pt-24 2xl:pt-32 relative flex flex-col items-center justify-center">
 
             {/* Main Hero Content */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10 text-center pb-12 md:pb-16">
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="flex justify-center mb-6 md:mb-8"
+                    className="flex justify-center mb-4 md:mb-5"
                 >
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
                         <span className="relative flex h-1.5 w-1.5">
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                             }
                         }
                     }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mb-8 md:mb-10"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mb-5 md:mb-7"
                 >
                     <div
                         className="flex items-center h-16 cursor-pointer"
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
                                     zIndex: i,
                                 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                                className="relative rounded-full border-[2px] border-[#FAFAFA] dark:border-background-dark overflow-hidden w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 shadow-sm"
+                                className="relative rounded-full border-[2px] border-[#FAFAFA] dark:border-background-dark overflow-hidden w-9 h-9 md:w-10 md:h-10 2xl:w-11 2xl:h-11 shadow-sm"
                             >
                                 <img
                                     className="w-full h-full object-cover"
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
                     className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
                 >
                     {/* Row 1 */}
-                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-2">
+                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
                         <span>Premium</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: -2 }}
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-2">
+                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
                         <span className="text-slate-400">Solutions for</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: 2 }}
@@ -165,7 +165,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium"
+                    className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-4 md:mt-7 leading-relaxed font-medium"
                 >
                     We build stunning websites, powerful SaaS products, and deliver exceptional social media services that help your business grow and thrive in the digital world.
                 </motion.p>
@@ -175,7 +175,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="mt-12 flex flex-col items-center"
+                    className="mt-8 flex flex-col items-center"
                 >
                     <Link
                         to="/contact"
@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
                             <span className="material-symbols-rounded text-xl">arrow_forward</span>
                         </div>
                     </Link>
-                    <p className="mt-4 text-xs md:text-sm text-slate-500 font-medium tracking-tight">No pressure, just possibilities.</p>
+                    <p className="mt-2 text-xs md:text-sm text-slate-500 font-medium tracking-tight">No pressure, just possibilities.</p>
                 </motion.div>
             </div>
         </header>
