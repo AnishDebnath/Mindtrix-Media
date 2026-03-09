@@ -38,7 +38,7 @@ export const projects: Project[] = [
         services: ["UI/UX Design", "Frontend Development", "E-Commerce Integration"],
         date: "Oct 2023",
         liveLink: "https://demo.example.com",
-        liveLabel: "View Demo",
+        liveLabel: "Live Preview",
         buyLink: "/contact?project=ecommerce-pro",
         customiseLink: "/contact?service=templates",
         content: [
