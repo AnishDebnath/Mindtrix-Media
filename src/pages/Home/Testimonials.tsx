@@ -264,7 +264,7 @@ const Testimonials: React.FC = () => {
                                         className="inline-flex items-center justify-center gap-2 bg-white text-black pl-5 pr-1.5 py-1.5 rounded-full font-bold text-sm hover:scale-105 transition-transform group w-full max-w-[200px] shadow-lg shadow-black/10"
                                     >
                                         Book a Call
-                                        <div className="w-8 h-8 md:w-9 md:h-9 bg-[#FF5C00] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300">
+                                        <div className="w-8 h-8 bg-[#FF5C00] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300">
                                             <span className="material-symbols-rounded text-base">arrow_forward</span>
                                         </div>
                                     </Link>

@@ -58,10 +58,10 @@ const FreePrototype: React.FC = () => {
                                 transition={{ delay: 0.3 }}
                                 className="flex flex-col sm:flex-row sm:flex-nowrap gap-4 md:gap-6"
                             >
-                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-8 py-3.5 rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/25">
+                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/25">
                                     Get Your Free Prototype
                                 </Link>
-                                <Link to="/process" className="w-fit whitespace-nowrap px-8 py-3.5 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 font-bold text-sm md:text-base hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                                <Link to="/process" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 font-bold text-sm md:text-base hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                                     How It Works
                                 </Link>
                             </motion.div>

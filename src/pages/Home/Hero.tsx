@@ -179,11 +179,11 @@ const Hero: React.FC = () => {
                 >
                     <Link
                         to="/contact"
-                        className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-2 py-2 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
+                        className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
                     >
                         Book a Call
-                        <div className="w-10 h-10 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                            <span className="material-symbols-rounded text-xl">arrow_forward</span>
+                        <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
+                            <span className="material-symbols-rounded text-lg">arrow_forward</span>
                         </div>
                     </Link>
                     <p className="mt-2 text-xs md:text-sm text-slate-500 font-medium tracking-tight">No pressure, just possibilities.</p>

@@ -209,7 +209,7 @@ const PrototypeForm: React.FC = () => {
 
                     <button
                         disabled={status === 'sending'}
-                        className="w-full group relative overflow-hidden bg-[#111] dark:bg-white text-white dark:text-[#111] py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-primary/20 hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full group relative overflow-hidden bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-primary/20 hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         <span className="relative z-10">{status === 'sending' ? 'Sending...' : 'Claim Free Prototype'}</span>
                         <div className="w-8 h-8 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">

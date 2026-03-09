@@ -49,7 +49,7 @@ const CTA: React.FC = () => {
                             transition={{ delay: 0.4 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-slate-950 text-white px-10 py-4.5 md:py-5 rounded-2xl font-bold text-base md:text-lg 2xl:text-xl shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
+                            className="bg-slate-950 text-white px-10 h-[44px] flex items-center justify-center rounded-2xl font-bold text-sm md:text-base shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
                         >
                             Get started
                         </motion.button>
@@ -96,7 +96,7 @@ const CTA: React.FC = () => {
                             <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Quick 15-minute call</h3>
                             <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Pick a time that works for you.</p>
 
-                            <Link to="/contact" className="block w-full bg-[#FF5C00] hover:bg-[#E04F00] text-white text-center py-3 md:py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                            <Link to="/contact" className="flex items-center justify-center w-full bg-[#FF5C00] hover:bg-[#E04F00] text-white h-[44px] rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                 Book a free call
                             </Link>
                         </motion.div>

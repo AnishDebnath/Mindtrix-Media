@@ -18,7 +18,7 @@ const WorkFilter: React.FC<WorkFilterProps> = ({ activeCategory, setActiveCatego
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setActiveCategory(cat)}
-                        className={`relative px-5 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-tight transition-all duration-300 ${activeCategory === cat
+                        className={`relative px-5 md:px-6 h-[44px] flex justify-center items-center rounded-full text-xs md:text-sm font-bold tracking-tight transition-all duration-300 ${activeCategory === cat
                             ? 'text-white'
                             : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                             }`}

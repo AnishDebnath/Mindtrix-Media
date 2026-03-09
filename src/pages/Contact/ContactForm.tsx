@@ -119,14 +119,14 @@ const ContactForm: React.FC = () => {
                 <div className="flex flex-col items-center pt-2 gap-4">
                     <button
                         disabled={status === 'sending'}
-                        className="w-full group flex items-center justify-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] py-3.5 px-8 rounded-full font-bold text-base md:text-lg hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+                        className="w-full group flex items-center justify-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 px-8 rounded-full font-bold text-base md:text-lg hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
                     >
                         <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
                         <div className="w-8 h-8 flex-shrink-0 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
                             {status === 'sending' ? (
                                 <div className="w-5 h-5 border-2 border-[#111] dark:border-white border-t-transparent rounded-full animate-spin" />
                             ) : (
-                                <span className="material-symbols-rounded text-xl">arrow_forward</span>
+                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
                             )}
                         </div>
                     </button>

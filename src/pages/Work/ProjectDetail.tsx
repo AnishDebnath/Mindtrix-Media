@@ -67,11 +67,11 @@ const ProjectDetail: React.FC = () => {
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-2 py-2 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
+                                className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
                             >
                                 Visit Live Site
                                 <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                    <span className="material-symbols-rounded text-xl">arrow_outward</span>
+                                    <span className="material-symbols-rounded text-lg">arrow_outward</span>
                                 </div>
                             </a>
                         </motion.div>

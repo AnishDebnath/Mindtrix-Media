@@ -169,11 +169,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 >
                                     <Link
                                         to="/free-prototype"
-                                        className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] py-2.5 pl-6 pr-2.5 rounded-full font-bold text-base flex items-center justify-between group shadow-xl shadow-black/10 active:scale-[0.98] transition-all"
+                                        className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 pl-6 pr-1.5 rounded-full font-bold text-base flex items-center justify-between group shadow-xl shadow-black/10 active:scale-[0.98] transition-all"
                                     >
                                         Claim Free Prototype
-                                        <div className="w-10 h-10 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center text-white dark:text-[#111] group-hover:rotate-45 transition-transform duration-300">
-                                            <span className="material-symbols-rounded text-xl">rocket_launch</span>
+                                        <div className="w-8 h-8 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center text-white dark:text-[#111] group-hover:rotate-45 transition-transform duration-300">
+                                            <span className="material-symbols-rounded text-lg">rocket_launch</span>
                                         </div>
                                     </Link>
                                 </motion.div>
