@@ -121,7 +121,7 @@ const FreePrototypePage: React.FC = () => {
                                     hidden: { opacity: 0, y: 20 },
                                     show: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } }
                                 }}
-                                className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-10 pt-10 border-t border-slate-300 dark:border-slate-600"
+                                className="flex flex-row sm:flex-row items-center justify-start gap-4 mt-10 pt-10 border-t border-slate-300 dark:border-slate-600"
                             >
                                 <div
                                     className="flex items-center h-16 cursor-pointer"
