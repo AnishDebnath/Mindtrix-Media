@@ -235,9 +235,18 @@ const ProjectDetail: React.FC = () => {
                                         <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1 font-display leading-tight">{p.title.split(':')[0]}</h3>
                                         <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">{p.client}</p>
                                     </div>
-                                    <div className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                                        <span className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors text-base">north_east</span>
-                                    </div>
+                                    <motion.div className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm">
+                                        <motion.span
+                                            variants={{
+                                                initial: { rotate: 0 },
+                                                hover: { rotate: 45 }
+                                            }}
+                                            transition={{ duration: 0.3 }}
+                                            className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors text-xl"
+                                        >
+                                            arrow_outward
+                                        </motion.span>
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))}
