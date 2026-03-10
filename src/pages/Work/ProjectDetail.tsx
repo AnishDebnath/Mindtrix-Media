@@ -30,7 +30,7 @@ const ProjectDetail: React.FC = () => {
     const moreWork = projects.filter(p => p.id !== project.id).slice(0, 2);
 
     return (
-        <div className="pt-24 md:pt-32 pb-0 relative">
+        <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
@@ -77,45 +77,60 @@ const ProjectDetail: React.FC = () => {
                         </motion.div>
                     </div>
 
-                    {/* Metadata Grid */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-10 border-t border-slate-200 dark:border-slate-800/50"
-                    >
-                        <div>
-                            <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Client</span>
-                            <span className="text-base font-display font-bold text-slate-900 dark:text-white">{project.client}</span>
-                        </div>
-                        <div className="col-span-2 md:col-span-2">
-                            <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Services</span>
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {project.services.map((s, i) => (
-                                    <span key={i} className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 bg-white/50 dark:bg-slate-800/50">
-                                        {s}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div>
-                            <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Date</span>
-                            <span className="text-base font-display font-bold text-slate-900 dark:text-white">{project.date}</span>
-                        </div>
-                    </motion.div>
                 </div>
 
                 {/* Main Hero Image with Parallax */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover will-change-transform" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </motion.div>
 
+                {/* Overview Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mx-auto max-w-5xl px-4 md:px-0"
+                >
+                    <h2 className="text-3xl md:text-[40px] font-display font-bold text-slate-900 dark:text-white mb-8 tracking-tight">Overview</h2>
+                    <p className="text-[14px] md:text-[16px] text-slate-500 dark:text-slate-400 font-normal leading-[1.8] mb-10">
+                        {project.description}
+                    </p>
+
+                    <div className="mb-14">
+                        <h3 className="flex items-center gap-3 text-primary text-[12px] md:text-[14px] font-bold uppercase tracking-widest mb-4">
+                            <span className="w-6 h-[1px] bg-primary inline-block"></span>What we did</h3>
+                        <ul className="list-disc pl-5 space-y-2 text-[14px] md:text-[16px] text-slate-500 dark:text-slate-400 font-light">
+                            {project.services.map((s, i) => (
+                                <li key={i} className="pl-2">{s}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 gap-y-10 mb-14 border-y border-slate-200 dark:border-white/10 py-10 md:py-12">
+                        <div className="flex flex-col text-left">
+                            <h3 className="flex items-center gap-3 text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
+                                <span className="w-6 h-[1px] bg-primary inline-block"></span>Client</h3>
+                            <span className="text-[14px] md:text-[16px] font-medium text-slate-900 dark:text-white">{project.client}</span>
+                        </div>
+                        <div className="flex flex-col text-left">
+                            <h3 className="flex items-center gap-3 text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
+                                <span className="w-6 h-[1px] bg-primary inline-block"></span>Industry</h3>
+                            <span className="text-[14px] md:text-[16px] font-medium text-slate-900 dark:text-white">{project.industry}</span>
+                        </div>
+                        <div className="flex flex-col text-left">
+                            <h3 className="flex items-center gap-3 text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
+                                <span className="w-6 h-[1px] bg-primary inline-block"></span>Year</h3>
+                            <span className="text-[14px] md:text-[16px] font-medium text-slate-900 dark:text-white">{project.year}</span>
+                        </div>
+                    </div>
+                </motion.div>
+
                 {/* Content Sections */}
-                <div className="mx-auto mb-32 space-y-24">
+                <div className="mx-auto mb-20 md:mb-32 space-y-10 md:space-y-16">
                     {project.content.map((block, index) => {
                         if (block.type === 'text') {
                             return (
@@ -126,11 +141,13 @@ const ProjectDetail: React.FC = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     className="flex flex-col gap-6"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <span className="w-6 h-[1px] bg-primary"></span>
-                                        <h3 className="text-primary text-[10px] font-bold uppercase tracking-widest">{block.title}</h3>
-                                    </div>
-                                    <p className="text-base md:text-lg leading-relaxed text-slate-800 dark:text-slate-200">
+                                    {block.title && (
+                                        <div className="flex items-center gap-3">
+                                            <h3 className="flex items-center gap-3 text-primary text-[12px] md:text-[14px] font-bold uppercase tracking-widest">
+                                                <span className="w-6 h-[1px] bg-primary inline-block"></span>{block.title}</h3>
+                                        </div>
+                                    )}
+                                    <p className="leading-relaxed text-slate-800 dark:text-slate-200 text-[14px] md:text-[16px]">
                                         {block.body}
                                     </p>
                                 </motion.div>
@@ -177,7 +194,7 @@ const ProjectDetail: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16"
+                        className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 md:gap-8 mb-10 md:mb-16"
                     >
                         <h2 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
                             More <span className="text-primary">Work</span>

@@ -19,7 +19,7 @@ const CountUp: React.FC<{ val: number }> = ({ val }) => {
 const FreePrototypePage: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
     return (
-        <div className="flex flex-col pt-20 md:pt-24">
+        <div className="flex flex-col pt-28 md:pt-36 2xl:pt-40">
             <div className="relative">
 
 

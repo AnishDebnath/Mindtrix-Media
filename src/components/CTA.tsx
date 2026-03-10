@@ -88,7 +88,7 @@ const CTA: React.FC = () => {
                                         <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="black" stroke="white" />
                                     </svg>
                                     <div className="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-md absolute left-4 top-4 whitespace-nowrap">
-                                        AMANDA
+                                        Mindtrix Media
                                     </div>
                                 </motion.div>
                             </div>
