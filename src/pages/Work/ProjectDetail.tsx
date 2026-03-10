@@ -139,7 +139,7 @@ const ProjectDetail: React.FC = () => {
                                     initial={{ opacity: 0, y: 40 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className="flex flex-col gap-6"
+                                    className="flex flex-col gap-6 px-4 md:px-0"
                                 >
                                     {block.title && (
                                         <div className="flex items-center gap-3">
