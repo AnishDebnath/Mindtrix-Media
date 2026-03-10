@@ -30,82 +30,85 @@ const BlogPost: React.FC = () => {
     const moreArticles = articles.filter(a => a.id !== article.id).slice(0, 2);
 
     return (
-        <div className="pt-25 pb-0 relative min-h-screen">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                    backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
-                    backgroundSize: '24px 24px'
-                }}>
-            </div>
-
+        <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="mb-12 text-center">
+                <div className="mb-16 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex justify-center flex-wrap gap-3 mb-6"
+                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
                     >
-                        {article?.tags?.map((tag, i) => (
-                            <span key={i} className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 text-xs font-bold uppercase tracking-widest text-primary bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
-                                {tag}
-                            </span>
-                        ))}
+                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Blog Post</span>
                     </motion.div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight"
-                    >
-                        {article.title}
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium"
-                    >
-                        {article.desc}
-                    </motion.p>
+                    <div className="flex flex-col items-center justify-center text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="max-w-3xl"
+                        >
+                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+                                {article.title}
+                            </h1>
+                            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+                                {article.desc}
+                            </p>
+                        </motion.div>
+                    </div>
                 </div>
 
-                {/* Hero Image */}
+                {/* Main Hero Image with Parallax */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
-                    <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
+                    <img src={article.img} alt={article.title} className="w-full h-full object-cover will-change-transform" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </motion.div>
 
-                {/* Content */}
-                <article className="prose prose-lg dark:prose-invert prose-slate mx-auto mb-20">
-                    {article.content && article.content.map((paragraph, index) => (
-                        <motion.p
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: index * 0.1 }}
-                            className="text-base md:text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-normal mb-8"
-                        >
-                            {paragraph}
-                        </motion.p>
-                    ))}
-                </article>
+                {/* Content Sections */}
+                <div className="mx-auto mb-20 md:mb-32 space-y-8 md:space-y-12">
+                    {article.content && (article.content as any[]).map((block: any, index: number) => {
+                        if (block.type === 'image') {
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true, margin: '-100px' }}
+                                    className="w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10"
+                                >
+                                    <img src={block.src} alt={block.alt} className="w-full h-auto" />
+                                </motion.div>
+                            );
+                        }
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-100px' }}
+                                className="flex flex-col gap-4"
+                            >
+                                <p className="leading-relaxed text-slate-800 dark:text-slate-200 text-[16px] md:text-[18px]">
+                                    {block.body ?? block}
+                                </p>
+                            </motion.div>
+                        );
+                    })}
+                </div>
 
-                <div className="border-t border-slate-200 dark:border-slate-800 my-16 w-full" />
+                <div className="border-t border-slate-200 dark:border-white/10 my-16 w-full" />
 
                 {/* More Articles */}
-                <div className="w-full">
+                <div className="w-full mb-20 md:mb-32">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16"
+                        className="flex flex-col items-center md:flex-row justify-between items-end gap-8 mb-16"
                     >
                         <h2 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
                             Read <span className="text-primary">Next</span>
@@ -116,7 +119,7 @@ const BlogPost: React.FC = () => {
                         </Link>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                         {moreArticles.map((a, i) => (
                             <ArticleCard key={i} article={a as any} delay={i * 0.1} />
                         ))}
