@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../assets/mindtrix-media-logo.png';
+
 const footerSocials = [
     { name: "LinkedIn", icon: "https://cdn.simpleicons.org/linkedin/white", link: "#" },
     { name: "X", icon: "https://cdn.simpleicons.org/x/white", link: "#" },
@@ -41,8 +43,8 @@ const Footer: React.FC = () => {
                         {/* Branding */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link to="/" className="flex items-center gap-3 mb-6 group">
-                                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-                                    <span className="material-symbols-rounded text-xl">movie_edit</span>
+                                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform overflow-hidden p-1.5">
+                                    <img src={logo} alt="Mindtrix Media" className="w-full h-full object-contain" />
                                 </div>
                                 <span className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                             </Link>
