@@ -21,16 +21,16 @@ const AboutHeader: React.FC = () => {
                 className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-[#111] dark:text-white mb-6"
             >
                 <div className="flex flex-wrap justify-center items-center gap-x-2.5 md:gap-x-3.5">
-                    <span>We’re the</span>
+                    <span>We're Your</span>
                     <motion.span
                         whileHover={{ scale: 1.05, rotate: -2 }}
                         className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20"
                     >
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Magic" />
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Team" />
                     </motion.span>
-                    <span className="text-primary">Secret</span>
+                    <span className="text-primary">Digital</span>
                 </div>
-                <div>Weapon Behind Creators.</div>
+                <div>Solutions Partner.</div>
             </motion.h1>
 
             <motion.p
@@ -39,7 +39,7 @@ const AboutHeader: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
             >
-                Founded in 2021, we started with a simple mission: to help creators reclaim their time so they can focus on what they do best—creating.
+                Mindtrix Media is a website and software development agency based in Kolkata, India. We build professional websites, e-commerce stores, CRM systems, and ERP platforms for businesses worldwide.
             </motion.p>
         </div>
     );

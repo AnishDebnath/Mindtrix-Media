@@ -8,10 +8,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-    { count: '1,200', label: 'Videos Delivered', icon: 'edit_square' },
-    { count: '300', label: 'Creators Served', icon: 'groups' },
-    { count: '450', label: 'Total Views', icon: 'visibility' },
-    { count: '98', label: 'Retention Rate', icon: 'analytics' },
+    { count: '50', label: 'Software Systems Built', icon: 'code' },
+    { count: '100', label: 'Businesses Served', icon: 'groups' },
+    { count: '15', label: 'Countries Reached', icon: 'public' },
+    { count: '98', label: 'Client Satisfaction', icon: 'analytics' },
 ];
 
 const StatItem: React.FC<{ stat: Stat; idx: number; isLast: boolean }> = ({ stat, idx, isLast }) => {
@@ -34,8 +34,8 @@ const StatItem: React.FC<{ stat: Stat; idx: number; isLast: boolean }> = ({ stat
     // Handle suffixes/prefixes for labels
     const getFormattedCount = () => {
         const formatted = displayCount.toLocaleString();
-        if (stat.label === 'Total Views') return `${formatted}M+`;
-        if (stat.label === 'Retention Rate') return `${formatted}%`;
+        if (stat.label === 'Countries Reached') return `${formatted}+`;
+        if (stat.label === 'Client Satisfaction') return `${formatted}%`;
         return `${formatted}+`;
     };
 

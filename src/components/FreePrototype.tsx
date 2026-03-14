@@ -25,7 +25,7 @@ const FreePrototype: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-primary/30 bg-primary/5 backdrop-blur-sm"
                             >
-                                <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Our Unique Guarantee</span>
+                                <span className="text-secondary font-bold tracking-widest uppercase text-xs">✦ Our Unique Guarantee</span>
                             </motion.div>
 
                             <motion.h2
@@ -35,8 +35,8 @@ const FreePrototype: React.FC = () => {
                                 transition={{ delay: 0.1 }}
                                 className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 leading-[1.1]"
                             >
-                                See It Before <br />
-                                We <span className="text-primary">Build It.</span>
+                                We Show You First. <br />
+                                Then We <span className="text-primary">Build It.</span>
                             </motion.h2>
 
                             <motion.p
@@ -46,9 +46,9 @@ const FreePrototype: React.FC = () => {
                                 transition={{ delay: 0.2 }}
                                 className="text-sm md:text-base 2xl:text-lg text-slate-600 dark:text-slate-300 mb-8 md:mb-10 leading-relaxed"
                             >
-                                We believe in earning your trust first. That's why we design a
-                                <strong> free, high-fidelity prototype</strong> of your website before you sign any contract or pay a single cent.
-                                Visualize the result, give feedback, and move forward with 100% confidence.
+                                Most agencies ask you to pay first. We don't.
+                                Before development starts, we build a <strong>free, working prototype</strong> of your website or system.
+                                You see exactly how it works. You give feedback. Then we build the real thing. No risk.
                             </motion.p>
 
                             <motion.div
@@ -58,7 +58,7 @@ const FreePrototype: React.FC = () => {
                                 transition={{ delay: 0.3 }}
                                 className="flex flex-col sm:flex-row sm:flex-nowrap gap-4 md:gap-6"
                             >
-                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/25">
+                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25">
                                     Get Your Free Prototype
                                 </Link>
                                 <Link to="/process" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 font-bold text-sm md:text-base hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">

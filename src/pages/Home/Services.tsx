@@ -2,37 +2,56 @@ import React from 'react';
 import { motion } from 'framer-motion';
 const services = [
     {
-        title: "Website Templates",
-        desc: "Premium, ready-to-use website templates that are fully customizable, responsive, and optimized for conversions. Perfect for businesses that need a professional online presence fast.",
-        tags: [
-            { text: "Fully Responsive", icon: "devices" },
-            { text: "SEO Optimized", icon: "search" },
-            { text: "Easy Customization", icon: "tune" }
-        ]
-    },
-    {
         title: "Custom Website Development",
-        desc: "Bespoke websites tailored to your brand and business goals. From landing pages to complex web applications, we build digital experiences that convert.",
+        desc: "We build professional, fast websites for your business. Every site is designed to look great, load fast, and turn visitors into customers.",
         tags: [
-            { text: "Tailored Design", icon: "palette" },
-            { text: "Performance Focused", icon: "rocket_launch" }
+            { text: "SEO Optimized", icon: "search" },
+            { text: "Mobile Friendly", icon: "smartphone" },
+            { text: "High Performance", icon: "rocket_launch" }
         ]
     },
     {
-        title: "Social Media Services",
-        desc: "Comprehensive social media management, content creation, and strategy that builds your brand and engages your audience across all platforms.",
+        title: "E-commerce Development",
+        desc: "Launch a professional online store. We handle product listings, payment gateways, and everything your customers need for a smooth buying experience.",
         tags: [
-            { text: "Content Strategy", icon: "campaign" },
-            { text: "Multi-Platform", icon: "hub" }
+            { text: "Payment Integration", icon: "credit_card" },
+            { text: "Inventory Control", icon: "inventory" },
+            { text: "Mobile-First", icon: "devices" }
         ]
     },
     {
-        title: "SaaS Product Development",
-        desc: "We build scalable, cloud-based software solutions that solve real problems. From MVP to full-scale product, we handle the entire development lifecycle.",
+        title: "CRM System Development",
+        desc: "Manage all your clients in one place. We build custom CRM systems that track leads, automate follow-ups, and keep your sales team organized.",
         tags: [
-            { text: "Scalable Architecture", icon: "cloud" },
-            { text: "User-Centric Design", icon: "person" },
-            { text: "Agile Development", icon: "trending_up" }
+            { text: "Lead Tracking", icon: "trending_up" },
+            { text: "Sales Automation", icon: "auto_awesome" },
+            { text: "Client Dashboard", icon: "analytics" }
+        ]
+    },
+    {
+        title: "ERP Software Development",
+        desc: "Connect your whole business in one system. We build ERP platforms that manage inventory, finance, HR, and operations — all in real time.",
+        tags: [
+            { text: "Inventory & Finance", icon: "payments" },
+            { text: "HR & Operations", icon: "groups" },
+            { text: "Real-Time Reports", icon: "insights" }
+        ]
+    },
+    {
+        title: "SEO & Performance Optimization",
+        desc: "Slow websites lose customers. We optimize your site speed, fix technical SEO issues, and help you rank higher on Google.",
+        tags: [
+            { text: "Core Web Vitals", icon: "speed" },
+            { text: "SEO Audit", icon: "search" }
+        ]
+    },
+    {
+        title: "Website Maintenance & Support",
+        desc: "Keep your website updated, secure, and running smoothly. We offer ongoing support, bug fixes, content updates, and performance monitoring.",
+        tags: [
+            { text: "Security Updates", icon: "security" },
+            { text: "24/7 Monitoring", icon: "monitor_heart" },
+            { text: "Content Updates", icon: "edit" }
         ]
     }
 ];
@@ -63,7 +82,7 @@ const Services: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
                     >
-                        What We Do Best
+                        What We Build For You
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -72,7 +91,7 @@ const Services: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed"
                     >
-                        We deliver comprehensive digital solutions that transform your business. From stunning websites to powerful SaaS products, we've got you covered.
+                        Mindtrix Media builds websites, e-commerce stores, CRM systems, ERP platforms, and more — for businesses of all sizes across the world.
                     </motion.p>
                 </div>
 

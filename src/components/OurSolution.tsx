@@ -5,19 +5,19 @@ const OurSolution: React.FC = () => {
     const [highlightSolution, setHighlightSolution] = React.useState(true);
 
     const problems = [
-        "Website development takes too long.",
-        "Can't find reliable developers.",
-        "My online presence looks unprofessional.",
-        "Social media management is overwhelming.",
-        "Building a SaaS product seems impossible."
+        "My website is old and doesn't get results.",
+        "I don't know who to trust for development.",
+        "Managing customers in spreadsheets is messy.",
+        "My business data is scattered everywhere.",
+        "I need a website but don't know where to start."
     ];
 
     const solutions = [
-        "Fast, professional development.",
-        "Dedicated expert team.",
-        "Premium, conversion-optimized designs.",
-        "Full-service social media support.",
-        "End-to-end SaaS development."
+        "A fresh, modern website built to convert.",
+        "A trusted agency with a clear, proven process.",
+        "A custom CRM that organizes your clients and sales.",
+        "An ERP system that connects all your operations.",
+        "A free prototype first — so you see it before we build it."
     ];
 
     return (
@@ -38,7 +38,7 @@ const OurSolution: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
                     >
-                        Why Most Businesses Struggle Online
+                        Common Problems. Simple Solutions.
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ const OurSolution: React.FC = () => {
                         className="flex flex-col items-center gap-6"
                     >
                         <p className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                            A quick side-by-side of the challenges you shouldn't have to face and how we solve them for you.
+                            Real challenges businesses face — and how Mindtrix Media solves them.
                         </p>
 
                         {/* Comparison Toggle */}

@@ -64,7 +64,7 @@ const AboutValues: React.FC = () => {
                                     Our Mission
                                 </h3>
                                 <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
-                                    Empowering creators to scale their impact through high-retention, conversion-focused video editing that converts viewers into fans.
+                                    To help businesses worldwide automate their operations, manage their customers, and scale efficiently through custom-built software systems — CRM platforms, ERP solutions, SaaS products, and digital infrastructure that actually fits how they work.
                                 </p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const AboutValues: React.FC = () => {
                                 Our Vision
                             </h3>
                             <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
-                                Setting the global standard for creative post-production where every frame serves a purpose.
+                                To be the world's most trusted custom software development agency — where every business, regardless of size or location, can access the same calibre of digital systems used by the world's leading enterprises.
                             </p>
                         </div>
                     </motion.div>
@@ -128,10 +128,10 @@ const AboutValues: React.FC = () => {
                         </div>
                         <div className="p-5 relative z-20">
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">
-                                Our Strategy
+                                Our Approach
                             </h3>
                             <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
-                                Merging human creative intuition with hyper-efficient workflows.
+                                We always prototype first, build second. Every system is shaped around your specific workflows, not the other way around.
                             </p>
                         </div>
                     </motion.div>
@@ -174,17 +174,17 @@ const AboutValues: React.FC = () => {
                                 Our Culture
                             </h3>
                             <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed mb-6 md:mb-8">
-                                A results-obsessed collective of artists and strategists dedicated to the long-term success and scaling of the creators we serve.
+                                A results-driven team of engineers, designers, and strategists who are deeply invested in the long-term success of every business we serve. We don't just build software — we build systems that help companies grow.
                             </p>
                             <div className="flex gap-3 flex-wrap">
                                 <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
-                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Collaboration First</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Client-Centric</span>
                                 </div>
                                 <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
                                     <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Results Driven</span>
                                 </div>
                                 <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
-                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Always Learning</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Transparency First</span>
                                 </div>
                             </div>
                         </div>

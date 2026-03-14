@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
                             ))}
                         </div>
                         <p className="text-[10px] md:text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center sm:justify-start gap-1">
-                            Trusted by <CountUp val={100} />+ clients
+                            Trusted by <CountUp val={10} />+ clients
                         </p>
                     </motion.div>
                 </motion.div>
@@ -125,38 +125,38 @@ const Hero: React.FC = () => {
                 >
                     {/* Row 1 */}
                     <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
-                        <span>Premium</span>
+                        <span>Websites</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: -2 }}
                             className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner"
                         >
-                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Digital" />
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Software" />
                         </motion.span>
-                        <span className="text-primary">Digital</span>
+                        <span className="text-primary">& Business</span>
                     </div>
 
                     {/* Row 2 */}
                     <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
-                        <span className="text-slate-400">Solutions for</span>
+                        <span className="text-primary">Software</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: 2 }}
                             className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
                         >
                             <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Business" />
                         </motion.span>
-                        <span>Businesses</span>
+                        <span className="text-slate-400">Built to Scale</span>
                     </div>
 
                     {/* Row 3 */}
                     <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6">
-                        <span className="text-slate-400">based in London,</span>
+                        <span>Your Business</span>
                         <motion.span
                             whileHover={{ scale: 1.05, rotate: -2 }}
-                            className="relative inline-flex w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 2xl:w-24 2xl:h-24 rounded-full overflow-hidden items-center justify-center bg-blue-100 align-middle shadow-inner border-[2px] border-white dark:border-slate-800"
+                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
                         >
-                            <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="London" />
+                            <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Worldwide" />
                         </motion.span>
-                        <span>UK</span>
+                        <span className="text-secondary">Worldwide</span>
                     </div>
                 </motion.h1>
 
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-4 md:mt-7 leading-relaxed font-medium"
                 >
-                    We build stunning websites, powerful SaaS products, and deliver exceptional social media services that help your business grow and thrive in the digital world.
+                    We build professional websites, e-commerce stores, CRM systems, and ERP platforms for businesses worldwide. Fast, secure, and built to grow with you.
                 </motion.p>
 
                 {/* CTA */}
@@ -181,12 +181,12 @@ const Hero: React.FC = () => {
                         to="/contact"
                         className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
                     >
-                        Book a Call
+                        Get Your Free Prototype
                         <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
                             <span className="material-symbols-rounded text-lg">arrow_forward</span>
                         </div>
                     </Link>
-                    <p className="mt-2 text-xs md:text-sm text-slate-500 font-medium tracking-tight">No pressure, just possibilities.</p>
+                    <p className="mt-2 text-xs md:text-sm text-slate-500 font-medium tracking-tight">We show you how it works before you pay anything.</p>
                 </motion.div>
             </div>
         </header>

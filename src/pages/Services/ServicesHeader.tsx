@@ -36,7 +36,7 @@ const ServicesHeader: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
             >
-                From concept to launch. We deliver comprehensive digital solutions that transform your business and drive real results.
+                Mindtrix Media is a custom software development agency that builds CRM systems, ERP platforms, SaaS products, business websites, and e-commerce stores for companies worldwide.
             </motion.p>
         </div>
     );

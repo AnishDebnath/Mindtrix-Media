@@ -31,7 +31,7 @@ const CTA: React.FC = () => {
                             transition={{ delay: 0.2 }}
                             className="text-sm font-bold tracking-[0.2em] text-slate-800/70 uppercase mb-4 block"
                         >
-                            Let's build something great
+                            Let's work together
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ const CTA: React.FC = () => {
                             transition={{ delay: 0.3 }}
                             className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 leading-[1.1] mb-8 md:mb-12"
                         >
-                            Ready to transform your digital presence?
+                            Ready to start your project?
                         </motion.h2>
                         <motion.button
                             initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const CTA: React.FC = () => {
                             whileTap={{ scale: 0.95 }}
                             className="bg-slate-950 text-white px-10 h-[44px] flex items-center justify-center rounded-2xl font-bold text-sm md:text-base shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
                         >
-                            Get started
+                            Get Started Today
                         </motion.button>
                     </div>
 
@@ -93,10 +93,10 @@ const CTA: React.FC = () => {
                                 </motion.div>
                             </div>
 
-                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Quick 15-minute call</h3>
-                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Pick a time that works for you.</p>
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Free 15-minute discovery call</h3>
+                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Tell us your idea. We'll tell you how to build it.</p>
 
-                            <Link to="/contact" className="flex items-center justify-center w-full bg-[#FF5C00] hover:bg-[#E04F00] text-white h-[44px] rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                            <Link to="/contact" className="flex items-center justify-center w-full bg-primary-dark hover:bg-primary text-white h-[44px] rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                 Book a free call
                             </Link>
                         </motion.div>

@@ -39,7 +39,7 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
 
     return (
         <div className="text-center min-w-[100px] md:min-w-[140px]" ref={ref}>
-            <div className="text-2xl md:text-3xl 2xl:text-4xl font-extrabold text-primary mb-1 md:mb-1.5 font-display tracking-tight">
+            <div className="text-2xl md:text-3xl 2xl:text-4xl font-extrabold text-secondary mb-1 md:mb-1.5 font-display tracking-tight">
                 {getFormattedCount()}
             </div>
             <div className="text-slate-900 dark:text-slate-100 font-bold text-[10px] md:text-xs 2xl:text-sm tracking-tight uppercase whitespace-nowrap">{stat.label}</div>
@@ -49,9 +49,9 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
 
 const About: React.FC = () => {
     const stats: Stat[] = [
-        { count: '200+', label: 'Websites Delivered' },
-        { count: '150+', label: 'Happy Clients' },
-        { count: '5+', label: 'SaaS Products' },
+        { count: '50+', label: 'Projects Delivered' },
+        { count: '100+', label: 'Clients Worldwide' },
+        { count: '15+', label: 'Countries Served' },
     ];
 
     return (
@@ -63,10 +63,10 @@ const About: React.FC = () => {
                     viewport={{ once: true }}
                     className="inline-block mb-6 px-4 py-1.5 rounded-[3rem] border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
                 >
-                    <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ About</span>
+                    <span className="text-secondary font-bold tracking-widest uppercase text-xs">✦ About</span>
                 </motion.div>
                 <motion.h2 {...fadeInUp} className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mb-8 md:mb-12 leading-tight text-slate-900 dark:text-white text-center">
-                    We're the Digital Partners Behind <br className="hidden md:block" /> Businesses That Actually Grow with <br className="hidden md:block" /> Results. <span className="text-primary">Fast, Reliable</span> and <span className="text-[#FF5C00]">Obsessed.</span>
+                    We help businesses build better websites, smarter software, and stronger digital systems. <span className="text-primary">Simple, effective,</span> and <span className="text-secondary">built for growth.</span>
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

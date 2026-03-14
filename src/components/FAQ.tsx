@@ -2,28 +2,32 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 const homeFaqs = [
     {
-        q: "What services do you offer?",
-        a: "We offer website templates, custom website development, social media management, and SaaS product development. Each service is tailored to meet your specific business needs and goals."
+        q: "What is custom website development?",
+        a: "Custom website development means building a website from scratch, designed for your specific business. It gives you full control over design, features, and how it works. Unlike templates, a custom website is built for your goals and grows with your business."
     },
     {
-        q: "How long does a typical project take?",
-        a: "Website templates are available immediately. Custom websites typically take 2-4 weeks, while SaaS products take 8-12 weeks depending on complexity. We'll provide a detailed timeline during our initial consultation."
+        q: "Why does a business need CRM software?",
+        a: "CRM (Customer Relationship Management) software helps you manage clients, track leads, and follow up on deals in one place. Without it, businesses lose track of customers and miss sales. A custom CRM from Mindtrix Media is built to match exactly how your team works."
     },
     {
-        q: "What technologies do you use?",
-        a: "We use modern, industry-standard technologies including React, Next.js, Node.js, and cloud platforms like AWS. We choose the best tech stack for each project based on your specific requirements."
+        q: "What is ERP software used for?",
+        a: "ERP (Enterprise Resource Planning) software connects your business operations into one system. It manages inventory, finance, HR, and reporting all in one place. It helps teams work faster, reduce errors, and make better decisions using live data."
     },
     {
-        q: "Do you provide ongoing support after launch?",
-        a: "Yes! We offer maintenance packages and ongoing support for all our projects. This includes updates, bug fixes, and technical assistance to ensure your digital solution continues to perform optimally."
+        q: "How long does it take to build a business website?",
+        a: "A basic business website takes around 2 to 4 weeks. Larger websites with custom features, e-commerce, or integrations may take 6 to 12 weeks. At Mindtrix Media, we first build a free prototype so you can see the layout and structure before full development begins."
     },
     {
-        q: "Can you help with existing projects?",
-        a: "Absolutely. We can take over existing projects, provide audits, optimize performance, or add new features. We'll assess your current setup and provide recommendations."
+        q: "What is the benefit of responsive web design?",
+        a: "Responsive web design means your website looks great and works perfectly on all screen sizes — phones, tablets, and computers. Most visitors use mobile devices. A responsive website keeps them engaged, lowers bounce rates, and helps you rank higher on Google."
     },
     {
-        q: "What makes your agency different?",
-        a: "We combine technical expertise with strategic thinking. Every project is approached with your business goals in mind, ensuring we deliver solutions that not only look great but drive real results."
+        q: "Why choose a custom CRM instead of ready-made software?",
+        a: "Ready-made CRM tools like Salesforce or HubSpot come with features you don't need and workflows that don't fit your business. A custom CRM is built around your exact process. You pay once and own it outright — no monthly fees, no limitations."
+    },
+    {
+        q: "What does website performance optimization mean?",
+        a: "Website performance optimization means making your site faster and more efficient. This includes compressing images, improving server response times, fixing code errors, and passing Google's Core Web Vitals. A faster website ranks higher on Google and keeps visitors from leaving."
     }
 ];
 
@@ -51,8 +55,8 @@ const FAQ: React.FC = () => {
                             transition={{ delay: 0.1 }}
                             className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
                         >
-                            Got Questions?<br />
-                            We Got Answers
+                            Questions We<br />
+                            Get Asked Often
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -61,7 +65,7 @@ const FAQ: React.FC = () => {
                             transition={{ delay: 0.2 }}
                             className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-md"
                         >
-                            Straightforward, no-fluff answers to help you feel confident about working with us.
+                            Simple answers about our website development, CRM, ERP, and software services.
                         </motion.p>
                     </div>
 

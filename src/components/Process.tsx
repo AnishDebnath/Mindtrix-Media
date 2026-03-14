@@ -20,7 +20,7 @@ const Process: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6"
                     >
-                        How It Works?
+                        How We Work
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -29,7 +29,7 @@ const Process: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        A quick overview of how we work together to deliver exceptional digital solutions!
+                        A simple, structured process that takes your idea from discovery to a live, working system.
                     </motion.p>
                 </div>
 
@@ -62,8 +62,8 @@ const Process: React.FC = () => {
                             </div>
                         </div>
                         <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Share Your Vision</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Tell us about your project goals, target audience, and requirements through our simple onboarding process.</p>
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Discovery & Planning</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We learn about your business, goals, and requirements. Then we plan the full scope of your project so there are no surprises later.</p>
                         </div>
                     </motion.div>
 
@@ -88,8 +88,8 @@ const Process: React.FC = () => {
                             </motion.div>
                         </div>
                         <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">We Build & Design</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our expert team designs, develops, and tests your digital solution using industry-leading tools and best practices.</p>
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Free Prototype & Design</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Before we write code, we build a free working prototype. You see how your website or system will look and work. You review it, request changes, and approve it — all before full development begins.</p>
                         </div>
                     </motion.div>
 
@@ -126,8 +126,8 @@ const Process: React.FC = () => {
                             </div>
                         </div>
                         <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Review & Refine</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We present the work for your feedback and make revisions until you're completely satisfied with the result.</p>
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Development & Testing</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We build your website or software with clean, structured code. Every feature is tested on all devices and browsers. We make sure everything works perfectly before going live.</p>
                         </div>
                     </motion.div>
 
@@ -157,8 +157,8 @@ const Process: React.FC = () => {
                             </motion.div>
                         </div>
                         <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Launch & Support</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We deliver your final product ready to launch, with ongoing support to ensure continued success.</p>
+                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Launch & Ongoing Support</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We launch your website or system and stay available for support. We monitor performance, fix issues quickly, and help you grow with updates and new features over time.</p>
                         </div>
                     </motion.div>
                 </div>
