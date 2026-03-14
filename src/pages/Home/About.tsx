@@ -17,6 +17,7 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
     const [displayCount, setDisplayCount] = useState(0);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isDecimal = stat.count.includes('.');
 
     useEffect(() => {
         if (isInView) {
@@ -24,14 +25,17 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
             const controls = animate(0, numericValue, {
                 duration: 2,
                 ease: "easeOut",
-                onUpdate: (value) => setDisplayCount(Math.floor(value)),
+                onUpdate: (value) => setDisplayCount(value),
             });
             return () => controls.stop();
         }
     }, [isInView, stat.count]);
 
     const getFormattedCount = () => {
-        const formatted = displayCount.toLocaleString();
+        if (isDecimal) {
+            return displayCount.toFixed(1);
+        }
+        const formatted = Math.floor(displayCount).toLocaleString();
         if (stat.count.includes('M')) return `${formatted}M+`;
         if (stat.count.includes('+')) return `${formatted}+`;
         return formatted;
@@ -49,9 +53,9 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
 
 const About: React.FC = () => {
     const stats: Stat[] = [
-        { count: '50+', label: 'Projects Delivered' },
-        { count: '100+', label: 'Clients Worldwide' },
-        { count: '15+', label: 'Countries Served' },
+        { count: '10+', label: 'Projects Delivered' },
+        { count: '7+', label: 'Clients Worldwide' },
+        { count: '4.7', label: 'Client Rating' },
     ];
 
     return (
