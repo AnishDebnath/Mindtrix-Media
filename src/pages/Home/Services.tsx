@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 const services = [
     {
         title: "Custom Website Development",
@@ -11,49 +12,32 @@ const services = [
         ]
     },
     {
-        title: "E-commerce Development",
-        desc: "Launch a professional online store. We handle product listings, payment gateways, and everything your customers need for a smooth buying experience.",
+        title: "Website Optimization & Maintenance",
+        desc: "Keep your site running at peak performance. We handle speed optimization, security updates, and regular maintenance so you can focus on growing your business.",
         tags: [
-            { text: "Payment Integration", icon: "credit_card" },
-            { text: "Inventory Control", icon: "inventory" },
-            { text: "Mobile-First", icon: "devices" }
+            { text: "Speed Boost", icon: "speed" },
+            { text: "Security Patching", icon: "security" },
+            { text: "Uptime Monitoring", icon: "monitor_heart" }
         ]
     },
     {
-        title: "CRM System Development",
-        desc: "Manage all your clients in one place. We build custom CRM systems that track leads, automate follow-ups, and keep your sales team organized.",
+        title: "CRM & Business System Development",
+        desc: "Scale your operations with custom software. From tracking leads to automating sales workflows, we build systems that keep your business organized and efficient.",
         tags: [
             { text: "Lead Tracking", icon: "trending_up" },
-            { text: "Sales Automation", icon: "auto_awesome" },
-            { text: "Client Dashboard", icon: "analytics" }
+            { text: "Sales Automation", icon: "auto_mode" },
+            { text: "Business Insights", icon: "analytics" }
         ]
     },
     {
-        title: "ERP Software Development",
-        desc: "Connect your whole business in one system. We build ERP platforms that manage inventory, finance, HR, and operations — all in real time.",
+        title: "E-commerce Solutions",
+        desc: "Launch a powerful online store designed to sell. We integrate secure payment gateways, manage inventory, and create a smooth shopping journey for your customers.",
         tags: [
-            { text: "Inventory & Finance", icon: "payments" },
-            { text: "HR & Operations", icon: "groups" },
-            { text: "Real-Time Reports", icon: "insights" }
+            { text: "Secure Payments", icon: "credit_card" },
+            { text: "Inventory Management", icon: "inventory" },
+            { text: "Cart Optimization", icon: "shopping_cart_checkout" }
         ]
     },
-    {
-        title: "SEO & Performance Optimization",
-        desc: "Slow websites lose customers. We optimize your site speed, fix technical SEO issues, and help you rank higher on Google.",
-        tags: [
-            { text: "Core Web Vitals", icon: "speed" },
-            { text: "SEO Audit", icon: "search" }
-        ]
-    },
-    {
-        title: "Website Maintenance & Support",
-        desc: "Keep your website updated, secure, and running smoothly. We offer ongoing support, bug fixes, content updates, and performance monitoring.",
-        tags: [
-            { text: "Security Updates", icon: "security" },
-            { text: "24/7 Monitoring", icon: "monitor_heart" },
-            { text: "Content Updates", icon: "edit" }
-        ]
-    }
 ];
 
 const Services: React.FC = () => {
@@ -82,7 +66,7 @@ const Services: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
                     >
-                        What We Build For You
+                        What <span className="text-secondary">We Build</span> For You
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -91,7 +75,7 @@ const Services: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed"
                     >
-                        Mindtrix Media builds websites, e-commerce stores, CRM systems, ERP platforms, and more — for businesses of all sizes across the world.
+                        Mindtrix Media builds custom websites, e-commerce stores, CRM systems, business platforms, and more for businesses of all sizes across the world.
                     </motion.p>
                 </div>
 
@@ -141,6 +125,25 @@ const Services: React.FC = () => {
                             </motion.div>
                         );
                     })}
+                </div>
+
+                <div className="mt-12 md:mt-16 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        <Link
+                            to="/services"
+                            className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 active:scale-95 transition-all shadow-xl group"
+                        >
+                            <span>Explore All Services</span>
+                            <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
+                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                            </div>
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
         </section>
