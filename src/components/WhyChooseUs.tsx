@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
+// Import Videos
+import BuiltForBusinessVideo from '../assets/built-for-business.mp4';
+import StartSmallVideo from '../assets/start-small.mp4';
+
 const WhyChooseUs: React.FC = () => {
     return (
         <section className="py-8 md:py-12 2xl:py-16 bg-transparent relative overflow-hidden">
@@ -29,7 +33,8 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.1 }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mt-4 mb-4 text-slate-900 dark:text-white"
                     >
-                        Why Clients Choose Mindtrix Media
+                        Why Clients Choose <br />
+                        <span className="text-secondary">Mindtrix Media</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -49,23 +54,22 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-9 00 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 px-4 md:px-6 border border-slate-100 dark:border-slate-800 shrink-0">
-                            <div className="grid grid-cols-3 gap-4 opacity-30 absolute inset-0 p-6 place-content-center">
-                                {[...Array(9)].map((_, i) => (
-                                    <div key={i} className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 mx-auto"></div>
-                                ))}
-                            </div>
-                            <motion.div
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                className="w-24 h-24 bg-gradient-to-br from-primary to-orange-600 rounded-2xl shadow-2xl shadow-primary/40 relative z-10 flex items-center justify-center text-white"
+                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-slate-800 shrink-0">
+                            <video
+                                className="w-full h-full object-cover"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
                             >
-                                <span className="material-symbols-rounded text-3xl md:text-4xl">movie</span>
-                            </motion.div>
+                                <source src={BuiltForBusinessVideo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Built Around Your Business</h3>
+                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Built For Your Business</h3>
                             <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Every website and system we build is designed around how your business actually works. No cookie-cutter templates. No generic solutions. Just something that fits you perfectly.</p>
                         </div>
                     </motion.div>
@@ -78,46 +82,21 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.4 }}
                         className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
-                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-800 flex select-none shrink-0">
-                            <div className="hidden sm:flex w-16 h-full border-r border-white/10 flex-col p-3 gap-3 shrink-0">
-                                <div className="flex gap-1.5 mb-2">
-                                    <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
-                                    <div className="w-2 h-2 rounded-full bg-yellow-500/80"></div>
-                                    <div className="w-2 h-2 rounded-full bg-green-500/80"></div>
-                                </div>
-                                {[1, 2, 3, 4, 5, 6].map((_, i) => (
-                                    <div key={i} className="flex items-center gap-1.5 opacity-40">
-                                        <span className="material-symbols-rounded text-[8px] text-white">folder</span>
-                                        <div className="h-1 bg-white rounded-full w-full"></div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex-1 bg-[#111] relative flex items-center justify-center p-4 sm:p-8 overflow-hidden">
-                                <div className="w-full max-w-[220px] aspect-[3/4] bg-white rounded-md shadow-2xl overflow-hidden relative origin-top transform group-hover:scale-[1.02] transition-transform duration-500">
-                                    <div className="h-6 border-b border-slate-100 flex items-center justify-between px-2">
-                                        <div className="flex items-center gap-1">
-                                            <div className="w-3 h-3 bg-slate-900 rounded-sm"></div>
-                                            <div className="w-8 h-1 bg-slate-200 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <div className="p-4 flex flex-col items-center text-center mt-2">
-                                        <div className="px-1.5 py-0.5 bg-[#FFD54F] rounded text-[5px] font-bold tracking-wider mb-2">EDITING</div>
-                                        <h4 className="text-[9px] font-bold text-slate-900 leading-tight mb-2">Video Editor crafting <br /> viral social content</h4>
-                                        <div className="flex items-center gap-2 mb-4">
-                                            <div className="px-2 py-1 bg-black text-white text-[5px] font-bold rounded">Get Quote</div>
-                                        </div>
-                                        <div className="relative w-20 h-24 mt-1">
-                                            <div className="w-full h-full rounded-md overflow-hidden bg-slate-100">
-                                                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover grayscale-[20%]" alt="Portrait" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-800 shrink-0">
+                            <video
+                                className="w-full h-full object-cover"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            >
+                                <source src={StartSmallVideo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">You Own It Completely</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Every project we build belongs to you. No monthly license fees. No vendor lock-in. You get the full source code and the freedom to update, expand, or move your platform at any time.</p>
+                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Start Small, Own Anytime</h3>
+                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Start with our affordable yearly subscription to launch your website or software without high upfront costs. Upgrade anytime to full ownership with complete source files and total control.</p>
                         </div>
                     </motion.div>
 
@@ -130,10 +109,27 @@ const WhyChooseUs: React.FC = () => {
                         className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
                     >
                         <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-slate-800 shrink-0">
+                            {/* Animated Mouse Pointer */}
+                            <motion.div
+                                animate={{
+                                    x: [-110, -55, 0, 55, 110, 55, 0, -55, -110],
+                                    y: [0, 100, 0, 100, 0, 100, 0, 100, 0],
+                                    rotate: [0, 45, 0, 45, 0, -45, 0, -45, 0],
+                                }}
+                                transition={{
+                                    duration: 12,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                }}
+                                className="absolute z-20 pointer-events-none"
+                            >
+                                <span className="material-symbols-rounded text-3xl text-primary drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]">near_me</span>
+                            </motion.div>
+
                             {[
-                                { d: 2, l: 'Discovery' },
-                                { d: 6, l: 'Development' },
-                                { d: 24, l: 'Launch', highlight: true }
+                                { d: 13, l: 'Planning' },
+                                { d: 14, l: 'Develope' },
+                                { d: 24, l: 'Deliver', highlight: true }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -141,11 +137,11 @@ const WhyChooseUs: React.FC = () => {
                                     className="bg-white dark:bg-slate-900 p-2 md:p-2.5 lg:p-1 xl:p-2.5 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 w-[28%] min-w-[70px] md:w-28 lg:w-[70px] xl:w-28 aspect-[3/4] flex flex-col"
                                 >
                                     <div className={`
-                                flex-1 flex items-center justify-center rounded-xl mb-0.5 xl:mb-1
-                                ${item.highlight
-                                            ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner'
-                                            : 'bg-transparent text-slate-900 dark:text-white'}
-                             `}>
+                                        flex-1 flex items-center justify-center rounded-xl mb-0.5 xl:mb-1 border
+                                        ${item.highlight
+                                            ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner border-green-500'
+                                            : 'bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-white border-slate-200 dark:border-slate-800'}
+                                     `}>
                                         <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
                                             {item.d.toString().padStart(2, '0')}
                                         </span>
