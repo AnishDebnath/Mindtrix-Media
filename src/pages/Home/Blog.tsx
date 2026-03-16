@@ -2,24 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 const homeArticles = [
     {
-        title: 'How YouTube Creators Can Build a Viral Personal Brand',
-        desc: "You're more than just a youtube channel — you're a media powerhouse.",
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBVrletRrurbgSnM9552NzibzGParEUS8xagLMIiJmyWLa7tz_PR-6sMCCWRhLdKJn22GhVTHNCqOR4HAk6vxtRmVkPNXVWPVqmVYVoeBG-6dlHJtMfFPVeEoP0viX6sTOjj-EGwzhWaeEE7fBPs0f-vAQcA1QGahkWYQkgLYC8_EjzEeXaO_i_39HJXo7TpvbxcjWR3QPfbZyrRZK669jaNowAQs5lxrqv0VvTwMzN-iGWD3iP45Re4gQj9iMVc6E7kFfvrcSpvZI'
+        title: 'Why Custom CRMs Outperform Off-the-Shelf Software',
+        desc: "Generic tools don't fit every business. Discover how tailored CRM systems drive efficiency and growth.",
+        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
     },
     {
-        title: '7 Editing Tricks to Double Your View Duration',
-        desc: "Retention is everything. Learn how the pros keep viewers hooked till the end.",
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBRVEXtMFCbJ8-foCTHZeWbUJYNDDQ-46JNbsVTzzUSwSlxzQzjQiLevhMoKId2S26XKKWNsJKk27koJSFeMUW8KtYrWk08JYiWACT2ECCwz-S0X0d_Knxh-5ioe75hQv00p5Rlia8dbBK6lbaWEEMI3Y8sbBRAnotuwEiwbW9vbjhTmWRzhM8BFzxQn5gzQhiKzhndMStULde_Q4TlA7nJn9KX-QHdKBQTRE8Ngjv2V0kSSi6qh536O5qS_rvZULn77HDJ6-rQ9_o'
+        title: '5 SEO Strategies for Scalable E-commerce in 2024',
+        desc: "Ranking high on Google is just the start. Learn how to optimize for both search engines and user conversion.",
+        img: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80'
     },
     {
-        title: '5 Thumbnail Must-Haves for High CTR in 2024',
-        desc: 'Stop the scroll and get the click with these proven layout strategies.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8CNcZtDDLXwtE6gBFjBHRNrWC6Iv_2wa1RQ4qAz4tbwF6XYg8yHtPdpVaCPYjGqTblQcTcHe2QP3LgIvggrY4kWd0rs3vPve6_r9bJ3tZWArUzkDT8-8qaBOgRDC1sULLM-DtvVpcWaAlRc4YcffOnEOQ32bR9rUdbvjC44DBLB7S7aOpIydqIju5CD0BuBLPhKNcPaI97_u2QhHunhXRILc8UUA9QTCAGRd2eLBYRCA3GnW0AOM5mp7H-9x0f3o1RiQc1N_1q4g'
+        title: 'How Business Automation Saves 20+ Hours Weekly',
+        desc: 'Stop wasting time on manual tasks. We break down the best workflows to automate your business operations.',
+        img: 'https://images.unsplash.com/photo-1518186239751-08183ca2032e?auto=format&fit=crop&w=800&q=80'
     },
     {
-        title: 'Why Every Creator Needs a Short-Form Strategy',
-        desc: "Shorts, Reels, and TikToks are the fastest way to grow your audience today.",
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZw7AF0mE-HUYgZ-KKBK4l40fyLw550NYR1EXonP5NPPnVwAmwv22k9kgjmI3oOB0ajwME70Pm4m39POCRNwVDn9UNqw_jj-E0wdv7s-EFdDuNFx8861_YZG3aMK7F31ORMbMsrW0VnmYp54GUWs3ssmMRqcUxBd9bUmC924dhU2C1mEqhPNSD5wEJoeD6UwacGA5BqmCYRS66l8lvBJ243wlCJXcoHKJfh7_DOXlkRbQ-GaK87W_o3U0FgM59UdpM6DhxP52KJfY'
+        title: "The Importance of Fast, High-Performance Web Architecture",
+        desc: "Speed is a ranking factor. Learn how modern tech stacks (like Next.js) can boost your revenue through speed.",
+        img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
     }
 ];
 
@@ -43,7 +43,7 @@ const Blog: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mb-3 text-slate-900 dark:text-white"
                     >
-                        Creator Insights & Tips
+                        Insights & <span className="text-secondary">Expertise</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const Blog: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
                     >
-                        Stay ahead of the game with fresh insights on editing trends, YouTube growth strategies.
+                        Stay ahead of the curve with fresh perspectives on custom software, e-commerce growth, and business automation.
                     </motion.p>
                 </div>
 

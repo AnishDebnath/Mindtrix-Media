@@ -55,8 +55,8 @@ const FAQ: React.FC = () => {
                             transition={{ delay: 0.1 }}
                             className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
                         >
-                            Questions We<br />
-                            Get Asked Often
+                            Questions <span className='text-secondary'>We<br />
+                                Get Asked</span> Often
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}

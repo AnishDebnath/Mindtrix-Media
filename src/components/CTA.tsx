@@ -93,8 +93,8 @@ const CTA: React.FC = () => {
                                 </motion.div>
                             </div>
 
-                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Free 15-minute discovery call</h3>
-                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Tell us your idea. We'll tell you how to build it.</p>
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Free 15-minute call</h3>
+                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Tell us your idea. <br /> We'll tell you how to build it.</p>
 
                             <Link to="/contact" className="flex items-center justify-center w-full bg-primary-dark hover:bg-primary text-white h-[44px] rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                 Book a free call
