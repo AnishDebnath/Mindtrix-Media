@@ -3,54 +3,54 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 const imageTestimonials = [
     {
-        name: "Ethan Moore",
-        title: "Co-founder, NovaTech",
-        text: "Franklin turned our ideas into a sharp, clean brand. Fast, easy, and right on point.",
+        name: "Sarah Jenkins",
+        title: "CEO, UrbanThreads",
+        text: "Mindtrix Media built our e-commerce store from scratch. Our conversion rate jumped by 40% in the first month. Highly recommended for scalable online stores.",
         image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
     },
     {
-        name: "Ansh",
-        title: "Co-founder, NovaTech",
-        text: "Franklin turned our ideas into a sharp, clean brand. Fast, easy, and right on point.",
+        name: "David Chen",
+        title: "Operations Manager, LogiFlow",
+        text: "The custom CRM they developed saved our team 20+ hours of manual work every week. Their business automation systems are truly top-notch.",
         image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop"
     },
     {
-        name: "Narendra Modi",
-        title: "Prime Minister of India",
-        text: "Franklin turned our ideas into a sharp, clean brand. Fast, easy, and right on point.",
+        name: "Elena Rodriguez",
+        title: "Founder, Bloom Digital",
+        text: "Fast, professional, and SEO-focused. Our new website now ranks on the first page for all our target keywords. They are the best in web development.",
         image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop"
     }
 ];
 
 const scrollTestimonials = [
     {
-        handle: "@mark_locus",
-        name: "Mark Locus",
-        text: "Bro who edits your videos? The pacing and cuts are SO clean.",
+        handle: "@tech_founder",
+        name: "Alex Rivera",
+        text: "The speed optimization on our site is insane. 99+ score on PageSpeed. Mindtrix lives up to the hype!",
         avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80"
     },
     {
-        handle: "@tonysa",
-        name: "Tony Sa",
-        text: "Whoever’s editing your videos now... they deserve a raise this was smooth af",
+        handle: "@ecommerce_king",
+        name: "Marcus Thorne",
+        text: "Finally found a partner who understands both design and business logic. The checkout flow is so smooth now.",
         avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80"
     },
     {
-        handle: "@johnbai",
-        name: "John Bai",
-        text: "Editing leveled up big time. Timing, cuts, music — everything’s just right",
+        handle: "@biz_grower",
+        name: "Linda Wu",
+        text: "Scaling our operations was a mess until we got our custom business dashboard. Incredible ROI.",
         avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
     },
     {
-        handle: "@chrismaw",
-        name: "Chris Maw",
-        text: "Noticed the pacing and flow are so much better lately. You working with someone new?",
+        handle: "@startup_guru",
+        name: "Jameson P.",
+        text: "The free prototype phase was a game-changer. We knew exactly what we were getting. Zero surprises.",
         avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80"
     },
     {
-        handle: "@jemmy",
-        name: "Jemmy",
-        text: "This feels super polished now. Loving the new vibe — your editor is killing it",
+        handle: "@retail_pro",
+        name: "Sophia Lane",
+        text: "Inventory management used to be a nightmare. Now it's fully automated. Thank you Mindtrix!",
         avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=100&q=80"
     }
 ];
@@ -87,7 +87,7 @@ const Testimonials: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight flex justify-center items-center gap-x-3 whitespace-nowrap"
                     >
-                        <span>Kind words from</span>
+                        <span className='text-secondary'>Kind words</span><span>from</span>
                         <motion.div
                             whileHover={{ rotate: 10, scale: 1.1 }}
                             className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl shadow-xl flex items-center justify-center transform rotate-[10deg] border-t border-white/20 relative top-1.5"
@@ -103,7 +103,7 @@ const Testimonials: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        We've partnered with creators, founders, and studios who value editing that works, here's what they had to say.
+                        We've partnered with founders, startups, and established brands to build digital solutions that drive results.
                     </motion.p>
                 </div>
 
@@ -118,7 +118,7 @@ const Testimonials: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[220px] 2xl:h-[260px] rounded-[1.5rem] overflow-hidden group"
+                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[300px] 2xl:h-[360px] rounded-[1.5rem] overflow-hidden group"
                         >
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -161,7 +161,7 @@ const Testimonials: React.FC = () => {
                                             transition={{ duration: 0.4, ease: "easeOut" }}
                                         >
                                             <blockquote className="text-sm md:text-lg 2xl:text-xl font-bold text-white leading-tight min-h-[3em] md:min-h-[2.5em]">
-                                                "{featuredTestimonial.text}"
+                                                {featuredTestimonial.text}
                                             </blockquote>
                                         </motion.div>
                                     </AnimatePresence>
@@ -243,7 +243,7 @@ const Testimonials: React.FC = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-[#111] text-white rounded-[1.5rem] p-8 md:p-10 lg:p-8 2xl:p-10 text-center relative overflow-hidden shadow-2xl h-full lg:min-h-[300px] 2xl:min-h-[340px] flex flex-col items-center justify-between gap-8 md:gap-10 lg:gap-8 2xl:gap-0"
+                                className="bg-[#111] text-white rounded-[1.5rem] p-8 md:p-10 lg:p-8 2xl:p-10 text-center relative overflow-hidden shadow-2xl h-full lg:min-h-[300px] 2xl:min-h-[360px] flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-8"
                             >
                                 <div className="flex flex-col items-center gap-3 relative z-10 w-full">
                                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-[3px] border-white/10 bg-white/5 shadow-inner">
@@ -272,16 +272,16 @@ const Testimonials: React.FC = () => {
                                     <div className="flex flex-col items-center gap-0.5">
                                         <p className="text-slate-400 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest">Prefer to Email?</p>
                                         <a
-                                            href="mailto:ajoy.sayhello@gmail.com"
+                                            href="mailto:mindtrixmediaindia@gmail.com"
                                             className="text-slate-200 hover:text-white transition-colors text-sm font-medium border-b border-white/10"
                                         >
-                                            ajoy.sayhello@gmail.com
+                                            mindtrixmediaindia@gmail.com
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center gap-1.5 relative z-10 w-full">
-                                    {['Collaboration', 'Business Inquiry', 'Want My Videos Edited', 'Send Me Samples'].map((tag, i) => (
+                                    {['Web Development', 'E-commerce', 'CRM Systems', 'Business Automation'].map((tag, i) => (
                                         <span
                                             key={i}
                                             className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] 2xl:text-[10px] font-bold text-slate-400 hover:bg-white/10 transition-colors cursor-default whitespace-nowrap"

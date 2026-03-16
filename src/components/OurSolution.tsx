@@ -38,7 +38,7 @@ const OurSolution: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
                     >
-                        Common Problems. Simple Solutions.
+                        Common Problems. <span className="text-secondary">Simple Solutions.</span>
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}

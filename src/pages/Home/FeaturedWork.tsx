@@ -46,7 +46,7 @@ const FeaturedWork: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
                     >
-                        Work that speaks for itself
+                        Work <span className="text-secondary">that speaks</span> for itself
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
