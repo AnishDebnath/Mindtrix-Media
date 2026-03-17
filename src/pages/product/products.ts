@@ -14,7 +14,7 @@ export interface Product {
     subtitle: string;
     description: string;
     services: string[];
-    date: string;
+    date?: string;
     liveLink: string;
     liveLabel?: string;
     buyLink?: string;

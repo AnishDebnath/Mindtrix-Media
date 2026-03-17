@@ -32,7 +32,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110 opacity-95 group-hover:opacity-100 dark:opacity-80 dark:group-hover:opacity-100"
+                                    className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                                 />
                             </div>
                             {/* Inner Overlay */}

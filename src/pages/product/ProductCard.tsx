@@ -27,12 +27,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                 <div className="w-full lg:w-1/2">
                     <div className="relative group perspective-1000" onClick={() => navigate(`/product/${product.id}`)}>
                         <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                        <div className="relative overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-[#0F0F0F] border border-slate-200 dark:border-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] cursor-pointer">
+                        <div className="relative overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-[#0F0F0F] border border-slate-200 dark:border-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02 ] cursor-pointer">
                             <div className="aspect-[4/3] w-full overflow-hidden relative">
                                 <img
                                     src={product.image}
                                     alt={product.title}
-                                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110 opacity-95 group-hover:opacity-100 dark:opacity-80 dark:group-hover:opacity-100"
+                                    className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                                 />
                                 {/* Overlays Tags */}
                                 {/* <div className="absolute top-4 left-4 flex gap-2 font-sans z-10 transition-transform duration-500 group-hover:-translate-y-1">
