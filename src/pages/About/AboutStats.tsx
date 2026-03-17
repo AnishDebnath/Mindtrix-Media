@@ -8,9 +8,9 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-    { count: '50', label: 'Software Systems Built', icon: 'code' },
-    { count: '100', label: 'Businesses Served', icon: 'groups' },
-    { count: '15', label: 'Countries Reached', icon: 'public' },
+    { count: '10', label: 'Projects Delivered', icon: 'code' },
+    { count: '7', label: 'Clients Worldwide', icon: 'groups' },
+    { count: '5', label: 'Countries Reached', icon: 'public' },
     { count: '98', label: 'Client Satisfaction', icon: 'analytics' },
 ];
 

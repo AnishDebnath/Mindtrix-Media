@@ -28,9 +28,9 @@ const AboutHeader: React.FC = () => {
                     >
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Team" />
                     </motion.span>
-                    <span className="text-primary">Digital</span>
+                    <span className="text-secondary">Digital</span>
                 </div>
-                <div>Solutions Partner.</div>
+                <div><span className='text-primary'>Solutions</span> Partner.</div>
             </motion.h1>
 
             <motion.p
@@ -39,7 +39,7 @@ const AboutHeader: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
             >
-                Mindtrix Media is a website and software development agency based in Kolkata, India. We build professional websites, e-commerce stores, CRM systems, and ERP platforms for businesses worldwide.
+                Mindtrix Media is a website and software development agency based in Kolkata, India. We build professional business websites, e-commerce stores, CRM systems, and ERP platforms for businesses worldwide.
             </motion.p>
         </div>
     );

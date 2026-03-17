@@ -1,52 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TeamMember from './TeamMember';
+import preetamImage from '../../assets/preetam.jpeg';
+import anishImage from '../../assets/anish.jpeg';
 
 const teamMembers = [
     {
         name: "Preetam Chakraborty",
-        role: "Founder & Lead Editor",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+        role: "Founder & Chief Executive Officer",
+        image: preetamImage,
         socials: {
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
+            linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
             instagram: "https://instagram.com",
-            website: "https://mindtrixmedia.com"
         }
     },
     {
-        name: "Sarah Chen",
-        role: "Creative Director",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+        name: "Anish Debnath",
+        role: "Co-Founder & Lead Developer",
+        image: anishImage,
         socials: {
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-            instagram: "https://instagram.com",
-            website: "https://mindtrixmedia.com"
+            twitter: "https://x.com/anishdebnath07",
+            linkedin: "https://www.linkedin.com/in/anish-debnath-7b3516211",
+            instagram: "https://www.instagram.com/aanishdebnath/",
+            website: "https://anishdebnath.netlify.app/"
         }
     },
-    {
-        name: "Marcus Johnson",
-        role: "Motion Designer",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-        socials: {
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-            instagram: "https://instagram.com",
-            website: "https://mindtrixmedia.com"
-        }
-    },
-    {
-        name: "Emily Davis",
-        role: "Account Manager",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-        socials: {
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-            instagram: "https://instagram.com",
-            website: "https://mindtrixmedia.com"
-        }
-    }
 ];
 
 const AboutTeam: React.FC = () => {
@@ -70,7 +48,7 @@ const AboutTeam: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
                     >
-                        Meet the <span className="text-primary">creative</span> minds.
+                        Meet the <span className="text-secondary">creative</span> minds.
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

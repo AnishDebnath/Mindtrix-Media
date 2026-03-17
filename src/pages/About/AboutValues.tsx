@@ -23,7 +23,7 @@ const AboutValues: React.FC = () => {
                         transition={{ delay: 0.1 }}
                         className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
                     >
-                        Our <span className="text-primary">Mission</span> & <span className="text-primary">Vision.</span>
+                        Our <span className="text-secondary">Mission</span> & <span className="text-primary">Vision.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

@@ -42,8 +42,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                         <h3 className="text-base md:text-lg lg:text-base 2xl:text-xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight">
                             {member.name}
                         </h3>
-                        <p className="text-slate-500 dark:text-slate-400 text-[9px] md:text-[10px] lg:text-[9px] 2xl:text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 leading-tight">
-                            <span className="flex-shrink-0 w-6 h-[2px] bg-primary/30 rounded-full group-hover:w-8 group-hover:bg-primary transition-all duration-300"></span>
+                        <p className="text-slate-500 dark:text-slate-400 text-[9px] md:text-[10px] lg:text-[9px] 2xl:text-[11px] font-bold uppercase tracking-widest flex items-start gap-2 leading-tight">
+                            <span className="flex-shrink-0 w-6 h-[2px] mt-1 bg-primary/30 rounded-full group-hover:w-8 group-hover:bg-primary transition-all duration-300"></span>
                             {member.role}
                         </p>
                     </div>
