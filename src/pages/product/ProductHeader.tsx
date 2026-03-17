@@ -36,7 +36,7 @@ const ProductHeader: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
             >
-                A showcase of our digital solutions, from stunning websites to powerful SaaS products that helped businesses grow and succeed online.
+                A showcase of the websites, software, and digital platforms we’ve built to help businesses grow and succeed online.
             </motion.p>
         </div>
     );

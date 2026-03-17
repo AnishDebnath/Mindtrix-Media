@@ -3,52 +3,52 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
     {
-        name: "Stephan P.",
-        handle: "@steipete",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Stephan",
-        text: "Tried Claw by @steipete. I tried to build my own AI assistant bots before, and I am very impressed how many hard things Claw gets right. Persistence, context...",
+        name: "Sarah Jenkins",
+        handle: "@sjenkins_ceo",
+        avatar: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=100&q=80",
+        text: "Mindtrix Media completely transformed our online presence. The new UI/UX design and custom e-commerce web development skyrocketed our conversion rates overnight.",
     },
     {
-        name: "Aryeh Dubois",
-        handle: "@AryehDubois",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aryeh",
-        text: "It feels like I have a junior developer always ready to help. It's incredibly fast and accurate.",
+        name: "David Chen",
+        handle: "@davidc_tech",
+        avatar: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=100&q=80",
+        text: "Incredible custom software development! They built a scalable SaaS platform for our operations that handles thousands of daily users with zero lag. Exceptional backend architecture.",
     },
     {
-        name: "Mark Jaquith",
-        handle: "@markjaquith",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mark",
-        text: "I've been saying for like six months that even if LLMs suddenly stopped improving, we could spend *years* discovering new transformative uses.",
+        name: "Elena Rodriguez",
+        handle: "@elena_digital",
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80",
+        text: "The SEO-optimized website design we received from Mindtrix pushed us to page one on Google. Their modern tech stack and attention to responsive design is simply unmatched.",
     },
     {
-        name: "Philo",
-        handle: "@Philo01",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Philo",
-        text: "Feels like we're living in the future.",
+        name: "Marcus Thorne",
+        handle: "@ecommerce_king",
+        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80",
+        text: "I bought one of their prebuilt e-commerce templates and it was flawlessly integrated. Fastest loading speeds we've ever had—our bounce rate dropped by 30%.",
     },
     {
-        name: "Senator NFTs",
-        handle: "@Senator_NFTs",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Senator",
-        text: "OpenClaw is a game changer. The potential for custom extensions is huge, and AI really speeds up the process.",
+        name: "Jameson P.",
+        handle: "@startup_guru",
+        avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80",
+        text: "From website wireframing to full stack app development, the Mindtrix team delivered a premium digital product perfectly suited for our ambitious startup launch.",
     },
     {
-        name: "M. Neves",
-        handle: "@mneves",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Neves",
-        text: "Try @openclaw. And you can talk to it.",
+        name: "Alex Rivera",
+        handle: "@tech_founder",
+        avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80",
+        text: "We needed a complete brand identity redesign along with a custom mobile application. They delivered a world-class UI that our users absolutely love logging into.",
     },
     {
-        name: "Sarah J.",
-        handle: "@sarah_dev",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-        text: "The speed at which I can iterate now is mind-blowing. Highly recommended.",
+        name: "Sophia Lane",
+        handle: "@retail_pro",
+        avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=100&q=80",
+        text: "Their strategic UX consulting uncovered huge gaps in our customer journey. The subsequent website redesign generated a 200% ROI within the first three months of launching.",
     },
     {
-        name: "Alex T.",
-        handle: "@alexthedev",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
-        text: "This tool has completely changed my workflow. I can't imagine going back.",
+        name: "Michael Ross",
+        handle: "@mross_business",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
+        text: "Truly a top-tier digital agency. They seamlessly migrated our legacy platform to a modern React stack. Blazing fast web apps, clean code, and brilliant frontend design.",
     }
 ];
 
@@ -104,7 +104,7 @@ const ProductTestimonials: React.FC = () => {
                     viewport={{ once: true }}
                     className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight"
                 >
-                    Trusted by builders <span className="text-primary">everywhere.</span>
+                    Trusted by Growing <span className="text-secondary">Businesses</span>
                 </motion.h2>
 
                 <motion.p
@@ -114,7 +114,7 @@ const ProductTestimonials: React.FC = () => {
                     transition={{ delay: 0.2 }}
                     className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
                 >
-                    Join 100+ businesses and brands who have accelerated their growth with our premium digital solutions and strategic expertise.
+                    Join 20+ businesses and brands who have accelerated their growth with our premium digital solutions and strategic expertise.
                 </motion.p>
             </div>
 
