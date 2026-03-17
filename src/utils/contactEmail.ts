@@ -8,9 +8,9 @@ export const sendContactEmail = (formData: {
     message: string;
 }) => {
     // Replace these with your actual EmailJS credentials
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_CONTACT_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = 'service_an2n3bc';
+    const TEMPLATE_ID = 'template_q9016js';
+    const PUBLIC_KEY = '_8InCRSnXpA6YiytW';
 
     return emailjs.send(
         SERVICE_ID,
