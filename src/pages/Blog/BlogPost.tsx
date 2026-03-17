@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { articles } from './index';
+import { articles } from './blogData';
 import ArticleCard from './ArticleCard';
 import { CTA } from '../../components';
 

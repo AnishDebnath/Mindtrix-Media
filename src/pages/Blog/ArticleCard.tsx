@@ -40,7 +40,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
                     <div className="px-4 pb-4 flex flex-col flex-1">
                         <div className="flex flex-wrap gap-1.5 mb-2.5">
                             {article.tags.map((tag, index) => (
-                                <span key={index} className="px-2 py-0.5 text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-widest bg-slate-100 dark:bg-white/5 text-primary rounded-lg border border-slate-200/50 dark:border-white/5">
+                                <span key={index} className="px-2 py-0.5 text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-widest bg-slate-100 dark:bg-white/5 text-secondary rounded-lg border border-slate-200/50 dark:border-white/5">
                                     {tag}
                                 </span>
                             ))}

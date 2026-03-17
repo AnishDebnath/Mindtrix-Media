@@ -5,7 +5,7 @@ import ProductHeader from './ProductHeader';
 import ProductFilter from './ProductFilter';
 import { FreePrototype, Process, ProductTestimonials, CTA } from '../../components';
 
-import { products, categories } from './products';
+import { products, categories } from './productsData';
 
 
 

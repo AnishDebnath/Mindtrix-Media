@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { products } from './products';
+import { products } from './productsData';
 import { CTA } from '../../components';
 
 const ProductDetail: React.FC = () => {

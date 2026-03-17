@@ -21,14 +21,14 @@ const BlogHeader: React.FC = () => {
                 className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-[#111] dark:text-white"
             >
                 <div className="flex flex-wrap justify-center items-center gap-x-3.5 md:gap-x-5">
-                    <span>Digital Systems</span>
+                    <span>Digital Solutions</span>
                     <motion.span
                         whileHover={{ scale: 1.05, rotate: -2 }}
                         className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/10"
                     >
                         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Blog" />
                     </motion.span>
-                    <span className="text-primary">& Strategy</span>
+                    <span className="text-secondary">& Strategy</span>
                 </div>
             </motion.h1>
 

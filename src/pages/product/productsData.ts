@@ -19,39 +19,14 @@ export interface Product {
     liveLabel?: string;
     buyLink?: string;
     customiseLink?: string;
+    featured?: boolean;
+    featuredTag?: string;
     content: (
         | { type: 'image'; src: string; alt: string; className?: string }
         | { type: 'text'; title?: string; body: string }
         | { type: 'grid'; images: string[] }
     )[];
 }
-
-export const featuredProducts = [
-    {
-        title: "Naka",
-        category: "Customized",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-        featured: true
-    },
-    {
-        title: "Signal Spark",
-        category: "Customized",
-        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
-        featured: true
-    },
-    {
-        title: "Lumenhaus",
-        category: "Customized",
-        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-        featured: false
-    },
-    {
-        title: "Drift Bloom",
-        category: "Customized",
-        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
-        featured: false
-    }
-];
 
 export const categories = ["Prebuilt", "Customized"];
 
@@ -72,6 +47,8 @@ export const products: Product[] = [
         buyLink: "/contact?project=ecommerce-pro",
         customiseLink: "/contact?service=templates",
         year: "2023",
+        featured: true,
+        featuredTag: "Featured",
         content: [
             { type: 'text', body: "In a competitive market of vibrant colors and overwhelming visuals, our client's product was getting lost on the shelves. The brand wanted something that wouldn't blend in—something that would interrupt the shopper's line of sight." },
             { type: 'image', src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80", alt: "Main Hero" },
@@ -98,6 +75,8 @@ export const products: Product[] = [
         customiseLink: "/contact?service=custom-websites",
         duration: "8 Weeks",
         year: "2023",
+        featured: true,
+        featuredTag: "Featured",
         secondaryDescription: "To establish a strong digital foothold, the client requested a complete overhaul of their existing web presence, ensuring seamless user journeys and brand consistency.",
         challenge: "The old website suffered from high bounce rates and lacked clear user pathways, making it difficult for potential clients to find information.",
         solution: "We restructured the site architecture, introduced a modern aesthetic, and created clear calls-to-actions placed strategically throughout the user journey.",
@@ -129,6 +108,7 @@ export const products: Product[] = [
         challenge: "Low engagement rates and a stagnant follower count indicated that the current social media strategy was failing to resonate with target audiences.",
         solution: "We implemented a community-first approach, focusing on user-generated content, interactive stories, and high-quality educational fitness reels.",
         result: "Within three months, organic reach increased by over 300% and daily engagement rates multiplied by 5x across all active platforms.",
+        featured: true,
         content: [
             { type: 'image', src: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1600&q=80", alt: "Social Campaign" },
             { type: 'text', title: "Growth Strategy", body: "We developed a data-driven content calendar with engaging posts, stories, and reels optimized for each platform's algorithm. Consistent posting schedule and community engagement drove remarkable growth." }
@@ -155,6 +135,7 @@ export const products: Product[] = [
         challenge: "Existing market solutions were either too generic or too slow to handle the specific volume and complexity of the client's proprietary data pipelines.",
         solution: "We built a custom React dashboard backed by a highly optimized Node.js microservices architecture to process and stream data in real-time.",
         result: "The new platform reduced data processing times by 80% and empowered the team to make critical business decisions faster and with total confidence.",
+        featured: true,
         content: [
             { type: 'image', src: "https://images.unsplash.com/photo-1621504450168-b8c437517b3d?auto=format&fit=crop&w=1600&q=80", alt: "Dashboard" }
         ]
@@ -180,6 +161,8 @@ export const products: Product[] = [
         challenge: "Creating a template that is opinionated enough to look beautiful out of the box, yet flexible enough to adapt to vastly different creative styles.",
         solution: "We designed a heavily modular, CSS-variables driven architecture with multiple pre-built layouts, focusing on smooth page transitions and minimalist frames.",
         result: "The template became the fastest-selling product on the marketplace, driving thousands of downloads and maintaining a perfect 5-star rating.",
+        featured: true,
+        featuredTag: "Featured",
         content: [
             { type: 'image', src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80", alt: "Portfolio" }
         ]
