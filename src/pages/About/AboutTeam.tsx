@@ -11,7 +11,7 @@ const teamMembers = [
         image: preetamImage,
         socials: {
             linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
-            instagram: "https://instagram.com",
+            instagram: "https://www.instagram.com/preetam.photographer",
         }
     },
     {

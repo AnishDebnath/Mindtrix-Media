@@ -10,10 +10,21 @@ const ContactForm: React.FC = () => {
         purpose: '',
         message: ''
     });
-    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'invalid'>('idle');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validation: Simple email regex and minimum 10 digits for phone
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneDigits = formData.phone.replace(/[^0-9]/g, '');
+
+        if (!emailRegex.test(formData.email) || phoneDigits.length < 10) {
+            setStatus('invalid');
+            setTimeout(() => setStatus('idle'), 5000);
+            return;
+        }
+
         setStatus('sending');
 
         try {
@@ -36,6 +47,14 @@ const ContactForm: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+
+        // Prevent non-numeric input for phone field
+        if (name === 'phone') {
+            const numericValue = value.replace(/[^0-9+]/g, ''); // Allow numbers and '+'
+            setFormData(prev => ({ ...prev, [name]: numericValue }));
+            return;
+        }
+
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
@@ -67,8 +86,9 @@ const ContactForm: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email Address</label>
+                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email Address <span className="text-primary">*</span></label>
                         <input
+                            required
                             type="email"
                             name="email"
                             value={formData.email}
@@ -85,8 +105,9 @@ const ContactForm: React.FC = () => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
+                            pattern="[0-9+ ]*"
                             className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
-                            placeholder="+1 (555) 000-0000"
+                            placeholder="+91 XXXXX-XXXXX"
                         />
                     </div>
                 </div>
@@ -100,7 +121,7 @@ const ContactForm: React.FC = () => {
                         value={formData.purpose}
                         onChange={handleChange}
                         className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
-                        placeholder="e.g. Video Editing, Consultation, etc."
+                        placeholder="e.g. Website Development, Maintenance & Support etc."
                     />
                 </div>
 
@@ -141,6 +162,11 @@ const ContactForm: React.FC = () => {
                             <p className="text-sm md:text-base font-bold text-red-500 flex items-center gap-1 whitespace-nowrap">
                                 <span className="material-symbols-rounded text-lg md:text-xl">error</span>
                                 Failed to send message.
+                            </p>
+                        ) : status === 'invalid' ? (
+                            <p className="text-sm md:text-base font-bold text-orange-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">warning</span>
+                                Please provide a valid email & phone number.
                             </p>
                         ) : (
                             <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">

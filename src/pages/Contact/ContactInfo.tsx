@@ -4,19 +4,22 @@ import { motion, animate } from 'framer-motion';
 const contactInfo = [
     {
         title: "Email Us",
-        value: "ajoy.sayhello@gmail.com",
+        value: "mindtrixmediaindia@gmail.com",
+        href: "mailto:mindtrixmediaindia@gmail.com",
         icon: "mail",
         color: "blue"
     },
     {
         title: "Call Us",
-        value: "+44 (0) 20 7946 0123",
+        value: "+91 89100 92451",
+        href: "tel:+918910092451",
         icon: "call",
         color: "blue"
     },
     {
-        title: "Visit Us",
-        value: "123 Creator Lane, London, UK",
+        title: "Office",
+        value: "Kolkata, India",
+        href: "https://www.google.com/maps/search/Kolkata,+India",
         icon: "location_on",
         color: "orange"
     }
@@ -90,13 +93,13 @@ const ContactInfo: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-8 md:mb-10 leading-relaxed max-w-xl"
             >
-                Ready to take your content to the next level? Fill out the form or send us an email, and we'll get back to you within 24 hours.
+                Ready to take your business to the next level? Fill out the form or send us an email, and we'll get back to you within 24 hours.
             </motion.p>
 
             <div className="space-y-6">
                 {contactInfo.map((info, i) => (
                     <div key={i} className="flex items-center gap-3 group">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${info.color === 'blue'
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${info.color === 'blue'
                             ? 'bg-blue-100/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                             : 'bg-orange-100/50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
                             }`}>
@@ -104,7 +107,14 @@ const ContactInfo: React.FC = () => {
                         </div>
                         <div>
                             <h3 className="text-[10px] md:text-[11px] 2xl:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{info.title}</h3>
-                            <p className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white">{info.value}</p>
+                            <a
+                                href={info.href}
+                                target={info.title === "Office" ? "_blank" : undefined}
+                                rel={info.title === "Office" ? "noopener noreferrer" : undefined}
+                                className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-300"
+                            >
+                                {info.value}
+                            </a>
                         </div>
                     </div>
                 ))}
@@ -149,7 +159,7 @@ const ContactInfo: React.FC = () => {
                         ))}
                     </div>
                     <p className="text-sm md:text-base 2xl:text-lg font-bold text-slate-700 dark:text-slate-300">
-                        Trusted by <CountUp val={100} />+ clients
+                        Trusted by <CountUp val={10} />+ clients
                     </p>
                 </div>
             </motion.div>
