@@ -25,11 +25,11 @@ const ProductPage: React.FC = () => {
 
                 <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
+                    className="flex flex-col max-w-6xl mx-auto"
                 >
                     <AnimatePresence mode="popLayout">
-                        {filteredProducts.map((product) => (
-                            <ProductCard key={product.title} product={product} />
+                        {filteredProducts.map((product, index) => (
+                            <ProductCard key={product.title} product={product} index={index} />
                         ))}
                     </AnimatePresence>
                 </motion.div>
