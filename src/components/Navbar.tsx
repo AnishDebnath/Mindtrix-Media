@@ -5,7 +5,7 @@ import logo from '../assets/mindtrix-media-logo.png';
 
 const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Work', path: '/work' },
+    { name: 'Products', path: '/product' },
     { name: 'Services', path: '/services' },
     { name: 'About us', path: '/about' },
     { name: 'Blog', path: '/blog' },
@@ -99,11 +99,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                         </button>
 
                         <Link
-                            to="/free-prototype"
+                            to="/product"
                             className="hidden lg:flex bg-[#111] dark:bg-white text-white dark:text-[#111] pl-4 pr-1.5 py-1.5 rounded-full font-bold text-xs md:text-sm items-center gap-2.5 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
                         >
 
-                            Free Prototype
+                            Explore All Products
                             <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
                                 <span className="material-symbols-rounded text-lg">arrow_outward</span>
                             </div>
@@ -170,10 +170,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                     className="pt-6 pb-2 px-2"
                                 >
                                     <Link
-                                        to="/free-prototype"
+                                        to="/product"
                                         className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 pl-6 pr-1.5 rounded-full font-bold text-base flex items-center justify-between group shadow-xl shadow-black/10 active:scale-[0.98] transition-all"
                                     >
-                                        Claim Free Prototype
+                                        Explore All Products
                                         <div className="w-8 h-8 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center text-white dark:text-[#111] group-hover:rotate-45 transition-transform duration-300">
                                             <span className="material-symbols-rounded text-lg">rocket_launch</span>
                                         </div>

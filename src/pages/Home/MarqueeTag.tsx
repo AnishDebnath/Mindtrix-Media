@@ -11,7 +11,7 @@ const marqueeItems = [
     "4.7 Stars Client Rating"
 ];
 
-const Marquee: React.FC = () => {
+const MarqueeTag: React.FC = () => {
     return (
         <section className="py-8 md:py-12 2xl:py-16 overflow-hidden relative z-20">
             {/* Edge Fades */}
@@ -47,4 +47,4 @@ const Marquee: React.FC = () => {
     );
 };
 
-export default Marquee;
+export default MarqueeTag;

@@ -7,10 +7,10 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Services from './pages/Services';
-import Work from './pages/Work';
+import Product from './pages/product';
 import Contact from './pages/Contact';
 import FreePrototypePage from './pages/FreePrototype';
-import ProjectDetail from './pages/Work/ProjectDetail';
+import ProductDetail from './pages/product/ProductDetail';
 import BlogPost from './pages/Blog/BlogPost';
 
 // Components
@@ -47,8 +47,8 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/work/:id" element={<ProjectDetail />} />
+              <Route path="/product" element={<Product />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/free-prototype" element={<FreePrototypePage />} />
             </Routes>

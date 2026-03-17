@@ -1,11 +1,4 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ProjectCard from './ProjectCard';
-import WorkHeader from './WorkHeader';
-import WorkFilter, { categories } from './WorkFilter';
-import { FreePrototype, Process, WorkTestimonials, CTA } from '../../components';
-
-export interface Project {
+export interface Product {
     id: string;
     title: string;
     category: string;
@@ -33,11 +26,40 @@ export interface Project {
     )[];
 }
 
-export const projects: Project[] = [
+export const featuredProducts = [
+    {
+        title: "Naka",
+        category: "Customized",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        featured: true
+    },
+    {
+        title: "Signal Spark",
+        category: "Customized",
+        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+        featured: true
+    },
+    {
+        title: "Lumenhaus",
+        category: "Customized",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
+        featured: false
+    },
+    {
+        title: "Drift Bloom",
+        category: "Customized",
+        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
+        featured: false
+    }
+];
+
+export const categories = ["Prebuilt", "Customized"];
+
+export const products: Product[] = [
     {
         id: "ecommerce-pro-template",
         title: "E-Commerce Pro Template",
-        category: "Website Templates",
+        category: "Prebuilt",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
         client: "Template Marketplace",
         industry: "E-Commerce",
@@ -49,7 +71,6 @@ export const projects: Project[] = [
         liveLabel: "Live Preview",
         buyLink: "/contact?project=ecommerce-pro",
         customiseLink: "/contact?service=templates",
-        duration: "12 Weeks",
         year: "2023",
         content: [
             { type: 'text', body: "In a competitive market of vibrant colors and overwhelming visuals, our client's product was getting lost on the shelves. The brand wanted something that wouldn't blend in—something that would interrupt the shopper's line of sight." },
@@ -63,7 +84,7 @@ export const projects: Project[] = [
     {
         id: "corporate-website-redesign",
         title: "Corporate Website Redesign",
-        category: "Custom Websites",
+        category: "Customized",
         image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80",
         client: "TechCorp Solutions",
         industry: "Technology",
@@ -90,7 +111,7 @@ export const projects: Project[] = [
     {
         id: "social-media-campaign",
         title: "Social Media Growth Campaign",
-        category: "Social Media",
+        category: "Customized",
         image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=80",
         client: "FitLife Brand",
         industry: "Health & Fitness",
@@ -116,7 +137,7 @@ export const projects: Project[] = [
     {
         id: "saas-dashboard-platform",
         title: "SaaS Analytics Dashboard",
-        category: "SaaS Products",
+        category: "Prebuilt",
         image: "https://images.unsplash.com/photo-1621504450168-b8c437517b3d?auto=format&fit=crop&w=800&q=80",
         client: "DataFlow Inc",
         industry: "Software as a Service",
@@ -141,7 +162,7 @@ export const projects: Project[] = [
     {
         id: "portfolio-template",
         title: "Creative Portfolio Template",
-        category: "Website Templates",
+        category: "Prebuilt",
         image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
         client: "Template Store",
         industry: "Creative Services",
@@ -166,7 +187,7 @@ export const projects: Project[] = [
     {
         id: "restaurant-booking-app",
         title: "Restaurant Booking SaaS",
-        category: "SaaS Products",
+        category: "Prebuilt",
         image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
         client: "DineEasy",
         industry: "Hospitality",
@@ -189,43 +210,3 @@ export const projects: Project[] = [
         ]
     }
 ];
-
-
-
-const WorkPage: React.FC = () => {
-    const [activeCategory, setActiveCategory] = useState("All");
-
-    const filteredProjects = activeCategory === "All"
-        ? projects
-        : projects.filter(p => p.category === activeCategory);
-
-    return (
-        <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
-            <div className="pb-8 md:pb-12 2xl:pb-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <WorkHeader />
-                <WorkFilter
-                    activeCategory={activeCategory}
-                    setActiveCategory={setActiveCategory}
-                />
-
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
-                >
-                    <AnimatePresence mode="popLayout">
-                        {filteredProjects.map((project) => (
-                            <ProjectCard key={project.title} project={project} />
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
-            </div>
-
-            <FreePrototype />
-            <Process />
-            <WorkTestimonials />
-            <CTA />
-        </div>
-    );
-};
-
-export default WorkPage;

@@ -77,7 +77,7 @@ const TestimonialCard: React.FC<{ item: typeof testimonials[0] }> = ({ item }) =
     </motion.div>
 );
 
-const WorkTestimonials: React.FC = () => {
+const ProductTestimonials: React.FC = () => {
     const row1 = [...testimonials].sort(() => Math.random() - 0.5);
     const row2 = [...testimonials].sort(() => Math.random() - 0.5);
 
@@ -161,4 +161,4 @@ const WorkTestimonials: React.FC = () => {
     );
 };
 
-export default WorkTestimonials;
+export default ProductTestimonials;

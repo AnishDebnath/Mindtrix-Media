@@ -13,7 +13,7 @@ const footerLinks = [
     {
         title: "Useful Links",
         links: [
-            { name: "Our Projects", path: "/" },
+            { name: "Our Products", path: "/product" },
             { name: "About Us", path: "/#about" },
             { name: "News & Blogs", path: "/blog" },
             { name: "Our Team", path: "/about" }

@@ -10,13 +10,13 @@ import {
 } from '../../components';
 import Hero from './Hero';
 import Carousel from './Carousel';
-import Marquee from './Marquee';
+import MarqueeTag from './MarqueeTag';
 import About from './About';
 import Services from './Services';
-import FeaturedWork from './FeaturedWork';
+import FeaturedProducts from './FeaturedProducts';
 import Testimonials from './Testimonials';
 import Blog from './Blog';
-import MarqueeWork from './MarqueeWork';
+import FooterMarquee from './FooterMarquee';
 
 const Home: React.FC = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
         <div className="relative z-10">
             <Hero />
             <Carousel windowWidth={windowWidth} />
-            <Marquee />
+            <MarqueeTag />
             <About />
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20">
                 <BrandShowcase />
@@ -40,12 +40,12 @@ const Home: React.FC = () => {
             <WhyChooseUs />
             <Services />
             <Process />
-            <FeaturedWork />
+            <FeaturedProducts />
             <OurSolution />
             <Testimonials />
             <FAQ />
             <Blog />
-            <MarqueeWork />
+            <FooterMarquee />
             <CTA />
         </div>
     );

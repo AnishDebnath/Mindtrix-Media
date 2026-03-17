@@ -1,7 +1,7 @@
 export { default as FAQ } from './FAQ';
 export { default as Process } from './Process';
 export { default as WhyChooseUs } from './WhyChooseUs';
-export { default as WorkTestimonials } from './WorkTestimonials';
+export { default as ProductTestimonials } from './ProductTestimonials';
 export { default as BrandShowcase } from './BrandShowcase';
 export { default as CTA } from './CTA';
 export { default as Footer } from './Footer';

@@ -4,7 +4,7 @@ import AboutHeroImage from './AboutHeroImage';
 import AboutValues from './AboutValues';
 import AboutStats from './AboutStats';
 import AboutTeam from './AboutTeam';
-import { WhyChooseUs, WorkTestimonials, BrandShowcase, CTA } from '../../components';
+import { WhyChooseUs, ProductTestimonials, BrandShowcase, CTA } from '../../components';
 
 
 const AboutPage: React.FC = () => {
@@ -29,7 +29,7 @@ const AboutPage: React.FC = () => {
             <AboutValues />
             <AboutTeam />
             <WhyChooseUs />
-            <WorkTestimonials />
+            <ProductTestimonials />
             <CTA />
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const MarqueeWork: React.FC = () => {
+const MarqueeProduct: React.FC = () => {
     return (
         <section className="py-8 md:py-12 2xl:py-16 bg-transparent overflow-hidden">
             <div className="flex flex-col gap-8">
@@ -16,7 +16,7 @@ const MarqueeWork: React.FC = () => {
                         {[...Array(12)].map((_, i) => (
                             <div key={i} className="flex items-center gap-12">
                                 <span className="text-7xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
-                                    Let’s work together.
+                                    Let’s build together.
                                 </span>
                                 <span className="text-4xl md:text-6xl text-[#FF5C00]">✦</span>
                             </div>
@@ -35,7 +35,7 @@ const MarqueeWork: React.FC = () => {
                         {[...Array(12)].map((_, i) => (
                             <div key={i} className="flex items-center gap-12">
                                 <span className="text-7xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
-                                    Let’s work together.
+                                    Let’s build together.
                                 </span>
                                 <span className="text-4xl md:text-6xl text-slate-800">✦</span>
                             </div>
@@ -47,4 +47,4 @@ const MarqueeWork: React.FC = () => {
     );
 };
 
-export default MarqueeWork;
+export default MarqueeProduct;
