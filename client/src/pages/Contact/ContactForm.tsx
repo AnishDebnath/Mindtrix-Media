@@ -1,0 +1,188 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { sendContactEmail } from '../../utils/contactEmail';
+
+const ContactForm: React.FC = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        purpose: '',
+        message: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'invalid'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // Validation: Simple email regex and minimum 10 digits for phone
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneDigits = formData.phone.replace(/[^0-9]/g, '');
+
+        if (!emailRegex.test(formData.email) || phoneDigits.length < 10) {
+            setStatus('invalid');
+            setTimeout(() => setStatus('idle'), 5000);
+            return;
+        }
+
+        setStatus('sending');
+
+        try {
+            await sendContactEmail(formData);
+            setStatus('success');
+            setFormData({
+                fullName: '',
+                email: '',
+                phone: '',
+                purpose: '',
+                message: ''
+            });
+            setTimeout(() => setStatus('idle'), 5000);
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+
+        // Prevent non-numeric input for phone field
+        if (name === 'phone') {
+            const numericValue = value.replace(/[^0-9+]/g, ''); // Allow numbers and '+'
+            setFormData(prev => ({ ...prev, [name]: numericValue }));
+            return;
+        }
+
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="relative h-full overflow-hidden bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-[#0A0A0A]/95 backdrop-blur-2xl p-6 md:p-8 2xl:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white dark:border-white/10"
+        >
+            {/* Decorative background gradients */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+
+            <form onSubmit={handleSubmit} className="relative h-full flex flex-col space-y-5">
+                <div className="space-y-2">
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Full Name <span className="text-primary">*</span></label>
+                    <input
+                        required
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        placeholder="John Doe"
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email Address <span className="text-primary">*</span></label>
+                        <input
+                            required
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            placeholder="john@example.com"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Phone No <span className="text-primary">*</span></label>
+                        <input
+                            required
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            pattern="[0-9+ ]*"
+                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            placeholder="+91 XXXXX-XXXXX"
+                        />
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Contact Purpose <span className="text-primary">*</span></label>
+                    <input
+                        required
+                        type="text"
+                        name="purpose"
+                        value={formData.purpose}
+                        onChange={handleChange}
+                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        placeholder="e.g. Website Development, Maintenance & Support etc."
+                    />
+                </div>
+
+                <div className="flex-1 flex flex-col space-y-2">
+                    <label className="text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Message / Details <span className="text-primary">*</span></label>
+                    <textarea
+                        required
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="flex-1 w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-sm 2xl:text-base outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400 min-h-[120px]"
+                        placeholder="Tell us about your inquiry..."
+                    />
+                </div>
+
+                <div className="flex flex-col items-center pt-2 gap-4">
+                    <button
+                        disabled={status === 'sending'}
+                        className="w-full group flex items-center justify-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 px-8 rounded-full font-bold text-base md:text-lg hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+                    >
+                        <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
+                        <div className="w-8 h-8 flex-shrink-0 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
+                            {status === 'sending' ? (
+                                <div className="w-5 h-5 border-2 border-[#111] dark:border-white border-t-transparent rounded-full animate-spin" />
+                            ) : (
+                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                            )}
+                        </div>
+                    </button>
+
+                    <div className="flex items-center justify-center min-h-[24px] w-full px-2">
+                        {status === 'success' ? (
+                            <p className="text-sm md:text-base font-bold text-emerald-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">check_circle</span>
+                                Message sent successfully!
+                            </p>
+                        ) : status === 'error' ? (
+                            <p className="text-sm md:text-base font-bold text-red-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">error</span>
+                                Failed to send message.
+                            </p>
+                        ) : status === 'invalid' ? (
+                            <p className="text-sm md:text-base font-bold text-orange-500 flex items-center gap-1 whitespace-nowrap">
+                                <span className="material-symbols-rounded text-lg md:text-xl">warning</span>
+                                Please provide a valid email & phone number.
+                            </p>
+                        ) : (
+                            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                <p className="text-xs md:text-sm font-medium italic whitespace-nowrap">We respond within 24 hours</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </form>
+        </motion.div>
+    );
+};
+
+export default ContactForm;
+
