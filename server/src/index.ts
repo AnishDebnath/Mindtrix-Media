@@ -31,7 +31,7 @@ const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL || 'mindtrixmediaindia@gmail
 const RECIPIENT_NAME = process.env.RECIPIENT_NAME || 'Mindtrix Media Team';
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
     res.json({ status: 'server is running' });
 });
 
@@ -120,6 +120,10 @@ app.post('/api/prototype', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+}
+
+export default app;
