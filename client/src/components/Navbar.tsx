@@ -19,6 +19,8 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+
     const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
 
@@ -68,14 +70,19 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
 
                     {/* Desktop Nav */}
-                    <div className="hidden lg:flex items-center bg-slate-100/80 dark:bg-white/5 rounded-full p-1 border border-slate-200 dark:border-white/5">
+                    <div
+                        className="hidden lg:flex items-center bg-slate-100/80 dark:bg-white/5 rounded-full p-1 border border-slate-200 dark:border-white/5"
+                        onMouseLeave={() => setHoveredPath(null)}
+                    >
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`relative px-2 lg:px-2.5 xl:px-3 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-primary'}`}
+                                onMouseEnter={() => setHoveredPath(link.path)}
+                                className={`relative px-2 lg:px-2.5 xl:px-3 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'}`}
                             >
                                 {link.name}
+
                                 {isActive(link.path) && (
                                     <motion.div
                                         layoutId="nav-pill"
@@ -83,9 +90,18 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
+
+                                {hoveredPath === link.path && !isActive(link.path) && (
+                                    <motion.div
+                                        layoutId="nav-hover-pill"
+                                        className="absolute inset-0 bg-slate-200 dark:bg-white/5 rounded-full -z-10"
+                                        transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
+                                    />
+                                )}
                             </Link>
                         ))}
                     </div>
+
 
                     {/* Actions */}
                     <div className="flex items-center gap-2.5 md:gap-3 mr-4">
