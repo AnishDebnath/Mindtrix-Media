@@ -178,7 +178,7 @@ const Hero: React.FC = () => {
                     className="mt-8 flex flex-col items-center"
                 >
                     <Link
-                        to="/contact"
+                        to="/free-prototype"
                         className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
                     >
                         Get Your Free Prototype

@@ -4,8 +4,8 @@ import { motion, animate } from 'framer-motion';
 const contactInfo = [
     {
         title: "Email Us",
-        value: "mindtrixmediaindia@gmail.com",
-        href: "mailto:mindtrixmediaindia@gmail.com",
+        value: "hello@mindtrixmedia.com",
+        href: "mailto:hello@mindtrixmedia.com",
         icon: "mail",
         color: "blue"
     },
@@ -19,7 +19,7 @@ const contactInfo = [
     {
         title: "Office",
         value: "Kolkata, India",
-        href: "https://www.google.com/maps/search/Kolkata,+India",
+        href: "https://maps.app.goo.gl/8CFaaPxF1kfkNXsB7",
         icon: "location_on",
         color: "orange"
     }
@@ -93,7 +93,7 @@ const ContactInfo: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-8 md:mb-10 leading-relaxed max-w-xl"
             >
-                Ready to take your business to the next level? Fill out the form or send us an email, and we'll get back to you within 24 hours.
+                Ready to take your business to the next level? Fill out the form or send us an email, and <span className="text-secondary">we'll get back to you within 24 hours.</span>
             </motion.p>
 
             <div className="space-y-6">

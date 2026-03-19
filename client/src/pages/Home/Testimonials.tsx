@@ -272,10 +272,10 @@ const Testimonials: React.FC = () => {
                                     <div className="flex flex-col items-center gap-0.5">
                                         <p className="text-slate-400 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest">Prefer to Email?</p>
                                         <a
-                                            href="mailto:mindtrixmediaindia@gmail.com"
+                                            href="mailto:hello@mindtrixmedia.com"
                                             className="text-slate-200 hover:text-white transition-colors text-sm font-medium border-b border-white/10"
                                         >
-                                            mindtrixmediaindia@gmail.com
+                                            hello@mindtrixmedia.com
                                         </a>
                                     </div>
                                 </div>
