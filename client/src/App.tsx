@@ -60,14 +60,8 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
 };
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    // Check localStorage, and default to true (dark) if nothing is found
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme === 'dark';
-    }
-    return true;
-  });
+  const [darkMode, setDarkMode] = useState<boolean>(true);
+
 
   useEffect(() => {
     if (darkMode) {

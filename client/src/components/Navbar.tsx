@@ -89,14 +89,15 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
                     {/* Actions */}
                     <div className="flex items-center gap-2.5 md:gap-3 mr-4">
-                        <button
+                        {/* <button
                             onClick={toggleTheme}
                             className="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                             aria-label="Toggle Theme"
                         >
                             <span className="material-symbols-rounded block dark:hidden text-xl">dark_mode</span>
                             <span className="material-symbols-rounded hidden dark:block text-xl">light_mode</span>
-                        </button>
+                        </button> */}
+
 
                         <Link
                             to="/free-prototype"
