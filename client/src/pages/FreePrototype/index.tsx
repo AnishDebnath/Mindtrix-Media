@@ -83,14 +83,14 @@ const FreePrototypePage: React.FC = () => {
                                 transition={{ delay: 0.2 }}
                                 className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-12 leading-relaxed max-w-xl"
                             >
-                                We're so confident in our design skills that we'll design a high-fidelity prototype of your new website for <strong className="text-slate-900 dark:text-white underline decoration-primary/30 decoration-4 underline-offset-4">free</strong>. No strings attached.
+                                We're so confident in our design skills that we'll design a high-detailed prototype of your new website for <strong className="text-slate-900 dark:text-secondary underline decoration-primary/30 decoration-4 underline-offset-4">free</strong>. No hidden conditions.
                             </motion.p>
 
                             <div className="space-y-8">
                                 {[
                                     { title: "Review Your Strategy", desc: "In-depth competitor and market analysis.", icon: "analytics", color: "blue" },
-                                    { title: "Visual Prototype", desc: "Custom high-fidelity homepage concept.", icon: "palette", color: "orange" },
-                                    { title: "Risk-Free Decision", desc: "100% free with no strings attached.", icon: "verified", color: "blue" }
+                                    { title: "Visual Prototype", desc: "Preview the product before development.", icon: "palette", color: "orange" },
+                                    { title: "Risk-Free Decision", desc: "100% free, no hidden conditions.", icon: "verified", color: "blue" }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
@@ -152,7 +152,7 @@ const FreePrototypePage: React.FC = () => {
                                         ))}
                                     </div>
                                     <p className="text-sm font-bold text-slate-700 dark:text-slate-300">
-                                        Trusted by <CountUp val={100} />+ clients
+                                        Trusted by <CountUp val={10} />+ clients
                                     </p>
                                 </div>
                             </motion.div>
