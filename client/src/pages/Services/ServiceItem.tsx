@@ -79,7 +79,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                         </Link>
 
                         <Link
-                            to="/work"
+                            to="/product?category=Customized"
                             className="group flex items-center gap-2 px-5 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             View Work

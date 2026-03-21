@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from './ProductCard';
 import ProductHeader from './ProductHeader';
@@ -10,7 +11,23 @@ import { products, categories } from './productsData';
 
 
 const ProductPage: React.FC = () => {
-    const [activeCategory, setActiveCategory] = useState(categories[0]);
+    const [searchParams] = useSearchParams();
+    const initialCategory = searchParams.get('category');
+    
+    // Check if the query category exists in our categories list
+    const validInitialCategory = initialCategory && categories.includes(initialCategory) 
+        ? initialCategory 
+        : categories[0];
+
+    const [activeCategory, setActiveCategory] = useState(validInitialCategory);
+
+    // Update state if URL changes - e.g. when clicking a link from another page
+    useEffect(() => {
+        const categoryFromUrl = searchParams.get('category');
+        if (categoryFromUrl && categories.includes(categoryFromUrl)) {
+            setActiveCategory(categoryFromUrl);
+        }
+    }, [searchParams]);
 
     const filteredProducts = products.filter(p => p.category === activeCategory);
 
