@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // Import Videos
-import BuiltForBusinessVideo from '../assets/built-for-business.mp4';
-import StartSmallVideo from '../assets/start-small.mp4';
+import BuiltForBusinessVideo from '../assets/why-choose-us/built-for-business.mp4';
+import StartSmallVideo from '../assets/why-choose-us/start-small.mp4';
 
 const WhyChooseUs: React.FC = () => {
     return (

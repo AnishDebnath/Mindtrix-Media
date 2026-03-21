@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Import Process Videos
-import DiscoveryVideo from '../assets/drop-requirement.mp4';
-import DesignVideo from '../assets/magic.mp4';
-import DevelopmentVideo from '../assets/feedback.mp4';
-import LaunchVideo from '../assets/launch.mp4';
+import DiscoveryVideo from '../assets/process/drop-requirement.mp4';
+import DesignVideo from '../assets/process/magic.mp4';
+import DevelopmentVideo from '../assets/process/feedback.mp4';
+import LaunchVideo from '../assets/process/launch.mp4';
 
 const Process: React.FC = () => {
     return (
