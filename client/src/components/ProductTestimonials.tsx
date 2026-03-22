@@ -60,7 +60,7 @@ const TestimonialCard: React.FC<{ item: typeof testimonials[0] }> = ({ item }) =
         <div className="flex flex-col gap-3 md:gap-4">
             <div className="flex items-center gap-3 pb-2">
                 <div className="flex-shrink-0 relative">
-                    <img src={item.avatar} alt={item.handle} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
+                    <img src={item.avatar} alt={item.handle} loading="lazy" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
                     <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900">
                         <span className="material-symbols-rounded text-[6px] md:text-[8px] text-white">verified</span>
                     </div>

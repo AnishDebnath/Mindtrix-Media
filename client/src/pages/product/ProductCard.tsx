@@ -32,6 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                 <img
                                     src={product.image}
                                     alt={product.title}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                                 />
                                 {/* Overlays Tags */}

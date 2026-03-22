@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link to="/" className="flex items-center gap-3 mb-6 group">
                                 <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform overflow-hidden p-1.5">
-                                    <img src={logo} alt="Mindtrix Media" className="w-full h-full object-contain" />
+                                    <img src={logo} alt="Mindtrix Media" loading="lazy" className="w-full h-full object-contain" />
                                 </div>
                                 <span className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                             </Link>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                                             className="w-8 h-8 rounded-full bg-[#1A1A1A] flex items-center justify-center hover:bg-primary transition-all duration-300 group"
                                             aria-label={social.name}
                                         >
-                                            <img src={social.icon} alt={social.name} className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                            <img src={social.icon} alt={social.name} loading="lazy" className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
                                         </a>
                                     ))}
                                 </div>

@@ -53,6 +53,7 @@ const Blog: React.FC = () => {
                                 <img
                                     src={post.img}
                                     alt={post.title}
+                                    loading="lazy"
                                     className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>

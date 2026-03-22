@@ -52,6 +52,7 @@ const FeaturedProducts: React.FC = () => {
                                     <img
                                         src={product.image}
                                         alt={product.title}
+                                        loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     />
 

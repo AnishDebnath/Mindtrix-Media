@@ -56,6 +56,7 @@ const Process: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={DiscoveryVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
@@ -83,6 +84,7 @@ const Process: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={DesignVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
@@ -110,6 +112,7 @@ const Process: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={DevelopmentVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
@@ -137,6 +140,7 @@ const Process: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={LaunchVideo} type="video/mp4" />
                                 Your browser does not support the video tag.

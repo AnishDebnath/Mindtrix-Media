@@ -63,6 +63,7 @@ const WhyChooseUs: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={BuiltForBusinessVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
@@ -89,6 +90,7 @@ const WhyChooseUs: React.FC = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                             >
                                 <source src={StartSmallVideo} type="video/mp4" />
                                 Your browser does not support the video tag.

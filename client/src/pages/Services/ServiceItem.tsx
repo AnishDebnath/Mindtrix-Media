@@ -32,6 +32,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                                 <img
                                     src={service.image}
                                     alt={service.title}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                                 />
                             </div>

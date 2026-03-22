@@ -161,7 +161,7 @@ const ProductDetail: React.FC = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     className={`w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
                                 >
-                                    <img src={block.src} alt={block.alt} className="w-full h-auto" />
+                                    <img src={block.src} alt={block.alt} loading="lazy" className="w-full h-auto" />
                                 </motion.div>
                             );
                         } else if (block.type === 'grid') {
@@ -176,7 +176,7 @@ const ProductDetail: React.FC = () => {
                                             transition={{ delay: i * 0.2 }}
                                             className="rounded-[1.2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 dark:ring-white/10 aspect-square"
                                         >
-                                            <img src={img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                                            <img src={img} alt="" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                                         </motion.div>
                                     ))}
                                 </div>
@@ -223,6 +223,7 @@ const ProductDetail: React.FC = () => {
                                     <img
                                         src={p.image}
                                         alt={p.title}
+                                        loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     />
                                     <div className="absolute top-4 right-4 px-4 py-1.5 bg-black/80 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full z-10 border border-white/10">
