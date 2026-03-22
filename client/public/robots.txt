@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Priority pages
+Allow: /
+Allow: /services
+Allow: /product
+Allow: /about
+Allow: /blog
+Allow: /contact
+Allow: /free-prototype
+
+# Block build artifacts
+Disallow: /dist/
+Disallow: /.vite/
+
+Sitemap: https://mindtrixmedia.com/sitemap.xml

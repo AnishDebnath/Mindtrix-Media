@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { articles } from './blogData';
 import ArticleCard from './ArticleCard';
 import { CTA } from '../../components';
+import useSEO from '../../utils/useSEO';
 
 const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -12,9 +13,41 @@ const BlogPost: React.FC = () => {
     const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
     const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [id]);
+    useSEO(
+        article
+            ? {
+                title: `${article.title} | Mindtrix Media Blog`,
+                description: article.desc,
+                keywords: `${article.tags.join(', ')}, Mindtrix Media, web development blog`,
+                canonicalPath: `/blog/${article.id}`,
+                ogTitle: article.title,
+                ogDescription: article.desc,
+                ogImage: article.img,
+                twitterImage: article.img,
+                structuredData: {
+                    '@context': 'https://schema.org',
+                    '@type': 'BlogPosting',
+                    headline: article.title,
+                    description: article.desc,
+                    image: article.img,
+                    url: `https://mindtrixmedia.com/blog/${article.id}`,
+                    author: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com' },
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Mindtrix Media',
+                        url: 'https://mindtrixmedia.com',
+                        logo: { '@type': 'ImageObject', url: 'https://mindtrixmedia.com/src/assets/mindtrix-media-logo.png' },
+                    },
+                    keywords: article.tags.join(', '),
+                    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://mindtrixmedia.com/blog/${article.id}` },
+                },
+              }
+            : {
+                title: 'Article Not Found — Mindtrix Media Blog',
+                description: 'The article you are looking for could not be found.',
+                canonicalPath: '/blog',
+              }
+    );
 
     if (!article) {
         return (

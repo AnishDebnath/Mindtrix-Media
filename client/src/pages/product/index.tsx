@@ -5,8 +5,8 @@ import ProductCard from './ProductCard';
 import ProductHeader from './ProductHeader';
 import ProductFilter from './ProductFilter';
 import { FreePrototype, Process, ProductTestimonials, CTA } from '../../components';
-
 import { products, categories } from './productsData';
+import useSEO from '../../utils/useSEO';
 
 
 
@@ -20,6 +20,23 @@ const ProductPage: React.FC = () => {
         : categories[0];
 
     const [activeCategory, setActiveCategory] = useState(validInitialCategory);
+
+    useSEO({
+        title: 'Products & Projects | Prebuilt Website Templates & Custom Builds — Mindtrix Media',
+        description: 'Explore Mindtrix Media\'s portfolio of prebuilt website templates and custom-built digital solutions — from e-commerce stores to CRM systems and corporate websites.',
+        keywords: 'prebuilt website templates, buy website template, custom website portfolio, web design portfolio, e-commerce templates, corporate website design, Mindtrix Media products',
+        canonicalPath: '/product',
+        ogTitle: 'Products — Prebuilt Templates & Custom Solutions | Mindtrix Media',
+        ogDescription: 'Buy ready-to-launch website templates or explore our custom-built digital solutions. E-commerce, CRM, ERP & corporate websites.',
+        structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Products & Projects — Mindtrix Media',
+            url: 'https://mindtrixmedia.com/product',
+            description: 'A showcase of prebuilt website templates and custom digital solutions built by Mindtrix Media.',
+            publisher: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com' },
+        },
+    });
 
     // Update state if URL changes - e.g. when clicking a link from another page
     useEffect(() => {

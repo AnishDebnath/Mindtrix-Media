@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, animate } from 'framer-motion';
 import PrototypeForm from './PrototypeForm';
 import { Process, OurSolution, FAQ, CTA } from '../../components';
+import useSEO from '../../utils/useSEO';
 
 const CountUp: React.FC<{ val: number }> = ({ val }) => {
     const [count, setCount] = useState(0);
@@ -18,6 +19,26 @@ const CountUp: React.FC<{ val: number }> = ({ val }) => {
 
 const FreePrototypePage: React.FC = () => {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
+
+    useSEO({
+        title: 'Free Website Prototype — See Your New Site Before You Pay | Mindtrix Media',
+        description: 'Get a high-fidelity prototype of your new website completely free before any development starts. No strings attached. Mindtrix Media delivers a visual preview so you sign with confidence.',
+        keywords: 'free website prototype, free web design mockup, website design preview, risk-free web development, Mindtrix Media free prototype, website before you pay',
+        canonicalPath: '/free-prototype',
+        ogTitle: 'Get a Free Website Prototype — Zero Risk | Mindtrix Media',
+        ogDescription: 'We design a detailed prototype of your website before you pay anything. See it, love it, then we build it. Completely free — no hidden conditions.',
+        structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'Offer',
+            name: 'Free Website Prototype',
+            description: 'Mindtrix Media offers a completely free high-fidelity website prototype before any development contract is signed.',
+            price: '0',
+            priceCurrency: 'USD',
+            url: 'https://mindtrixmedia.com/free-prototype',
+            seller: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com' },
+            availability: 'https://schema.org/InStock',
+        },
+    });
     return (
         <div className="flex flex-col pt-28 md:pt-36 2xl:pt-40">
             <div className="relative">

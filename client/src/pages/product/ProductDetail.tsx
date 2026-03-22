@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { products } from './productsData';
 import { CTA } from '../../components';
+import useSEO from '../../utils/useSEO';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -12,9 +13,35 @@ const ProductDetail: React.FC = () => {
     const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
     const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [id]);
+    useSEO(
+        product
+            ? {
+                title: `${product.title.split(':')[0]} | Case Study — Mindtrix Media`,
+                description: product.description,
+                keywords: `${product.title}, ${product.industry}, ${product.services.join(', ')}, Mindtrix Media case study`,
+                canonicalPath: `/product/${product.id}`,
+                ogTitle: `${product.title.split(':')[0]} — Mindtrix Media Case Study`,
+                ogDescription: product.subtitle,
+                ogImage: product.image,
+                twitterImage: product.image,
+                structuredData: {
+                    '@context': 'https://schema.org',
+                    '@type': 'CreativeWork',
+                    name: product.title,
+                    description: product.description,
+                    url: `https://mindtrixmedia.com/product/${product.id}`,
+                    image: product.image,
+                    creator: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com' },
+                    genre: product.industry,
+                    keywords: product.services.join(', '),
+                },
+              }
+            : {
+                title: 'Product Not Found — Mindtrix Media',
+                description: 'The product you are looking for could not be found.',
+                canonicalPath: '/product',
+              }
+    );
 
     if (!product) {
         return (
