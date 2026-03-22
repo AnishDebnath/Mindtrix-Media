@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Pages
@@ -76,10 +76,10 @@ const App: React.FC = () => {
   const toggleTheme = () => setDarkMode(prev => !prev);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <AppContent darkMode={darkMode} toggleTheme={toggleTheme} />
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
