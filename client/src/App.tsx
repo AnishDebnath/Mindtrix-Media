@@ -19,9 +19,30 @@ import { Navbar, Layout } from './components';
 // Scroll to top component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
+    // Save original style to restore it after the jump
+    const htmlElement = document.documentElement;
+    const currentScrollBehavior = htmlElement.style.scrollBehavior;
+    
+    // Disable smooth scrolling temporarily for an instant jump
+    htmlElement.style.scrollBehavior = 'auto';
+    
+    // Jump to top
     window.scrollTo(0, 0);
+    
+    // Some browsers need it directly on the element
+    htmlElement.scrollTo(0, 0);
+    
+    // Restore original scroll behavior after a slight delay
+    // This delay is necessary to ensure the jump has been processed
+    const timer = setTimeout(() => {
+      htmlElement.style.scrollBehavior = currentScrollBehavior;
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
+
   return null;
 };
 
