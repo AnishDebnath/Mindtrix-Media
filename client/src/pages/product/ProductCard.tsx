@@ -75,33 +75,47 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
 
                     {/* Action Area */}
                     <div className="flex flex-wrap gap-4 w-full sm:w-auto">
-                        <Link
-                            to={product.buyLink || "/contact"}
-                            className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
-                        >
-                            Buy Now
-                            <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">shopping_cart</span>
-                        </Link>
+                        {product.category === "Prebuilt" ? (
+                            <>
+                                <Link
+                                    to={product.buyLink || "/contact"}
+                                    className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                                >
+                                    Buy Now
+                                    <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">shopping_cart</span>
+                                </Link>
 
-                        <a
-                            href={product.liveLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white px-6 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/10 transition-all font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest hover:scale-105 active:scale-95"
-                        >
-                            <span className="material-symbols-rounded text-base">visibility</span>
-                            {product.liveLabel || "View Live"}
-                        </a>
+                                <a
+                                    href={product.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white px-6 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/10 transition-all font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest hover:scale-105 active:scale-95"
+                                >
+                                    <span className="material-symbols-rounded text-base">visibility</span>
+                                    {product.liveLabel || "View Live"}
+                                </a>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to={product.customiseLink || "/contact"}
+                                    className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                                >
+                                    Customise
+                                    <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">tune</span>
+                                </Link>
 
-                        <Link
-                            to={product.customiseLink || "/contact"}
-                            className="group flex items-center gap-2 px-5 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                        >
-                            Customise
-                            <span className="w-6 h-6 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
-                                <span className="material-symbols-rounded text-[10px]">tune</span>
-                            </span>
-                        </Link>
+                                <a
+                                    href={product.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white px-6 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/10 transition-all font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest hover:scale-105 active:scale-95"
+                                >
+                                    <span className="material-symbols-rounded text-base">visibility</span>
+                                    {product.liveLabel || "View Live"}
+                                </a>
+                            </>
+                        )}
                     </div>
                 </div>
 
