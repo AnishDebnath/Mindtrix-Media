@@ -3,8 +3,6 @@
 
 Mindtrix Media is a high-end, modern digital agency platform designed with a focus on **Visual Excellence** and **Premium Aesthetics**. We specialize in building scalable websites, e-commerce stores, CRM systems, and ERP platforms that help businesses grow and scale worldwide.
 
-![Mindtrix Media Preview](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
-
 ---
 
 ## ✨ Features
