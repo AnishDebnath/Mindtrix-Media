@@ -2,6 +2,7 @@
   "name": "mindtrix-media",
   "private": true,
   "type": "module",
+  "description": "Mindtrix Media is a high-end web development and software agency platform focused on Visual Excellence and Premium Aesthetics.",
   "version": "1.0.0",
   "workspaces": [
     "client",

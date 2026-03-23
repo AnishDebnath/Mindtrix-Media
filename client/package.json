@@ -23,7 +23,7 @@
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   },
-  "description": "Mindtrix Media is a high-end, modern web application for a professional video editing agency based in London, UK. Designed with a focus on \"Visual Excellence\" and \"Premium Aesthetics,\" the platform showcases the agency's portfolio, services, and growth-focused editing philosophy.",
+  "description": "Mindtrix Media is a high-end, modern web application for a professional web development and software agency. Designed with a focus on \"Visual Excellence\" and \"Premium Aesthetics,\" the platform showcases the agency's portfolio, services, and growth-focused development philosophy.",
   "main": "index.js",
   "repository": {
     "type": "git",
