@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
     useSEO({
-        title: 'Mindtrix Media | Website Development & Software Solutions — CRM, ERP & E-commerce',
+        title: 'Mindtrix Media | Website Development & Software Solutions',
         description: 'Mindtrix Media builds professional websites, e-commerce stores, custom CRM systems, and ERP platforms for businesses worldwide. See a free prototype before you pay — zero risk.',
         keywords: 'website development company, custom CRM development, ERP software development, ecommerce website development, business website design, web development agency India, SaaS development, responsive web design, Mindtrix Media',
         canonicalPath: '/',
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                     description: 'Website development and software solutions agency specialising in custom CRM, ERP, SaaS and e-commerce platforms for businesses worldwide.',
                     address: { '@type': 'PostalAddress', addressLocality: 'Kolkata', addressCountry: 'IN' },
                     contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'hello@mindtrixmedia.com' },
-                    sameAs: ['https://www.linkedin.com/company/mindtrix-media', 'https://twitter.com/MindtrixMedia'],
+                    // sameAs: ['https://www.linkedin.com/company/mindtrix-media', 'https://twitter.com/MindtrixMedia'],
                 },
                 {
                     '@type': 'WebSite',
