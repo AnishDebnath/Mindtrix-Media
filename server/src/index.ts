@@ -8,7 +8,7 @@ import {
     contactConfirmationTemplate, 
     prototypeAdminTemplate, 
     prototypeConfirmationTemplate 
-} from './templates/index.js';
+} from './templates';
 
 
 console.log('Server is starting up...');
@@ -19,30 +19,6 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-
-// Brevo SDK Setup
-let apiInstance: any = null;
-
-const initializeBrevo = () => {
-    if (apiInstance) return apiInstance;
-
-    const apiKey = process.env.BREVO_API_KEY;
-    if (!apiKey) {
-        throw new Error('BREVO_API_KEY is not defined in environment variables.');
-    }
-
-    try {
-        const defaultClient = SibApiV3Sdk.ApiClient.instance;
-        const auth = defaultClient.authentications['api-key'];
-        auth.apiKey = apiKey;
-        apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-        console.log('Brevo SDK initialized successfully.');
-        return apiInstance;
-    } catch (error) {
-        console.error('Failed to initialize Brevo SDK:', error);
-        throw error;
-    }
-};
 
 // Sender/Recipient settings
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'hello@mindtrixmedia.com';
@@ -58,16 +34,35 @@ const sendEmail = async (
     htmlContent: string,
     replyTo?: { email: string, name: string }
 ) => {
-    const api = initializeBrevo();
-    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-    sendSmtpEmail.subject = subject;
-    sendSmtpEmail.htmlContent = htmlContent;
-    sendSmtpEmail.sender = { name: RECIPIENT_NAME, email: SENDER_EMAIL };
-    sendSmtpEmail.to = [to];
-    if (replyTo) {
-        sendSmtpEmail.replyTo = replyTo;
+    const apiKey = process.env.BREVO_API_KEY;
+    
+    if (!apiKey) {
+        throw new Error('BREVO_API_KEY is not defined. Please check your Vercel Environment Variables.');
     }
-    return await api.sendTransacEmail(sendSmtpEmail);
+
+    try {
+        // Initialize API client in-scope for absolute reliability in serverless
+        const defaultClient = SibApiV3Sdk.ApiClient.instance;
+        const auth = defaultClient.authentications['api-key'];
+        auth.apiKey = apiKey;
+
+        const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+        const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
+        
+        sendSmtpEmail.subject = subject;
+        sendSmtpEmail.htmlContent = htmlContent;
+        sendSmtpEmail.sender = { name: RECIPIENT_NAME, email: SENDER_EMAIL };
+        sendSmtpEmail.to = [to];
+        
+        if (replyTo) {
+            sendSmtpEmail.replyTo = replyTo;
+        }
+
+        return await apiInstance.sendTransacEmail(sendSmtpEmail);
+    } catch (error: any) {
+        console.error('Brevo SDK Internal Error:', error);
+        throw error;
+    }
 };
 
 // Health check endpoint
@@ -81,22 +76,18 @@ app.post('/api/contact', async (req, res) => {
     console.log(`Received contact form submission from: ${email}`);
 
     try {
-        // 1. Send notification to ADMIN
         const adminHtml = contactAdminTemplate({ fullName, email, phone, purpose, message });
 
         await sendEmail(
-
             { email: RECIPIENT_EMAIL, name: RECIPIENT_NAME },
             `New Contact from ${fullName}`,
             adminHtml,
             { email, name: fullName }
         );
 
-        // 2. Send confirmation to SENDER
         const senderHtml = contactConfirmationTemplate({ fullName, purpose });
 
         await sendEmail(
-
             { email, name: fullName },
             `Thanks for contacting Mindtrix Media!`,
             senderHtml
@@ -105,11 +96,12 @@ app.post('/api/contact', async (req, res) => {
         console.log(`Emails sent successfully via Brevo for contact form.`);
         res.status(200).json({ success: true, message: 'Message sent successfully!' });
     } catch (error: any) {
-        console.error('Brevo API Error:', error);
+        console.error('Endpoint Error:', error);
+        const detailedError = error.response ? JSON.parse(error.response.text) : error.message;
         res.status(500).json({
             success: false,
-            message: 'Failed to send email.',
-            error: error.message
+            message: 'Failed to send message.',
+            error: detailedError
         });
     }
 });
@@ -144,11 +136,12 @@ app.post('/api/prototype', async (req, res) => {
         console.log(`Emails sent successfully via Brevo for prototype request.`);
         res.status(200).json({ success: true, message: 'Prototype request sent successfully!' });
     } catch (error: any) {
-        console.error('Brevo API Error:', error);
+        console.error('Endpoint Error:', error);
+        const detailedError = error.response ? JSON.parse(error.response.text) : error.message;
         res.status(500).json({
             success: false,
             message: 'Failed to send request.',
-            error: error.message
+            error: detailedError
         });
     }
 });
