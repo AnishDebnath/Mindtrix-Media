@@ -8,7 +8,7 @@ import {
     contactConfirmationTemplate, 
     prototypeAdminTemplate, 
     prototypeConfirmationTemplate 
-} from './templates';
+} from './templates/index.js';
 
 
 console.log('Server is starting up...');
@@ -146,7 +146,8 @@ app.post('/api/prototype', async (req, res) => {
     }
 });
 
-if (process.env.NODE_ENV !== 'production') {
+// Avoid app.listen on Vercel
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
