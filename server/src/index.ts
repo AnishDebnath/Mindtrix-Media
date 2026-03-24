@@ -8,7 +8,7 @@ import {
     contactConfirmationTemplate, 
     prototypeAdminTemplate, 
     prototypeConfirmationTemplate 
-} from './templates';
+} from './templates/index.js';
 
 
 console.log('Server is starting up...');
@@ -21,21 +21,32 @@ app.use(cors());
 app.use(express.json());
 
 // Brevo SDK Setup
-let apiInstance: any;
+let apiInstance: any = null;
 
-try {
-    const defaultClient = SibApiV3Sdk.ApiClient.instance;
-    const apiKey = defaultClient.authentications['api-key'];
-    apiKey.apiKey = process.env.BREVO_API_KEY;
-    apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-    console.log('Brevo SDK initialized successfully.');
-} catch (error) {
-    console.error('Failed to initialize Brevo SDK:', error);
-}
+const initializeBrevo = () => {
+    if (apiInstance) return apiInstance;
 
-// Sender/Recipient settings from .env
+    const apiKey = process.env.BREVO_API_KEY;
+    if (!apiKey) {
+        throw new Error('BREVO_API_KEY is not defined in environment variables.');
+    }
+
+    try {
+        const defaultClient = SibApiV3Sdk.ApiClient.instance;
+        const auth = defaultClient.authentications['api-key'];
+        auth.apiKey = apiKey;
+        apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+        console.log('Brevo SDK initialized successfully.');
+        return apiInstance;
+    } catch (error) {
+        console.error('Failed to initialize Brevo SDK:', error);
+        throw error;
+    }
+};
+
+// Sender/Recipient settings
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'hello@mindtrixmedia.com';
-const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL || 'hello@mindtrixmedia.com';
+const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL || 'mindtrixmediaindia@gmail.com';
 const RECIPIENT_NAME = process.env.RECIPIENT_NAME || 'Mindtrix Media Team';
 
 /**
@@ -47,6 +58,7 @@ const sendEmail = async (
     htmlContent: string,
     replyTo?: { email: string, name: string }
 ) => {
+    const api = initializeBrevo();
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     sendSmtpEmail.subject = subject;
     sendSmtpEmail.htmlContent = htmlContent;
@@ -55,7 +67,7 @@ const sendEmail = async (
     if (replyTo) {
         sendSmtpEmail.replyTo = replyTo;
     }
-    return await apiInstance.sendTransacEmail(sendSmtpEmail);
+    return await api.sendTransacEmail(sendSmtpEmail);
 };
 
 // Health check endpoint

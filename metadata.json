@@ -1,5 +1,7 @@
 {
   "name": "Mindtrix Media",
   "description": "Mindtrix Media builds professional websites, e-commerce stores, custom CRM systems, and ERP platforms for businesses worldwide. See a free prototype before you pay — zero risk.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "https://www.google.com/webmasters/verification/"
+  ]
 }
