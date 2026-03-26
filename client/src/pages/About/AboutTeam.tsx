@@ -9,21 +9,21 @@ const teamMembers = [
         name: "Preetam Chakraborty",
         role: "Founder & Chief Executive Officer",
         image: preetamImage,
-        socials: {
-            linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
-            instagram: "https://www.instagram.com/preetam.photographer",
-        }
+        // socials: {
+        //     linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
+        //     instagram: "https://www.instagram.com/preetam.photographer",
+        // }
     },
     {
         name: "Anish Debnath",
         role: "Co-Founder & Lead Developer",
         image: anishImage,
-        socials: {
-            twitter: "https://x.com/anishdebnath07",
-            linkedin: "https://www.linkedin.com/in/anish-debnath-7b3516211",
-            instagram: "https://www.instagram.com/aanishdebnath/",
-            website: "https://anishdebnath.netlify.app/"
-        }
+        // socials: {
+        //     twitter: "https://x.com/anishdebnath07",
+        //     linkedin: "https://www.linkedin.com/in/anish-debnath-7b3516211",
+        //     instagram: "https://www.instagram.com/aanishdebnath/",
+        //     website: "https://anishdebnath.netlify.app/"
+        // }
     },
 ];
 

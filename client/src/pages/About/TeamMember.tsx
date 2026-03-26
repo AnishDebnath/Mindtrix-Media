@@ -6,12 +6,12 @@ interface TeamMemberProps {
         name: string;
         role: string;
         image: string;
-        socials?: {
-            twitter?: string;
-            linkedin?: string;
-            instagram?: string;
-            website?: string;
-        };
+        // socials?: {
+        //     twitter?: string;
+        //     linkedin?: string;
+        //     instagram?: string;
+        //     website?: string;
+        // };
     };
     delay: number;
 }
@@ -38,7 +38,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
 
                 {/* Content Area */}
                 <div className="p-4 pt-1 lg:p-3 lg:pt-0.5 xl:p-4 xl:pt-1 flex flex-col flex-1 relative">
-                    <div className="flex flex-col gap-1.5 mb-4">
+                    <div className="flex flex-col gap-1.5">
                         <h3 className="text-base md:text-lg lg:text-base 2xl:text-xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight">
                             {member.name}
                         </h3>
@@ -49,7 +49,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                     </div>
 
                     {/* Social Media Links */}
-                    {member.socials && (
+                    {/* {member.socials && (
                         <div className="mt-auto pt-3 border-t border-slate-100 dark:border-white/5">
                             <div className="flex gap-1.5 flex-wrap">
                                 {member.socials.twitter && (
@@ -112,7 +112,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                                 )}
                             </div>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
         </motion.div>
