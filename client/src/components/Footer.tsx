@@ -43,9 +43,7 @@ const Footer: React.FC = () => {
                         {/* Branding */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link to="/" className="flex items-center gap-3 mb-6 group">
-                                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform overflow-hidden p-1.5">
-                                    <img src={logo} alt="Mindtrix Media" loading="lazy" className="w-full h-full object-contain" />
-                                </div>
+                                <img src={logo} alt="Mindtrix Media" loading="lazy" className="w-10 h-10 object-contain" />
                                 <span className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">Mindtrix Media</span>
                             </Link>
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-bold text-white mb-4 md:mb-5 leading-tight">Ready to build <br />your custom software system?</h3>

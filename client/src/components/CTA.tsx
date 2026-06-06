@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logo from "../assets/preetam.jpeg"
 
 const CTA: React.FC = () => {
     return (
@@ -75,7 +76,7 @@ const CTA: React.FC = () => {
 
                             <div className="flex items-center gap-3 mb-5 md:mb-6 relative">
                                 <div className="flex items-center gap-2">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
+                                    <img src={logo} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
                                     <span className="text-slate-400 font-bold">+</span>
                                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-white text-[9px] font-bold shadow-sm">You</div>
                                 </div>
