@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-// Import Videos
-import BuiltForBusinessVideo from '../assets/why-choose-us/built-for-business.mp4';
-import StartSmallVideo from '../assets/why-choose-us/start-small.mp4';
+import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const WhyChooseUs: React.FC = () => {
     return (
@@ -65,7 +63,7 @@ const WhyChooseUs: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={BuiltForBusinessVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("built-for-business_qo40uk.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -92,7 +90,7 @@ const WhyChooseUs: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={StartSmallVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("start-small_njf8xc.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>

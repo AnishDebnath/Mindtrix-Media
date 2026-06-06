@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Import Process Videos
-import DiscoveryVideo from '../assets/process/drop-requirement.mp4';
-import DesignVideo from '../assets/process/magic.mp4';
-import DevelopmentVideo from '../assets/process/feedback.mp4';
-import LaunchVideo from '../assets/process/launch.mp4';
+import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const Process: React.FC = () => {
     return (
@@ -58,7 +54,7 @@ const Process: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={DiscoveryVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("drop-requirement_koqsdt.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -86,7 +82,7 @@ const Process: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={DesignVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("magic_w7xcbp.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -114,7 +110,7 @@ const Process: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={DevelopmentVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("feedback_gqb3un.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -142,7 +138,7 @@ const Process: React.FC = () => {
                                 playsInline
                                 preload="metadata"
                             >
-                                <source src={LaunchVideo} type="video/mp4" />
+                                <source src={getCloudinaryUrl("launch_jgpcdd.mp4")} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
