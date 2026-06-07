@@ -1,18 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const brands = [
-    { id: 1, name: 'LOGO', icon: 'square' },
-    { id: 2, name: 'Logoipsum', icon: 'bolt', slant: true },
-    { id: 3, name: 'Logoipsum', icon: 'trip_origin' },
-    { id: 4, name: 'CCCCC', icon: 'all_inclusive' },
-    { id: 5, name: 'Logo', icon: 'bubble_chart' },
-    { id: 6, name: 'Logoipsum', icon: 'grid_view' },
-];
+import { getCloudinaryUrl } from '@/utils/cloudinary';
 
 const BrandShowcase: React.FC = () => {
+    const brands = [
+        { id: 1, name: 'Brand 1', image: getCloudinaryUrl("TPH_miatat.png"), slant: false },
+        { id: 2, name: 'Brand 2', image: getCloudinaryUrl("Charu_dnt5kf.png"), slant: true },
+    ];
+
     return (
-        <div className="py-8 md:py-12 2xl:py-16 px-8 overflow-hidden">
+        <div className="py-0 px-8 overflow-hidden">
             <div className="relative flex items-center">
                 <motion.div
                     animate={{
@@ -31,12 +28,13 @@ const BrandShowcase: React.FC = () => {
                     {[...brands, ...brands, ...brands, ...brands, ...brands].map((brand, index) => (
                         <div
                             key={index}
-                            className={`flex items-center gap-4 transition-all duration-300 cursor-pointer ${brand.slant ? 'italic' : ''}`}
+                            className={`flex items-center gap-4 transition-all duration-300 cursor-pointer min-w-[250px] ${brand.slant ? 'italic' : ''}`}
                         >
-                            <span className="material-symbols-rounded text-2xl md:text-4xl text-gray-800 dark:text-gray-200">{brand.icon}</span>
-                            <span className="text-xl md:text-3xl 2xl:text-4xl font-display font-extrabold tracking-tighter text-gray-800 dark:text-gray-200">
-                                {brand.name}
-                            </span>
+                            <img
+                                src={brand.image}
+                                alt={brand.name}
+                                className="h-20 md:h-28 2xl:h-32 w-auto object-contain block"
+                            />
                         </div>
                     ))}
                 </motion.div>

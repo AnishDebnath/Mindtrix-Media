@@ -7,7 +7,7 @@ const teamMembers = [
     {
         name: "Preetam Chakraborty",
         role: "Founder & CEO",
-        image: getCloudinaryUrl("preetam_r7y9i7.jpg"),
+        image: getCloudinaryUrl("preetam_ycnlib.jpg"),
         // socials: {
         //     linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
         //     instagram: "https://www.instagram.com/preetam.photographer",
@@ -16,7 +16,7 @@ const teamMembers = [
     {
         name: "Anish Debnath",
         role: "Co-Founder & CTO",
-        image: getCloudinaryUrl("anish_y7ve5p.jpg"),
+        image: getCloudinaryUrl("anish_huixzn.jpg"),
         // socials: {
         //     twitter: "https://x.com/anishdebnath07",
         //     linkedin: "https://www.linkedin.com/in/anish-debnath-7b3516211",

@@ -76,7 +76,7 @@ const CTA: React.FC = () => {
 
                             <div className="flex items-center gap-3 mb-5 md:mb-6 relative">
                                 <div className="flex items-center gap-2">
-                                    <img src={getCloudinaryUrl("preetam_r7y9i7.jpg")} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
+                                    <img src={getCloudinaryUrl("preetam_ycnlib.jpg")} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-sm" alt="Amanda" />
                                     <span className="text-slate-400 font-bold">+</span>
                                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-white text-[9px] font-bold shadow-sm">You</div>
                                 </div>
