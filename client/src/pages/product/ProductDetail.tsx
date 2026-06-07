@@ -35,12 +35,12 @@ const ProductDetail: React.FC = () => {
                     genre: product.industry,
                     keywords: product.services.join(', '),
                 },
-              }
+            }
             : {
                 title: 'Product Not Found — Mindtrix Media',
                 description: 'The product you are looking for could not be found.',
                 canonicalPath: '/product',
-              }
+            }
     );
 
     if (!product) {
@@ -109,7 +109,7 @@ const ProductDetail: React.FC = () => {
                 {/* Main Hero Image with Parallax */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-[4/3] w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={product.image} alt={product.title} className="w-full h-full object-cover will-change-transform" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -186,7 +186,7 @@ const ProductDetail: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className={`w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
+                                    className={`aspect-[4/3] w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
                                 >
                                     <img src={block.src} alt={block.alt} loading="lazy" className="w-full h-auto" />
                                 </motion.div>
