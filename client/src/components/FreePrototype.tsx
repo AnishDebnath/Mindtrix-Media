@@ -77,7 +77,7 @@ const FreePrototype: React.FC = () => {
                             className="relative"
                         >
                             {/* Card Stack Effect */}
-                            <div className="relative aspect-square md:aspect-[4/3]">
+                            <div className="relative aspect-[4/3]">
                                 {/* Back Card */}
                                 <div className="absolute top-8 right-8 inset-0 bg-slate-100 dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 transform rotate-6 opacity-60" />
                                 {/* Middle Card */}

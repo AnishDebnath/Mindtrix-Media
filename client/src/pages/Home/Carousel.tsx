@@ -1,41 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { getCloudinaryUrl } from '@/utils/cloudinary';
 
 const carouselItems = [
     {
         id: 1,
-        title: "Portfoy",
-        category: "Portfolio Template",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        title: "The Photographers House",
+        category: "Photographer Portfolio with Booking Feature",
+        img: getCloudinaryUrl('cover_yidgjt.png'),
+        link: "/product/the-photographers-house"
     },
     {
         id: 2,
         title: "CourseSite",
         category: "Education Platform",
         img: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        link: "/product/coursesite"
     },
     {
         id: 3,
         title: "LanderOS",
         category: "SaaS Landing",
         img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        link: "/product/landeros"
     },
     {
         id: 4,
         title: "Alter",
         category: "Fintech Dashboard",
         img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        link: "/product/alter"
     },
     {
         id: 5,
         title: "Nexus",
         category: "Design System",
         img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        link: "/product/nexus"
     },
 ];
 
@@ -66,8 +68,9 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                     className="flex gap-4 md:gap-6 px-4 min-w-max"
                 >
                     {marqueeItems.map((item, index) => (
-                        <div
+                        <Link
                             key={`${item.id}-${index}`}
+                            to={item.link}
                             className="relative flex-shrink-0 w-[320px] sm:w-[500px] bg-white dark:bg-slate-900/50 rounded-[2rem] sm:rounded-[2.5rem] p-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col gap-4"
                         >
                             {/* Image & Content Container */}
@@ -85,14 +88,14 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                         <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider">{item.category}</p>
                                     </div>
 
-                                    <button
+                                    <div
                                         className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
                                     >
                                         <span className="material-symbols-rounded text-[16px] sm:text-[20px]">arrow_outward</span>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </motion.div>
             </div>
