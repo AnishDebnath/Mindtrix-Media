@@ -13,17 +13,17 @@ const carouselItems = [
     },
     {
         id: 2,
-        title: "CourseSite",
-        category: "Education Platform",
-        img: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-        link: "/product/coursesite"
+        title: "E-Commerce Platform",
+        category: "E-Commerce Website",
+        img: getCloudinaryUrl("cover_pfkodo.png"),
+        link: "/product/ecommerce-platform"
     },
     {
         id: 3,
-        title: "LanderOS",
-        category: "SaaS Landing",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        link: "/product/landeros"
+        title: "Charu Enterprise",
+        category: "Digital Business Card & Company Landing Page",
+        img: getCloudinaryUrl('cover_fwf41w.png'),
+        link: "/product/charu-enterprise"
     },
     {
         id: 4,
