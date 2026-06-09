@@ -13,24 +13,31 @@ const carouselItems = [
     },
     {
         id: 2,
-        title: "E-Commerce Platform",
-        category: "E-Commerce Website",
-        img: getCloudinaryUrl("cover_pfkodo.png"),
-        link: "/product/ecommerce-platform"
-    },
-    {
-        id: 3,
         title: "Charu Enterprise",
         category: "Digital Business Card & Company Landing Page",
         img: getCloudinaryUrl('cover_fwf41w.png'),
         link: "/product/charu-enterprise"
     },
     {
-        id: 4,
+        id: 3,
         title: "Charu Enterprise E-Commerce",
         category: "E-Commerce Platform",
         img: getCloudinaryUrl("cover_qw2egu.png"),
         link: "/product/charu-enterprise-ecommerce"
+    },
+    {
+        id: 4,
+        title: "Luxury Jewellery E-Commerce Platform",
+        category: "E-Commerce Platform",
+        img: getCloudinaryUrl("cover_jbmyuv.png"),
+        link: "/product/luxury-jewellery-ecommerce-platform"
+    },
+    {
+        id: 5,
+        title: "E-Commerce Platform",
+        category: "E-Commerce Website",
+        img: getCloudinaryUrl("cover_pfkodo.png"),
+        link: "/product/ecommerce-platform"
     },
 ];
 

@@ -8,6 +8,7 @@ const BrandShowcase: React.FC = () => {
         { id: 2, name: 'Brand 2', image: getCloudinaryUrl("charu_ypwood.png"), slant: false },
         { id: 3, name: 'Brand 3', image: getCloudinaryUrl("gconnect_gpyufu.png"), slant: false },
         { id: 4, name: 'Brand 4', image: getCloudinaryUrl("crh_ctephp.png"), slant: false },
+        { id: 5, name: 'Brand 5', image: getCloudinaryUrl("gold_zfz6i0.png"), slant: false },
     ];
 
     return (
