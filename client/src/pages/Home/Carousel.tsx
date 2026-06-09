@@ -32,13 +32,6 @@ const carouselItems = [
         img: getCloudinaryUrl("cover_qw2egu.png"),
         link: "/product/charu-enterprise-ecommerce"
     },
-    {
-        id: 5,
-        title: "Nexus",
-        category: "Design System",
-        img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
-        link: "/product/nexus"
-    },
 ];
 
 interface CarouselProps {
