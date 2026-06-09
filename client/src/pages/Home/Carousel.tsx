@@ -27,10 +27,10 @@ const carouselItems = [
     },
     {
         id: 4,
-        title: "Alter",
-        category: "Fintech Dashboard",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        link: "/product/alter"
+        title: "Charu Enterprise E-Commerce",
+        category: "E-Commerce Platform",
+        img: getCloudinaryUrl("cover_qw2egu.png"),
+        link: "/product/charu-enterprise-ecommerce"
     },
     {
         id: 5,
