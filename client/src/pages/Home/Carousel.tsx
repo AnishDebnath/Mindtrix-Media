@@ -41,10 +41,17 @@ const carouselItems = [
     },
     {
         id: 6,
-        title: "Jewellery CRM System",
+        title: "Jewellery Management System (CRM)",
         category: "CRM System",
         img: getCloudinaryUrl("home_zpa3i8.png"),
         link: "/product/jewellery-crm-system"
+    },
+    {
+        id: 7,
+        title: "Car Rental System (ERP)",
+        category: "CRM System",
+        img: getCloudinaryUrl("home_w6npmd.png"),
+        link: "/product/car-rental-erp"
     },
 ];
 
