@@ -39,6 +39,13 @@ const carouselItems = [
         img: getCloudinaryUrl("cover_pfkodo.png"),
         link: "/product/ecommerce-platform"
     },
+    {
+        id: 6,
+        title: "Jewellery CRM System",
+        category: "CRM System",
+        img: getCloudinaryUrl("home_zpa3i8.png"),
+        link: "/product/jewellery-crm-system"
+    },
 ];
 
 interface CarouselProps {
