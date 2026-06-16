@@ -179,7 +179,7 @@ export const products: Product[] = [
         id: "charu-enterprise",
         title: "Charu Enterprise Digital Business Card & Company Landing Page",
         category: "Customized",
-        image: getCloudinaryUrl("cover_fwf41w.png"),
+        image: getCloudinaryUrl("cover_fowio8.png"),
         client: "Charu Enterprise",
         industry: "Manufacturing & Industrial Hardware",
         subtitle: "A QR-powered digital business card and company landing page designed to showcase products, manufacturing capabilities, certifications, and business information in a professional and accessible format.",
@@ -224,7 +224,7 @@ export const products: Product[] = [
 
             {
                 type: "image",
-                src: getCloudinaryUrl('about_obrqq0.png'),
+                src: getCloudinaryUrl('about_yr7s2w.png'),
                 alt: "QR Code Based Business Landing Page Experience"
             },
 

@@ -3,8 +3,15 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { products } from '../product/productsData';
 
-const FeaturedProducts: React.FC = () => {
-    const featuredItems = products.filter(p => p.featured);
+interface FeaturedProductsProps {
+    projectIds?: string[];
+}
+
+const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
+    const featuredItems = projectIds 
+        ? projectIds.map(id => products.find(p => p.id === id)).filter((p): p is typeof products[0] => !!p)
+        : products.filter(p => p.featured).slice(0, 4);
+
     return (
         <section className="py-8 md:py-12 2xl:py-16 bg-transparent" id="featured-products">
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20">
@@ -64,15 +71,15 @@ const FeaturedProducts: React.FC = () => {
                                 </div>
 
                                 {/* Info Area */}
-                                <div className="px-6 flex justify-between items-end">
-                                    <div>
-                                        <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-slate-900 dark:text-white mb-1 font-display group-hover:text-primary transition-colors duration-300">
+                                <div className="px-6 flex justify-between items-end gap-4">
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-slate-900 dark:text-white mb-1 font-display group-hover:text-primary transition-colors duration-300 truncate">
                                             {product.title}
                                         </h3>
-                                        <p className="text-slate-500 dark:text-slate-400 font-medium text-xs md:text-sm 2xl:text-base">{product.client}</p>
+                                        <p className="text-slate-500 dark:text-slate-400 font-medium text-xs md:text-sm 2xl:text-base truncate">{product.client}</p>
                                     </div>
                                     <motion.div
-                                        className="w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
+                                        className="w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 flex-shrink-0 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
                                     >
                                         <motion.span
                                             variants={{

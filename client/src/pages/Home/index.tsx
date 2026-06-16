@@ -74,7 +74,7 @@ const Home: React.FC = () => {
             <WhyChooseUs />
             <Services />
             <Process />
-            <FeaturedProducts />
+            <FeaturedProducts projectIds={['the-photographers-house', 'charu-enterprise', 'ecommerce-platform', 'car-rental-erp']} />
             <OurSolution />
             <Testimonials />
             <FAQ />

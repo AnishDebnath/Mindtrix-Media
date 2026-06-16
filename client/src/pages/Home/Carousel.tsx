@@ -15,7 +15,7 @@ const carouselItems = [
         id: 2,
         title: "Charu Enterprise",
         category: "Digital Business Card & Company Landing Page",
-        img: getCloudinaryUrl('cover_fwf41w.png'),
+        img: getCloudinaryUrl('cover_fowio8.png'),
         link: "/product/charu-enterprise"
     },
     {
@@ -96,14 +96,14 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                 />
 
                                 {/* Floating Glass Content Card */}
-                                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between z-10 transition-transform duration-300 group-hover:scale-[1.02]">
-                                    <div>
-                                        <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                                        <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider">{item.category}</p>
+                                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between gap-3 z-10 transition-transform duration-300 group-hover:scale-[1.02]">
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">{item.title}</h3>
+                                        <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider truncate">{item.category}</p>
                                     </div>
 
                                     <div
-                                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
+                                        className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
                                     >
                                         <span className="material-symbols-rounded text-[16px] sm:text-[20px]">arrow_outward</span>
                                     </div>
