@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, animate } from 'framer-motion';
 import PrototypeForm from './PrototypeForm';
-import { Process, OurSolution, FAQ, CTA } from '../../components';
 import useSEO from '../../utils/useSEO';
+
+// Lazy Components
+const Process = lazy(() => import('../../components/Process'));
+const OurSolution = lazy(() => import('../../components/OurSolution'));
+const FAQ = lazy(() => import('../../components/FAQ'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const CountUp: React.FC<{ val: number }> = ({ val }) => {
     const [count, setCount] = useState(0);
@@ -189,12 +194,18 @@ const FreePrototypePage: React.FC = () => {
 
 
             {/* FAQ Section */}
-            <div>
+            <Suspense fallback={null}>
                 <Process />
+            </Suspense>
+            <Suspense fallback={null}>
                 <OurSolution />
+            </Suspense>
+            <Suspense fallback={null}>
                 <FAQ />
+            </Suspense>
+            <Suspense fallback={null}>
                 <CTA />
-            </div>
+            </Suspense>
         </div>
     );
 };

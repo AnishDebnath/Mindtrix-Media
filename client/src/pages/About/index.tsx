@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import AboutHeader from './AboutHeader';
 import AboutHeroImage from './AboutHeroImage';
 import AboutValues from './AboutValues';
 import AboutStats from './AboutStats';
 import AboutTeam from './AboutTeam';
-import { WhyChooseUs, ProductTestimonials, BrandShowcase, CTA } from '../../components';
+import { BrandShowcase } from '../../components';
 import useSEO from '../../utils/useSEO';
 
+// Lazy Components
+const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
+const ProductTestimonials = lazy(() => import('../../components/ProductTestimonials'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const AboutPage: React.FC = () => {
     useSEO({
@@ -49,9 +53,11 @@ const AboutPage: React.FC = () => {
             </div>
             <AboutValues />
             <AboutTeam />
-            <WhyChooseUs />
-            <ProductTestimonials />
-            <CTA />
+            <Suspense fallback={null}>
+                <WhyChooseUs />
+                <ProductTestimonials />
+                <CTA />
+            </Suspense>
         </div>
     );
 };

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { servicesList } from './servicesData';
 import ServiceItem from './ServiceItem';
 import ServicesHeader from './ServicesHeader';
-import { FAQ, Process, WhyChooseUs, CTA } from '../../components';
 import useSEO from '../../utils/useSEO';
+
+// Lazy Components
+const FAQ = lazy(() => import('../../components/FAQ'));
+const Process = lazy(() => import('../../components/Process'));
+const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const ServicesPage: React.FC = () => {
     useSEO({
@@ -39,10 +44,12 @@ const ServicesPage: React.FC = () => {
                 </div>
             </div>
 
-            <WhyChooseUs />
-            <Process />
-            <FAQ />
-            <CTA />
+            <Suspense fallback={null}>
+                <WhyChooseUs />
+                <Process />
+                <FAQ />
+                <CTA />
+            </Suspense>
         </div>
     );
 };

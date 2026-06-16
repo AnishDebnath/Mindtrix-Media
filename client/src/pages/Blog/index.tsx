@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { articles } from './blogData';
 import ArticleCard from './ArticleCard';
 import BlogHeader from './BlogHeader';
-import { FAQ, CTA } from '../../components';
 import useSEO from '../../utils/useSEO';
+
+// Lazy Components
+const FAQ = lazy(() => import('../../components/FAQ'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const BlogPage: React.FC = () => {
     useSEO({
@@ -50,8 +53,12 @@ const BlogPage: React.FC = () => {
                 </div>
 
             </div>
-            <FAQ />
-            <CTA />
+            <Suspense fallback={null}>
+                <FAQ />
+            </Suspense>
+            <Suspense fallback={null}>
+                <CTA />
+            </Suspense>
         </div>
     );
 };

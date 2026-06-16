@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Pages
-import Home from './pages/Home';
-import Blog from './pages/Blog';
-import About from './pages/About';
-import Services from './pages/Services';
-import Product from './pages/product';
-import Contact from './pages/Contact';
-import FreePrototypePage from './pages/FreePrototype';
-import ProductDetail from './pages/product/ProductDetail';
-import BlogPost from './pages/Blog/BlogPost';
+// Lazy loaded Pages
+const Home = lazy(() => import('./pages/Home'));
+const Blog = lazy(() => import('./pages/Blog'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Product = lazy(() => import('./pages/product'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FreePrototypePage = lazy(() => import('./pages/FreePrototype'));
+const ProductDetail = lazy(() => import('./pages/product/ProductDetail'));
+const BlogPost = lazy(() => import('./pages/Blog/BlogPost'));
+const Footer = lazy(() => import('./components/Footer'));
 
 // Components
 import { Navbar, Layout } from './components';
@@ -62,17 +63,22 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
             transition={{ duration: 0.3 }}
             className="flex flex-col flex-grow"
           >
-            <Routes location={location}>
-              <Route path="/" element={<Home />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/product" element={<Product />} />
-              <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/free-prototype" element={<FreePrototypePage />} />
-            </Routes>
+            <Suspense fallback={null}>
+              <Routes location={location}>
+                <Route path="/" element={<Home />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/product" element={<Product />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/free-prototype" element={<FreePrototypePage />} />
+              </Routes>
+              <div className="w-full max-w-[1440px] mx-auto">
+                <Footer />
+              </div>
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </Layout>

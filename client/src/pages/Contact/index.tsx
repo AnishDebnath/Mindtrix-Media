@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
-import { FAQ, CTA } from '../../components';
 import useSEO from '../../utils/useSEO';
+
+// Lazy Components
+const FAQ = lazy(() => import('../../components/FAQ'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const ContactPage: React.FC = () => {
     useSEO({
@@ -39,10 +42,12 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* FAQ Section */}
-            <div>
+            <Suspense fallback={null}>
                 <FAQ />
-            </div>
-            <CTA />
+            </Suspense>
+            <Suspense fallback={null}>
+                <CTA />
+            </Suspense>
         </div>
     );
 };

@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import {
-    FreePrototype,
-    WhyChooseUs,
-    Process,
-    FAQ,
     BrandShowcase,
-    OurSolution,
-    CTA
 } from '../../components';
 import Hero from './Hero';
-import Carousel from './Carousel';
 import MarqueeTag from './MarqueeTag';
 import About from './About';
-import Services from './Services';
-import FeaturedProducts from './FeaturedProducts';
-import Testimonials from './Testimonials';
-import Blog from './Blog';
-import FooterMarquee from './FooterMarquee';
 import useSEO from '../../utils/useSEO';
+
+// Lazy Components
+const FreePrototype = lazy(() => import('../../components/FreePrototype'));
+const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
+const Process = lazy(() => import('../../components/Process'));
+const FAQ = lazy(() => import('../../components/FAQ'));
+const OurSolution = lazy(() => import('../../components/OurSolution'));
+const CTA = lazy(() => import('../../components/CTA'));
+
+const Carousel = lazy(() => import('./Carousel'));
+const Services = lazy(() => import('./Services'));
+const FeaturedProducts = lazy(() => import('./FeaturedProducts'));
+const Testimonials = lazy(() => import('./Testimonials'));
+const Blog = lazy(() => import('./Blog'));
+const FooterMarquee = lazy(() => import('./FooterMarquee'));
 
 const Home: React.FC = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
@@ -64,23 +67,47 @@ const Home: React.FC = () => {
     return (
         <div className="relative z-10">
             <Hero />
-            <Carousel windowWidth={windowWidth} />
+            <Suspense fallback={null}>
+                <Carousel windowWidth={windowWidth} />
+            </Suspense>
             <MarqueeTag />
             <About />
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20">
                 <BrandShowcase />
             </div>
-            <FreePrototype />
-            <WhyChooseUs />
-            <Services />
-            <Process />
-            <FeaturedProducts projectIds={['the-photographers-house', 'charu-enterprise', 'ecommerce-platform', 'car-rental-erp']} />
-            <OurSolution />
-            <Testimonials />
-            <FAQ />
-            <Blog />
-            <FooterMarquee />
-            <CTA />
+            <Suspense fallback={null}>
+                <FreePrototype />
+            </Suspense>
+            <Suspense fallback={null}>
+                <WhyChooseUs />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Services />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Process />
+            </Suspense>
+            <Suspense fallback={null}>
+                <FeaturedProducts projectIds={['the-photographers-house', 'charu-enterprise', 'ecommerce-platform', 'car-rental-erp']} />
+            </Suspense>
+            <Suspense fallback={null}>
+                <OurSolution />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Testimonials />
+            </Suspense>
+            <Suspense fallback={null}>
+                <FAQ />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Blog />
+            </Suspense>
+            <Suspense fallback={null}>
+                <FooterMarquee />
+            </Suspense>
+            <Suspense fallback={null}>
+                <CTA />
+            </Suspense>
         </div>
     );
 };

@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from './ProductCard';
 import ProductHeader from './ProductHeader';
 import ProductFilter from './ProductFilter';
-import { FreePrototype, Process, ProductTestimonials, CTA } from '../../components';
 import { products, categories } from './productsData';
 import useSEO from '../../utils/useSEO';
 
-
+// Lazy Components
+const FreePrototype = lazy(() => import('../../components/FreePrototype'));
+const Process = lazy(() => import('../../components/Process'));
+const ProductTestimonials = lazy(() => import('../../components/ProductTestimonials'));
+const CTA = lazy(() => import('../../components/CTA'));
 
 const ProductPage: React.FC = () => {
     const [searchParams] = useSearchParams();
@@ -69,10 +72,18 @@ const ProductPage: React.FC = () => {
                 </motion.div>
             </div>
 
-            <FreePrototype />
-            <Process />
-            <ProductTestimonials />
-            <CTA />
+            <Suspense fallback={null}>
+                <FreePrototype />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Process />
+            </Suspense>
+            <Suspense fallback={null}>
+                <ProductTestimonials />
+            </Suspense>
+            <Suspense fallback={null}>
+                <CTA />
+            </Suspense>
         </div>
     );
 };
