@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
             name: 'Contact Mindtrix Media',
             url: 'https://mindtrixmedia.com/contact',
             description: 'Reach out to Mindtrix Media to discuss your website, CRM, ERP, or e-commerce project.',
-            publisher: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com', email: 'hello@mindtrixmedia.com' },
+            publisher: { '@type': 'Organization', name: 'Mindtrix Media', url: 'https://mindtrixmedia.com', email: 'mindtrixmediaindia@gmail.com' },
         },
     });
     return (

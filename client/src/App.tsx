@@ -12,6 +12,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const FreePrototypePage = lazy(() => import('./pages/FreePrototype'));
 const ProductDetail = lazy(() => import('./pages/product/ProductDetail'));
 const BlogPost = lazy(() => import('./pages/Blog/BlogPost'));
+const Careers = lazy(() => import('./pages/Careers'));
 const Footer = lazy(() => import('./components/Footer'));
 
 // Components
@@ -25,16 +26,16 @@ const ScrollToTop = () => {
     // Save original style to restore it after the jump
     const htmlElement = document.documentElement;
     const currentScrollBehavior = htmlElement.style.scrollBehavior;
-    
+
     // Disable smooth scrolling temporarily for an instant jump
     htmlElement.style.scrollBehavior = 'auto';
-    
+
     // Jump to top
     window.scrollTo(0, 0);
-    
+
     // Some browsers need it directly on the element
     htmlElement.scrollTo(0, 0);
-    
+
     // Restore original scroll behavior after a slight delay
     // This delay is necessary to ensure the jump has been processed
     const timer = setTimeout(() => {
@@ -73,6 +74,7 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
                 <Route path="/product" element={<Product />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/careers" element={<Careers />} />
                 <Route path="/free-prototype" element={<FreePrototypePage />} />
               </Routes>
               <div className="w-full max-w-[1440px] mx-auto">

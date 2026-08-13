@@ -4,8 +4,8 @@ import { motion, animate } from 'framer-motion';
 const contactInfo = [
     {
         title: "Email Us",
-        value: "hello@mindtrixmedia.com",
-        href: "mailto:hello@mindtrixmedia.com",
+        value: "mindtrixmediaindia@gmail.com",
+        href: "mailto:mindtrixmediaindia@gmail.com",
         icon: "mail",
         color: "blue"
     },
