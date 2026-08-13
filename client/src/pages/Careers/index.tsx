@@ -1,34 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CareersHeader from './CareersHeader';
+import CareerHeader from './CareerHeader';
+import CareerCard from './CareerCard';
+import { openings } from './CareerData';
 import useSEO from '../../utils/useSEO';
-
-interface Opening {
-    title: string;
-    type: string;
-    location: string;
-    description: string;
-}
-
-const openings: Opening[] = [];
 
 const CareersPage: React.FC = () => {
     useSEO({
-        title: 'Careers at Mindtrix Media | Web Development Jobs & Opportunities',
-        description: 'Explore careers at Mindtrix Media. We build websites, CRM, ERP and SaaS products. Join our team — currently no open positions, but we welcome talent.',
-        keywords: 'Mindtrix Media careers, web development jobs, software developer jobs, CRM ERP careers, join our team, jobs at digital agency',
+        title: 'Careers at Mindtrix Media | Freelance Sales Executive Job in Kolkata',
+        description: 'We\'re hiring a Freelance Sales Executive (Female) in Kolkata. Commission-based, 100% work from home, flexible hours. Apply now at Mindtrix Media.',
+        keywords: 'sales executive job Kolkata, Mindtrix Media careers, freelancing jobs Kolkata, digital marketing sales job, work from home sales job',
         canonicalPath: '/careers',
         ogTitle: 'Careers — Mindtrix Media',
         ogDescription: 'Join our team or get in touch about potential opportunities at Mindtrix Media.',
         structuredData: {
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'Mindtrix Media',
+            '@type': 'JobPosting',
+            title: 'Freelance Sales Executive (Female)',
             url: 'https://mindtrixmedia.com/careers',
-            description: 'A Kolkata-based web and software development agency. Careers page with information about joining the team.',
-            logo: 'https://mindtrixmedia.com/src/assets/mindtrix-media-logo.png',
-            address: { '@type': 'PostalAddress', addressLocality: 'Kolkata', addressCountry: 'IN' },
-            contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'mindtrixmediaindia@gmail.com' },
+            employmentType: 'CONTRACTOR',
+            jobLocation: {
+                '@type': 'Place',
+                address: { '@type': 'PostalAddress', addressLocality: 'Kolkata', addressCountry: 'IN' },
+            },
+            hiringOrganization: { '@type': 'Organization', name: 'Mindtrix Media', sameAs: 'https://www.mindtrixmedia.com' },
+            description: 'Mindtrix Media is hiring a Freelance Sales Executive (Female), based in Kolkata, work from home. Commission-based income with no earning cap. Promote custom websites, CRM, ERP and business automation solutions to businesses across Kolkata and India. Transparent direct hiring — no fees, no middlemen.',
+            email: 'mindtrixmediaindia@gmail.com',
         },
     });
 
@@ -43,7 +40,7 @@ const CareersPage: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <CareersHeader />
+                <CareerHeader />
 
                 {/* Current Openings Section */}
                 <motion.section
@@ -52,83 +49,10 @@ const CareersPage: React.FC = () => {
                     viewport={{ once: true }}
                     className="py-8 md:py-12 2xl:py-16 relative"
                 >
-                    <div className={openings.length > 0 ? 'text-center max-w-2xl mx-auto mb-10 md:mb-12' : 'mb-0'}>
-                        {openings.length > 0 && (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="inline-block mb-6 px-4 py-2 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
-                            >
-                                <span className="text-primary font-bold tracking-widest uppercase text-xs flex items-center gap-2">
-                                    <span className="material-symbols-rounded text-sm">work</span> Current Openings
-                                </span>
-                            </motion.div>
-                        )}
-                        {openings.length > 0 && (
-                            <>
-                                <motion.h2
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.1 }}
-                                    className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
-                                >
-                                    Open <br />
-                                    <span className="text-secondary">Vacancies</span>
-                                </motion.h2>
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.2 }}
-                                    className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
-                                >
-                                    Explore our current opportunities below and join a team building products for clients worldwide.
-                                </motion.p>
-                            </>
-                        )}
-                    </div>
-
                     {openings.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 gap-4 md:gap-6">
                             {openings.map((opening, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    whileHover={{ y: -10, scale: 1.015 }}
-                                    viewport={{ once: true }}
-                                    transition={{ type: "tween", duration: 0.3, ease: "easeOut", delay: idx * 0.1 }}
-                                    className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-8 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl overflow-hidden relative flex flex-col"
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                                    <div className="relative z-10 flex flex-col flex-1">
-                                        <div className="flex items-center gap-2 mb-4">
-                                            <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary group-hover:bg-primary/20 transition-all duration-300">
-                                                {opening.type}
-                                            </span>
-                                            <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 group-hover:bg-primary/20 transition-all duration-300">
-                                                {opening.location}
-                                            </span>
-                                        </div>
-                                        <h3 className="text-lg md:text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
-                                            {opening.title}
-                                        </h3>
-                                        <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm leading-relaxed mb-6 flex-1">
-                                            {opening.description}
-                                        </p>
-                                        <motion.a
-                                            href="mailto:mindtrixmediaindia@gmail.com"
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                            className="inline-flex items-center gap-2 bg-primary-dark hover:bg-primary text-white px-5 py-2.5 rounded-xl font-display font-bold text-sm shadow-lg shadow-primary/20 transition-all self-start"
-                                        >
-                                            <span className="material-symbols-rounded text-sm">arrow_forward</span>
-                                            Apply Now
-                                        </motion.a>
-                                    </div>
-                                </motion.div>
+                                <CareerCard key={idx} opening={opening} index={idx} />
                             ))}
                         </div>
                     ) : (

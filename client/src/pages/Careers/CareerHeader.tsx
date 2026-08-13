@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const CareersHeader: React.FC = () => {
+const CareerHeader: React.FC = () => {
     return (
         <div className="text-center mb-10 md:mb-12">
             <motion.div
@@ -45,4 +45,4 @@ const CareersHeader: React.FC = () => {
     );
 };
 
-export default CareersHeader;
+export default CareerHeader;
