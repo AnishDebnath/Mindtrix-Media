@@ -8,6 +8,7 @@ Allow: /product
 Allow: /about
 Allow: /blog
 Allow: /contact
+Allow: /careers
 Allow: /free-prototype
 
 # Block build artifacts

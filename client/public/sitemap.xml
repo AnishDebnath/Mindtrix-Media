@@ -51,6 +51,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://mindtrixmedia.com/careers</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Product Detail Pages -->
   <url>
     <loc>https://mindtrixmedia.com/product/ecommerce-pro-template</loc>
