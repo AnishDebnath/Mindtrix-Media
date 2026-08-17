@@ -10,12 +10,12 @@ export interface Opening {
 
 export const openings: Opening[] = [
     {
-        title: 'Freelance Sales Executive (Female)',
+        title: 'Sales Executive (Female)',
         type: 'Freelance',
         location: 'Kolkata · Work From Home',
-        description: 'Mindtrix Media is looking for a passionate, self-driven, and confident Female Freelance Sales Executive to join our growing team. If you enjoy meeting new people, building relationships, and helping businesses embrace digital transformation, this opportunity is for you.',
+        description: 'Mindtrix Media is looking for a passionate, self-driven, and confident Female Sales Executive to join our growing team. If you enjoy meeting new people, building relationships, and helping businesses embrace digital transformation, this opportunity is for you.',
         perks: [
-            'Commission-based role with no fixed salary and unlimited earning potential.',
+            'Commission-based role with unlimited earning potential.',
             'Female candidates only, based in Kolkata; graduate preferred.',
             'Fluent in English, Hindi & Bengali.',
             'Own laptop preferred.',
