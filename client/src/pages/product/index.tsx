@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from './ProductCard';
 import ProductHeader from './ProductHeader';
 import ProductFilter from './ProductFilter';
-import { products, categories } from './productsData';
+import { products, categories } from '../../data/products';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components

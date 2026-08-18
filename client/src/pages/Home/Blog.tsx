@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { articles } from '../Blog/blogData';
+import { articles } from '../../data/blog';
 
 const Blog: React.FC = () => {
     const featuredArticles = articles.filter(article => article.featured).slice(0, 4);

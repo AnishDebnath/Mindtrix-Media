@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { products } from '../product/productsData';
+import { products } from '../../data/products';
 
 interface FeaturedProductsProps {
     projectIds?: string[];

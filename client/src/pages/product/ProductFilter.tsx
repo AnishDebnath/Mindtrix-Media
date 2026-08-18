@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { categories } from './productsData';
+import { categories } from '../../data/products';
 
 interface ProductFilterProps {
     activeCategory: string;

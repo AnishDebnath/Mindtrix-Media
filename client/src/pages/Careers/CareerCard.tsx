@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Opening } from './CareerData';
+import { Opening } from '../../data/CareerData';
 
 interface CareerCardProps {
     opening: Opening;

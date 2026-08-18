@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CareerHeader from './CareerHeader';
 import CareerCard from './CareerCard';
-import { openings } from './CareerData';
+import { openings } from '../../data/CareerData';
 import useSEO from '../../utils/useSEO';
 
 const CareersPage: React.FC = () => {

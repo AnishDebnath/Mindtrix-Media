@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { articles } from './blogData';
+import { articles } from '../../data/blog';
 import ArticleCard from './ArticleCard';
 import BlogHeader from './BlogHeader';
 import useSEO from '../../utils/useSEO';

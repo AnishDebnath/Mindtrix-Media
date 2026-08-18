@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { products } from './productsData';
+import { products } from '../../data/products';
 import { CTA } from '../../components';
 import useSEO from '../../utils/useSEO';
 

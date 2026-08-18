@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { Product } from './productsData';
+import { Product } from '../../data/products';
 
 interface ProductCardProps {
     product: Product;

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { servicesList } from './servicesData';
+import { servicesList } from '../../data/servicesData';
 import ServiceItem from './ServiceItem';
 import ServicesHeader from './ServicesHeader';
 import useSEO from '../../utils/useSEO';
