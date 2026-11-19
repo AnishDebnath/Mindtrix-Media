@@ -1,6 +1,6 @@
 export const highPerformanceArchitecture = {
     id: 'high-performance-architecture',
-    featured: false,
+    featured: true,
     tags: ['Architecture', 'Performance'],
     title: 'The Importance of Fast, High-Performance Web Architecture',
     desc: "Speed is a ranking factor. Learn how modern tech stacks (like Next.js) can boost your revenue through speed.",
