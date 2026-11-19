@@ -1,15 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import {
     contactAdminTemplate,
     contactConfirmationTemplate,
     prototypeAdminTemplate,
     prototypeConfirmationTemplate
 } from '../src/templates/emailTemplates.js';
-
-// ponytail: silent config
-dotenv.config({ quiet: true } as any);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
