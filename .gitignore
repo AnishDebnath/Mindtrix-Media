@@ -29,4 +29,8 @@ Thumbs.db
 *.tsbuildinfo
 coverage/
 
+# Legacy folders
+client/
+server/
+
 .agents/
