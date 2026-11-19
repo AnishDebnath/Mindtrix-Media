@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TeamMember from './TeamMember';
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+import { getImageKitUrl } from "@/utils/imagekit";
 
 const teamMembers = [
     {
         name: "Preetam Chakraborty",
         role: "Founder & CEO",
-        image: getCloudinaryUrl("preetam_ycnlib.jpg"),
+        image: getImageKitUrl("preetam_ycnlib.jpg"),
         // socials: {
         //     linkedin: "https://www.linkedin.com/in/preetam-chakraborty-b3b4a7304/",
         //     instagram: "https://www.instagram.com/preetam.photographer",
@@ -16,7 +16,7 @@ const teamMembers = [
     {
         name: "Anish Debnath",
         role: "Co-Founder & CTO",
-        image: getCloudinaryUrl("anish_huixzn.jpg"),
+        image: getImageKitUrl("anish_huixzn.jpg"),
         // socials: {
         //     twitter: "https://x.com/anishdebnath07",
         //     linkedin: "https://www.linkedin.com/in/anish-debnath-7b3516211",
