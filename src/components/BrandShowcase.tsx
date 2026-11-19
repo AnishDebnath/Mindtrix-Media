@@ -13,14 +13,14 @@ import rentaloneLogo from '@/assets/brand logo/rentalone.png';
 
 const BrandShowcase: React.FC = () => {
     const brands = [
-        { id: 1, name: 'The Photographer House', image: tphLogo, slant: false },
-        { id: 2, name: 'Charu Enterprise', image: charuLogo, slant: false },
-        { id: 3, name: 'GConnect', image: gconnectLogo, slant: false },
-        { id: 4, name: 'Camera Rental House', image: crhLogo, slant: false },
-        { id: 5, name: 'Gold CRM', image: goldLogo, slant: false },
-        { id: 6, name: 'Biswabangla Nordic Association', image: biswabanglaLogo, slant: false },
-        { id: 7, name: 'Garulink', image: garulinkLogo, slant: false },
-        { id: 8, name: 'Rent Alone', image: rentaloneLogo, slant: false },
+        { name: 'The Photographer House', image: tphLogo },
+        { name: 'Charu Enterprise', image: charuLogo },
+        { name: 'GConnect', image: gconnectLogo },
+        { name: 'Camera Rental House', image: crhLogo },
+        { name: 'Gold CRM', image: goldLogo },
+        { name: 'Biswabangla Nordic Association', image: biswabanglaLogo },
+        { name: 'Garulink', image: garulinkLogo },
+        { name: 'Rent Alone', image: rentaloneLogo },
     ];
 
     return (
@@ -43,7 +43,7 @@ const BrandShowcase: React.FC = () => {
                     {[...brands, ...brands, ...brands, ...brands].map((brand, index) => (
                         <div
                             key={index}
-                            className={`flex items-center transition-all duration-300 cursor-pointer min-w-max ${brand.slant ? 'italic' : ''}`}
+                            className="flex items-center transition-all duration-300 cursor-pointer min-w-max"
                         >
                             <img
                                 src={brand.image}

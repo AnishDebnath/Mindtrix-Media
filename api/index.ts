@@ -9,6 +9,7 @@ import {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const RECEIVER_EMAIL = process.env.CONTACT_RECEIVER_EMAIL || 'mindtrixmediaindia@gmail.com';
 
 app.use(cors());
 app.use(express.json());
@@ -66,11 +67,9 @@ app.post('/api/contact', async (req, res) => {
     const { fullName, email, phone, purpose, message } = req.body;
 
     try {
-        const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'mindtrixmediaindia@gmail.com';
-
         const adminHtml = contactAdminTemplate({ fullName, email, phone, purpose, message });
         await sendEmail({
-            to: receiverEmail,
+            to: RECEIVER_EMAIL,
             subject: `New Contact from ${fullName}`,
             html: adminHtml,
             replyTo: email,
@@ -99,11 +98,9 @@ app.post('/api/prototype', async (req, res) => {
     const { fullName, email, phone, projectType, website, description } = req.body;
 
     try {
-        const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'mindtrixmediaindia@gmail.com';
-
         const adminHtml = prototypeAdminTemplate({ fullName, email, phone, projectType, website, description });
         await sendEmail({
-            to: receiverEmail,
+            to: RECEIVER_EMAIL,
             subject: `New Prototype Request: ${fullName}`,
             html: adminHtml,
             replyTo: email,

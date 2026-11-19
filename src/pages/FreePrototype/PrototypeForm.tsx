@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sendPrototypeEmail } from '@/api';
+import { sanitizePhone, isContactValid } from '@/utils/validation';
+import { servicesList } from '@/data/servicesData';
 
-const projectTypes = [
-    { label: "Custom Website Development", value: "Custom Website Development" },
-    { label: "E-commerce Solutions", value: "E-commerce Solutions" },
-    { label: "Responsive Web Design", value: "Responsive Web Design" },
-    { label: "SEO & Performance Optimization", value: "SEO & Performance Optimization" },
-    { label: "Branding & UI/UX Consulting", value: "Branding & UI/UX Consulting" },
-    { label: "Website Maintenance & Support", value: "Website Maintenance & Support" },
-    { label: "Website Migration & Upgrade", value: "Website Migration & Upgrade" },
-    { label: "CRM System Development", value: "CRM System Development" },
-    { label: "ERP Software Development", value: "ERP Software Development" },
-    { label: "Business Website Development", value: "Business Website Development" },
-
-];
+const projectTypes = servicesList.map(s => ({ label: s.title, value: s.title }));
 
 const PrototypeForm: React.FC = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,25 +25,16 @@ const PrototypeForm: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-
-        // Prevent non-numeric input for phone field (Synced with ContactForm)
-        if (name === 'phone') {
-            const numericValue = value.replace(/[^0-9+]/g, ''); // Allow numbers and '+'
-            setFormData(prev => ({ ...prev, [name]: numericValue }));
-            return;
-        }
-
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData(prev => ({
+            ...prev,
+            [name]: name === 'phone' ? sanitizePhone(value) : value
+        }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validation (Synced with ContactForm)
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneDigits = formData.phone.replace(/[^0-9]/g, '');
-
-        if (!emailRegex.test(formData.email) || phoneDigits.length < 10) {
+        if (!isContactValid(formData.email, formData.phone)) {
             setStatus('invalid');
             setTimeout(() => setStatus('idle'), 5000);
             return;

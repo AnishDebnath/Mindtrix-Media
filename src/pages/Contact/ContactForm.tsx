@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { sendContactEmail } from '@/api';
+import { sanitizePhone, isContactValid } from '@/utils/validation';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -15,11 +16,7 @@ const ContactForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validation: Simple email regex and minimum 10 digits for phone
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneDigits = formData.phone.replace(/[^0-9]/g, '');
-
-        if (!emailRegex.test(formData.email) || phoneDigits.length < 10) {
+        if (!isContactValid(formData.email, formData.phone)) {
             setStatus('invalid');
             setTimeout(() => setStatus('idle'), 5000);
             return;
@@ -47,15 +44,10 @@ const ContactForm: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-
-        // Prevent non-numeric input for phone field
-        if (name === 'phone') {
-            const numericValue = value.replace(/[^0-9+]/g, ''); // Allow numbers and '+'
-            setFormData(prev => ({ ...prev, [name]: numericValue }));
-            return;
-        }
-
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData(prev => ({
+            ...prev,
+            [name]: name === 'phone' ? sanitizePhone(value) : value
+        }));
     };
 
     return (
