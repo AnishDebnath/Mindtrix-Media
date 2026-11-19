@@ -5,7 +5,7 @@ import {
     contactConfirmationTemplate,
     prototypeAdminTemplate,
     prototypeConfirmationTemplate
-} from '../src/templates/emailTemplates.js';
+} from '../src/templates/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
