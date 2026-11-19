@@ -1,58 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { productTestimonials as testimonials, ProductTestimonial } from '@/data/testimonialData';
 
-const testimonials = [
-    {
-        name: "Sarah Jenkins",
-        handle: "@sjenkins_ceo",
-        avatar: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=100&q=80",
-        text: "Mindtrix Media completely transformed our online presence. The new UI/UX design and custom e-commerce web development skyrocketed our conversion rates overnight.",
-    },
-    {
-        name: "David Chen",
-        handle: "@davidc_tech",
-        avatar: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=100&q=80",
-        text: "Incredible custom software development! They built a scalable SaaS platform for our operations that handles thousands of daily users with zero lag. Exceptional backend architecture.",
-    },
-    {
-        name: "Elena Rodriguez",
-        handle: "@elena_digital",
-        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80",
-        text: "The SEO-optimized website design we received from Mindtrix pushed us to page one on Google. Their modern tech stack and attention to responsive design is simply unmatched.",
-    },
-    {
-        name: "Marcus Thorne",
-        handle: "@ecommerce_king",
-        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80",
-        text: "I bought one of their prebuilt e-commerce templates and it was flawlessly integrated. Fastest loading speeds we've ever had—our bounce rate dropped by 30%.",
-    },
-    {
-        name: "Jameson P.",
-        handle: "@startup_guru",
-        avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80",
-        text: "From website wireframing to full stack app development, the Mindtrix team delivered a premium digital product perfectly suited for our ambitious startup launch.",
-    },
-    {
-        name: "Alex Rivera",
-        handle: "@tech_founder",
-        avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80",
-        text: "We needed a complete brand identity redesign along with a custom mobile application. They delivered a world-class UI that our users absolutely love logging into.",
-    },
-    {
-        name: "Sophia Lane",
-        handle: "@retail_pro",
-        avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=100&q=80",
-        text: "Their strategic UX consulting uncovered huge gaps in our customer journey. The subsequent website redesign generated a 200% ROI within the first three months of launching.",
-    },
-    {
-        name: "Michael Ross",
-        handle: "@mross_business",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
-        text: "Truly a top-tier digital agency. They seamlessly migrated our legacy platform to a modern React stack. Blazing fast web apps, clean code, and brilliant frontend design.",
-    }
-];
-
-const TestimonialCard: React.FC<{ item: typeof testimonials[0] }> = ({ item }) => (
+const TestimonialCard: React.FC<{ item: ProductTestimonial }> = ({ item }) => (
     <motion.div
         whileHover={{ scale: 1.02, translateY: -5 }}
         className="flex-shrink-0 w-[280px] md:w-[340px] 2xl:w-[380px] bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1rem] md:rounded-[1.2rem] p-5 md:p-6 mr-4 md:mr-6 shadow-xl shadow-black/5"

@@ -1,59 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-const imageTestimonials = [
-    {
-        name: "Sarah Jenkins",
-        title: "CEO, UrbanThreads",
-        text: "Mindtrix Media built our e-commerce store from scratch. Our conversion rate jumped by 40% in the first month. Highly recommended for scalable online stores.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
-    },
-    {
-        name: "David Chen",
-        title: "Operations Manager, LogiFlow",
-        text: "The custom CRM they developed saved our team 20+ hours of manual work every week. Their business automation systems are truly top-notch.",
-        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop"
-    },
-    {
-        name: "Elena Rodriguez",
-        title: "Founder, Bloom Digital",
-        text: "Fast, professional, and SEO-focused. Our new website now ranks on the first page for all our target keywords. They are the best in web development.",
-        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop"
-    }
-];
-
-const scrollTestimonials = [
-    {
-        handle: "@tech_founder",
-        name: "Alex Rivera",
-        text: "The speed optimization on our site is insane. 99+ score on PageSpeed. Mindtrix lives up to the hype!",
-        avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80"
-    },
-    {
-        handle: "@ecommerce_king",
-        name: "Marcus Thorne",
-        text: "Finally found a partner who understands both design and business logic. The checkout flow is so smooth now.",
-        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80"
-    },
-    {
-        handle: "@biz_grower",
-        name: "Linda Wu",
-        text: "Scaling our operations was a mess until we got our custom business dashboard. Incredible ROI.",
-        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
-    },
-    {
-        handle: "@startup_guru",
-        name: "Jameson P.",
-        text: "The free prototype phase was a game-changer. We knew exactly what we were getting. Zero surprises.",
-        avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80"
-    },
-    {
-        handle: "@retail_pro",
-        name: "Sophia Lane",
-        text: "Inventory management used to be a nightmare. Now it's fully automated. Thank you Mindtrix!",
-        avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=100&q=80"
-    }
-];
+import { imageTestimonials, scrollTestimonials } from '@/data/testimonialData';
 
 const Testimonials: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
