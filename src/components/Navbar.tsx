@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/mindtrix-media-logo.png';
+import whiteLogo from '../assets/white-logo.png';
 
 const navLinks = [
     { name: 'Home', path: '/' },
@@ -60,11 +60,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-1.5 md:p-2 transition-all duration-300"
                 >
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2.5 group ml-4">
-                        <img src={logo} alt="Mindtrix Media" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
-                        <span className="font-display font-bold text-base md:text-xl tracking-tight text-slate-900 dark:text-white">
-                            Mindtrix Media
-                        </span>
+                    <Link to="/" className="flex items-center group ml-3 md:ml-4">
+                        <img src={whiteLogo} alt="Mindtrix Media" className="h-7 md:h-8 2xl:h-9 w-auto object-contain" />
                     </Link>
 
 
