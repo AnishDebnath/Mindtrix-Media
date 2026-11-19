@@ -7,7 +7,7 @@ import {
     contactConfirmationTemplate,
     prototypeAdminTemplate,
     prototypeConfirmationTemplate
-} from './templates/index.js';
+} from '../src/templates/emailTemplates.js';
 
 // ponytail: silent config
 dotenv.config({ quiet: true } as any);

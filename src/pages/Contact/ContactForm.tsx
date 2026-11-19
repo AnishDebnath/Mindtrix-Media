@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { sendContactEmail } from '../../utils/contactEmail';
+import { sendContactEmail } from '@/api';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({

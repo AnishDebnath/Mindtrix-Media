@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { sendPrototypeEmail } from '../../utils/prototypeEmail';
+import { sendPrototypeEmail } from '@/api';
 
 const projectTypes = [
     { label: "Custom Website Development", value: "Custom Website Development" },

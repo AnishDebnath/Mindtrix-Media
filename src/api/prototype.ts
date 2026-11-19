@@ -1,14 +1,18 @@
+// ponytail: prototype API call
 const API_BASE_URL = '/api';
 
-export const sendContactEmail = async (formData: {
+export interface PrototypeFormData {
     fullName: string;
     email: string;
     phone: string;
-    purpose: string;
-    message: string;
-}) => {
+    projectType: string;
+    website?: string;
+    description: string;
+}
+
+export const sendPrototypeEmail = async (formData: PrototypeFormData) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/contact`, {
+        const response = await fetch(`${API_BASE_URL}/prototype`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,12 +23,12 @@ export const sendContactEmail = async (formData: {
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.message || 'Failed to send contact email');
+            throw new Error(data.message || 'Failed to send prototype request');
         }
 
         return data;
     } catch (error: any) {
-        console.error('Contact Email Error:', error);
+        console.error('Prototype Email Error:', error);
         throw error;
     }
 };
