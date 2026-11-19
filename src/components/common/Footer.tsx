@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import whiteLogo from '../assets/white-logo.png';
+import whiteLogo from '@/assets/white-logo.png';
 
 const footerSocials = [
     { name: "LinkedIn", icon: "https://cdn.simpleicons.org/linkedin/white", link: "#" },

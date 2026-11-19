@@ -13,10 +13,11 @@ const FreePrototypePage = lazy(() => import('./pages/FreePrototype'));
 const ProductDetail = lazy(() => import('./pages/product/ProductDetail'));
 const BlogPost = lazy(() => import('./pages/Blog/BlogPost'));
 const Careers = lazy(() => import('./pages/Careers'));
-const Footer = lazy(() => import('./components/Footer'));
+const Footer = lazy(() => import('./components/common/Footer'));
 
 // Components
-import { Navbar, Layout } from './components';
+import { Navbar } from './components/common';
+import { Layout } from './components/layout';
 
 // Scroll to top component
 const ScrollToTop = () => {

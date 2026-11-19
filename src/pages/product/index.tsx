@@ -8,10 +8,10 @@ import { products, categories } from '../../data/products';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const FreePrototype = lazy(() => import('../../components/FreePrototype'));
-const Process = lazy(() => import('../../components/Process'));
-const ProductTestimonials = lazy(() => import('../../components/ProductTestimonials'));
-const CTA = lazy(() => import('../../components/CTA'));
+const FreePrototype = lazy(() => import('../../components/sections/FreePrototype'));
+const Process = lazy(() => import('../../components/sections/Process'));
+const ProductTestimonials = lazy(() => import('../../components/product/ProductTestimonials'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const ProductPage: React.FC = () => {
     const [searchParams] = useSearchParams();

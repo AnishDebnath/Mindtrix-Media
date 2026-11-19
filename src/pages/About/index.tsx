@@ -4,13 +4,13 @@ import AboutHeroImage from './AboutHeroImage';
 import AboutValues from './AboutValues';
 import AboutStats from './AboutStats';
 import AboutTeam from './AboutTeam';
-import { BrandShowcase } from '../../components';
+import { BrandShowcase } from '../../components/sections';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
-const ProductTestimonials = lazy(() => import('../../components/ProductTestimonials'));
-const CTA = lazy(() => import('../../components/CTA'));
+const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
+const ProductTestimonials = lazy(() => import('../../components/product/ProductTestimonials'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const AboutPage: React.FC = () => {
     useSEO({

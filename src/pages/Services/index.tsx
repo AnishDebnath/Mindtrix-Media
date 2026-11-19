@@ -5,10 +5,10 @@ import ServicesHeader from './ServicesHeader';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const FAQ = lazy(() => import('../../components/FAQ'));
-const Process = lazy(() => import('../../components/Process'));
-const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
-const CTA = lazy(() => import('../../components/CTA'));
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const Process = lazy(() => import('../../components/sections/Process'));
+const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const ServicesPage: React.FC = () => {
     useSEO({

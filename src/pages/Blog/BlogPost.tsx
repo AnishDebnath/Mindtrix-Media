@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { articles } from '../../data/blog';
 import ArticleCard from './ArticleCard';
-import { CTA } from '../../components';
+import { CTA } from '../../components/sections';
 import useSEO from '../../utils/useSEO';
 
 const BlogPost: React.FC = () => {

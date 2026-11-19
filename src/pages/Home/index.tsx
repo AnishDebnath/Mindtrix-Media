@@ -1,19 +1,17 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import {
-    BrandShowcase,
-} from '../../components';
+import { BrandShowcase } from '../../components/sections';
 import Hero from './Hero';
 import MarqueeTag from './MarqueeTag';
 import About from './About';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const FreePrototype = lazy(() => import('../../components/FreePrototype'));
-const WhyChooseUs = lazy(() => import('../../components/WhyChooseUs'));
-const Process = lazy(() => import('../../components/Process'));
-const FAQ = lazy(() => import('../../components/FAQ'));
-const OurSolution = lazy(() => import('../../components/OurSolution'));
-const CTA = lazy(() => import('../../components/CTA'));
+const FreePrototype = lazy(() => import('../../components/sections/FreePrototype'));
+const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
+const Process = lazy(() => import('../../components/sections/Process'));
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const OurSolution = lazy(() => import('../../components/sections/OurSolution'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const Carousel = lazy(() => import('./Carousel'));
 const Services = lazy(() => import('./Services'));

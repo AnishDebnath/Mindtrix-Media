@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
-import CTA from './CTA';
-import PageBackground from './PageBackground';
-import Footer from './Footer';
+import PageBackground from '../ui/PageBackground';
 
 interface LayoutProps {
     children: ReactNode;

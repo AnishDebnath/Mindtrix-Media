@@ -4,10 +4,10 @@ import PrototypeForm from './PrototypeForm';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const Process = lazy(() => import('../../components/Process'));
-const OurSolution = lazy(() => import('../../components/OurSolution'));
-const FAQ = lazy(() => import('../../components/FAQ'));
-const CTA = lazy(() => import('../../components/CTA'));
+const Process = lazy(() => import('../../components/sections/Process'));
+const OurSolution = lazy(() => import('../../components/sections/OurSolution'));
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const CountUp: React.FC<{ val: number }> = ({ val }) => {
     const [count, setCount] = useState(0);

@@ -5,8 +5,8 @@ import BlogHeader from './BlogHeader';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
-const FAQ = lazy(() => import('../../components/FAQ'));
-const CTA = lazy(() => import('../../components/CTA'));
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const BlogPage: React.FC = () => {
     useSEO({
