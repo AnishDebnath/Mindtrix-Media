@@ -1,56 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { getCloudinaryUrl } from '@/utils/cloudinary';
+
+// ponytail: local carousel product images
+import tphCover from '@/assets/products/the photographer house/cover.png';
+import charuCover from '@/assets/products/charu enterprise/cover.png';
+import charuEcommerceCover from '@/assets/products/charu enterprise ecommerce/cover.png';
+import jewelleryCover from '@/assets/products/jewellery ecommerce/cover.png';
+import ecommerceCover from '@/assets/products/ecommerce/cover.png';
+import jewelleryCrmHome from '@/assets/products/gold crm/home.png';
+import carRentalHome from '@/assets/products/car rental erp/home.png';
 
 const carouselItems = [
     {
         id: 1,
         title: "The Photographers House",
         category: "Photographer Portfolio with Booking Feature",
-        img: getCloudinaryUrl('cover_yidgjt.png'),
+        img: tphCover,
         link: "/product/the-photographers-house"
     },
     {
         id: 2,
         title: "Charu Enterprise",
         category: "Digital Business Card & Company Landing Page",
-        img: getCloudinaryUrl('cover_fowio8.png'),
+        img: charuCover,
         link: "/product/charu-enterprise"
     },
     {
         id: 3,
         title: "Charu Enterprise E-Commerce",
         category: "E-Commerce Platform",
-        img: getCloudinaryUrl("cover_qw2egu.png"),
+        img: charuEcommerceCover,
         link: "/product/charu-enterprise-ecommerce"
     },
     {
         id: 4,
         title: "Luxury Jewellery E-Commerce Platform",
         category: "E-Commerce Platform",
-        img: getCloudinaryUrl("cover_jbmyuv.png"),
+        img: jewelleryCover,
         link: "/product/luxury-jewellery-ecommerce-platform"
     },
     {
         id: 5,
         title: "E-Commerce Platform",
         category: "E-Commerce Website",
-        img: getCloudinaryUrl("cover_pfkodo.png"),
+        img: ecommerceCover,
         link: "/product/ecommerce-platform"
     },
     {
         id: 6,
         title: "Jewellery Management System (CRM)",
         category: "CRM System",
-        img: getCloudinaryUrl("home_zpa3i8.png"),
+        img: jewelleryCrmHome,
         link: "/product/jewellery-crm-system"
     },
     {
         id: 7,
         title: "Car Rental System (ERP)",
         category: "CRM System",
-        img: getCloudinaryUrl("home_w6npmd.png"),
+        img: carRentalHome,
         link: "/product/car-rental-erp"
     },
 ];

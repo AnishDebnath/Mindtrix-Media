@@ -1,10 +1,16 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import coverImg from "@/assets/products/ecommerce/cover.png";
+import homeImg from "@/assets/products/ecommerce/home.png";
+import categoryImg from "@/assets/products/ecommerce/category.png";
+import cartImg from "@/assets/products/ecommerce/cart.png";
+import grid1Img from "@/assets/products/ecommerce/grid1.png";
+import grid2Img from "@/assets/products/ecommerce/grid2.png";
 
 export const ecommercePlatform = {
     id: "ecommerce-platform",
     title: "E-Commerce Platform",
     category: "Prebuilt",
-    image: getCloudinaryUrl("cover_pfkodo.png"),
+    image: coverImg,
     client: "Mindtrix Media",
     industry: "Manufacturing & Export",
     subtitle: "A modern B2B e-commerce platform built for a global fence fitting manufacturer with multi-currency support and wholesale quote management.",
@@ -24,7 +30,7 @@ export const ecommercePlatform = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("home_xumz1f.png"),
+            src: homeImg,
             alt: "Charu Enterprise Homepage"
         },
         {
@@ -34,7 +40,7 @@ export const ecommercePlatform = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("category_zic41k.png"),
+            src: categoryImg,
             alt: "Product Catalog Interface"
         },
         {
@@ -44,7 +50,7 @@ export const ecommercePlatform = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("cart_po4hu5.png"),
+            src: cartImg,
             alt: "Wholesale Quote Request System"
         },
         {
@@ -65,8 +71,8 @@ export const ecommercePlatform = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_r7dtl5.png"),
-                getCloudinaryUrl("grid2_hgmf08.png")
+                grid1Img,
+                grid2Img
             ]
         }
     ]

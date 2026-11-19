@@ -1,10 +1,17 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import homeImg from "@/assets/products/gold crm/home.png";
+import hrPayrollImg from "@/assets/products/gold crm/hr payroll.png";
+import billingImg from "@/assets/products/gold crm/billing.png";
+import accountsImg from "@/assets/products/gold crm/accounts.png";
+import settingsImg from "@/assets/products/gold crm/settings.png";
+import grid1Img from "@/assets/products/gold crm/grid1.png";
+import grid2Img from "@/assets/products/gold crm/grid2.png";
 
 export const jewelleryCrmSystem = {
     id: "jewellery-crm-system",
     title: "Jewellery Management System (CRM)",
     category: "Prebuilt",
-    image: getCloudinaryUrl("home_zpa3i8.png"),
+    image: homeImg,
     client: "Mindtrix Media",
     industry: "Jewellery, Gold & Diamond Retail",
     subtitle: "A comprehensive CRM platform designed to streamline jewellery retail operations, inventory management, financial services, and business administration from a single centralized system.",
@@ -40,7 +47,7 @@ export const jewelleryCrmSystem = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("home_zpa3i8.png"),
+            src: homeImg,
             alt: "Jewellery CRM Dashboard"
         },
 
@@ -52,7 +59,7 @@ export const jewelleryCrmSystem = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("hr_payroll_y7pbrk.png"),
+            src: hrPayrollImg,
             alt: "Jewellery Business Operations Management"
         },
 
@@ -64,7 +71,7 @@ export const jewelleryCrmSystem = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("billing_ii7h1d.png"),
+            src: billingImg,
             alt: "Jewellery POS and Billing System"
         },
 
@@ -76,7 +83,7 @@ export const jewelleryCrmSystem = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("accounts_eduomi.png"),
+            src: accountsImg,
             alt: "Gold Loan Management Module"
         },
 
@@ -94,7 +101,7 @@ export const jewelleryCrmSystem = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("settings_cjelxs.png"),
+            src: settingsImg,
             alt: "CRM Analytics Dashboard"
         },
 
@@ -119,8 +126,8 @@ export const jewelleryCrmSystem = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_gthtl9.png"),
-                getCloudinaryUrl("grid2_xmq5fm.png"),
+                grid1Img,
+                grid2Img,
             ]
         }
 

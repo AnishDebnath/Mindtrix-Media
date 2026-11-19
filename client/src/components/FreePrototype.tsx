@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local asset import
+import freePrototypeImg from '@/assets/free-prototype.png';
 
 const FreePrototype: React.FC = () => {
     return (
@@ -86,7 +87,7 @@ const FreePrototype: React.FC = () => {
                                 {/* Front Card (Main Visual) */}
                                 <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col group/card">
                                     <img
-                                        src={getCloudinaryUrl("free-prototype_ucu579.png")}
+                                        src={freePrototypeImg}
                                         alt="Free Prototype"
                                         className="w-full h-full object-cover object-top brightness-[0.7] dark:brightness-[0.5]"
                                     />

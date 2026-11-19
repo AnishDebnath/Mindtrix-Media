@@ -1,10 +1,18 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import homeImg from "@/assets/products/car rental erp/home.png";
+import carImg from "@/assets/products/car rental erp/car.png";
+import driverImg from "@/assets/products/car rental erp/driver.png";
+import accountsImg from "@/assets/products/car rental erp/accounts.png";
+import userImg from "@/assets/products/car rental erp/user.png";
+import auditImg from "@/assets/products/car rental erp/audit.png";
+import grid1Img from "@/assets/products/car rental erp/grid1.png";
+import grid2Img from "@/assets/products/car rental erp/grid2.png";
 
 export const carRentalErp = {
     id: "car-rental-erp",
     title: "Car Rental System (ERP)",
     category: "Prebuilt",
-    image: getCloudinaryUrl('home_w6npmd.png'),
+    image: homeImg,
     client: "Mindtrix Media",
     industry: "Transportation, Driver Management & Car Rental",
     subtitle: "A comprehensive Car Rental ERP & CRM platform designed to automate operations, bookings, billing, finance management, and customer relationships from a single dashboard.",
@@ -39,7 +47,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("home_w6npmd.png"),
+            src: homeImg,
             alt: "FleetStream ERP Dashboard"
         },
 
@@ -51,7 +59,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("car_hdcz6b.png"),
+            src: carImg,
             alt: "Fleet Management Module"
         },
 
@@ -63,7 +71,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("driver_za1vdr.png"),
+            src: driverImg,
             alt: "Booking and Dispatch Management"
         },
 
@@ -75,7 +83,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("accounts_oaasvz.png"),
+            src: accountsImg,
             alt: "Automated Billing Engine"
         },
 
@@ -93,7 +101,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("user_jj4mzh.png"),
+            src: userImg,
             alt: "CRM and Client Management"
         },
 
@@ -111,7 +119,7 @@ export const carRentalErp = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("audit_ubmwzq.png"),
+            src: auditImg,
             alt: "Financial Reporting Dashboard"
         },
 
@@ -130,8 +138,8 @@ export const carRentalErp = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_hszak8.png"),
-                getCloudinaryUrl("grid2_recfrn.png"),
+                grid1Img,
+                grid2Img,
             ]
         }
 

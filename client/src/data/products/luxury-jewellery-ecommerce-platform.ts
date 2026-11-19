@@ -1,10 +1,18 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import coverImg from "@/assets/products/jewellery ecommerce/cover.png";
+import homeImg from "@/assets/products/jewellery ecommerce/home.png";
+import categoryImg from "@/assets/products/jewellery ecommerce/category.png";
+import loginImg from "@/assets/products/jewellery ecommerce/login.png";
+import productDetailImg from "@/assets/products/jewellery ecommerce/product detail.png";
+import cartImg from "@/assets/products/jewellery ecommerce/cart.png";
+import grid1Img from "@/assets/products/jewellery ecommerce/grid1.png";
+import grid2Img from "@/assets/products/jewellery ecommerce/grid2.png";
 
 export const luxuryJewelleryEcommercePlatform = {
     id: "luxury-jewellery-ecommerce-platform",
     title: "Luxury Jewelry E-Commerce Platform",
     category: "Prebuilt",
-    image: getCloudinaryUrl('cover_jbmyuv.png'),
+    image: coverImg,
     client: "Mindtrix Media",
     industry: "Luxury Jewelry & Retail",
     subtitle: "A premium jewelry e-commerce platform combining heritage craftsmanship, AI-powered shopping assistance, and immersive product experiences.",
@@ -37,7 +45,7 @@ export const luxuryJewelleryEcommercePlatform = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("home_kxafkz.png"),
+            src: homeImg,
             alt: "Luxury Jewelry E-Commerce Homepage"
         },
 
@@ -49,7 +57,7 @@ export const luxuryJewelleryEcommercePlatform = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("category_zo4qqk.png"),
+            src: categoryImg,
             alt: "Luxury Jewelry Collection Showcase"
         },
 
@@ -61,7 +69,7 @@ export const luxuryJewelleryEcommercePlatform = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("login_loyi6v.png"),
+            src: loginImg,
             alt: "AI Jewelry Shopping Assistant"
         },
 
@@ -73,7 +81,7 @@ export const luxuryJewelleryEcommercePlatform = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("product_detail_htzane.png"),
+            src: productDetailImg,
             alt: "Jewelry Collection Details"
         },
 
@@ -91,7 +99,7 @@ export const luxuryJewelleryEcommercePlatform = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("cart_adaq4z.png"),
+            src: cartImg,
             alt: "AR Virtual Jewelry Try-On Experience"
         },
 
@@ -110,8 +118,8 @@ export const luxuryJewelleryEcommercePlatform = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_sjsaru.png"),
-                getCloudinaryUrl("grid2_ur4cpl.png")
+                grid1Img,
+                grid2Img
             ]
         }
 

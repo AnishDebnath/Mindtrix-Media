@@ -1,10 +1,16 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import coverImg from "@/assets/products/the photographer house/cover.png";
+import homeImg from "@/assets/products/the photographer house/home.png";
+import galleryImg from "@/assets/products/the photographer house/gallery.png";
+import bookingImg from "@/assets/products/the photographer house/booking.png";
+import grid1Img from "@/assets/products/the photographer house/grid1.png";
+import grid2Img from "@/assets/products/the photographer house/grid2.png";
 
 export const thePhotographersHouse = {
     id: "the-photographers-house",
     title: "Photographer Portfolio with Booking Feature",
     category: "Customized",
-    image: getCloudinaryUrl("cover_yidgjt.png"),
+    image: coverImg,
     client: "The Photographer House",
     industry: "Photography & Creative Services",
     subtitle: "A professional portfolio with booking feature designed for photographers to showcase organized work collections and attract new clients.",
@@ -24,7 +30,7 @@ export const thePhotographersHouse = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("home_wi4ew2.png"),
+            src: homeImg,
             alt: "Photography Portfolio Homepage"
         },
         {
@@ -34,7 +40,7 @@ export const thePhotographersHouse = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("gallery_oqca2o.png"),
+            src: galleryImg,
             alt: "Folder Based Photography Gallery"
         },
         {
@@ -44,7 +50,7 @@ export const thePhotographersHouse = {
         },
         {
             type: "image",
-            src: getCloudinaryUrl("booking_a97ten.png"),
+            src: bookingImg,
             alt: "Photography Booking System"
         },
         {
@@ -58,15 +64,15 @@ export const thePhotographersHouse = {
             body: "The platform includes folder-based project organization, high-quality image galleries, mobile-responsive design, booking request forms, project categorization, fast-loading image optimization, SEO-friendly architecture, easy portfolio management, and a user-focused navigation experience. These features help photographers showcase their work effectively while providing potential clients with a seamless browsing and inquiry process."
         },
         {
-            type: "text",
+            type: "results",
             title: "Results & Impact",
             body: "The final website transformed the photographer's online presence into a professional portfolio and lead-generation platform. Instead of sending scattered social media links, the client can now share a single website that presents work in an organized and trustworthy manner. Potential clients can quickly explore relevant projects, evaluate the photographer's expertise, and submit booking requests, resulting in a more efficient client acquisition process and stronger brand credibility."
         },
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_wvfvyo.png"),
-                getCloudinaryUrl("grid2_y2ywsq.png")
+                grid1Img,
+                grid2Img
             ]
         }
     ]

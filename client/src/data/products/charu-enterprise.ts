@@ -1,10 +1,16 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import coverImg from "@/assets/products/charu enterprise/cover.png";
+import homeImg from "@/assets/products/charu enterprise/home.png";
+import aboutImg from "@/assets/products/charu enterprise/about.png";
+import contactImg from "@/assets/products/charu enterprise/contact.png";
+import grid1Img from "@/assets/products/charu enterprise/grid1.png";
+import grid2Img from "@/assets/products/charu enterprise/grid2.png";
 
 export const charuEnterprise = {
     id: "charu-enterprise",
     title: "Charu Enterprise Digital Business Card & Company Landing Page",
     category: "Customized",
-    image: getCloudinaryUrl("cover_fowio8.png"),
+    image: coverImg,
     client: "Charu Enterprise",
     industry: "Manufacturing & Industrial Hardware",
     subtitle: "A QR-powered digital business card and company landing page designed to showcase products, manufacturing capabilities, certifications, and business information in a professional and accessible format.",
@@ -37,7 +43,7 @@ export const charuEnterprise = {
 
         {
             type: "image",
-            src: getCloudinaryUrl('home_u8sktx.png'),
+            src: homeImg,
             alt: "Charu Enterprise Landing Page Homepage"
         },
 
@@ -49,7 +55,7 @@ export const charuEnterprise = {
 
         {
             type: "image",
-            src: getCloudinaryUrl('about_yr7s2w.png'),
+            src: aboutImg,
             alt: "QR Code Based Business Landing Page Experience"
         },
 
@@ -61,7 +67,7 @@ export const charuEnterprise = {
 
         {
             type: "image",
-            src: getCloudinaryUrl('contact_ej4rue.png'),
+            src: contactImg,
             alt: "Manufacturing Excellence and Company Highlights"
         },
 
@@ -92,8 +98,8 @@ export const charuEnterprise = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_ywdfli.png"),
-                getCloudinaryUrl("grid2_asl22j.png")
+                grid1Img,
+                grid2Img
             ]
         }
 

@@ -1,10 +1,18 @@
-import { getCloudinaryUrl } from "@/utils/cloudinary";
+// ponytail: local product assets
+import coverImg from "@/assets/products/charu enterprise ecommerce/cover.png";
+import homeImg from "@/assets/products/charu enterprise ecommerce/home.png";
+import categoryImg from "@/assets/products/charu enterprise ecommerce/category.png";
+import productDetailImg from "@/assets/products/charu enterprise ecommerce/product detail.png";
+import wholesaleImg from "@/assets/products/charu enterprise ecommerce/wholesale.png";
+import contactImg from "@/assets/products/charu enterprise ecommerce/contact.png";
+import grid1Img from "@/assets/products/charu enterprise ecommerce/grid1.png";
+import grid2Img from "@/assets/products/charu enterprise ecommerce/grid2.png";
 
 export const charuEnterpriseEcommerce = {
     id: "charu-enterprise-ecommerce",
     title: "Charu Enterprise E-Commerce Platform (B2B)",
     category: "Customized",
-    image: getCloudinaryUrl("cover_qw2egu.png"),
+    image: coverImg,
     client: "Charu Enterprise",
     industry: "Manufacturing & Industrial Hardware",
     subtitle: "A modern B2B e-commerce platform designed to help industrial buyers discover, compare, and request bulk pricing for fence fittings and hardware products worldwide.",
@@ -36,7 +44,7 @@ export const charuEnterpriseEcommerce = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("home_iemayj.png"),
+            src: homeImg,
             alt: "Charu Enterprise Industrial Hardware E-Commerce Website"
         },
 
@@ -48,7 +56,7 @@ export const charuEnterpriseEcommerce = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("category_cfstud.png"),
+            src: categoryImg,
             alt: "Industrial Product Catalog Interface"
         },
 
@@ -60,7 +68,7 @@ export const charuEnterpriseEcommerce = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("product_detail_jmvovz.png"),
+            src: productDetailImg,
             alt: "Industrial Product Detail Page"
         },
 
@@ -72,7 +80,7 @@ export const charuEnterpriseEcommerce = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("wholesale_tir9pk.png"),
+            src: wholesaleImg,
             alt: "Bulk Wholesale Inquiry System"
         },
 
@@ -90,7 +98,7 @@ export const charuEnterpriseEcommerce = {
 
         {
             type: "image",
-            src: getCloudinaryUrl("contact_ont7ip.png"),
+            src: contactImg,
             alt: "Product Comparison Feature"
         },
 
@@ -109,8 +117,8 @@ export const charuEnterpriseEcommerce = {
         {
             type: "grid",
             images: [
-                getCloudinaryUrl("grid1_j3foh3.png"),
-                getCloudinaryUrl("grid2_zqsre7.png")
+                grid1Img,
+                grid2Img
             ]
         }
 
