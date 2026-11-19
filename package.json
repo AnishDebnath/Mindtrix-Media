@@ -5,11 +5,8 @@
   "type": "module",
   "description": "Mindtrix Media is a high-end web development and software agency platform focused on Visual Excellence and Premium Aesthetics.",
   "scripts": {
-    "dev": "concurrently -k -n \"vite,api\" -c \"blue.bold,green.bold\" \"vite\" \"tsx watch api/index.ts\"",
-    "dev:vite": "vite",
-    "dev:client": "vite",
+    "dev": "vite",
     "dev:api": "tsx watch api/index.ts",
-    "dev:server": "tsx watch api/index.ts",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -9,8 +9,8 @@ import {
     prototypeConfirmationTemplate
 } from './templates/index.js';
 
-console.log('Server is starting up...');
-dotenv.config();
+// ponytail: silent config
+dotenv.config({ quiet: true } as any);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
