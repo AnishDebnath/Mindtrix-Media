@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                         {/* Branding */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link to="/" className="inline-block mb-6 group">
-                                <img src={whiteLogo} alt="Mindtrix Media" loading="lazy" className="h-9 md:h-11 2xl:h-12 w-auto object-contain" />
+                                <img src={whiteLogo} alt="Mindtrix Media" loading="lazy" className="h-10 md:h-12 2xl:h-14 w-auto object-contain" />
                             </Link>
                             <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-bold text-white mb-4 md:mb-5 leading-tight">Ready to build <br />your custom software system?</h3>
                             <p className="text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">From CRM and ERP platforms to SaaS products and business websites — we build systems that scale with you.</p>

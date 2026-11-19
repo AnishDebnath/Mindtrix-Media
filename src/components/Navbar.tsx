@@ -60,8 +60,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-1.5 md:p-2 transition-all duration-300"
                 >
                     {/* Logo */}
-                    <Link to="/" className="flex items-center group ml-3 md:ml-4">
-                        <img src={whiteLogo} alt="Mindtrix Media" className="h-7 md:h-8 2xl:h-9 w-auto object-contain" />
+                    <Link to="/" className="flex items-center group ml-3 md:ml-4 py-1">
+                        <img src={whiteLogo} alt="Mindtrix Media" className="h-8 md:h-9 2xl:h-10 w-auto object-contain" />
                     </Link>
 
 
