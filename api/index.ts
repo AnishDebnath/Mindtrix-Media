@@ -9,10 +9,18 @@ import {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const RECEIVER_EMAIL = process.env.CONTACT_RECEIVER_EMAIL || 'mindtrixmediaindia@gmail.com';
 
 app.use(cors());
 app.use(express.json());
+
+// ponytail: strictly read env vars; never hardcode env values in codebase
+const getRequiredEnv = (key: string): string => {
+    const val = process.env[key];
+    if (!val) {
+        throw new Error(`Environment variable "${key}" is not set.`);
+    }
+    return val;
+};
 
 /**
  * Sends transactional email via Resend REST API using native fetch.
@@ -28,12 +36,8 @@ const sendEmail = async ({
     html: string;
     replyTo?: string;
 }) => {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-        throw new Error('RESEND_API_KEY is not defined.');
-    }
-
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Mindtrix Media <hello@mindtrixmedia.com>';
+    const apiKey = getRequiredEnv('RESEND_API_KEY');
+    const fromEmail = getRequiredEnv('RESEND_FROM_EMAIL');
 
     const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -67,9 +71,10 @@ app.post('/api/contact', async (req, res) => {
     const { fullName, email, phone, purpose, message } = req.body;
 
     try {
+        const receiverEmail = getRequiredEnv('CONTACT_RECEIVER_EMAIL');
         const adminHtml = contactAdminTemplate({ fullName, email, phone, purpose, message });
         await sendEmail({
-            to: RECEIVER_EMAIL,
+            to: receiverEmail,
             subject: `New Contact from ${fullName}`,
             html: adminHtml,
             replyTo: email,
@@ -98,9 +103,10 @@ app.post('/api/prototype', async (req, res) => {
     const { fullName, email, phone, projectType, website, description } = req.body;
 
     try {
+        const receiverEmail = getRequiredEnv('CONTACT_RECEIVER_EMAIL');
         const adminHtml = prototypeAdminTemplate({ fullName, email, phone, projectType, website, description });
         await sendEmail({
-            to: RECEIVER_EMAIL,
+            to: receiverEmail,
             subject: `New Prototype Request: ${fullName}`,
             html: adminHtml,
             replyTo: email,
