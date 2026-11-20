@@ -20,17 +20,18 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Featured Work</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Featured Work</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        Products <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">That Speak</span> for Themselves
+                        Products <span className="text-[#6366f1]">That Speak</span>{' '}
+                        <span className="text-[#ffc659]">for Themselves</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -52,10 +53,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300 h-full"
+                                className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md backdrop-blur-md transition-all duration-300 h-full"
                             >
                                 {/* Image Frame */}
-                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-black mb-3 md:mb-4 border border-slate-100 dark:border-white/[0.06]">
+                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-3 md:mb-4 border border-slate-100 dark:border-white/[0.06]">
                                     <img
                                         src={product.image}
                                         alt={product.title}
@@ -64,8 +65,8 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                     />
 
                                     {product.featuredTag && (
-                                        <div className="absolute top-3 right-3 px-2.5 py-1 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[9px] font-semibold uppercase tracking-widest rounded-lg shadow-lg z-10">
-                                            {product.featuredTag}
+                                        <div className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/85 backdrop-blur-md border border-[#ffc659]/50 text-[#ffc659] text-[9px] font-bold uppercase tracking-widest rounded-lg shadow-sm z-10 flex items-center gap-1">
+                                            <span>★</span> {product.featuredTag}
                                         </div>
                                     )}
                                 </div>
@@ -76,10 +77,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">
                                             {product.title}
                                         </h3>
-                                        <p className="text-slate-500 dark:text-neutral-400 font-medium text-xs md:text-sm truncate">{product.client}</p>
+                                        <p className="text-[#94a3b8] font-semibold text-xs md:text-sm truncate">{product.client}</p>
                                     </div>
                                     <motion.div
-                                        className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0 rounded-xl border border-slate-200 dark:border-white/[0.1] bg-slate-50 dark:bg-neutral-900/60 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
+                                        className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0 rounded-xl border border-slate-300 dark:border-white/[0.1] bg-white dark:bg-neutral-900/60 flex items-center justify-center group-hover:bg-slate-950 group-hover:border-slate-950 dark:group-hover:bg-primary dark:group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
                                     >
                                         <motion.span
                                             variants={{

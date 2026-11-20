@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import whiteLogo from '@/assets/white-logo.png';
+import blackLogo from '@/assets/black-logo.png';
 
 const footerSocials = [
     { name: "LinkedIn", icon: "https://cdn.simpleicons.org/linkedin/white", link: "#" },
@@ -36,18 +37,19 @@ const Footer: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-full bg-black rounded-2xl md:rounded-3xl px-6 pt-10 pb-12 md:pt-14 md:pb-16 2xl:p-16 relative overflow-hidden flex flex-col justify-between border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                className="w-full bg-white dark:bg-black rounded-2xl md:rounded-3xl px-6 pt-10 pb-12 md:pt-14 md:pb-16 2xl:p-16 relative overflow-hidden flex flex-col justify-between border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)]"
             >
                 <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-between">
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
                         {/* Branding */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link to="/" className="inline-block mb-6 group">
-                                <img src={whiteLogo} alt="Mindtrix Media" loading="lazy" className="h-10 md:h-12 2xl:h-14 w-auto object-contain" />
+                                <img src={blackLogo} alt="Mindtrix Media" loading="lazy" className="h-10 md:h-12 2xl:h-14 w-auto object-contain block dark:hidden" />
+                                <img src={whiteLogo} alt="Mindtrix Media" loading="lazy" className="h-10 md:h-12 2xl:h-14 w-auto object-contain hidden dark:block" />
                             </Link>
-                            <h3 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-5 leading-tight tracking-tight">Ready to build <br />your custom software system?</h3>
-                            <p className="text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">From CRM and ERP platforms to SaaS products and business websites — we build systems that scale with you.</p>
-                            <Link to="/contact" className="inline-flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group text-sm md:text-base">
+                            <h3 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4 md:mb-5 leading-tight tracking-tight">Ready to build <br />your custom software system?</h3>
+                            <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">From CRM and ERP platforms to SaaS products and business websites — we build systems that scale with you.</p>
+                            <Link to="/contact" className="inline-flex items-center gap-2 text-slate-900 dark:text-white font-bold hover:text-[#6366f1] transition-colors group text-sm md:text-base">
                                 Start Your Project
                                 <span className="material-symbols-rounded scale-75 group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </Link>
@@ -57,15 +59,15 @@ const Footer: React.FC = () => {
                         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:pl-12 pt-0 md:pt-4">
                             {footerLinks.map((col, idx) => (
                                 <div key={idx}>
-                                    <h4 className="text-white font-bold mb-5 md:mb-6 text-sm md:text-base">{col.title}</h4>
-                                    <ul className="space-y-3 text-xs md:text-sm text-slate-400 font-medium">
+                                    <h4 className="text-slate-900 dark:text-white font-bold mb-5 md:mb-6 text-sm md:text-base">{col.title}</h4>
+                                    <ul className="space-y-3 text-xs md:text-sm text-slate-600 dark:text-slate-400 font-medium">
                                         {col.links.map((link, lIdx) => (
                                             <li key={lIdx}>
                                                 <Link
                                                     to={link.path}
-                                                    className="hover:text-white transition-all duration-300 flex items-center gap-0 hover:gap-2 group/link"
+                                                    className="hover:text-[#6366f1] transition-all duration-300 flex items-center gap-0 hover:gap-2 group/link"
                                                 >
-                                                    <div className="w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover/link:w-1.5 group-hover/link:h-1.5" />
+                                                    <div className="w-0 h-1 bg-[#6366f1] rounded-full transition-all duration-300 group-hover/link:w-1.5 group-hover/link:h-1.5" />
                                                     <span className="transition-transform duration-300 group-hover/link:translate-x-1">{link.name}</span>
                                                 </Link>
                                             </li>
@@ -76,17 +78,17 @@ const Footer: React.FC = () => {
 
                             {/* Socials */}
                             <div>
-                                <h4 className="text-white font-bold mb-5 md:mb-6 text-sm md:text-base">Get In Touch</h4>
-                                <p className="text-slate-400 mb-4 text-xs md:text-sm">Connect with us via our socials</p>
+                                <h4 className="text-slate-900 dark:text-white font-bold mb-5 md:mb-6 text-sm md:text-base">Get In Touch</h4>
+                                <p className="text-slate-600 dark:text-slate-400 mb-4 text-xs md:text-sm">Connect with us via our socials</p>
                                 <div className="flex gap-3">
                                     {footerSocials.map((social, i) => (
                                         <a
                                             key={i}
                                             href={social.link}
-                                            className="w-8 h-8 rounded-full bg-[#1A1A1A] flex items-center justify-center hover:bg-primary transition-all duration-300 group"
+                                            className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#1A1A1A] border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-[#6366f1] transition-all duration-300 group"
                                             aria-label={social.name}
                                         >
-                                            <img src={social.icon} alt={social.name} loading="lazy" className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                            <img src={social.icon} alt={social.name} loading="lazy" className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity invert dark:invert-0" />
                                         </a>
                                     ))}
                                 </div>
@@ -97,7 +99,7 @@ const Footer: React.FC = () => {
                     {/* Bottom */}
                     <div className="relative mt-auto pt-6 md:pt-8 lg:pt-16 pb-4">
                         <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end pointer-events-none select-none">
-                            <h1 className="text-[20vw] md:text-[18vw] lg:text-[16vw] 2xl:text-[14vw] font-black text-center text-white/[0.04] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
+                            <h1 className="text-[20vw] md:text-[18vw] lg:text-[16vw] 2xl:text-[14vw] font-black text-center text-slate-900/[0.07] dark:text-white/[0.05] leading-[0.75] tracking-tighter whitespace-nowrap font-display translate-y-[15%]">Mindtrix</h1>
                         </div>
                         <div className="relative z-10 text-center">
                             <p className="text-slate-500 text-xs md:text-sm font-medium">© All Right Reserved by Mindtrix Media - 2025</p>

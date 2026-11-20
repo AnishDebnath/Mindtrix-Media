@@ -14,17 +14,18 @@ const Blog: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Blog</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Blog</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 dark:text-white tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 tracking-tight leading-tight"
                     >
-                        Insights & <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Expertise</span>
+                        Insights & <span className="text-[#6366f1]">Expertise</span>{' '}
+                        <span className="text-[#ffc659]">Shared.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

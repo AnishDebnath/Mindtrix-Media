@@ -22,19 +22,20 @@ const WhyChooseUs: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Why Choose Us</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Why Choose Us</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 dark:text-white leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 leading-tight"
                     >
                         Why Clients Choose <br />
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Mindtrix Media</span>
+                        <span className="text-[#6366f1]">Mindtrix</span>{' '}
+                        <span className="text-[#ffc659]">Media</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -54,7 +55,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
                         <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
@@ -81,7 +82,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
                         <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
@@ -108,7 +109,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
                         <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-white/[0.06] shrink-0">
                             {/* Animated Mouse Pointer */}
@@ -141,7 +142,7 @@ const WhyChooseUs: React.FC = () => {
                                     <div className={`
                                         flex-1 flex items-center justify-center rounded-lg mb-0.5 xl:mb-1 border
                                         ${item.highlight
-                                            ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner border-green-500'
+                                            ? 'bg-[#ffc659] text-slate-950 font-bold border-[#ffc659] shadow-sm'
                                             : 'bg-slate-50 dark:bg-black text-slate-900 dark:text-white border-slate-200 dark:border-white/[0.06]'}
                                      `}>
                                         <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
@@ -149,7 +150,7 @@ const WhyChooseUs: React.FC = () => {
                                         </span>
                                     </div>
                                     <div className="text-center py-1.5 lg:py-0.5 xl:py-2">
-                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-medium ${item.highlight ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-400'}`}>{item.l}</div>
+                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-semibold ${item.highlight ? 'text-slate-950 font-bold' : 'text-[#94a3b8]'}`}>{item.l}</div>
                                     </div>
                                 </motion.div>
                             ))}

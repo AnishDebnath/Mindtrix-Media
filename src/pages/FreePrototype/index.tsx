@@ -61,12 +61,12 @@ const FreePrototypePage: React.FC = () => {
                                     transition={{ duration: 0.5, ease: "easeOut" }}
                                     className="flex justify-start"
                                 >
-                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
+                                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-slate-300 shadow-sm backdrop-blur-md">
                                         <span className="relative flex h-2 w-2">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                                         </span>
-                                        <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                                        <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                                             Available for New Projects
                                         </span>
                                     </div>
@@ -76,20 +76,20 @@ const FreePrototypePage: React.FC = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     whileHover={{ scale: 1.02 }}
-                                    className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-300 w-fit cursor-default"
+                                    className="relative flex items-center gap-2 px-4 py-2 bg-[#ffc659] rounded-xl shadow-sm border border-[#ffc659]/60 transition-all duration-300 w-fit cursor-default"
                                 >
-                                    <span className="material-symbols-rounded text-white text-[18px] drop-shadow-sm">timer</span>
-                                    <span className="text-xs font-bold text-white tracking-widest uppercase drop-shadow-sm">Limited Time Offer</span>
+                                    <span className="material-symbols-rounded text-slate-950 text-[18px]">timer</span>
+                                    <span className="text-xs font-bold text-slate-950 tracking-widest uppercase">Limited Time Offer</span>
                                 </motion.div>
                             </div>
 
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-8 leading-[1.08] tracking-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-[1.08] tracking-tight"
                             >
                                 See It Before <br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                                <span className="text-[#6366f1]">
                                     You Sign.
                                 </span>
                             </motion.h1>
@@ -117,8 +117,8 @@ const FreePrototypePage: React.FC = () => {
                                         className="flex items-center gap-4 group"
                                     >
                                         <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${item.color === 'blue'
-                                            ? 'bg-blue-100/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
-                                            : 'bg-orange-100/50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
+                                            ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                                            : 'bg-[#ffc659]/20 text-amber-700'
                                             }`}>
                                             <span className="material-symbols-rounded text-[22px]">{item.icon}</span>
                                         </div>

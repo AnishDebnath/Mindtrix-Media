@@ -28,17 +28,19 @@ const OurSolution: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Our Solution</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Our Solution</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        Common Problems. <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Simple Solutions.</span>
+                        Common Problems.{' '}
+                        <span className="text-[#6366f1]">Simple</span>{' '}
+                        <span className="text-[#ffc659]">Solutions.</span>
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -52,8 +54,8 @@ const OurSolution: React.FC = () => {
                         </p>
 
                         {/* Comparison Toggle */}
-                        <div className="flex items-center gap-3 bg-white dark:bg-neutral-900/60 px-4 py-2 rounded-xl border border-slate-200/80 dark:border-white/[0.1] shadow-sm backdrop-blur-md mt-2">
-                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${!highlightSolution ? 'text-slate-900 dark:text-white' : 'text-slate-400 dark:text-neutral-500'}`}>Problem</span>
+                        <div className="flex items-center gap-3 bg-white dark:bg-neutral-900/60 px-4 py-2 rounded-xl border border-slate-300 dark:border-white/[0.1] shadow-sm backdrop-blur-md mt-2">
+                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${!highlightSolution ? 'text-slate-900 font-bold dark:text-white' : 'text-slate-600 dark:text-neutral-500'}`}>Problem</span>
                             <button
                                 onClick={() => setHighlightSolution(!highlightSolution)}
                                 className={`w-11 h-6 rounded-full flex items-center transition-colors duration-300 px-0.5 ${highlightSolution ? 'bg-indigo-600' : 'bg-slate-300 dark:bg-neutral-800'}`}
@@ -64,7 +66,7 @@ const OurSolution: React.FC = () => {
                                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 />
                             </button>
-                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${highlightSolution ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-neutral-500'}`}>Solution</span>
+                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${highlightSolution ? 'text-[#6366f1] font-bold' : 'text-slate-600'}`}>Solution</span>
                         </div>
                     </motion.div>
                 </div>
@@ -74,7 +76,7 @@ const OurSolution: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-3 border border-slate-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md relative overflow-hidden"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-3 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md relative overflow-hidden"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10">
                             {/* Problems Column */}
@@ -101,14 +103,14 @@ const OurSolution: React.FC = () => {
 
                             {/* Solutions Column */}
                             <motion.div
-                                className="flex flex-col bg-slate-950 dark:bg-neutral-900/80 rounded-xl md:rounded-2xl p-6 md:p-10 border border-slate-800 dark:border-white/[0.08] shadow-xl relative overflow-hidden transition-all duration-500"
+                                className="flex flex-col bg-slate-50 dark:bg-neutral-900/80 rounded-xl md:rounded-2xl p-6 md:p-10 border border-slate-200/90 dark:border-white/[0.08] shadow-md relative overflow-hidden transition-all duration-500"
                                 animate={{
                                     opacity: highlightSolution ? 1 : 0.3,
                                     scale: highlightSolution ? 1 : 0.98,
                                     filter: highlightSolution ? 'grayscale(0%)' : 'grayscale(100%)'
                                 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-primary mb-12 text-center relative z-10">Our Solution</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-[#6366f1] mb-12 text-center relative z-10">Our Solution</h3>
                                 <ul className="space-y-8 relative z-10">
                                     {solutions.map((solution, idx) => (
                                         <motion.li
@@ -117,9 +119,9 @@ const OurSolution: React.FC = () => {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: idx * 0.1 }}
-                                            className="flex items-center gap-5 text-white/90 font-normal text-sm sm:text-base"
+                                            className="flex items-center gap-5 text-slate-800 dark:text-white/90 font-medium text-sm sm:text-base"
                                         >
-                                            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40">
+                                            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#6366f1] flex items-center justify-center shadow-md shadow-[#6366f1]/30">
                                                 <span className="material-symbols-rounded text-white text-sm font-bold">check</span>
                                             </div>
                                             {solution}
@@ -127,7 +129,7 @@ const OurSolution: React.FC = () => {
                                     ))}
                                 </ul>
                                 {/* Subtle decorative glow */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#6366f1]/5 blur-[80px] rounded-full pointer-events-none" />
                             </motion.div>
                         </div>
                     </motion.div>

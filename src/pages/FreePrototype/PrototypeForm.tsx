@@ -72,7 +72,7 @@ const PrototypeForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative overflow-hidden bg-gradient-to-br from-white/95 to-slate-50/95 dark:from-slate-900/95 dark:to-[#0A0A0A]/95 backdrop-blur-2xl p-6 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white dark:border-white/10"
+            className="relative overflow-hidden bg-white/95 backdrop-blur-2xl p-6 md:p-10 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-slate-200/90"
         >
             <style>{`
                 .custom-scrollbar::-webkit-scrollbar {
@@ -90,52 +90,46 @@ const PrototypeForm: React.FC = () => {
                 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                     background: #94A3B8;
                 }
-                .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: #334155;
-                }
-                .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: #475569;
-                }
             `}</style>
             {/* Decorative Ribbon */}
-            <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-orange-600 text-white text-[12px] md:text-[13px] font-black uppercase tracking-[0.15em] py-1.5 px-12 rotate-45 translate-x-[28%] translate-y-[45%] shadow-xl z-10 border-b border-white/10">
+            <div className="absolute top-0 right-0 bg-[#ffc659] text-slate-950 text-[12px] md:text-[13px] font-black uppercase tracking-[0.15em] py-1.5 px-12 rotate-45 translate-x-[28%] translate-y-[45%] shadow-md z-10 border-b border-black/10">
                 Free
             </div>
 
 
             {/* Decorative gradient blobs */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#6366f1]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#ffc659]/10 rounded-full blur-3xl pointer-events-none" />
 
             <form onSubmit={handleSubmit} className="relative space-y-5 z-0" onClick={() => isDropdownOpen && setIsDropdownOpen(false)}>
                 <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Full Name <span className="text-primary">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Full Name <span className="text-[#6366f1]">*</span></label>
                     <input
                         required
                         type="text"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="John Doe"
                     />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Email <span className="text-primary">*</span></label>
+                        <label className="text-xs font-semibold text-slate-800 ml-1">Email <span className="text-[#6366f1]">*</span></label>
                         <input
                             required
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="john@example.com"
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Phone No <span className="text-primary">*</span></label>
+                        <label className="text-xs font-semibold text-slate-800 ml-1">Phone No <span className="text-[#6366f1]">*</span></label>
                         <input
                             required
                             type="tel"
@@ -143,14 +137,14 @@ const PrototypeForm: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             pattern="[0-9+ ]*"
-                            className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="+91 XXXXX-XXXXX"
                         />
                     </div>
                 </div>
 
                 <div className="space-y-2 relative">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Project Type <span className="text-primary">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Type <span className="text-[#6366f1]">*</span></label>
                     <div className="relative">
                         <button
                             type="button"
@@ -158,9 +152,9 @@ const PrototypeForm: React.FC = () => {
                                 e.stopPropagation();
                                 setIsDropdownOpen(!isDropdownOpen);
                             }}
-                            className={`w-full text-left bg-slate-50/50 dark:bg-slate-800/50 border rounded-2xl px-5 py-4 flex items-center justify-between text-sm outline-none transition-all ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 dark:border-slate-700 hover:border-primary/50'}`}
+                            className={`w-full text-left bg-white border rounded-2xl px-5 py-4 flex items-center justify-between text-sm outline-none transition-all shadow-sm ${isDropdownOpen ? 'border-[#6366f1] ring-2 ring-[#6366f1]/20' : 'border-slate-300 hover:border-[#6366f1]/50'}`}
                         >
-                            <span className={formData.projectType ? "text-slate-900 dark:text-white" : "text-slate-400"}>
+                            <span className={formData.projectType ? "text-slate-900 font-medium" : "text-slate-400"}>
                                 {formData.projectType ? projectTypes.find(t => t.value === formData.projectType)?.label : "Select a project type"}
                             </span>
                             <span className={`material-symbols-rounded text-slate-500 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}>expand_more</span>
@@ -173,7 +167,7 @@ const PrototypeForm: React.FC = () => {
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                     transition={{ duration: 0.2 }}
-                                    className="absolute top-full left-0 w-full mt-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl shadow-xl overflow-y-auto max-h-[340px] z-20 custom-scrollbar"
+                                    className="absolute top-full left-0 w-full mt-2 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-y-auto max-h-[340px] z-20 custom-scrollbar"
                                 >
 
                                     {projectTypes.map((type) => (
@@ -184,13 +178,13 @@ const PrototypeForm: React.FC = () => {
                                                 handleSelect(type.value);
                                             }}
                                             className={`px-5 py-3 cursor-pointer transition-colors flex items-center justify-between ${formData.projectType === type.value
-                                                ? 'bg-primary/5 text-primary font-medium'
-                                                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'
+                                                ? 'bg-[#6366f1]/10 text-[#6366f1] font-medium'
+                                                : 'text-slate-700 hover:bg-slate-50'
                                                 }`}
                                         >
                                             {type.label}
                                             {formData.projectType === type.value && (
-                                                <span className="material-symbols-rounded text-primary text-sm">check</span>
+                                                <span className="material-symbols-rounded text-[#6366f1] text-sm">check</span>
                                             )}
                                         </li>
                                     ))}
@@ -201,26 +195,26 @@ const PrototypeForm: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Current Website <span className="text-slate-400 font-normal text-[10px] ml-1">(Optional)</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Current Website <span className="text-slate-400 font-normal text-[10px] ml-1">(Optional)</span></label>
                     <input
                         type="url"
                         name="website"
                         value={formData.website}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-400"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="https://www.yourbrandsite.com"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-neutral-300 ml-1">Project Description <span className="text-primary">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Description <span className="text-[#6366f1]">*</span></label>
                     <textarea
                         required
                         rows={3}
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none placeholder:text-slate-400"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all resize-none placeholder:text-slate-400 shadow-sm"
                         placeholder="Tell us about the problem you want to solve..."
                     />
                 </div>

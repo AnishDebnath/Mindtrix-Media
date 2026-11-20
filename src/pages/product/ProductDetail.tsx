@@ -65,9 +65,9 @@ const ProductDetail: React.FC = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Case Study</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Case Study</span>
                     </motion.div>
 
                     <div className="flex flex-col items-center justify-center text-center">
@@ -226,7 +226,7 @@ const ProductDetail: React.FC = () => {
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                             More <span className="text-primary">Products</span>
                         </h2>
-                        <Link to="/product" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+                        <Link to="/product" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400 hover:text-primary transition-colors">
                             View All Products
                             <span className="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </Link>
@@ -241,11 +241,11 @@ const ProductDetail: React.FC = () => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-3 pb-6 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500"
+                                className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-3 pb-6 border border-slate-200/90 dark:border-slate-800 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-500"
                             >
                                 <div
                                     onClick={() => navigate(`/product/${p.id}`)}
-                                    className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-black mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
+                                    className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-slate-100 mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
                                 >
                                     <img
                                         src={p.image}
@@ -253,7 +253,7 @@ const ProductDetail: React.FC = () => {
                                         loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     />
-                                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-black/80 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider rounded-lg z-10 border border-white/10">
+                                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-slate-950/85 backdrop-blur-md text-[#ffc659] text-xs font-semibold uppercase tracking-wider rounded-lg z-10 border border-[#ffc659]/50">
                                         {p.category}
                                     </div>
                                 </div>
@@ -261,16 +261,16 @@ const ProductDetail: React.FC = () => {
                                 <div className="px-4 flex justify-between items-end">
                                     <div>
                                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-1 leading-tight">{p.title.split(':')[0]}</h3>
-                                        <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">{p.client}</p>
+                                        <p className="text-slate-600 dark:text-slate-400 font-medium text-sm">{p.client}</p>
                                     </div>
-                                    <motion.div className="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm">
+                                    <motion.div className="w-10 h-10 rounded-xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-neutral-900 flex items-center justify-center group-hover:bg-slate-950 group-hover:border-slate-950 group-hover:text-white dark:group-hover:bg-primary dark:group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm">
                                         <motion.span
                                             variants={{
                                                 initial: { rotate: 0 },
                                                 hover: { rotate: 45 }
                                             }}
                                             transition={{ duration: 0.3 }}
-                                            className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors text-xl"
+                                            className="material-symbols-rounded text-slate-700 group-hover:text-white transition-colors text-xl"
                                         >
                                             arrow_outward
                                         </motion.span>

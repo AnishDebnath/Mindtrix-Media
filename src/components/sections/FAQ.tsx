@@ -15,19 +15,20 @@ const FAQ: React.FC = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                         >
-                            <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ FAQ</span>
+                            <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ FAQ</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                         >
                             Questions We <br />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Get Asked</span> Often
+                            <span className="text-[#6366f1]">Get Asked</span>{' '}
+                            <span className="text-[#ffc659]">Often</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -51,7 +52,7 @@ const FAQ: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className={`rounded-xl md:rounded-2xl transition-all duration-300 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] backdrop-blur-md ${isOpen ? 'bg-white dark:bg-neutral-950/80 p-4 md:p-5' : 'bg-white/80 dark:bg-neutral-950/50 px-4 py-3.5 hover:bg-white dark:hover:bg-neutral-950/70'}`}
+                                    className={`rounded-xl md:rounded-2xl transition-all duration-300 border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm ${isOpen ? 'bg-white dark:bg-neutral-950/80 p-4 md:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border-slate-300' : 'bg-white dark:bg-neutral-950/50 px-4 py-3.5 hover:bg-slate-50 dark:hover:bg-neutral-950/70'}`}
                                 >
                                     <button
                                         onClick={() => setOpenFAQ(isOpen ? null : index)}
@@ -60,8 +61,8 @@ const FAQ: React.FC = () => {
                                         <h4 className={`font-semibold text-sm md:text-base leading-snug tracking-tight ${isOpen ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-neutral-300'}`}>
                                             {faq.q}
                                         </h4>
-                                        <div className={`flex-shrink-0 w-7 h-7 rounded-lg border flex items-center justify-center transition-colors duration-300 ${isOpen ? 'border-slate-300 dark:border-white/20 bg-slate-100 dark:bg-neutral-800' : 'border-slate-200 dark:border-white/[0.08]'}`}>
-                                            <span className={`material-symbols-rounded text-base transition-transform duration-300 ${isOpen ? 'rotate-180 text-slate-900 dark:text-white' : 'text-slate-400'}`}>
+                                        <div className={`flex-shrink-0 w-7 h-7 rounded-lg border flex items-center justify-center transition-colors duration-300 ${isOpen ? 'border-slate-300 dark:border-white/20 bg-slate-100 dark:bg-neutral-800' : 'border-slate-300 bg-slate-50 dark:border-white/[0.08]'}`}>
+                                            <span className={`material-symbols-rounded text-base transition-transform duration-300 ${isOpen ? 'rotate-180 text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>
                                                 expand_more
                                             </span>
                                         </div>

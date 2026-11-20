@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                 <div className="w-full lg:w-1/2">
                     <div className="relative group perspective-1000" onClick={() => navigate(`/product/${product.id}`)}>
                         <div className="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-slate-100 dark:bg-neutral-950/80 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-500 group-hover:scale-[1.01] cursor-pointer p-2.5">
+                        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/80 border border-slate-200/90 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-500 group-hover:scale-[1.01] cursor-pointer p-2.5">
                             <div className="aspect-[4/3] w-full overflow-hidden rounded-xl md:rounded-2xl relative border border-slate-100 dark:border-white/[0.04]">
                                 <img
                                     src={product.image}
@@ -46,10 +46,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                         <span className="w-12 h-[2px] bg-secondary" />
                         <span className="text-secondary font-bold tracking-widest uppercase text-xs">0{index + 1}</span>
                         <div className="w-8 h-[1px] bg-slate-200 dark:bg-white/10 ml-2" />
-                        <span className="text-slate-400 dark:text-slate-500 text-xs font-medium uppercase tracking-widest">{product.client}</span>
+                        <span className="text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-widest">{product.client}</span>
                     </div>
 
-                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight hover:text-indigo-500 transition-colors duration-200">
+                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight hover:text-[#6366f1] transition-colors duration-200">
                         {product.title.split(':')[0]}
                     </h3>
 
@@ -57,10 +57,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     <ul className="space-y-3 mb-8 md:mb-10">
                         {product.services.slice(0, 4).map((service, idx) => (
                             <li key={idx} className="flex items-start gap-3">
-                                <div className="w-5 h-5 rounded-md bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <span className="material-symbols-rounded text-[12px] text-secondary font-bold">check</span>
+                                <div className="w-5 h-5 rounded-md bg-[#ffc659]/20 border border-[#ffc659]/40 flex items-center justify-center shrink-0 mt-0.5">
+                                    <span className="material-symbols-rounded text-[12px] text-amber-700 font-bold">check</span>
                                 </div>
-                                <span className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-medium">
+                                <span className="text-sm md:text-base text-slate-700 dark:text-slate-400 font-medium">
                                     {service}
                                 </span>
                             </li>

@@ -56,17 +56,18 @@ const Services: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Services</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Services</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        What <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">We Build</span> For You
+                        What <span className="text-[#6366f1]">We Build</span>{' '}
+                        <span className="text-[#ffc659]">For You</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -99,7 +100,7 @@ const Services: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                                 whileHover={{ y: -4 }}
-                                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-5 md:p-7 flex flex-col justify-between min-h-[200px] md:min-h-[220px] 2xl:min-h-[250px] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 ${colSpan}`}
+                                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-5 md:p-7 flex flex-col justify-between min-h-[200px] md:min-h-[220px] 2xl:min-h-[250px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 hover:shadow-md dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 ${colSpan}`}
                             >
                                 <div className="absolute inset-0 opacity-20 pointer-events-none"
                                     style={{
@@ -115,12 +116,15 @@ const Services: React.FC = () => {
                                 </div>
 
                                 <div className="relative z-10 flex flex-wrap gap-2 mt-6 md:mt-8 mb-1">
-                                    {service.tags.map((tag, i) => (
-                                        <div key={i} className="flex items-center gap-1.5 bg-slate-100 dark:bg-white/[0.05] border border-slate-200/80 dark:border-white/[0.08] rounded-lg px-3 py-1 text-slate-700 dark:text-neutral-300 text-[10px] md:text-xs font-medium transition-colors">
-                                            <span className="material-symbols-rounded text-indigo-500 dark:text-indigo-400 text-sm md:text-base">{tag.icon}</span>
-                                            {tag.text}
-                                        </div>
-                                    ))}
+                                    {service.tags.map((tag, i) => {
+                                        const iconColor = (idx + i) % 2 === 0 ? 'text-[#6366f1]' : 'text-[#ffc659]';
+                                        return (
+                                            <div key={i} className="flex items-center gap-1.5 bg-slate-50 dark:bg-white/[0.05] border border-slate-200/90 dark:border-white/[0.08] rounded-lg px-3 py-1 text-slate-800 dark:text-neutral-300 text-[10px] md:text-xs font-semibold transition-colors">
+                                                <span className={`material-symbols-rounded text-sm md:text-base ${iconColor}`}>{tag.icon}</span>
+                                                {tag.text}
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </motion.div>
                         );

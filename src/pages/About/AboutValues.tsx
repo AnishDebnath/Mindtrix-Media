@@ -10,9 +10,9 @@ const AboutValues: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">rocket_launch</span> Agency Purpose
                         </span>
                     </motion.div>
@@ -21,9 +21,11 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-4 leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight"
                     >
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Mission & Vision.</span>
+                        Our <span className="text-[#6366f1]">Mission</span>{' '}
+                        <span className="text-slate-900">&amp;</span>{' '}
+                        <span className="text-[#ffc659]">Vision.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

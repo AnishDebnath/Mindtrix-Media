@@ -16,17 +16,18 @@ const Process: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Process</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Process</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        How <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">We Work</span>
+                        How <span className="text-[#6366f1]">We</span>{' '}
+                        <span className="text-[#ffc659]">Work</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -46,10 +47,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 mx-auto w-full">
-                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">01</span>
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-[#6366f1] bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-[#94a3b8]/40 shadow-sm">01</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -74,10 +75,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">02</span>
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-[#ffc659] bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-[#94a3b8]/40 shadow-sm">02</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -102,10 +103,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">03</span>
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-[#6366f1] bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-[#94a3b8]/40 shadow-sm">03</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -130,10 +131,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">04</span>
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-[#ffc659] bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-[#94a3b8]/40 shadow-sm">04</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay

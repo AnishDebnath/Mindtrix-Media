@@ -30,12 +30,12 @@ const Hero: React.FC = () => {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex justify-center mb-5 md:mb-6"
                 >
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/80 dark:bg-neutral-900/60 border border-slate-200/80 dark:border-white/[0.12] backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-slate-300 shadow-sm backdrop-blur-md">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                         </span>
-                        <span className="text-xs font-medium text-slate-700 dark:text-neutral-300">
+                        <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                             Available for New Projects
                         </span>
                     </div>
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0, rotate: -45 }}
                                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                     transition={{ delay: 0.8 + (i * 0.1), type: "spring", stiffness: 300, damping: 15 }}
-                                    className="material-symbols-rounded text-[#FFC107] text-[14px] md:text-[15px]"
+                                    className="material-symbols-rounded text-[#ffc659] text-[14px] md:text-[15px]"
                                 >
                                     star
                                 </motion.span>
@@ -121,13 +121,14 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 dark:text-white max-w-5xl mx-auto"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 max-w-5xl mx-auto"
                 >
-                    <span className="block bg-clip-text text-transparent bg-gradient-to-b from-slate-900 via-slate-800 to-slate-600 dark:from-white dark:via-neutral-100 dark:to-neutral-400">
+                    <span className="block text-slate-900">
                         Websites & Business Software
                     </span>
-                    <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                        Built to Scale Worldwide.
+                    <span className="block mt-2">
+                        <span className="text-[#6366f1]">Built to Scale</span>{' '}
+                        <span className="text-[#ffc659]">Worldwide.</span>
                     </span>
                 </motion.h1>
 
@@ -159,13 +160,13 @@ const Hero: React.FC = () => {
                     </Link>
                     <Link
                         to="/product"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-700 dark:text-neutral-300 hover:text-slate-950 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 border border-slate-200/80 dark:border-white/[0.1] backdrop-blur-md transition-all active:scale-95"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 hover:text-slate-950 dark:text-neutral-200 dark:hover:text-white bg-white hover:bg-slate-50 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 border border-slate-300 dark:border-white/[0.1] shadow-sm backdrop-blur-md transition-all active:scale-95"
                     >
                         <span>Explore Work</span>
                     </Link>
                 </motion.div>
-                <p className="mt-3 text-xs text-slate-500 dark:text-neutral-500 font-medium tracking-tight">
-                    Zero risk — we build a working prototype before you pay anything.
+                <p className="mt-3 text-xs text-slate-600 dark:text-neutral-400 font-medium tracking-tight">
+                    <span className="text-[#ffc659] font-bold">Zero risk</span> <span className="text-[#94a3b8]">|</span> we build a working prototype before you pay anything.
                 </p>
             </div>
         </header>

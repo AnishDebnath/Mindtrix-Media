@@ -9,14 +9,14 @@ const FreePrototype: React.FC = () => {
         <section className="py-8 md:py-12 2xl:py-16 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/5 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-[#6366f1]/10 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-[#ffc659]/10 rounded-full blur-[100px]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <div className="bg-white/80 dark:bg-neutral-950/70 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-white/[0.08] p-6 md:p-12 overflow-hidden relative shadow-sm dark:shadow-[0_0_50px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+                <div className="bg-white rounded-2xl md:rounded-3xl border border-slate-200/90 p-6 md:p-12 overflow-hidden relative shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
                     {/* Grid Pattern Overlay */}
-                    <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(rgba(100,116,139,0.15)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-16 items-center relative z-10">
                         {/* Content */}
@@ -25,9 +25,9 @@ const FreePrototype: React.FC = () => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
                             >
-                                <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Our Unique Guarantee</span>
+                                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Our Unique Guarantee</span>
                             </motion.div>
 
                             <motion.h2
@@ -35,10 +35,10 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight"
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight"
                             >
                                 See It First. <br />
-                                Then We <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Build It.</span>
+                                Then We <span className="text-[#6366f1]">Build It.</span>
                             </motion.h2>
 
                             <motion.p

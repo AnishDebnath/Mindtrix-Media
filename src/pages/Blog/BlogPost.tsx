@@ -73,7 +73,7 @@ const BlogPost: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Blog Post</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Blog Post</span>
                     </motion.div>
 
                     <div className="flex flex-col items-center justify-center text-center">

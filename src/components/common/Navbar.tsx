@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import whiteLogo from '@/assets/white-logo.png';
+import blackLogo from '@/assets/black-logo.png';
 
 const navLinks = [
     { name: 'Home', path: '/' },
@@ -57,17 +58,17 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="w-full max-w-4xl bg-white/80 dark:bg-black/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/[0.1] rounded-2xl shadow-lg shadow-black/5 dark:shadow-[0_0_24px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)] flex items-center justify-between p-2 transition-all duration-300"
+                    className="w-full max-w-4xl bg-white/95 dark:bg-black/60 backdrop-blur-xl border border-slate-300/80 dark:border-white/[0.1] rounded-2xl shadow-md shadow-slate-200/50 dark:shadow-[0_0_24px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)] flex items-center justify-between p-2 transition-all duration-300"
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center group ml-1 sm:ml-2 py-1">
-                        <img src={whiteLogo} alt="Mindtrix Media" className="h-8 md:h-9 2xl:h-10 w-auto object-contain" />
+                        <img src={darkMode ? whiteLogo : blackLogo} alt="Mindtrix Media" className="h-8 md:h-9 2xl:h-10 w-auto object-contain" />
                     </Link>
 
 
                     {/* Desktop Nav */}
                     <div
-                        className="hidden lg:flex items-center bg-slate-100/80 dark:bg-neutral-900/50 rounded-xl p-1 border border-slate-200/60 dark:border-white/[0.06]"
+                        className="hidden lg:flex items-center bg-slate-100/90 dark:bg-neutral-900/50 rounded-xl p-1 border border-slate-200 dark:border-white/[0.06]"
                         onMouseLeave={() => setHoveredPath(null)}
                     >
                         {navLinks.map((link) => (
@@ -75,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 key={link.name}
                                 to={link.path}
                                 onMouseEnter={() => setHoveredPath(link.path)}
-                                className={`relative px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary dark:text-white' : 'text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white'}`}
+                                className={`relative px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-[#6366f1] font-semibold dark:text-white' : 'text-slate-700 dark:text-neutral-400 hover:text-slate-950 dark:hover:text-white'}`}
                             >
                                 {link.name}
 
@@ -191,7 +192,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 >
                                     <div className="flex items-center gap-3">
                                         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Available for projects</span>
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Available for projects</span>
                                     </div>
 
                                 </motion.div>

@@ -90,8 +90,7 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
 };
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
-
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     if (darkMode) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -33,10 +33,10 @@
   <meta name="twitter:image" content="https://mindtrixmedia.com/og-image.png" />
 
   <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
+    if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   </script>
 
@@ -70,15 +70,15 @@
         },
         extend: {
           colors: {
-            "primary": "#6366F1",
-            "primary-dark": "#4F46E5",
+            "primary": "#6366f1",
+            "primary-dark": "#4f46e5",
             "secondary": "#ffc659",
-            "accent": "#8B5CF6",
-            "accent-blue": "#3B82F6",
+            "muted-slate": "#94a3b8",
+            "accent": "#6366f1",
+            "accent-blue": "#6366f1",
             "background-light": "#FAFAFA",
             "background-dark": "#000000",
-            "surface-dark": "#09090b",
-            "gradient-primary": "linear-gradient(135deg, #3B82F6, #8B5CF6)"
+            "surface-dark": "#09090b"
           },
           fontFamily: {
             sans: ["Inter", "sans-serif"],

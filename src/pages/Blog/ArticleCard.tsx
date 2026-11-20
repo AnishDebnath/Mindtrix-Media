@@ -25,7 +25,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
             className="group h-full block"
         >
             <Link to={`/blog/${article.id}`} className="block h-full">
-                <div className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.2rem] border border-slate-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 p-2 md:p-2.5 h-full flex flex-col">
+                <div className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.2rem] border border-slate-200/90 dark:border-white/10 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-500 p-2 md:p-2.5 h-full flex flex-col">
                     {/* Image Container - Compacted */}
                     <div className="aspect-[16/10] relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] mb-3 border border-slate-100 dark:border-white/5">
                         <img
@@ -40,7 +40,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
                     <div className="px-4 pb-4 flex flex-col flex-1">
                         <div className="flex flex-wrap gap-1.5 mb-2.5">
                             {article.tags.map((tag, index) => (
-                                <span key={index} className="px-2 py-0.5 text-xs font-medium uppercase tracking-wider bg-slate-100 dark:bg-white/5 text-secondary rounded-lg border border-slate-200/50 dark:border-white/5">
+                                <span key={index} className="px-2 py-0.5 text-xs font-semibold uppercase tracking-wider bg-amber-50 dark:bg-white/5 text-amber-700 dark:text-secondary rounded-lg border border-amber-200/80 dark:border-white/5">
                                     {tag}
                                 </span>
                             ))}
@@ -60,7 +60,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay }) => {
                             </span>
                             <motion.div
                                 whileHover={{ x: 3 }}
-                                className="w-7 h-7 rounded-lg bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 flex items-center justify-center group-hover/link:bg-primary group-hover/link:border-primary group-hover/link:text-white transition-all duration-300 shadow-sm"
+                                className="w-7 h-7 rounded-lg bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-800 group-hover/link:bg-slate-950 group-hover/link:border-slate-950 group-hover/link:text-white transition-all duration-300 shadow-sm"
                             >
                                 <span className="material-symbols-rounded text-sm">arrow_forward</span>
                             </motion.div>

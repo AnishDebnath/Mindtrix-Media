@@ -41,12 +41,19 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
         return formatted;
     };
 
+    const colorClass = idx === 0
+        ? 'text-[#6366f1]'
+        : idx === 1
+            ? 'text-[#ffc659]'
+            : 'text-slate-900 dark:text-white';
+
     return (
         <div className="text-center min-w-[100px] md:min-w-[140px]" ref={ref}>
-            <div className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-1 tracking-tight">
+            <div className={`text-3xl md:text-4xl font-bold mb-1 tracking-tight ${colorClass}`}>
                 {getFormattedCount()}
+                {isDecimal && <span className="text-[#ffc659] text-2xl md:text-3xl ml-1">★</span>}
             </div>
-            <div className="text-slate-500 dark:text-neutral-400 font-medium text-[10px] md:text-xs tracking-wider uppercase whitespace-nowrap">{stat.label}</div>
+            <div className="text-[#94a3b8] font-bold text-[10px] md:text-xs tracking-wider uppercase whitespace-nowrap">{stat.label}</div>
         </div>
     );
 };
@@ -65,21 +72,20 @@ const About: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-6 shadow-sm"
                 >
-                    <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ About</span>
+                    <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ About</span>
                 </motion.div>
-                <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-[1.15] tracking-tight text-slate-900 dark:text-white text-center">
+                <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-[1.15] tracking-tight text-slate-900 text-center">
                     We help businesses build better websites, smarter software, and stronger digital systems.{' '}
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-                        Simple, effective, and built for growth.
-                    </span>
+                    <span className="text-[#6366f1]">Simple, effective,</span>{' '}
+                    and <span className="text-[#ffc659]">built for growth.</span>
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="inline-flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 2xl:gap-16 bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl px-8 md:px-14 py-6 md:py-8 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] backdrop-blur-xl"
+                    className="inline-flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 2xl:gap-16 bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl px-8 md:px-14 py-6 md:py-8 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-xl divide-y md:divide-y-0 md:divide-x divide-[#94a3b8]/30"
                 >
                     {stats.map((stat, idx) => (
                         <StatItem key={idx} stat={stat} idx={idx} />

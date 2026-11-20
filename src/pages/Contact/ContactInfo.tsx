@@ -49,12 +49,12 @@ const ContactInfo: React.FC = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex justify-start mb-6"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-slate-300 shadow-sm backdrop-blur-md">
                     <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
-                    <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                    <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                         Available for New Projects
                     </span>
                 </div>
@@ -63,19 +63,19 @@ const ContactInfo: React.FC = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
-                <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                     <span className="material-symbols-rounded text-sm">mail</span> Contact Us
                 </span>
             </motion.div>
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight leading-[1.08]"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 md:mb-8 tracking-tight leading-[1.08]"
             >
                 Let's start a <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                <span className="text-[#6366f1]">
                     conversation.
                 </span>
             </motion.h1>
@@ -92,8 +92,8 @@ const ContactInfo: React.FC = () => {
                 {contactInfo.map((info, i) => (
                     <div key={i} className="flex items-center gap-3 group">
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${info.color === 'blue'
-                            ? 'bg-blue-100/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
-                            : 'bg-orange-100/50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
+                            ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                            : 'bg-[#ffc659]/20 text-amber-700'
                             }`}>
                             <span className="material-symbols-rounded text-[18px]">{info.icon}</span>
                         </div>

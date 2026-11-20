@@ -15,17 +15,17 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
             whileHover={{ y: -5, scale: 1.005 }}
             viewport={{ once: true }}
             transition={{ type: "tween", duration: 0.3, ease: "easeOut", delay: index * 0.1 }}
-            className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-8 border border-slate-200/60 dark:border-white/10 shadow-xl group hover:shadow-2xl overflow-hidden relative"
+            className="bg-white rounded-[1.5rem] p-6 md:p-8 border border-slate-200/90 shadow-[0_2px_12px_rgba(0,0,0,0.04)] group hover:shadow-xl hover:border-slate-300 overflow-hidden relative transition-all duration-300"
         >
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-10">
                 {/* Left - Role Info */}
                 <div>
                     <div className="flex flex-wrap items-center gap-2 mb-4">
-                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium uppercase tracking-wider text-primary group-hover:bg-primary/20 transition-all duration-300">
+                        <span className="px-3 py-1 bg-indigo-50 border border-indigo-100/80 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#6366f1]">
                             {opening.type}
                         </span>
-                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400 group-hover:bg-primary/20 transition-all duration-300">
+                        <span className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-700">
                             {opening.location}
                         </span>
                     </div>

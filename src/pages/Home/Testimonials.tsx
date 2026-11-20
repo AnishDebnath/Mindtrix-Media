@@ -25,17 +25,18 @@ const Testimonials: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Testimonials</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Testimonials</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        Kind Words <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">from Clients</span>
+                        Kind Words <span className="text-[#6366f1]">from Clients</span>{' '}
+                        <span className="text-[#ffc659]">Worldwide</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -59,7 +60,7 @@ const Testimonials: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[300px] 2xl:h-[360px] rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] overflow-hidden group"
+                            className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[300px] 2xl:h-[360px] rounded-2xl md:rounded-3xl border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden group"
                         >
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -150,18 +151,21 @@ const Testimonials: React.FC = () => {
                                 className="flex gap-5 w-max"
                             >
                                 {[...marqueeTestimonials, ...marqueeTestimonials, ...marqueeTestimonials].map((item, i) => (
-                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] bg-white/80 dark:bg-neutral-950/70 backdrop-blur-xl border border-slate-200/80 dark:border-white/[0.08] rounded-xl md:rounded-2xl p-4 md:p-5 mr-4 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] bg-white dark:bg-neutral-950/70 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] rounded-xl md:rounded-2xl p-4 md:p-5 mr-4 shadow-sm">
                                         <div className="flex flex-col gap-2 md:gap-3">
                                             <div className="flex items-center gap-3">
                                                 <div className="flex-shrink-0 relative">
                                                     <img src={item.avatar} alt={item.handle} className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-slate-100 dark:bg-neutral-800 object-cover border border-slate-200 dark:border-white/[0.1]" />
-                                                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-neutral-900">
+                                                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-[#6366f1] rounded-full flex items-center justify-center border-2 border-white dark:border-neutral-900">
                                                         <span className="material-symbols-rounded text-[6px] md:text-[8px] text-white">verified</span>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p className="font-bold text-slate-900 dark:text-white text-xs md:text-sm leading-tight">{item.name || item.handle}</p>
-                                                    <p className="text-primary font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
+                                                    <div className="flex items-center gap-1">
+                                                        <p className="font-bold text-slate-900 dark:text-white text-xs md:text-sm leading-tight">{item.name || item.handle}</p>
+                                                        <span className="text-[#ffc659] text-[10px]">★</span>
+                                                    </div>
+                                                    <p className="text-[#94a3b8] font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
                                                 </div>
                                             </div>
                                             <p className="text-slate-600 dark:text-neutral-400 text-[11px] md:text-xs leading-relaxed font-normal line-clamp-2">
@@ -172,8 +176,8 @@ const Testimonials: React.FC = () => {
                                 ))}
                             </motion.div>
                             {/* Gradient Fade Edges */}
-                            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#FAFAFA] dark:from-black to-transparent z-10 pointer-events-none" />
-                            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#FAFAFA] dark:from-black to-transparent z-10 pointer-events-none" />
+                            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F8FAFC] dark:from-black to-transparent z-10 pointer-events-none" />
+                            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F8FAFC] dark:from-black to-transparent z-10 pointer-events-none" />
                         </div>
                     </div>
 
@@ -184,17 +188,17 @@ const Testimonials: React.FC = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-950 dark:bg-neutral-950 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-center relative overflow-hidden border border-slate-800 dark:border-white/[0.1] shadow-2xl h-full lg:min-h-[300px] 2xl:min-h-[360px] flex flex-col items-center justify-center gap-6"
+                                className="bg-white dark:bg-neutral-950 rounded-2xl md:rounded-3xl p-6 md:p-8 text-center relative overflow-hidden border border-slate-200/90 dark:border-white/[0.1] shadow-[0_2px_12px_rgba(0,0,0,0.04)] h-full lg:min-h-[300px] 2xl:min-h-[360px] flex flex-col items-center justify-center gap-6"
                             >
                                 <div className="flex flex-col items-center gap-3 relative z-10 w-full">
-                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white/10 bg-white/5 shadow-inner">
+                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-slate-200 bg-slate-50 shadow-inner">
                                         <img
                                             src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
                                             alt="Avatar"
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-display font-bold leading-tight">
+                                    <h3 className="text-lg md:text-xl font-display font-bold leading-tight text-slate-900 dark:text-white">
                                         Book a 15-min call
                                     </h3>
                                 </div>
@@ -202,19 +206,19 @@ const Testimonials: React.FC = () => {
                                 <div className="w-full flex flex-col items-center gap-4 relative z-10">
                                     <Link
                                         to="/contact"
-                                        className="inline-flex items-center justify-between gap-2 bg-white text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl hover:bg-neutral-200 transition-all group w-full shadow-sm active:scale-95"
+                                        className="inline-flex items-center justify-between gap-2 bg-slate-950 text-white hover:bg-slate-800 font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl transition-all group w-full shadow-sm active:scale-95"
                                     >
                                         <span>Book a Call</span>
-                                        <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center text-white">
+                                        <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center text-black">
                                             <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                                         </div>
                                     </Link>
 
                                     <div className="flex flex-col items-center gap-0.5">
-                                        <p className="text-slate-400 text-xs font-medium uppercase tracking-wider">Prefer to Email?</p>
+                                        <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">Prefer to Email?</p>
                                         <a
                                             href="mailto:mindtrixmediaindia@gmail.com"
-                                            className="text-slate-200 hover:text-white transition-colors text-sm font-medium border-b border-white/10"
+                                            className="text-slate-800 hover:text-[#6366f1] transition-colors text-sm font-semibold border-b border-slate-200"
                                         >
                                             mindtrixmediaindia@gmail.com
                                         </a>
@@ -225,7 +229,7 @@ const Testimonials: React.FC = () => {
                                     {['Web Development', 'E-commerce', 'CRM Systems', 'Business Automation'].map((tag, i) => (
                                         <span
                                             key={i}
-                                            className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-slate-400 hover:bg-white/10 transition-colors cursor-default whitespace-nowrap"
+                                            className="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors cursor-default whitespace-nowrap"
                                         >
                                             {tag}
                                         </span>
@@ -233,8 +237,8 @@ const Testimonials: React.FC = () => {
                                 </div>
 
                                 {/* Background Effects */}
-                                <div className="absolute top-0 right-0 w-80 h-80 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-                                <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+                                <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#6366f1]/5 blur-[100px] rounded-full pointer-events-none"></div>
                             </motion.div>
                         </div>
                     </div>

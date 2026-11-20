@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const location = useLocation();
 
     return (
-        <div className="relative min-h-screen bg-[#FAFAFA] dark:bg-black text-slate-900 dark:text-neutral-100 transition-colors duration-500 flex flex-col selection:bg-indigo-500/30 selection:text-white">
+        <div className="relative min-h-screen bg-[#F8FAFC] dark:bg-black text-slate-900 dark:text-neutral-100 transition-colors duration-500 flex flex-col selection:bg-indigo-500/30 selection:text-white">
             <PageBackground pathname={location.pathname} />
 
             <div className="w-full relative z-10 flex flex-col flex-grow">
