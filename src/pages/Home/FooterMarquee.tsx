@@ -15,10 +15,10 @@ const MarqueeProduct: React.FC = () => {
                     >
                         {[...Array(12)].map((_, i) => (
                             <div key={i} className="flex items-center gap-12">
-                                <span className="text-7xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
+                                <span className="text-6xl md:text-8xl 2xl:text-9xl font-bold text-slate-900/[0.08] dark:text-white/[0.06] tracking-tighter select-none">
                                     Let’s build together.
                                 </span>
-                                <span className="text-4xl md:text-6xl text-[#FF5C00]">✦</span>
+                                <span className="text-3xl md:text-5xl text-indigo-500/30">✦</span>
                             </div>
                         ))}
                     </motion.div>
@@ -34,10 +34,10 @@ const MarqueeProduct: React.FC = () => {
                     >
                         {[...Array(12)].map((_, i) => (
                             <div key={i} className="flex items-center gap-12">
-                                <span className="text-7xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
+                                <span className="text-6xl md:text-8xl 2xl:text-9xl font-bold text-slate-900/[0.08] dark:text-white/[0.06] tracking-tighter select-none">
                                     Let’s build together.
                                 </span>
-                                <span className="text-4xl md:text-6xl text-slate-800">✦</span>
+                                <span className="text-3xl md:text-5xl text-purple-500/20">✦</span>
                             </div>
                         ))}
                     </motion.div>

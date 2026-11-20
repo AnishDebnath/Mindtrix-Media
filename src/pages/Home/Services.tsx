@@ -56,30 +56,30 @@ const Services: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Services</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Services</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        What <span className="text-secondary">We Build</span> For You
+                        What <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">We Build</span> For You
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto font-normal"
                     >
                         Mindtrix Media builds custom websites, e-commerce stores, CRM systems, business platforms, and more for businesses of all sizes across the world.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6 max-w-7xl mx-auto">
                     {services.map((service, idx) => {
                         const isEvenRow = Math.floor(idx / 2) % 2 === 0;
                         const isFirstInRow = idx % 2 === 0;
@@ -98,26 +98,26 @@ const Services: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                whileHover={{ y: -5 }}
-                                className={`group relative overflow-hidden rounded-[1.5rem] bg-[#121212] p-4 md:p-5 2xl:p-6 flex flex-col justify-between min-h-[180px] md:min-h-[200px] 2xl:min-h-[240px] shadow-2xl border border-white/5 ${colSpan}`}
+                                whileHover={{ y: -4 }}
+                                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-5 md:p-7 flex flex-col justify-between min-h-[200px] md:min-h-[220px] 2xl:min-h-[250px] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 ${colSpan}`}
                             >
-                                <div className="absolute inset-0 opacity-30 pointer-events-none"
+                                <div className="absolute inset-0 opacity-20 pointer-events-none"
                                     style={{
-                                        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",
+                                        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)",
                                         backgroundSize: "32px 32px"
                                     }}>
                                 </div>
-                                <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                                <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
                                 <div className="relative z-10 text-left">
-                                    <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-white mb-2 font-display">{service.title}</h3>
-                                    <p className="text-slate-400 text-sm md:text-base 2xl:text-lg leading-relaxed">{service.desc}</p>
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">{service.title}</h3>
+                                    <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">{service.desc}</p>
                                 </div>
 
                                 <div className="relative z-10 flex flex-wrap gap-2 mt-6 md:mt-8 mb-1">
                                     {service.tags.map((tag, i) => (
-                                        <div key={i} className="flex items-center gap-1.5 bg-[#1A1A1A] border border-white/10 rounded-full px-2.5 py-1 text-white text-[10px] 2xl:text-xs font-bold uppercase tracking-wider group-hover:border-primary/30 transition-colors">
-                                            <span className="material-symbols-rounded text-primary text-sm md:text-base">{tag.icon}</span>
+                                        <div key={i} className="flex items-center gap-1.5 bg-slate-100 dark:bg-white/[0.05] border border-slate-200/80 dark:border-white/[0.08] rounded-lg px-3 py-1 text-slate-700 dark:text-neutral-300 text-[10px] md:text-xs font-medium transition-colors">
+                                            <span className="material-symbols-rounded text-indigo-500 dark:text-indigo-400 text-sm md:text-base">{tag.icon}</span>
                                             {tag.text}
                                         </div>
                                     ))}
@@ -136,11 +136,11 @@ const Services: React.FC = () => {
                     >
                         <Link
                             to="/services"
-                            className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 active:scale-95 transition-all shadow-xl group"
+                            className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                         >
                             <span>Explore All Services</span>
-                            <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                            <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                             </div>
                         </Link>
                     </motion.div>

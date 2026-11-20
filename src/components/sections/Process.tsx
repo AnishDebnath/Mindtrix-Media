@@ -16,26 +16,26 @@ const Process: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Process</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Process</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        How <span className="text-secondary">We Work</span>
+                        How <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">We Work</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal"
                     >
-                        A simple, structured process that takes your idea from planning to launch, working system.
+                        A simple, structured process that takes your idea from planning to a launched, working system.
                     </motion.p>
                 </div>
 
@@ -46,10 +46,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
-                        <div className="aspect-[16/10] relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 overflow-hidden shrink-0 mx-auto w-full">
-                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">01</span>
+                        <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 mx-auto w-full">
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">01</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -62,9 +62,9 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Drop Your Requirement</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Share your idea, business goals, and project requirements with us. We listen carefully to understand exactly what you want to build.</p>
+                        <div className="px-3 pb-3 pt-1">
+                            <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Drop Your Requirement</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Share your idea, business goals, and project requirements with us. We listen carefully to understand exactly what you want to build.</p>
                         </div>
                     </motion.div>
 
@@ -74,10 +74,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
-                        <div className="aspect-[16/10] relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">02</span>
+                        <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">02</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -90,9 +90,9 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">We Do Our Magic</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Our team designs and develops your website or software using the best technologies build for your business needs.</p>
+                        <div className="px-3 pb-3 pt-1">
+                            <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">We Do Our Magic</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Our team designs and develops your website or software using the best technologies built for your business needs.</p>
                         </div>
                     </motion.div>
 
@@ -102,10 +102,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
-                        <div className="aspect-[16/10] relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">03</span>
+                        <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">03</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -118,9 +118,9 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Feedback? Easy</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">You review the project and share feedback. We refine and improve everything until it matches your expectations perfectly.</p>
+                        <div className="px-3 pb-3 pt-1">
+                            <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Feedback? Easy</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">You review the project and share feedback. We refine and improve everything until it matches your expectations perfectly.</p>
                         </div>
                     </motion.div>
 
@@ -130,10 +130,10 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
-                        <div className="aspect-[16/10] relative mb-4 bg-slate-50 dark:bg-slate-800/50 rounded-[1.2rem] border border-slate-100 dark:border-slate-800/50 overflow-hidden shrink-0 w-full">
-                            <span className="absolute top-4 left-4 z-30 text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-slate-800">04</span>
+                        <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
+                            <span className="absolute top-3 left-3 z-30 text-xs font-mono font-medium text-slate-700 dark:text-neutral-300 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-200/80 dark:border-white/[0.1]">04</span>
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -146,9 +146,9 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5">
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white mb-2">Launch & Ongoing Support</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We launch your website or system and stay available for support. We monitor performance, fix issues quickly, and updates to help your business grow.</p>
+                        <div className="px-3 pb-3 pt-1">
+                            <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Launch & Ongoing Support</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">We launch your website or system and stay available for support. We monitor performance, fix issues quickly, and provide updates to help your business grow.</p>
                         </div>
                     </motion.div>
                 </div>

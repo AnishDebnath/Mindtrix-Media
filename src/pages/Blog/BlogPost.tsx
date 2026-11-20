@@ -71,9 +71,9 @@ const BlogPost: React.FC = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Blog Post</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Blog Post</span>
                     </motion.div>
 
                     <div className="flex flex-col items-center justify-center text-center">
@@ -82,10 +82,10 @@ const BlogPost: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="max-w-3xl"
                         >
-                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
                                 {article.title}
                             </h1>
-                            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+                            <p className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal">
                                 {article.desc}
                             </p>
                         </motion.div>
@@ -143,10 +143,10 @@ const BlogPost: React.FC = () => {
                         viewport={{ once: true }}
                         className="flex flex-col items-center md:flex-row justify-between items-end gap-8 mb-16"
                     >
-                        <h2 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                             Read <span className="text-primary">Next</span>
                         </h2>
-                        <Link to="/blog" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+                        <Link to="/blog" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
                             View All Blogs
                             <span className="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </Link>

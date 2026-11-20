@@ -22,17 +22,17 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
                 {/* Left - Role Info */}
                 <div>
                     <div className="flex flex-wrap items-center gap-2 mb-4">
-                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary group-hover:bg-primary/20 transition-all duration-300">
+                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium uppercase tracking-wider text-primary group-hover:bg-primary/20 transition-all duration-300">
                             {opening.type}
                         </span>
-                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 group-hover:bg-primary/20 transition-all duration-300">
+                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400 group-hover:bg-primary/20 transition-all duration-300">
                             {opening.location}
                         </span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
                         {opening.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm leading-relaxed mb-5">
+                    <p className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-5 font-normal">
                         {opening.description}
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
@@ -52,14 +52,14 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                             </span>
-                            <span className="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest">Hiring — Apply Now</span>
+                            <span className="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Hiring — Apply Now</span>
                         </div>
                         <div className="flex flex-col gap-3">
                             <motion.a
                                 href={`mailto:${opening.applyEmail}?subject=${encodeURIComponent('Application: ' + opening.title)}`}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="inline-flex items-center justify-center gap-2 bg-primary-dark hover:bg-primary text-white px-5 py-3 rounded-xl font-display font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+                                className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-4 sm:px-5 h-9 sm:h-10 rounded-xl font-medium text-xs sm:text-sm shadow-sm transition-all"
                             >
                                 <span className="material-symbols-rounded text-sm">send</span>
                                 Apply via Email
@@ -71,7 +71,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
                                     rel="noopener noreferrer"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="inline-flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 px-5 py-3 rounded-xl font-display font-bold text-sm transition-colors"
+                                    className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 px-4 sm:px-5 h-9 sm:h-10 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md transition-all"
                                 >
                                     <span className="material-symbols-rounded text-sm">chat</span>
                                     WhatsApp

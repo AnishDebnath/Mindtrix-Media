@@ -33,10 +33,10 @@ const MarqueeTag: React.FC = () => {
                     {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm border border-slate-200/50 dark:border-slate-800/50 shadow-sm whitespace-nowrap min-w-max group hover:border-primary/20 transition-colors duration-300"
+                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white/80 dark:bg-neutral-900/40 backdrop-blur-md border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-white/[0.15] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] whitespace-nowrap min-w-max transition-colors duration-300"
                         >
-                            <span className="text-xl text-primary animate-pulse">✦</span>
-                            <span className="font-display font-bold text-slate-700 dark:text-slate-300 text-base md:text-lg tracking-tight">
+                            <span className="text-xs text-indigo-500 dark:text-indigo-400">✦</span>
+                            <span className="font-sans font-medium text-slate-700 dark:text-neutral-300 text-xs md:text-sm tracking-tight">
                                 {text}
                             </span>
                         </div>

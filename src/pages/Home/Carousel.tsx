@@ -93,10 +93,10 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                         <Link
                             key={`${item.id}-${index}`}
                             to={item.link}
-                            className="relative flex-shrink-0 w-[320px] sm:w-[500px] bg-white dark:bg-slate-900/50 rounded-[2rem] sm:rounded-[2.5rem] p-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col gap-4"
+                            className="relative flex-shrink-0 w-[320px] sm:w-[500px] bg-white dark:bg-neutral-950/70 rounded-2xl sm:rounded-3xl p-3 sm:p-3.5 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300 group flex flex-col"
                         >
                             {/* Image & Content Container */}
-                            <div className="w-full h-[280px] sm:h-[400px] rounded-[1.6rem] sm:rounded-[2rem] overflow-hidden relative isolate group/image">
+                            <div className="w-full h-[280px] sm:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden relative isolate group/image border border-slate-100 dark:border-white/[0.05]">
                                 <img
                                     src={item.img}
                                     alt={item.title}
@@ -104,16 +104,16 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                 />
 
                                 {/* Floating Glass Content Card */}
-                                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/10 dark:bg-black/60 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-between gap-3 z-10 transition-transform duration-300 group-hover:scale-[1.02]">
+                                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-md border border-slate-200/60 dark:border-white/[0.1] shadow-lg flex items-center justify-between gap-3 z-10 transition-transform duration-300 group-hover:scale-[1.01]">
                                     <div className="flex-1 min-w-0">
-                                        <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">{item.title}</h3>
-                                        <p className="text-[10px] md:text-xs text-slate-200 font-medium opacity-80 uppercase tracking-wider truncate">{item.category}</p>
+                                        <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">{item.title}</h3>
+                                        <p className="text-[10px] md:text-xs text-slate-500 dark:text-neutral-400 font-medium uppercase tracking-wider truncate">{item.category}</p>
                                     </div>
 
                                     <div
-                                        className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md group-hover:rotate-45"
+                                        className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md"
                                     >
-                                        <span className="material-symbols-rounded text-[16px] sm:text-[20px]">arrow_outward</span>
+                                        <span className="material-symbols-rounded text-[16px] sm:text-[20px] transition-transform duration-300 group-hover:rotate-45">arrow_outward</span>
                                     </div>
                                 </div>
                             </div>

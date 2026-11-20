@@ -14,9 +14,9 @@ const FreePrototype: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl rounded-[2rem] border border-slate-200 dark:border-slate-800 p-6 md:p-12 overflow-hidden relative">
+                <div className="bg-white/80 dark:bg-neutral-950/70 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-white/[0.08] p-6 md:p-12 overflow-hidden relative shadow-sm dark:shadow-[0_0_50px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.06)]">
                     {/* Grid Pattern Overlay */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-16 items-center relative z-10">
                         {/* Content */}
@@ -25,9 +25,9 @@ const FreePrototype: React.FC = () => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-primary/30 bg-primary/5 backdrop-blur-sm"
+                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                             >
-                                <span className="text-secondary font-bold tracking-widest uppercase text-xs">✦ Our Unique Guarantee</span>
+                                <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Our Unique Guarantee</span>
                             </motion.div>
 
                             <motion.h2
@@ -35,10 +35,10 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 leading-[1.1]"
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight"
                             >
                                 See It First. <br />
-                                Then We <span className="text-primary">Build It.</span>
+                                Then We <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Build It.</span>
                             </motion.h2>
 
                             <motion.p
@@ -46,11 +46,11 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-sm md:text-base 2xl:text-lg text-slate-600 dark:text-slate-300 mb-8 md:mb-10 leading-relaxed"
+                                className="text-sm md:text-base text-slate-600 dark:text-neutral-400 mb-8 leading-relaxed font-normal"
                             >
                                 Most agencies ask you to pay first. We don't.
-                                Before development starts, we build a <strong className='text-secondary'>free, working prototype</strong> of your website or system.
-                                You see exactly how it works. You give feedback. Then we build the real thing. No risk.
+                                Before development starts, we build a <strong className="text-slate-900 dark:text-white font-semibold">free, working prototype</strong> of your website or system.
+                                You see exactly how it works. You give feedback. Then we build the real thing. Zero risk.
                             </motion.p>
 
                             <motion.div
@@ -58,12 +58,12 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="flex flex-col sm:flex-row sm:flex-nowrap gap-4 md:gap-6"
+                                className="flex flex-col sm:flex-row sm:flex-nowrap gap-3.5"
                             >
-                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-primary text-white font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25">
+                                <Link to="/free-prototype" className="w-fit whitespace-nowrap px-5 py-2.5 rounded-xl bg-slate-950 dark:bg-white text-white dark:text-black font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all">
                                     Get Your Free Prototype
                                 </Link>
-                                <Link to="/process" className="w-fit whitespace-nowrap px-8 h-11 flex justify-center items-center rounded-full bg-secondary/80 text-white font-bold text-sm md:text-base hover:bg-secondary transition-all hover:scale-105 shadow-lg shadow-secondary/25">
+                                <Link to="/process" className="w-fit whitespace-nowrap px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md transition-all active:scale-95">
                                     How It Works
                                 </Link>
                             </motion.div>
@@ -80,12 +80,12 @@ const FreePrototype: React.FC = () => {
                             {/* Card Stack Effect */}
                             <div className="relative aspect-[4/3]">
                                 {/* Back Card */}
-                                <div className="absolute top-8 right-8 inset-0 bg-slate-100 dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 transform rotate-6 opacity-60" />
+                                <div className="absolute top-8 right-8 inset-0 bg-slate-100 dark:bg-neutral-900/40 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-white/[0.04] transform rotate-6 opacity-60" />
                                 {/* Middle Card */}
-                                <div className="absolute top-4 right-4 inset-0 bg-slate-200 dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 transform rotate-3 opacity-80" />
+                                <div className="absolute top-4 right-4 inset-0 bg-slate-200 dark:bg-neutral-900/60 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-white/[0.06] transform rotate-3 opacity-80" />
 
                                 {/* Front Card (Main Visual) */}
-                                <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col group/card">
+                                <div className="absolute inset-0 bg-white dark:bg-black rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-white/[0.1] shadow-2xl overflow-hidden flex flex-col group/card">
                                     <img
                                         src={freePrototypeImg}
                                         alt="Free Prototype"
@@ -98,7 +98,7 @@ const FreePrototype: React.FC = () => {
                                         whileInView={{ opacity: 1, scale: 1, rotate: -15, x: "-50%", y: "-50%" }}
                                         viewport={{ once: true }}
                                         transition={{ delay: 1, type: "spring", bounce: 0.5 }}
-                                        className="absolute top-1/2 left-1/2 border-2 md:border-4 border-green-500 text-green-500 font-black text-lg md:text-2xl 2xl:text-3xl px-5 md:px-8 py-2.5 md:py-4 rounded-xl uppercase tracking-widest z-20 whitespace-nowrap bg-white/10 dark:bg-black/20"
+                                        className="absolute top-1/2 left-1/2 border-2 md:border-4 border-green-500 text-green-500 font-bold text-lg md:text-2xl px-5 md:px-8 py-2.5 md:py-4 rounded-xl uppercase tracking-widest z-20 whitespace-nowrap bg-white/10 dark:bg-black/20"
                                         style={{ textShadow: "0 2px 10px rgba(0,0,0,0.2)" }}
                                     >
                                         Free Prototype

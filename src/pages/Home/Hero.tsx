@@ -28,14 +28,14 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="flex justify-center mb-4 md:mb-5"
+                    className="flex justify-center mb-5 md:mb-6"
                 >
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
-                        <span className="relative flex h-1.5 w-1.5">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/80 dark:bg-neutral-900/60 border border-slate-200/80 dark:border-white/[0.12] backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                        <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                         </span>
-                        <span className="text-[10px] md:text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                        <span className="text-xs font-medium text-slate-700 dark:text-neutral-300">
                             Available for New Projects
                         </span>
                     </div>
@@ -57,10 +57,10 @@ const Hero: React.FC = () => {
                             }
                         }
                     }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mb-5 md:mb-7"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8"
                 >
                     <div
-                        className="flex items-center h-16 cursor-pointer"
+                        className="flex items-center h-12 cursor-pointer"
                         onMouseEnter={() => setIsAvatarHovered(true)}
                         onMouseLeave={() => setIsAvatarHovered(false)}
                     >
@@ -76,11 +76,11 @@ const Hero: React.FC = () => {
                                     show: { opacity: 1, x: 0, scale: 1 }
                                 }}
                                 animate={{
-                                    marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -18),
+                                    marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -16),
                                     zIndex: i,
                                 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                                className="relative rounded-full border-[2px] border-[#FAFAFA] dark:border-background-dark overflow-hidden w-9 h-9 md:w-10 md:h-10 2xl:w-11 2xl:h-11 shadow-sm"
+                                className="relative rounded-full border-2 border-white dark:border-neutral-900 overflow-hidden w-8 h-8 md:w-9 md:h-9 shadow-sm"
                             >
                                 <img
                                     className="w-full h-full object-cover"
@@ -104,90 +104,69 @@ const Hero: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0, rotate: -45 }}
                                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                     transition={{ delay: 0.8 + (i * 0.1), type: "spring", stiffness: 300, damping: 15 }}
-                                    className="material-symbols-rounded text-[#FFC107] text-[14px] md:text-[16px]"
+                                    className="material-symbols-rounded text-[#FFC107] text-[14px] md:text-[15px]"
                                 >
                                     star
                                 </motion.span>
                             ))}
                         </div>
-                        <p className="text-[10px] md:text-xs 2xl:text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center sm:justify-start gap-1">
-                            Trusted by <CountUp val={10} />+ clients
+                        <p className="text-[11px] md:text-xs font-semibold text-slate-700 dark:text-neutral-300 flex items-center justify-center sm:justify-start gap-1">
+                            Trusted by <CountUp val={10} />+ clients worldwide
                         </p>
                     </motion.div>
                 </motion.div>
 
                 {/* Heading */}
                 <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 dark:text-white max-w-5xl mx-auto"
                 >
-                    {/* Row 1 */}
-                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
-                        <span>Websites</span>
-                        <motion.span
-                            whileHover={{ scale: 1.05, rotate: -2 }}
-                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner"
-                        >
-                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Software" />
-                        </motion.span>
-                        <span className="text-primary">& Business</span>
-                    </div>
-
-                    {/* Row 2 */}
-                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6 mb-1">
-                        <span className="text-primary">Software</span>
-                        <motion.span
-                            whileHover={{ scale: 1.05, rotate: 2 }}
-                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
-                        >
-                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Business" />
-                        </motion.span>
-                        <span className="text-slate-400">Built to Scale</span>
-                    </div>
-
-                    {/* Row 3 */}
-                    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 md:gap-x-6">
-                        <span>Your Business</span>
-                        <motion.span
-                            whileHover={{ scale: 1.05, rotate: -2 }}
-                            className="relative inline-flex w-10 h-6 md:w-20 md:h-12 2xl:w-28 2xl:h-16 rounded-full overflow-hidden items-center justify-center bg-slate-200 align-middle shadow-inner"
-                        >
-                            <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Worldwide" />
-                        </motion.span>
-                        <span className="text-secondary">Worldwide</span>
-                    </div>
+                    <span className="block bg-clip-text text-transparent bg-gradient-to-b from-slate-900 via-slate-800 to-slate-600 dark:from-white dark:via-neutral-100 dark:to-neutral-400">
+                        Websites & Business Software
+                    </span>
+                    <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                        Built to Scale Worldwide.
+                    </span>
                 </motion.h1>
 
                 {/* Subheading */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl 2xl:max-w-3xl mx-auto mt-4 md:mt-7 leading-relaxed font-medium"
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto mt-6 leading-relaxed font-normal"
                 >
-                    We build professional websites, e-commerce stores, CRM systems, and ERP platforms for businesses worldwide. Fast, secure, and built to grow with you.
+                    We build high-performance business websites, e-commerce platforms, custom CRM systems, and ERP solutions for businesses worldwide. Fast, secure, and built to grow with you.
                 </motion.p>
 
                 {/* CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                    className="mt-8 flex flex-col items-center"
+                    transition={{ delay: 0.7 }}
+                    className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5"
                 >
                     <Link
                         to="/free-prototype"
-                        className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 transition-all group shadow-xl"
+                        className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                     >
-                        Get Your Free Prototype
-                        <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                            <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                        <span>Get Your Free Prototype</span>
+                        <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                            <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                         </div>
                     </Link>
-                    <p className="mt-2 text-xs md:text-sm text-slate-500 font-medium tracking-tight">We show you how it works before you pay anything.</p>
+                    <Link
+                        to="/product"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-700 dark:text-neutral-300 hover:text-slate-950 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 border border-slate-200/80 dark:border-white/[0.1] backdrop-blur-md transition-all active:scale-95"
+                    >
+                        <span>Explore Work</span>
+                    </Link>
                 </motion.div>
+                <p className="mt-3 text-xs text-slate-500 dark:text-neutral-500 font-medium tracking-tight">
+                    Zero risk — we build a working prototype before you pay anything.
+                </p>
             </div>
         </header>
     );

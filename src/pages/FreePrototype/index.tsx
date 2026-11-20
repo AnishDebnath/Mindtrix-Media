@@ -61,7 +61,7 @@ const FreePrototypePage: React.FC = () => {
                                     transition={{ duration: 0.5, ease: "easeOut" }}
                                     className="flex justify-start"
                                 >
-                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/50 backdrop-blur-sm shadow-sm transition-all hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">
                                         <span className="relative flex h-2 w-2">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -76,7 +76,7 @@ const FreePrototypePage: React.FC = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     whileHover={{ scale: 1.02 }}
-                                    className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-lg shadow-orange-500/30 transition-all duration-300 w-fit cursor-default"
+                                    className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-300 w-fit cursor-default"
                                 >
                                     <span className="material-symbols-rounded text-white text-[18px] drop-shadow-sm">timer</span>
                                     <span className="text-xs font-bold text-white tracking-widest uppercase drop-shadow-sm">Limited Time Offer</span>
@@ -86,20 +86,11 @@ const FreePrototypePage: React.FC = () => {
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-8 leading-[1.08] tracking-tight"
                             >
                                 See It Before <br />
-                                <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                                    <motion.span
-                                        initial={{ width: 0, opacity: 0 }}
-                                        animate={{ width: 'auto', opacity: 1 }}
-                                        transition={{ delay: 0.4, duration: 0.6 }}
-                                        className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-xl shrink-0 -mt-2"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover" alt="Design Prototype" />
-                                        <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
-                                    </motion.span>
-                                    You <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-500 to-orange-600 py-2">Sign.</span>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                                    You Sign.
                                 </span>
                             </motion.h1>
 
@@ -107,7 +98,7 @@ const FreePrototypePage: React.FC = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 mb-12 leading-relaxed max-w-xl"
+                                className="text-base md:text-lg text-slate-600 dark:text-neutral-400 mb-10 leading-relaxed max-w-xl font-normal"
                             >
                                 We're so confident in our design skills that we'll design a high-detailed prototype of your new website for <strong className="text-slate-900 dark:text-secondary underline decoration-primary/30 decoration-4 underline-offset-4">free</strong>. No hidden conditions.
                             </motion.p>
@@ -125,15 +116,15 @@ const FreePrototypePage: React.FC = () => {
                                         transition={{ delay: 0.3 + (i * 0.1) }}
                                         className="flex items-center gap-4 group"
                                     >
-                                        <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${item.color === 'blue'
+                                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${item.color === 'blue'
                                             ? 'bg-blue-100/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                                             : 'bg-orange-100/50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
                                             }`}>
                                             <span className="material-symbols-rounded text-[22px]">{item.icon}</span>
                                         </div>
                                         <div>
-                                            <h3 className="text-[10px] md:text-[11px] 2xl:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">{item.title}</h3>
-                                            <p className="text-base md:text-lg 2xl:text-xl font-bold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
+                                            <h3 className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-0.5">{item.title}</h3>
+                                            <p className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
                                         </div>
                                     </motion.div>
                                 ))}

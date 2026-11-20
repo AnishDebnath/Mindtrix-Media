@@ -24,7 +24,11 @@ const BrandShowcase: React.FC = () => {
     ];
 
     return (
-        <div className="py-4 md:py-6 px-8 overflow-hidden">
+        <div className="py-4 md:py-6 px-4 md:px-8 overflow-hidden relative">
+            {/* Fade Filters */}
+            <div className="absolute inset-y-0 left-0 w-16 md:w-28 bg-gradient-to-r from-[#FAFAFA] dark:from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-16 md:w-28 bg-gradient-to-l from-[#FAFAFA] dark:from-black to-transparent z-10 pointer-events-none" />
+
             <div className="relative flex items-center">
                 <motion.div
                     animate={{

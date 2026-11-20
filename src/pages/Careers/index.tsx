@@ -72,10 +72,10 @@ const CareersPage: React.FC = () => {
                                     <div className="inline-flex items-center justify-center w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl shadow-lg mb-5 group-hover:bg-primary/20 transition-all duration-300">
                                         <span className="material-symbols-rounded text-2xl text-primary group-hover:scale-110 transition-transform duration-300">work_off</span>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                                    <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
                                         We&apos;re Not Hiring Right Now
                                     </h3>
-                                    <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed mb-6 max-w-sm">
+                                    <p className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-6 max-w-sm font-normal">
                                         No open positions at the moment. But we&apos;re always keen to hear from talented people who share our values.
                                     </p>
                                     <div className="flex items-center gap-2 mb-8">
@@ -83,14 +83,14 @@ const CareersPage: React.FC = () => {
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                                         </span>
-                                        <span className="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest">Open to Talent</span>
+                                        <span className="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Open to Talent</span>
                                     </div>
                                     <div className="flex flex-col sm:flex-row gap-3">
                                         <motion.a
                                             href="mailto:mindtrixmediaindia@gmail.com?subject=Job%20Inquiry"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="inline-flex items-center gap-2 bg-primary-dark hover:bg-primary text-white px-6 py-3 rounded-xl font-display font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+                                            className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-4 sm:px-5 h-9 sm:h-10 rounded-xl font-medium text-xs sm:text-sm shadow-sm transition-all"
                                         >
                                             <span className="material-symbols-rounded text-sm">send</span>
                                             Email Us
@@ -99,7 +99,7 @@ const CareersPage: React.FC = () => {
                                             href="/contact"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-display font-bold text-sm transition-colors"
+                                            className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 px-4 sm:px-5 h-9 sm:h-10 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md transition-all"
                                         >
                                             <span className="material-symbols-rounded text-sm">chat</span>
                                             Contact Us
@@ -119,7 +119,7 @@ const CareersPage: React.FC = () => {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                                 <div className="relative z-10 flex-1">
-                                    <h4 className="text-sm font-bold text-primary uppercase tracking-widest mb-6">How Hiring Works</h4>
+                                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-6">How Hiring Works</h4>
                                     <div className="space-y-6">
                                         {[
                                             { icon: 'mark_email_unread', step: 'Send Your Portfolio', desc: 'Email us your work and what you do.' },
@@ -131,7 +131,7 @@ const CareersPage: React.FC = () => {
                                                     <span className="material-symbols-rounded text-primary text-xl">{item.icon}</span>
                                                 </div>
                                                 <div>
-                                                    <h5 className="text-sm md:text-base font-bold text-slate-900 dark:text-white mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">{item.step}</h5>
+                                                    <h5 className="text-sm md:text-base font-semibold text-slate-900 dark:text-white mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">{item.step}</h5>
                                                     <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed">{item.desc}</p>
                                                 </div>
                                             </div>

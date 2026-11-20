@@ -15,33 +15,33 @@ const FAQ: React.FC = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                         >
-                            <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ FAQ</span>
+                            <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ FAQ</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                         >
-                            Questions <span className='text-secondary'>We<br />
-                                Get Asked</span> Often
+                            Questions We <br />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Get Asked</span> Often
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-md"
+                            className="text-sm md:text-base text-slate-600 dark:text-neutral-400 leading-relaxed max-w-md font-normal"
                         >
-                            Simple answers about our website development, CRM, ERP, and software services.
+                            Clear answers about our website development, CRM, ERP, and software solutions.
                         </motion.p>
                     </div>
 
                     {/* Right Column - Accordion */}
-                    <div className="lg:col-span-7 flex flex-col gap-4">
+                    <div className="lg:col-span-7 flex flex-col gap-3.5">
                         {homeFaqs.map((faq, index) => {
                             const isOpen = openFAQ === index;
                             return (
@@ -51,17 +51,17 @@ const FAQ: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className={`rounded-[1.2rem] transition-all duration-300 border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-xl ${isOpen ? 'bg-white dark:bg-slate-900 p-4 md:p-5' : 'bg-white/80 dark:bg-slate-900/50 px-4 py-3.5 hover:bg-white dark:hover:bg-slate-900'}`}
+                                    className={`rounded-xl md:rounded-2xl transition-all duration-300 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] backdrop-blur-md ${isOpen ? 'bg-white dark:bg-neutral-950/80 p-4 md:p-5' : 'bg-white/80 dark:bg-neutral-950/50 px-4 py-3.5 hover:bg-white dark:hover:bg-neutral-950/70'}`}
                                 >
                                     <button
                                         onClick={() => setOpenFAQ(isOpen ? null : index)}
                                         className="flex justify-between items-start w-full text-left gap-4"
                                     >
-                                        <h4 className={`font-bold text-sm md:text-lg 2xl:text-xl leading-snug ${isOpen ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-slate-200'}`}>
+                                        <h4 className={`font-semibold text-sm md:text-base leading-snug tracking-tight ${isOpen ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-neutral-300'}`}>
                                             {faq.q}
                                         </h4>
-                                        <div className={`flex-shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-colors duration-300 ${isOpen ? 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800' : 'border-slate-200 dark:border-slate-800'}`}>
-                                            <span className={`material-symbols-rounded text-lg transition-transform duration-300 ${isOpen ? 'rotate-180 text-slate-900 dark:text-white' : 'text-slate-400'}`}>
+                                        <div className={`flex-shrink-0 w-7 h-7 rounded-lg border flex items-center justify-center transition-colors duration-300 ${isOpen ? 'border-slate-300 dark:border-white/20 bg-slate-100 dark:bg-neutral-800' : 'border-slate-200 dark:border-white/[0.08]'}`}>
+                                            <span className={`material-symbols-rounded text-base transition-transform duration-300 ${isOpen ? 'rotate-180 text-slate-900 dark:text-white' : 'text-slate-400'}`}>
                                                 expand_more
                                             </span>
                                         </div>
@@ -70,12 +70,12 @@ const FAQ: React.FC = () => {
                                         {isOpen && (
                                             <motion.div
                                                 initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                                                animate={{ height: "auto", opacity: 1, marginTop: 24 }}
+                                                animate={{ height: "auto", opacity: 1, marginTop: 16 }}
                                                 exit={{ height: 0, opacity: 0, marginTop: 0 }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="p-3.5 md:p-4 bg-slate-100 dark:bg-slate-800 rounded-lg md:rounded-xl">
-                                                    <p className="text-slate-600 dark:text-slate-300 text-xs md:text-sm 2xl:text-base leading-relaxed">
+                                                <div className="p-3.5 md:p-4 bg-slate-50 dark:bg-black/50 rounded-lg md:rounded-xl border border-slate-100 dark:border-white/[0.04]">
+                                                    <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">
                                                         {faq.a}
                                                     </p>
                                                 </div>

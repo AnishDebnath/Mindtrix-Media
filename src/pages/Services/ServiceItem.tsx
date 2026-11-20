@@ -49,20 +49,20 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                         <span className="text-primary font-bold tracking-widest uppercase text-xs">0{index + 1}</span>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-[1.1]">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight">
                         {service.title}
                     </h3>
 
-                    <p className="text-xs md:text-sm 2xl:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6 md:mb-8 font-medium max-w-xl">
+                    <p className="text-sm md:text-base text-slate-600 dark:text-neutral-400 leading-relaxed mb-6 max-w-xl font-normal">
                         {service.description}
                     </p>
 
                     {/* Features/Tags Grid */}
-                    <div className="flex flex-wrap gap-2.5 mb-8 md:mb-10">
+                    <div className="flex flex-wrap gap-2 mb-8 md:mb-10">
                         {service.tags.map((tag, idx) => (
-                            <div key={idx} className="flex items-center gap-2 bg-slate-100 dark:bg-white/5 rounded-full px-3 py-1.5 border border-slate-200 dark:border-white/5 group hover:border-primary/30 transition-colors">
-                                <div className="w-1 h-1 rounded-full bg-primary group-hover:scale-150 transition-transform" />
-                                <span className="text-[10px] md:text-[11px] 2xl:text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                            <div key={idx} className="flex items-center gap-2 bg-slate-100 dark:bg-white/[0.05] rounded-lg px-3 py-1 border border-slate-200/80 dark:border-white/[0.08] transition-colors">
+                                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                                <span className="text-xs font-medium text-slate-700 dark:text-neutral-300">
                                     {tag}
                                 </span>
                             </div>
@@ -70,23 +70,25 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, index }) => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+                    <div className="flex flex-wrap gap-2.5 w-full sm:w-auto">
                         <Link
                             to="/free-prototype"
-                            className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                            className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black pl-3.5 pr-1.5 py-1.5 rounded-xl font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                         >
-                            Free Prototype
-                            <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                            <span>Free Prototype</span>
+                            <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+                            </div>
                         </Link>
 
                         <Link
                             to="/product?category=Customized"
-                            className="group flex items-center gap-2 px-5 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                            className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 pl-3.5 pr-1.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md hover:scale-[1.02] active:scale-95 transition-all group"
                         >
-                            View Work
-                            <span className="w-6 h-6 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
-                                <span className="material-symbols-rounded text-xs">arrow_outward</span>
-                            </span>
+                            <span>View Work</span>
+                            <div className="w-6 h-6 bg-white dark:bg-white/10 rounded-lg border border-slate-200/60 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-neutral-200 group-hover:translate-x-0.5 transition-transform duration-300">
+                                <span className="material-symbols-rounded text-sm">arrow_forward</span>
+                            </div>
                         </Link>
                     </div>
                 </div>

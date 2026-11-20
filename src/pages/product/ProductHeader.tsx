@@ -7,36 +7,30 @@ const ProductHeader: React.FC = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             >
-                <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">✦ Products / Projects</span>
+                <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Products / Projects</span>
             </motion.div>
 
             <motion.h1
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-5xl 2xl:text-7xl font-display font-extrabold tracking-tighter leading-[1.1] text-[#111] dark:text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 dark:text-white max-w-4xl mx-auto"
             >
-                <div className="flex flex-wrap justify-center items-center gap-x-3.5 md:gap-x-5">
-                    <span>Our Built</span>
-                    <motion.span
-                        whileHover={{ scale: 1.05, rotate: -2 }}
-                        className="relative inline-flex w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-32 2xl:h-20 rounded-full overflow-hidden items-center justify-center bg-orange-100 align-middle shadow-inner shadow-black/20"
-                    >
-                        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-90" alt="Product" />
-                    </motion.span>
-                    <span className="text-secondary">Products</span>
-                </div>
+                Our Engineered <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                    Products & Projects
+                </span>
             </motion.h1>
 
             <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-sm md:text-lg 2xl:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed font-medium px-4"
+                className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto mt-6 leading-relaxed font-normal px-4"
             >
-                A showcase of the websites, software, and digital platforms we’ve built to help businesses grow and succeed online.
+                A showcase of the websites, software platforms, and custom digital systems we’ve engineered for businesses worldwide.
             </motion.p>
         </div>
     );

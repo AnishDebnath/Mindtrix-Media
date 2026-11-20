@@ -22,26 +22,26 @@ const WhyChooseUs: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Why Choose Us</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Why Choose Us</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mt-4 mb-4 text-slate-900 dark:text-white"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 dark:text-white leading-tight"
                     >
                         Why Clients Choose <br />
-                        <span className="text-secondary">Mindtrix Media</span>
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Mindtrix Media</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                     >
                         We are a website and software development agency based in Kolkata, India, building digital solutions for businesses worldwide. We keep things simple, fast, and built to last.
                     </motion.p>
@@ -54,9 +54,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-slate-800 shrink-0">
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -69,9 +69,9 @@ const WhyChooseUs: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Built For Your Business</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Every website and system we build is designed around how your business actually works. No cookie-cutter templates. No generic solutions. Just something that fits you perfectly.</p>
+                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                            <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">Built For Your Business</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Every website and system we build is designed around how your business actually works. No cookie-cutter templates. No generic solutions. Just something that fits you perfectly.</p>
                         </div>
                     </motion.div>
 
@@ -81,9 +81,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-[#0A0A0A] rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-800 shrink-0">
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -96,9 +96,9 @@ const WhyChooseUs: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">Start Small, Own Anytime</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">Start with our affordable yearly subscription to launch your website or software without high upfront costs. Upgrade anytime to full ownership with complete source files and total control.</p>
+                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                            <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">Start Small, Own Anytime</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Start with our affordable yearly subscription to launch your website or software without high upfront costs. Upgrade anytime to full ownership with complete source files and total control.</p>
                         </div>
                     </motion.div>
 
@@ -108,9 +108,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-slate-900 rounded-[1.5rem] p-2.5 shadow-xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-[1.2rem] aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-slate-800 shrink-0">
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-white/[0.06] shrink-0">
                             {/* Animated Mouse Pointer */}
                             <motion.div
                                 animate={{
@@ -136,13 +136,13 @@ const WhyChooseUs: React.FC = () => {
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -5 }}
-                                    className="bg-white dark:bg-slate-900 p-2 md:p-2.5 lg:p-1 xl:p-2.5 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 w-[28%] min-w-[70px] md:w-28 lg:w-[70px] xl:w-28 aspect-[3/4] flex flex-col"
+                                    className="bg-white dark:bg-neutral-900/80 p-2 md:p-2.5 lg:p-1 xl:p-2.5 rounded-xl shadow-md border border-slate-200/80 dark:border-white/[0.08] w-[28%] min-w-[70px] md:w-28 lg:w-[70px] xl:w-28 aspect-[3/4] flex flex-col"
                                 >
                                     <div className={`
-                                        flex-1 flex items-center justify-center rounded-xl mb-0.5 xl:mb-1 border
+                                        flex-1 flex items-center justify-center rounded-lg mb-0.5 xl:mb-1 border
                                         ${item.highlight
                                             ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-inner border-green-500'
-                                            : 'bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-white border-slate-200 dark:border-slate-800'}
+                                            : 'bg-slate-50 dark:bg-black text-slate-900 dark:text-white border-slate-200 dark:border-white/[0.06]'}
                                      `}>
                                         <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
                                             {item.d.toString().padStart(2, '0')}
@@ -154,9 +154,9 @@ const WhyChooseUs: React.FC = () => {
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="px-4 pb-5 md:pb-0 md:px-8 lg:px-4 lg:pb-5 md:flex-1 md:flex md:flex-col md:justify-center">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold mb-2 text-slate-900 dark:text-white">On Time, Every Time</h3>
-                            <p className="text-slate-500 text-xs md:text-sm 2xl:text-base leading-relaxed">We follow a clear process: prototype, build, test, launch. Projects stay on track and within scope. You always know what's happening and when it will be ready.</p>
+                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                            <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">On Time, Every Time</h3>
+                            <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">We follow a clear process: prototype, build, test, launch. Projects stay on track and within scope. You always know what's happening and when it will be ready.</p>
                         </div>
                     </motion.div>
                 </div>

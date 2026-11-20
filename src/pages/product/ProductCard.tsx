@@ -19,30 +19,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="py-10 md:py-16 border-t border-slate-200 dark:border-slate-800 first:border-t-0"
+            className="py-10 md:py-16 border-t border-slate-200/80 dark:border-white/[0.08] first:border-t-0"
         >
             <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 2xl:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
 
                 {/* Visual Section (Image) */}
                 <div className="w-full lg:w-1/2">
                     <div className="relative group perspective-1000" onClick={() => navigate(`/product/${product.id}`)}>
-                        <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                        <div className="relative overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-[#0F0F0F] border border-slate-200 dark:border-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02 ] cursor-pointer">
-                            <div className="aspect-[4/3] w-full overflow-hidden relative">
+                        <div className="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-slate-100 dark:bg-neutral-950/80 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-500 group-hover:scale-[1.01] cursor-pointer p-2.5">
+                            <div className="aspect-[4/3] w-full overflow-hidden rounded-xl md:rounded-2xl relative border border-slate-100 dark:border-white/[0.04]">
                                 <img
                                     src={product.image}
                                     alt={product.title}
                                     loading="lazy"
                                     className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                                 />
-                                {/* Overlays Tags */}
-                                {/* <div className="absolute top-4 left-4 flex gap-2 font-sans z-10 transition-transform duration-500 group-hover:-translate-y-1">
-                                    <span className="px-3 py-1.5 bg-white/90 dark:bg-black/70 backdrop-blur-md rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-widest text-[#111] dark:text-white border border-white/20 shadow-lg">
-                                        {product.category}
-                                    </span>
-                                </div> */}
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                         </div>
                     </div>
                 </div>
@@ -56,7 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                         <span className="text-slate-400 dark:text-slate-500 text-xs font-medium uppercase tracking-widest">{product.client}</span>
                     </div>
 
-                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-[1.1] hover:text-primary transition-colors duration-300">
+                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight hover:text-indigo-500 transition-colors duration-200">
                         {product.title.split(':')[0]}
                     </h3>
 
@@ -64,7 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     <ul className="space-y-3 mb-8 md:mb-10">
                         {product.services.slice(0, 4).map((service, idx) => (
                             <li key={idx} className="flex items-start gap-3">
-                                <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <div className="w-5 h-5 rounded-md bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
                                     <span className="material-symbols-rounded text-[12px] text-secondary font-bold">check</span>
                                 </div>
                                 <span className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-medium">
@@ -75,45 +68,45 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     </ul>
 
                     {/* Action Area */}
-                    <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+                    <div className="flex flex-wrap gap-2.5 w-full sm:w-auto">
                         {product.category === "Prebuilt" ? (
                             <>
                                 <Link
                                     to={product.buyLink || "/contact"}
-                                    className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                                    className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-4 sm:px-5 h-9 sm:h-10 rounded-xl font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all group/btn"
                                 >
-                                    Buy Now
-                                    <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">shopping_cart</span>
+                                    <span>Buy Now</span>
+                                    <span className="material-symbols-rounded text-sm group-hover/btn:translate-x-0.5 transition-transform">shopping_cart</span>
                                 </Link>
 
                                 <a
                                     href={product.liveLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white px-6 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/10 transition-all font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest hover:scale-105 active:scale-95"
+                                    className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 px-4 sm:px-5 h-9 sm:h-10 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md hover:scale-[1.02] active:scale-95 transition-all"
                                 >
-                                    <span className="material-symbols-rounded text-base">visibility</span>
-                                    {product.liveLabel || "View Live"}
+                                    <span className="material-symbols-rounded text-sm">visibility</span>
+                                    <span>{product.liveLabel || "View Live"}</span>
                                 </a>
                             </>
                         ) : (
                             <>
                                 <Link
                                     to={product.customiseLink || "/contact"}
-                                    className="bg-[#111] dark:bg-white text-white dark:text-[#111] px-6 h-11 rounded-full font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 group/btn"
+                                    className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-4 sm:px-5 h-9 sm:h-10 rounded-xl font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all group/btn"
                                 >
-                                    Customise
-                                    <span className="material-symbols-rounded text-base group-hover/btn:translate-x-1 transition-transform">tune</span>
+                                    <span>Customise</span>
+                                    <span className="material-symbols-rounded text-sm group-hover/btn:translate-x-0.5 transition-transform">tune</span>
                                 </Link>
 
                                 <a
                                     href={product.liveLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white px-6 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-white/10 transition-all font-bold text-[9px] md:text-[10px] 2xl:text-xs uppercase tracking-widest hover:scale-105 active:scale-95"
+                                    className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 px-4 sm:px-5 h-9 sm:h-10 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md hover:scale-[1.02] active:scale-95 transition-all"
                                 >
-                                    <span className="material-symbols-rounded text-base">visibility</span>
-                                    {product.liveLabel || "View Live"}
+                                    <span className="material-symbols-rounded text-sm">visibility</span>
+                                    <span>{product.liveLabel || "View Live"}</span>
                                 </a>
                             </>
                         )}

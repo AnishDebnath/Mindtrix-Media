@@ -10,9 +10,9 @@ const AboutValues: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-2 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs flex items-center gap-2">
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">rocket_launch</span> Agency Purpose
                         </span>
                     </motion.div>
@@ -21,16 +21,16 @@ const AboutValues: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 md:mb-6"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-4 leading-tight"
                     >
-                        Our <span className="text-secondary">Mission</span> & <span className="text-primary">Vision.</span>
+                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Mission & Vision.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                     >
                         The principles that define who we are and where we're headed.
                     </motion.p>
@@ -60,10 +60,10 @@ const AboutValues: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-xl md:text-2xl 2xl:text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                                     Our Mission
                                 </h3>
-                                <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
+                                <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
                                     To help businesses worldwide automate their operations, manage their customers, and scale efficiently through custom-built software systems — CRM platforms, ERP solutions, SaaS products, and digital infrastructure that actually fits how they work.
                                 </p>
                             </div>
@@ -90,10 +90,10 @@ const AboutValues: React.FC = () => {
                                     <span className="material-symbols-rounded text-primary text-2xl group-hover:scale-110 transition-transform duration-300">visibility</span>
                                 </div>
                             </div>
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
                                 Our Vision
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
+                            <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
                                 To be the world's most trusted custom software development agency — where every business, regardless of size or location, can access the same calibre of digital systems used by the world's leading enterprises.
                             </p>
                         </div>
@@ -127,10 +127,10 @@ const AboutValues: React.FC = () => {
                             </div>
                         </div>
                         <div className="p-5 relative z-20">
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">
                                 Our Approach
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed">
+                            <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
                                 We always prototype first, build second. Every system is shaped around your specific workflows, not the other way around.
                             </p>
                         </div>
@@ -170,21 +170,21 @@ const AboutValues: React.FC = () => {
                                     <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/60 dark:border-white/10 group-hover:border-primary/30 transition-colors" />
                                 </div>
                             </div>
-                            <h3 className="text-xl md:text-2xl 2xl:text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                                 Our Culture
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm 2xl:text-base leading-relaxed mb-6 md:mb-8">
+                            <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                 A results-driven team of engineers, designers, and strategists who are deeply invested in the long-term success of every business we serve. We don't just build software — we build systems that help companies grow.
                             </p>
                             <div className="flex gap-3 flex-wrap">
-                                <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
-                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Client-Centric</span>
+                                <div className="px-3.5 py-1.5 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-lg border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
+                                    <span className="text-slate-600 dark:text-slate-300 text-xs font-medium">Client-Centric</span>
                                 </div>
-                                <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
-                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Results Driven</span>
+                                <div className="px-3.5 py-1.5 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-lg border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
+                                    <span className="text-slate-600 dark:text-slate-300 text-xs font-medium">Results Driven</span>
                                 </div>
-                                <div className="px-4 py-2 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-full border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
-                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold">Transparency First</span>
+                                <div className="px-3.5 py-1.5 bg-slate-100 dark:bg-white/5 backdrop-blur-sm rounded-lg border border-slate-200/60 dark:border-white/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
+                                    <span className="text-slate-600 dark:text-slate-300 text-xs font-medium">Transparency First</span>
                                 </div>
                             </div>
                         </div>

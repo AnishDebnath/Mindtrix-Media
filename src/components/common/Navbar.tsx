@@ -57,17 +57,17 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="w-full max-w-5xl bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-full shadow-xl shadow-black/5 dark:shadow-black/20 flex items-center justify-between p-1.5 md:p-2 transition-all duration-300"
+                    className="w-full max-w-4xl bg-white/80 dark:bg-black/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/[0.1] rounded-2xl shadow-lg shadow-black/5 dark:shadow-[0_0_24px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)] flex items-center justify-between p-2 transition-all duration-300"
                 >
                     {/* Logo */}
-                    <Link to="/" className="flex items-center group ml-3 md:ml-4 py-1">
+                    <Link to="/" className="flex items-center group ml-1 sm:ml-2 py-1">
                         <img src={whiteLogo} alt="Mindtrix Media" className="h-8 md:h-9 2xl:h-10 w-auto object-contain" />
                     </Link>
 
 
                     {/* Desktop Nav */}
                     <div
-                        className="hidden lg:flex items-center bg-slate-100/80 dark:bg-white/5 rounded-full p-1 border border-slate-200 dark:border-white/5"
+                        className="hidden lg:flex items-center bg-slate-100/80 dark:bg-neutral-900/50 rounded-xl p-1 border border-slate-200/60 dark:border-white/[0.06]"
                         onMouseLeave={() => setHoveredPath(null)}
                     >
                         {navLinks.map((link) => (
@@ -75,14 +75,14 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 key={link.name}
                                 to={link.path}
                                 onMouseEnter={() => setHoveredPath(link.path)}
-                                className={`relative px-2 lg:px-2.5 xl:px-3 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'}`}
+                                className={`relative px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary dark:text-white' : 'text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white'}`}
                             >
                                 {link.name}
 
                                 {isActive(link.path) && (
                                     <motion.div
                                         layoutId="nav-pill"
-                                        className="absolute inset-0 bg-white dark:bg-white/10 rounded-full shadow-md -z-10 border border-slate-200 dark:border-white/5"
+                                        className="absolute inset-0 bg-white dark:bg-white/10 rounded-lg shadow-sm -z-10 border border-slate-200 dark:border-white/10"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 {hoveredPath === link.path && !isActive(link.path) && (
                                     <motion.div
                                         layoutId="nav-hover-pill"
-                                        className="absolute inset-0 bg-slate-200 dark:bg-white/5 rounded-full -z-10"
+                                        className="absolute inset-0 bg-slate-200/80 dark:bg-white/[0.05] rounded-lg -z-10"
                                         transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
                                     />
                                 )}
@@ -100,24 +100,14 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
 
                     {/* Actions */}
-                    <div className="flex items-center gap-2.5 md:gap-3 mr-4">
-                        {/* <button
-                            onClick={toggleTheme}
-                            className="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                            aria-label="Toggle Theme"
-                        >
-                            <span className="material-symbols-rounded block dark:hidden text-xl">dark_mode</span>
-                            <span className="material-symbols-rounded hidden dark:block text-xl">light_mode</span>
-                        </button> */}
-
-
+                    <div className="flex items-center gap-2 mr-1">
                         <Link
                             to="/free-prototype"
-                            className="hidden lg:flex bg-[#111] dark:bg-white text-white dark:text-[#111] pl-4 pr-1.5 py-1.5 rounded-full font-bold text-xs md:text-sm items-center gap-2.5 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/5 group"
+                            className="hidden lg:flex bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black pl-3.5 pr-1.5 py-1.5 rounded-xl font-medium text-xs sm:text-sm items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-sm group"
                         >
                             Free Prototype
-                            <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                <span className="material-symbols-rounded text-lg">arrow_outward</span>
+                            <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                             </div>
                         </Link>
 
@@ -148,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -20, scale: 0.95 }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-[5.5rem] left-4 right-4 z-50 bg-white/98 dark:bg-[#0A0A0A]/98 backdrop-blur-3xl rounded-[2.5rem] p-5 shadow-[0_30px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-slate-200/50 dark:border-white/10 lg:hidden overflow-hidden"
+                            className="fixed top-[5.5rem] left-4 right-4 z-50 bg-white/98 dark:bg-[#0A0A0A]/98 backdrop-blur-3xl rounded-2xl p-5 shadow-[0_30px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-slate-200/50 dark:border-white/10 lg:hidden overflow-hidden"
                         >
                             <nav className="flex flex-col space-y-1.5">
                                 {navLinks.map((link, i) => (
@@ -160,14 +150,14 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                     >
                                         <Link
                                             to={link.path}
-                                            className={`flex items-center justify-between px-6 py-4 rounded-[1.5rem] group transition-all duration-300 ${isActive(link.path)
+                                            className={`flex items-center justify-between px-5 py-3.5 rounded-xl group transition-all duration-300 ${isActive(link.path)
                                                 ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold'
                                                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'
                                                 }`}
                                         >
                                             <span className="text-base font-semibold tracking-tight">{link.name}</span>
-                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive(link.path) ? 'bg-primary text-white scale-110' : 'bg-slate-100 dark:bg-white/10 text-slate-400 group-hover:bg-primary group-hover:text-white'}`}>
-                                                <span className="material-symbols-rounded text-lg">
+                                            <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(link.path) ? 'bg-primary text-white scale-110' : 'bg-slate-100 dark:bg-white/10 text-slate-400 group-hover:bg-primary group-hover:text-white'}`}>
+                                                <span className="material-symbols-rounded text-base">
                                                     {isActive(link.path) ? 'check' : 'arrow_forward'}
                                                 </span>
                                             </div>
@@ -183,11 +173,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 >
                                     <Link
                                         to="/free-prototype"
-                                        className="w-full bg-[#111] dark:bg-white text-white dark:text-[#111] py-1.5 pl-6 pr-1.5 rounded-full font-bold text-base flex items-center justify-between group shadow-xl shadow-black/10 active:scale-[0.98] transition-all"
+                                        className="w-full bg-slate-950 dark:bg-white text-white dark:text-black h-10 px-4 rounded-xl font-medium text-xs sm:text-sm flex items-center justify-between group shadow-sm active:scale-95 transition-all"
                                     >
                                         Free Prototype
-                                        <div className="w-8 h-8 bg-white/20 dark:bg-black/10 rounded-full flex items-center justify-center text-white dark:text-[#111] group-hover:rotate-45 transition-transform duration-300">
-                                            <span className="material-symbols-rounded text-lg">rocket_launch</span>
+                                        <div className="w-7 h-7 bg-white/20 dark:bg-black/10 rounded-lg flex items-center justify-center text-white dark:text-black">
+                                            <span className="material-symbols-rounded text-base group-hover:rotate-45 transition-transform duration-300">rocket_launch</span>
                                         </div>
                                     </Link>
                                 </motion.div>

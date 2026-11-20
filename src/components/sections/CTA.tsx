@@ -1,105 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-// ponytail: local mindtrix logo import
 import logo from '@/assets/mindtrix-media-logo.png';
 
 const CTA: React.FC = () => {
     return (
         <section className="py-8 md:py-12 2xl:py-16 px-4 bg-transparent relative z-10">
             <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-6xl mx-auto relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#FFC682] via-[#FFD6A5] to-[#FFC682] p-8 md:p-12 2xl:p-16 shadow-2xl"
+                className="max-w-6xl mx-auto relative rounded-2xl md:rounded-3xl overflow-hidden bg-neutral-950 border border-white/[0.1] p-8 md:p-14 2xl:p-16 shadow-[0_0_50px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             >
-                {/* Decorative Circles */}
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FF5C00]/10 rounded-full blur-3xl translate-y-1/2 pointer-events-none"></div>
+                {/* Radial Top Spotlight Glow */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.08) 45%, transparent 75%)'
+                    }}
+                />
 
-                {/* Concentric Circles SVG overlay */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <circle cx="50" cy="-20" r="40" stroke="black" strokeWidth="0.5" fill="none" />
-                    <circle cx="50" cy="120" r="40" stroke="black" strokeWidth="0.5" fill="none" />
-                </svg>
+                {/* Subtle Radial Dot Grid Overlay */}
+                <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
 
                 <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Side */}
                     <div className="text-left">
-                        <motion.span
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="text-sm font-bold tracking-[0.2em] text-slate-800/70 uppercase mb-4 block"
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-white/[0.12] bg-white/[0.05] backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                            <span className="text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Let's Work Together</span>
+                        </div>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 tracking-tight">
+                            Ready to build <br />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                                your next project?
+                            </span>
+                        </h2>
+                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-md mb-8 font-normal">
+                            Whether you need a high-converting website, custom CRM, ERP platform, or full SaaS system — we build software that scales with your business.
+                        </p>
+                        <Link
+                            to="/free-prototype"
+                            className="inline-flex items-center gap-2 bg-white text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:bg-neutral-200 hover:scale-[1.02] active:scale-95 transition-all group"
                         >
-                            Let's work together
-                        </motion.span>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 leading-[1.1] mb-8 md:mb-12"
-                        >
-                            Ready to start your project?
-                        </motion.h2>
-                        <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-slate-950 text-white px-10 h-[44px] flex items-center justify-center rounded-2xl font-bold text-sm md:text-base shadow-xl shadow-slate-900/10 hover:shadow-2xl transition-all"
-                        >
-                            Get Started Today
-                        </motion.button>
+                            <span>Get Started Today</span>
+                            <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+                            </div>
+                        </Link>
                     </div>
 
                     {/* Right Side - The Card */}
                     <div className="relative flex justify-center lg:justify-end">
                         <motion.div
-                            initial={{ opacity: 0, rotate: 6, y: 40 }}
-                            whileInView={{ opacity: 1, rotate: 3, y: 0 }}
+                            initial={{ opacity: 0, rotate: 3, y: 30 }}
+                            whileInView={{ opacity: 1, rotate: 2, y: 0 }}
                             whileHover={{ rotate: 0, scale: 1.02 }}
                             viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
-                            className="bg-white/90 backdrop-blur-xl p-4 md:p-5 2xl:p-6 rounded-[1.2rem] shadow-2xl w-full max-w-sm relative border border-white/50"
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+                            className="bg-neutral-900/80 backdrop-blur-xl p-6 md:p-7 rounded-2xl shadow-2xl w-full max-w-sm relative border border-white/[0.12] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                         >
-                            <div className="flex items-center gap-2.5 mb-5 md:mb-6 border-b border-slate-100 pb-2.5">
-                                <span className="relative flex h-2.5 w-2.5">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                            <div className="flex items-center gap-2.5 mb-5 border-b border-white/[0.08] pb-3">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                                 </span>
-                                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Available for Project</span>
+                                <span className="text-[11px] font-medium text-neutral-300 uppercase tracking-wider">Available for New Projects</span>
                             </div>
 
-                            <div className="flex items-center gap-3 mb-5 md:mb-6 relative">
+                            <div className="flex items-center gap-3 mb-5 relative">
                                 <div className="flex items-center gap-2">
-                                    <img src={logo} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover bg-white shadow-sm" alt="Mindtrix Media" />
-                                    <span className="text-slate-400 font-bold">+</span>
-                                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-white text-[9px] font-bold shadow-sm">You</div>
+                                    <img src={logo} className="w-8 h-8 rounded-full border border-white/20 object-cover bg-neutral-950 p-1 shadow-sm" alt="Mindtrix Media" />
+                                    <span className="text-neutral-500 font-bold">+</span>
+                                    <div className="w-8 h-8 rounded-full border border-white/20 bg-neutral-800 flex items-center justify-center text-white text-[10px] font-bold shadow-sm">You</div>
                                 </div>
-                                <motion.div
-                                    animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute left-14 top-6 z-20 pointer-events-none"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-                                        <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="black" stroke="white" />
-                                    </svg>
-                                    <div className="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-md absolute left-4 top-4 whitespace-nowrap">
-                                        Mindtrix Media
-                                    </div>
-                                </motion.div>
                             </div>
 
-                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-0.5">Free 15-minute call</h3>
-                            <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8">Tell us your idea. <br /> We'll tell you how to build it.</p>
+                            <h3 className="text-lg md:text-xl font-bold text-white mb-1 tracking-tight">Free 15-Minute Strategy Call</h3>
+                            <p className="text-neutral-400 text-xs md:text-sm mb-6 leading-relaxed">Tell us your vision. We'll show you how to engineer and scale it with zero friction.</p>
 
-                            <Link to="/contact" className="flex items-center justify-center w-full bg-primary-dark hover:bg-primary text-white h-[44px] rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
-                                Book a free call
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center justify-between gap-2 w-full bg-white text-black hover:bg-neutral-200 pl-4 pr-1.5 py-1.5 rounded-xl font-medium text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.02] active:scale-95 group"
+                            >
+                                <span>Book a Free Call</span>
+                                <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center text-white">
+                                    <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+                                </div>
                             </Link>
                         </motion.div>
                     </div>

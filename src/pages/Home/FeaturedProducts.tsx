@@ -8,7 +8,7 @@ interface FeaturedProductsProps {
 }
 
 const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
-    const featuredItems = projectIds 
+    const featuredItems = projectIds
         ? projectIds.map(id => products.find(p => p.id === id)).filter((p): p is typeof products[0] => !!p)
         : products.filter(p => p.featured).slice(0, 4);
 
@@ -20,30 +20,30 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Products / Projects</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Featured Work</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        Product <span className="text-secondary">that speak</span> for itself
+                        Products <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">That Speak</span> for Themselves
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal"
                     >
-                        Here's a glimpse of what our digital solutions have brought to life for our clients.
+                        Here's a glimpse of the digital platforms and systems we've engineered for our clients.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-7xl mx-auto">
                     {featuredItems.map((product, idx) => (
                         <Link key={idx} to={`/product/${product.id}`} className="block">
                             <motion.div
@@ -52,10 +52,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-2.5 pb-5 border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500 h-full"
+                                className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300 h-full"
                             >
                                 {/* Image Frame */}
-                                <div className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-black mb-4 md:mb-5 border border-slate-100 dark:border-slate-800">
+                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-black mb-3 md:mb-4 border border-slate-100 dark:border-white/[0.06]">
                                     <img
                                         src={product.image}
                                         alt={product.title}
@@ -64,22 +64,22 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                     />
 
                                     {product.featuredTag && (
-                                        <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#FF4D4D] to-[#FF0000] text-white text-[8px] font-black uppercase tracking-widest rounded-full shadow-lg z-10 border border-white/20">
+                                        <div className="absolute top-3 right-3 px-2.5 py-1 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[9px] font-semibold uppercase tracking-widest rounded-lg shadow-lg z-10">
                                             {product.featuredTag}
                                         </div>
                                     )}
                                 </div>
 
                                 {/* Info Area */}
-                                <div className="px-6 flex justify-between items-end gap-4">
+                                <div className="px-3 flex justify-between items-end gap-4">
                                     <div className="flex-1 min-w-0">
-                                        <h3 className="text-lg md:text-xl 2xl:text-2xl font-bold text-slate-900 dark:text-white mb-1 font-display group-hover:text-primary transition-colors duration-300 truncate">
+                                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">
                                             {product.title}
                                         </h3>
-                                        <p className="text-slate-500 dark:text-slate-400 font-medium text-xs md:text-sm 2xl:text-base truncate">{product.client}</p>
+                                        <p className="text-slate-500 dark:text-neutral-400 font-medium text-xs md:text-sm truncate">{product.client}</p>
                                     </div>
                                     <motion.div
-                                        className="w-10 h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 flex-shrink-0 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
+                                        className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0 rounded-xl border border-slate-200 dark:border-white/[0.1] bg-slate-50 dark:bg-neutral-900/60 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"
                                     >
                                         <motion.span
                                             variants={{
@@ -87,7 +87,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                                 hover: { rotate: 45 }
                                             }}
                                             transition={{ duration: 0.3 }}
-                                            className="material-symbols-rounded text-slate-400 group-hover:text-white transition-colors text-xl md:text-2xl 2xl:text-3xl"
+                                            className="material-symbols-rounded text-slate-500 dark:text-neutral-300 group-hover:text-white transition-colors text-lg md:text-xl"
                                         >
                                             arrow_outward
                                         </motion.span>
@@ -107,11 +107,11 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                     >
                         <Link
                             to="/product"
-                            className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 active:scale-95 transition-all shadow-xl group"
+                            className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                         >
                             <span>Explore All Products</span>
-                            <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                            <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                             </div>
                         </Link>
                     </motion.div>

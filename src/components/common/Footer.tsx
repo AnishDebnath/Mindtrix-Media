@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-full bg-[#000000] rounded-[1.5rem] px-5 pt-7 pb-10 md:pt-10 md:pb-12 2xl:p-14 relative overflow-hidden flex flex-col justify-between"
+                className="w-full bg-black rounded-2xl md:rounded-3xl px-6 pt-10 pb-12 md:pt-14 md:pb-16 2xl:p-16 relative overflow-hidden flex flex-col justify-between border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             >
                 <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-between">
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                             <Link to="/" className="inline-block mb-6 group">
                                 <img src={whiteLogo} alt="Mindtrix Media" loading="lazy" className="h-10 md:h-12 2xl:h-14 w-auto object-contain" />
                             </Link>
-                            <h3 className="text-lg md:text-xl 2xl:text-2xl font-display font-bold text-white mb-4 md:mb-5 leading-tight">Ready to build <br />your custom software system?</h3>
+                            <h3 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-5 leading-tight tracking-tight">Ready to build <br />your custom software system?</h3>
                             <p className="text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">From CRM and ERP platforms to SaaS products and business websites — we build systems that scale with you.</p>
                             <Link to="/contact" className="inline-flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group text-sm md:text-base">
                                 Start Your Project

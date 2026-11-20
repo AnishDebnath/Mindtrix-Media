@@ -9,61 +9,64 @@ const Blog: React.FC = () => {
         <section className="py-8 md:py-12 2xl:py-16 bg-transparent">
             <div className="max-w-5xl mx-auto px-4 md:px-8">
                 {/* Header */}
-                <div className="text-center mb-8 md:mb-10">
+                <div className="text-center mb-10 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1.5 rounded-full border border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">✦ Blog</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase text-xs tracking-wider">✦ Blog</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl 2xl:text-5xl font-display font-extrabold mb-3 text-slate-900 dark:text-white"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 dark:text-white tracking-tight leading-tight"
                     >
-                        Insights & <span className="text-secondary">Expertise</span>
+                        Insights & <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Expertise</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto"
+                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                     >
-                        Stay ahead of the curve with fresh perspectives on custom software, e-commerce growth, and business automation.
+                        Fresh perspectives on custom software architecture, e-commerce engineering, and system automation.
                     </motion.p>
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-5xl mx-auto">
                     {featuredArticles.map((post, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            whileHover={{ y: -8 }}
-                            className="group cursor-pointer"
-                        >
-                            <div className="mb-3 overflow-hidden rounded-[1.2rem] shadow-sm border border-slate-100 dark:border-slate-800">
-                                <img
-                                    src={post.img}
-                                    alt={post.title}
-                                    loading="lazy"
-                                    className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                            </div>
-                            <h3 className="text-base md:text-lg 2xl:text-xl font-bold mb-1.5 text-slate-900 dark:text-white group-hover:text-secondary transition-colors leading-snug line-clamp-2 min-h-[3rem] md:min-h-[3.5rem]">
-                                {post.title}
-                            </h3>
-                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm md:text-base 2xl:text-lg line-clamp-2 min-h-[2.5rem] md:min-h-[3rem]">
-                                {post.desc}
-                            </p>
-                        </motion.div>
+                        <Link to={`/blog/${post.id}`} key={i} className="block">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                whileHover={{ y: -4 }}
+                                className="group cursor-pointer bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300"
+                            >
+                                <div className="mb-3 overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06]">
+                                    <img
+                                        src={post.img}
+                                        alt={post.title}
+                                        loading="lazy"
+                                        className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div className="px-2">
+                                    <h3 className="text-base md:text-lg font-bold mb-1.5 text-slate-900 dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-slate-600 dark:text-neutral-400 leading-relaxed text-xs md:text-sm line-clamp-2">
+                                        {post.desc}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
 
@@ -76,11 +79,11 @@ const Blog: React.FC = () => {
                     >
                         <Link
                             to="/blog"
-                            className="inline-flex items-center gap-3 bg-[#111] dark:bg-white text-white dark:text-[#111] pl-6 pr-1.5 py-1.5 rounded-full font-bold text-sm md:text-base hover:scale-105 active:scale-95 transition-all shadow-xl group"
+                            className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                         >
                             <span>Explore All Insights</span>
-                            <div className="w-8 h-8 bg-white dark:bg-[#111] rounded-full flex items-center justify-center text-[#111] dark:text-white group-hover:rotate-45 transition-transform duration-300">
-                                <span className="material-symbols-rounded text-lg">arrow_forward</span>
+                            <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
+                                <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
                             </div>
                         </Link>
                     </motion.div>
