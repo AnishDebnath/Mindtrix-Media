@@ -58,7 +58,9 @@ const Services: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Services</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                            <span className="material-symbols-rounded text-sm">design_services</span> Services
+                        </span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}

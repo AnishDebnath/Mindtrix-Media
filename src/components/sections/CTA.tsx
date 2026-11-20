@@ -27,8 +27,9 @@ const CTA: React.FC = () => {
                     {/* Left Side */}
                     <div className="text-left">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-white/[0.05] shadow-sm mb-4">
-                            <span className="text-[#ffc659] text-xs">✦</span>
-                            <span className="text-slate-800 dark:text-white font-semibold uppercase text-xs tracking-wider">Let's Work Together</span>
+                            <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                                <span className="material-symbols-rounded text-sm">handshake</span> Let's Work Together
+                            </span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-8 tracking-tight">
                             Ready to build <br />

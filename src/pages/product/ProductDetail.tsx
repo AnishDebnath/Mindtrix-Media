@@ -67,7 +67,9 @@ const ProductDetail: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Case Study</span>
+                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                            <span className="material-symbols-rounded text-sm">description</span> Case Study
+                        </span>
                     </motion.div>
 
                     <div className="flex flex-col items-center justify-center text-center">

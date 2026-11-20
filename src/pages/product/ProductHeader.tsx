@@ -9,7 +9,9 @@ const ProductHeader: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
-                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider">✦ Products / Projects</span>
+                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                    <span className="material-symbols-rounded text-sm">apps</span> Products / Projects
+                </span>
             </motion.div>
 
             <motion.h1

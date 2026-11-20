@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center group ml-1 sm:ml-2 py-1">
-                        <img src={darkMode ? whiteLogo : blackLogo} alt="Mindtrix Media" className="h-8 md:h-9 2xl:h-10 w-auto object-contain" />
+                        <img src={darkMode ? whiteLogo : blackLogo} alt="Mindtrix Media" className="h-6 md:h-7 2xl:h-8 w-auto object-contain" />
                     </Link>
 
 
