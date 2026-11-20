@@ -30,7 +30,7 @@ const OurSolution: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">lightbulb</span> Our Solution
                         </span>
                     </motion.div>
@@ -41,8 +41,8 @@ const OurSolution: React.FC = () => {
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
                         Common Problems.{' '}
-                        <span className="text-[#6366f1]">Simple</span>{' '}
-                        <span className="text-[#ffc659]">Solutions.</span>
+                        <span className="text-primary">Simple</span>{' '}
+                        <span className="text-secondary">Solutions.</span>
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ const OurSolution: React.FC = () => {
                                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 />
                             </button>
-                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${highlightSolution ? 'text-[#6366f1] font-bold' : 'text-slate-600'}`}>Solution</span>
+                            <span className={`text-xs font-semibold uppercase tracking-wider transition-colors ${highlightSolution ? 'text-primary font-bold' : 'text-slate-600'}`}>Solution</span>
                         </div>
                     </motion.div>
                 </div>
@@ -112,7 +112,7 @@ const OurSolution: React.FC = () => {
                                     filter: highlightSolution ? 'grayscale(0%)' : 'grayscale(100%)'
                                 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-[#6366f1] mb-12 text-center relative z-10">Our Solution</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-primary mb-12 text-center relative z-10">Our Solution</h3>
                                 <ul className="space-y-8 relative z-10">
                                     {solutions.map((solution, idx) => (
                                         <motion.li
@@ -123,7 +123,7 @@ const OurSolution: React.FC = () => {
                                             transition={{ delay: idx * 0.1 }}
                                             className="flex items-center gap-5 text-slate-800 dark:text-white/90 font-medium text-sm sm:text-base"
                                         >
-                                            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#6366f1] flex items-center justify-center shadow-md shadow-[#6366f1]/30">
+                                            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-md shadow-primary/30">
                                                 <span className="material-symbols-rounded text-white text-sm font-bold">check</span>
                                             </div>
                                             {solution}
@@ -131,7 +131,7 @@ const OurSolution: React.FC = () => {
                                     ))}
                                 </ul>
                                 {/* Subtle decorative glow */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#6366f1]/5 blur-[80px] rounded-full pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
                             </motion.div>
                         </div>
                     </motion.div>

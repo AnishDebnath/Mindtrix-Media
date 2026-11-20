@@ -58,7 +58,7 @@ const Services: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">design_services</span> Services
                         </span>
                     </motion.div>
@@ -68,8 +68,8 @@ const Services: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        What <span className="text-[#6366f1]">We Build</span>{' '}
-                        <span className="text-[#ffc659]">For You</span>
+                        What <span className="text-primary">We Build</span>{' '}
+                        <span className="text-secondary">For You</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -119,7 +119,7 @@ const Services: React.FC = () => {
 
                                 <div className="relative z-10 flex flex-wrap gap-2 mt-6 md:mt-8 mb-1">
                                     {service.tags.map((tag, i) => {
-                                        const iconColor = (idx + i) % 2 === 0 ? 'text-[#6366f1]' : 'text-[#ffc659]';
+                                        const iconColor = (idx + i) % 2 === 0 ? 'text-primary' : 'text-secondary';
                                         return (
                                             <div key={i} className="flex items-center gap-1.5 bg-slate-50 dark:bg-white/[0.05] border border-slate-200/90 dark:border-white/[0.08] rounded-lg px-3 py-1 text-slate-800 dark:text-neutral-300 text-[10px] md:text-xs font-semibold transition-colors">
                                                 <span className={`material-symbols-rounded text-sm md:text-base ${iconColor}`}>{tag.icon}</span>

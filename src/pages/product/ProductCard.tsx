@@ -49,7 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                         <span className="text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-widest">{product.client}</span>
                     </div>
 
-                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight hover:text-[#6366f1] transition-colors duration-200">
+                    <h3 onClick={() => navigate(`/product/${product.id}`)} className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 tracking-tight leading-tight hover:text-primary transition-colors duration-200">
                         {product.title.split(':')[0]}
                     </h3>
 
@@ -57,7 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     <ul className="space-y-3 mb-8 md:mb-10">
                         {product.services.slice(0, 4).map((service, idx) => (
                             <li key={idx} className="flex items-start gap-3">
-                                <div className="w-5 h-5 rounded-md bg-[#ffc659]/20 border border-[#ffc659]/40 flex items-center justify-center shrink-0 mt-0.5">
+                                <div className="w-5 h-5 rounded-md bg-secondary/20 border border-secondary/40 flex items-center justify-center shrink-0 mt-0.5">
                                     <span className="material-symbols-rounded text-[12px] text-amber-700 font-bold">check</span>
                                 </div>
                                 <span className="text-sm md:text-base text-slate-700 dark:text-slate-400 font-medium">

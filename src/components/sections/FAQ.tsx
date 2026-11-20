@@ -17,7 +17,7 @@ const FAQ: React.FC = () => {
                             viewport={{ once: true }}
                             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                         >
-                            <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                            <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                                 <span className="material-symbols-rounded text-sm">help</span> FAQ
                             </span>
                         </motion.div>
@@ -29,8 +29,8 @@ const FAQ: React.FC = () => {
                             className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                         >
                             Questions We <br />
-                            <span className="text-[#6366f1]">Get Asked</span>{' '}
-                            <span className="text-[#ffc659]">Often</span>
+                            <span className="text-primary">Get Asked</span>{' '}
+                            <span className="text-secondary">Often</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}

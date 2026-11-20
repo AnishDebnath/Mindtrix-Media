@@ -24,7 +24,7 @@ const WhyChooseUs: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">verified</span> Why Choose Us
                         </span>
                     </motion.div>
@@ -36,8 +36,8 @@ const WhyChooseUs: React.FC = () => {
                         className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 leading-tight"
                     >
                         Why Clients Choose <br />
-                        <span className="text-[#6366f1]">Mindtrix</span>{' '}
-                        <span className="text-[#ffc659]">Media</span>
+                        <span className="text-primary">Mindtrix</span>{' '}
+                        <span className="text-secondary">Media</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ const WhyChooseUs: React.FC = () => {
                                     <div className={`
                                         flex-1 flex items-center justify-center rounded-lg mb-0.5 xl:mb-1 border
                                         ${item.highlight
-                                            ? 'bg-[#ffc659] text-slate-950 font-bold border-[#ffc659] shadow-sm'
+                                            ? 'bg-secondary text-slate-950 font-bold border-secondary shadow-sm'
                                             : 'bg-slate-50 dark:bg-black text-slate-900 dark:text-white border-slate-200 dark:border-white/[0.06]'}
                                      `}>
                                         <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
@@ -152,7 +152,7 @@ const WhyChooseUs: React.FC = () => {
                                         </span>
                                     </div>
                                     <div className="text-center py-1.5 lg:py-0.5 xl:py-2">
-                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-semibold ${item.highlight ? 'text-slate-950 font-bold' : 'text-[#94a3b8]'}`}>{item.l}</div>
+                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-semibold ${item.highlight ? 'text-slate-950 font-bold' : 'text-muted-slate'}`}>{item.l}</div>
                                     </div>
                                 </motion.div>
                             ))}

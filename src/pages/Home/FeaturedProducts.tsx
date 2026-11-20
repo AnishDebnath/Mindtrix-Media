@@ -22,7 +22,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">folder_open</span> Featured Work
                         </span>
                     </motion.div>
@@ -32,8 +32,8 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                         viewport={{ once: true }}
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        Products <span className="text-[#6366f1]">That Speak</span>{' '}
-                        <span className="text-[#ffc659]">for Themselves</span>
+                        Products <span className="text-primary">That Speak</span>{' '}
+                        <span className="text-secondary">for Themselves</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -67,7 +67,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                     />
 
                                     {product.featuredTag && (
-                                        <div className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/85 backdrop-blur-md border border-[#ffc659]/50 text-[#ffc659] text-[9px] font-bold uppercase tracking-widest rounded-lg shadow-sm z-10 flex items-center gap-1">
+                                        <div className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/85 backdrop-blur-md border border-secondary/50 text-secondary text-[9px] font-bold uppercase tracking-widest rounded-lg shadow-sm z-10 flex items-center gap-1">
                                             <span>★</span> {product.featuredTag}
                                         </div>
                                     )}
@@ -79,7 +79,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">
                                             {product.title}
                                         </h3>
-                                        <p className="text-[#94a3b8] font-semibold text-xs md:text-sm truncate">{product.client}</p>
+                                        <p className="text-muted-slate font-semibold text-xs md:text-sm truncate">{product.client}</p>
                                     </div>
                                     <motion.div
                                         className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0 rounded-xl border border-slate-300 dark:border-white/[0.1] bg-white dark:bg-neutral-900/60 flex items-center justify-center group-hover:bg-slate-950 group-hover:border-slate-950 dark:group-hover:bg-primary dark:group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm"

@@ -12,7 +12,7 @@ const AboutValues: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">rocket_launch</span> Agency Purpose
                         </span>
                     </motion.div>
@@ -23,9 +23,9 @@ const AboutValues: React.FC = () => {
                         transition={{ delay: 0.1 }}
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight"
                     >
-                        Our <span className="text-[#6366f1]">Mission</span>{' '}
+                        Our <span className="text-primary">Mission</span>{' '}
                         <span className="text-slate-900">&amp;</span>{' '}
-                        <span className="text-[#ffc659]">Vision.</span>
+                        <span className="text-secondary">Vision.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

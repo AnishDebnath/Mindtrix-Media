@@ -27,7 +27,7 @@ const AboutTeam: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">groups</span> Our Team
                         </span>
                     </motion.div>
@@ -37,7 +37,7 @@ const AboutTeam: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight"
                     >
-                        Meet the <span className="text-[#6366f1]">creative</span> minds.
+                        Meet the <span className="text-primary">creative</span> minds.
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

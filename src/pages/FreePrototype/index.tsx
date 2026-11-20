@@ -76,7 +76,7 @@ const FreePrototypePage: React.FC = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     whileHover={{ scale: 1.02 }}
-                                    className="relative flex items-center gap-2 px-4 py-2 bg-[#ffc659] rounded-xl shadow-sm border border-[#ffc659]/60 transition-all duration-300 w-fit cursor-default"
+                                    className="relative flex items-center gap-2 px-4 py-2 bg-secondary rounded-xl shadow-sm border border-secondary/60 transition-all duration-300 w-fit cursor-default"
                                 >
                                     <span className="material-symbols-rounded text-slate-950 text-[18px]">timer</span>
                                     <span className="text-xs font-bold text-slate-950 tracking-widest uppercase">Limited Time Offer</span>
@@ -89,7 +89,7 @@ const FreePrototypePage: React.FC = () => {
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-[1.08] tracking-tight"
                             >
                                 See It Before <br />
-                                <span className="text-[#6366f1]">
+                                <span className="text-primary">
                                     You Sign.
                                 </span>
                             </motion.h1>
@@ -117,8 +117,8 @@ const FreePrototypePage: React.FC = () => {
                                         className="flex items-center gap-4 group"
                                     >
                                         <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${item.color === 'blue'
-                                            ? 'bg-[#6366f1]/10 text-[#6366f1]'
-                                            : 'bg-[#ffc659]/20 text-amber-700'
+                                            ? 'bg-primary/10 text-primary'
+                                            : 'bg-secondary/20 text-amber-700'
                                             }`}>
                                             <span className="material-symbols-rounded text-[22px]">{item.icon}</span>
                                         </div>
@@ -165,7 +165,7 @@ const FreePrototypePage: React.FC = () => {
                                 <div>
                                     <div className="flex gap-1 mb-1">
                                         {[1, 2, 3, 4, 5].map((_, i) => (
-                                            <span key={i} className="material-symbols-rounded text-[#FFC107] text-[16px]">star</span>
+                                            <span key={i} className="material-symbols-rounded text-secondary text-[16px]">star</span>
                                         ))}
                                     </div>
                                     <p className="text-sm font-bold text-slate-700 dark:text-slate-300">

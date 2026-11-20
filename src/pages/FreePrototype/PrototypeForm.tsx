@@ -92,44 +92,44 @@ const PrototypeForm: React.FC = () => {
                 }
             `}</style>
             {/* Decorative Ribbon */}
-            <div className="absolute top-0 right-0 bg-[#ffc659] text-slate-950 text-[12px] md:text-[13px] font-black uppercase tracking-[0.15em] py-1.5 px-12 rotate-45 translate-x-[28%] translate-y-[45%] shadow-md z-10 border-b border-black/10">
+            <div className="absolute top-0 right-0 bg-secondary text-slate-950 text-[12px] md:text-[13px] font-black uppercase tracking-[0.15em] py-1.5 px-12 rotate-45 translate-x-[28%] translate-y-[45%] shadow-md z-10 border-b border-black/10">
                 Free
             </div>
 
 
             {/* Decorative gradient blobs */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#6366f1]/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#ffc659]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
             <form onSubmit={handleSubmit} className="relative space-y-5 z-0" onClick={() => isDropdownOpen && setIsDropdownOpen(false)}>
                 <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Full Name <span className="text-[#6366f1]">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Full Name <span className="text-primary">*</span></label>
                     <input
                         required
                         type="text"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="John Doe"
                     />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Email <span className="text-[#6366f1]">*</span></label>
+                        <label className="text-xs font-semibold text-slate-800 ml-1">Email <span className="text-primary">*</span></label>
                         <input
                             required
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="john@example.com"
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Phone No <span className="text-[#6366f1]">*</span></label>
+                        <label className="text-xs font-semibold text-slate-800 ml-1">Phone No <span className="text-primary">*</span></label>
                         <input
                             required
                             type="tel"
@@ -137,14 +137,14 @@ const PrototypeForm: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             pattern="[0-9+ ]*"
-                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="+91 XXXXX-XXXXX"
                         />
                     </div>
                 </div>
 
                 <div className="space-y-2 relative">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Type <span className="text-[#6366f1]">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Type <span className="text-primary">*</span></label>
                     <div className="relative">
                         <button
                             type="button"
@@ -152,7 +152,7 @@ const PrototypeForm: React.FC = () => {
                                 e.stopPropagation();
                                 setIsDropdownOpen(!isDropdownOpen);
                             }}
-                            className={`w-full text-left bg-white border rounded-2xl px-5 py-4 flex items-center justify-between text-sm outline-none transition-all shadow-sm ${isDropdownOpen ? 'border-[#6366f1] ring-2 ring-[#6366f1]/20' : 'border-slate-300 hover:border-[#6366f1]/50'}`}
+                            className={`w-full text-left bg-white border rounded-2xl px-5 py-4 flex items-center justify-between text-sm outline-none transition-all shadow-sm ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-300 hover:border-primary/50'}`}
                         >
                             <span className={formData.projectType ? "text-slate-900 font-medium" : "text-slate-400"}>
                                 {formData.projectType ? projectTypes.find(t => t.value === formData.projectType)?.label : "Select a project type"}
@@ -178,13 +178,13 @@ const PrototypeForm: React.FC = () => {
                                                 handleSelect(type.value);
                                             }}
                                             className={`px-5 py-3 cursor-pointer transition-colors flex items-center justify-between ${formData.projectType === type.value
-                                                ? 'bg-[#6366f1]/10 text-[#6366f1] font-medium'
+                                                ? 'bg-primary/10 text-primary font-medium'
                                                 : 'text-slate-700 hover:bg-slate-50'
                                                 }`}
                                         >
                                             {type.label}
                                             {formData.projectType === type.value && (
-                                                <span className="material-symbols-rounded text-[#6366f1] text-sm">check</span>
+                                                <span className="material-symbols-rounded text-primary text-sm">check</span>
                                             )}
                                         </li>
                                     ))}
@@ -201,20 +201,20 @@ const PrototypeForm: React.FC = () => {
                         name="website"
                         value={formData.website}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all placeholder:text-slate-400 shadow-sm"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="https://www.yourbrandsite.com"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Description <span className="text-[#6366f1]">*</span></label>
+                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Description <span className="text-primary">*</span></label>
                     <textarea
                         required
                         rows={3}
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1] transition-all resize-none placeholder:text-slate-400 shadow-sm"
+                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none placeholder:text-slate-400 shadow-sm"
                         placeholder="Tell us about the problem you want to solve..."
                     />
                 </div>

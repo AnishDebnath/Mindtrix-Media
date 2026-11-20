@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0, rotate: -45 }}
                                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                     transition={{ delay: 0.8 + (i * 0.1), type: "spring", stiffness: 300, damping: 15 }}
-                                    className="material-symbols-rounded text-[#ffc659] text-[14px] md:text-[15px]"
+                                    className="material-symbols-rounded text-secondary text-[14px] md:text-[15px]"
                                 >
                                     star
                                 </motion.span>
@@ -127,8 +127,8 @@ const Hero: React.FC = () => {
                         Websites & Business Software
                     </span>
                     <span className="block mt-2">
-                        <span className="text-[#6366f1]">Built to Scale</span>{' '}
-                        <span className="text-[#ffc659]">Worldwide.</span>
+                        <span className="text-primary">Built to Scale</span>{' '}
+                        <span className="text-secondary">Worldwide.</span>
                     </span>
                 </motion.h1>
 
@@ -166,7 +166,7 @@ const Hero: React.FC = () => {
                     </Link>
                 </motion.div>
                 <p className="mt-3 text-xs text-slate-600 dark:text-neutral-400 font-medium tracking-tight">
-                    <span className="text-[#ffc659] font-bold">Zero risk</span> <span className="text-[#94a3b8]">|</span> we build a working prototype before you pay anything.
+                    <span className="text-secondary font-bold">Zero risk</span> <span className="text-muted-slate">|</span> we build a working prototype before you pay anything.
                 </p>
             </div>
         </header>

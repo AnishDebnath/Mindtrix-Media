@@ -67,7 +67,7 @@ const ProductDetail: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">description</span> Case Study
                         </span>
                     </motion.div>
@@ -255,7 +255,7 @@ const ProductDetail: React.FC = () => {
                                         loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     />
-                                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-slate-950/85 backdrop-blur-md text-[#ffc659] text-xs font-semibold uppercase tracking-wider rounded-lg z-10 border border-[#ffc659]/50">
+                                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-slate-950/85 backdrop-blur-md text-secondary text-xs font-semibold uppercase tracking-wider rounded-lg z-10 border border-secondary/50">
                                         {p.category}
                                     </div>
                                 </div>

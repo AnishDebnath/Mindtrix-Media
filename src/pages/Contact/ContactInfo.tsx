@@ -65,7 +65,7 @@ const ContactInfo: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
-                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                     <span className="material-symbols-rounded text-sm">mail</span> Contact Us
                 </span>
             </motion.div>
@@ -75,7 +75,7 @@ const ContactInfo: React.FC = () => {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 md:mb-8 tracking-tight leading-[1.08]"
             >
                 Let's start a <br />
-                <span className="text-[#6366f1]">
+                <span className="text-primary">
                     conversation.
                 </span>
             </motion.h1>
@@ -92,8 +92,8 @@ const ContactInfo: React.FC = () => {
                 {contactInfo.map((info, i) => (
                     <div key={i} className="flex items-center gap-3 group">
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${info.color === 'blue'
-                            ? 'bg-[#6366f1]/10 text-[#6366f1]'
-                            : 'bg-[#ffc659]/20 text-amber-700'
+                            ? 'bg-primary/10 text-primary'
+                            : 'bg-secondary/20 text-amber-700'
                             }`}>
                             <span className="material-symbols-rounded text-[18px]">{info.icon}</span>
                         </div>
@@ -147,7 +147,7 @@ const ContactInfo: React.FC = () => {
                 <div>
                     <div className="flex gap-1 mb-1">
                         {[1, 2, 3, 4, 5].map((_, i) => (
-                            <span key={i} className="material-symbols-rounded text-[#FFC107] text-[16px]">star</span>
+                            <span key={i} className="material-symbols-rounded text-secondary text-[16px]">star</span>
                         ))}
                     </div>
                     <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300">

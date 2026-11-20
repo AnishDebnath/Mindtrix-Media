@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
-                        <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">reviews</span> Testimonials
                         </span>
                     </motion.div>
@@ -37,8 +37,8 @@ const Testimonials: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
                     >
-                        Kind Words <span className="text-[#6366f1]">from Clients</span>{' '}
-                        <span className="text-[#ffc659]">Worldwide</span>
+                        Kind Words <span className="text-primary">from Clients</span>{' '}
+                        <span className="text-secondary">Worldwide</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -158,16 +158,16 @@ const Testimonials: React.FC = () => {
                                             <div className="flex items-center gap-3">
                                                 <div className="flex-shrink-0 relative">
                                                     <img src={item.avatar} alt={item.handle} className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-slate-100 dark:bg-neutral-800 object-cover border border-slate-200 dark:border-white/[0.1]" />
-                                                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-[#6366f1] rounded-full flex items-center justify-center border-2 border-white dark:border-neutral-900">
+                                                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-neutral-900">
                                                         <span className="material-symbols-rounded text-[6px] md:text-[8px] text-white">verified</span>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <div className="flex items-center gap-1">
                                                         <p className="font-bold text-slate-900 dark:text-white text-xs md:text-sm leading-tight">{item.name || item.handle}</p>
-                                                        <span className="text-[#ffc659] text-[10px]">★</span>
+                                                        <span className="text-secondary text-[10px]">★</span>
                                                     </div>
-                                                    <p className="text-[#94a3b8] font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
+                                                    <p className="text-muted-slate font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
                                                 </div>
                                             </div>
                                             <p className="text-slate-600 dark:text-neutral-400 text-[11px] md:text-xs leading-relaxed font-normal line-clamp-2">
@@ -178,8 +178,8 @@ const Testimonials: React.FC = () => {
                                 ))}
                             </motion.div>
                             {/* Gradient Fade Edges */}
-                            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F8FAFC] dark:from-black to-transparent z-10 pointer-events-none" />
-                            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F8FAFC] dark:from-black to-transparent z-10 pointer-events-none" />
+                            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-canvas dark:from-black to-transparent z-10 pointer-events-none" />
+                            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-canvas dark:from-black to-transparent z-10 pointer-events-none" />
                         </div>
                     </div>
 
@@ -220,7 +220,7 @@ const Testimonials: React.FC = () => {
                                         <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">Prefer to Email?</p>
                                         <a
                                             href="mailto:mindtrixmediaindia@gmail.com"
-                                            className="text-slate-800 hover:text-[#6366f1] transition-colors text-sm font-semibold border-b border-slate-200"
+                                            className="text-slate-800 hover:text-primary transition-colors text-sm font-semibold border-b border-slate-200"
                                         >
                                             mindtrixmediaindia@gmail.com
                                         </a>
@@ -240,7 +240,7 @@ const Testimonials: React.FC = () => {
 
                                 {/* Background Effects */}
                                 <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
-                                <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#6366f1]/5 blur-[100px] rounded-full pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
                             </motion.div>
                         </div>
                     </div>

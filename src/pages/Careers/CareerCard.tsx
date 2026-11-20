@@ -22,7 +22,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
                 {/* Left - Role Info */}
                 <div>
                     <div className="flex flex-wrap items-center gap-2 mb-4">
-                        <span className="px-3 py-1 bg-indigo-50 border border-indigo-100/80 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#6366f1]">
+                        <span className="px-3 py-1 bg-indigo-50 border border-indigo-100/80 rounded-lg text-xs font-semibold uppercase tracking-wider text-primary">
                             {opening.type}
                         </span>
                         <span className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-700">

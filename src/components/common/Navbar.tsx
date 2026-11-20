@@ -76,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 key={link.name}
                                 to={link.path}
                                 onMouseEnter={() => setHoveredPath(link.path)}
-                                className={`relative px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-[#6366f1] font-semibold dark:text-white' : 'text-slate-700 dark:text-neutral-400 hover:text-slate-950 dark:hover:text-white'}`}
+                                className={`relative px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 ${isActive(link.path) ? 'text-primary font-semibold dark:text-white' : 'text-slate-700 dark:text-neutral-400 hover:text-slate-950 dark:hover:text-white'}`}
                             >
                                 {link.name}
 

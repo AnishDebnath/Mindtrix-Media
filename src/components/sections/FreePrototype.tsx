@@ -9,8 +9,8 @@ const FreePrototype: React.FC = () => {
         <section className="py-8 md:py-12 2xl:py-16 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-[#6366f1]/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-[#ffc659]/10 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[100px]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
@@ -27,7 +27,7 @@ const FreePrototype: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
                             >
-                                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                                <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                                     <span className="material-symbols-rounded text-sm">verified_user</span> Our Unique Guarantee
                                 </span>
                             </motion.div>
@@ -40,7 +40,7 @@ const FreePrototype: React.FC = () => {
                                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight"
                             >
                                 See It First. <br />
-                                Then We <span className="text-[#6366f1]">Build It.</span>
+                                Then We <span className="text-primary">Build It.</span>
                             </motion.h2>
 
                             <motion.p

@@ -9,7 +9,7 @@ const ProductHeader: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
-                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                     <span className="material-symbols-rounded text-sm">apps</span> Products / Projects
                 </span>
             </motion.div>
@@ -21,9 +21,9 @@ const ProductHeader: React.FC = () => {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 max-w-4xl mx-auto"
             >
                 Our Engineered <br />
-                <span className="text-[#6366f1]">Products</span>{' '}
+                <span className="text-primary">Products</span>{' '}
                 <span className="text-slate-900">&amp;</span>{' '}
-                <span className="text-[#ffc659]">Projects</span>
+                <span className="text-secondary">Projects</span>
             </motion.h1>
 
             <motion.p

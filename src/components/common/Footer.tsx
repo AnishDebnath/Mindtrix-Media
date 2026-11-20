@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                             </Link>
                             <h3 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4 md:mb-5 leading-tight tracking-tight">Ready to build <br />your custom software system?</h3>
                             <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-sm mb-5 md:mb-6 leading-relaxed">From CRM and ERP platforms to SaaS products and business websites — we build systems that scale with you.</p>
-                            <Link to="/contact" className="inline-flex items-center gap-2 text-slate-900 dark:text-white font-bold hover:text-[#6366f1] transition-colors group text-sm md:text-base">
+                            <Link to="/contact" className="inline-flex items-center gap-2 text-slate-900 dark:text-white font-bold hover:text-primary transition-colors group text-sm md:text-base">
                                 Start Your Project
                                 <span className="material-symbols-rounded scale-75 group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </Link>
@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
                                             <li key={lIdx}>
                                                 <Link
                                                     to={link.path}
-                                                    className="hover:text-[#6366f1] transition-all duration-300 flex items-center gap-0 hover:gap-2 group/link"
+                                                    className="hover:text-primary transition-all duration-300 flex items-center gap-0 hover:gap-2 group/link"
                                                 >
-                                                    <div className="w-0 h-1 bg-[#6366f1] rounded-full transition-all duration-300 group-hover/link:w-1.5 group-hover/link:h-1.5" />
+                                                    <div className="w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover/link:w-1.5 group-hover/link:h-1.5" />
                                                     <span className="transition-transform duration-300 group-hover/link:translate-x-1">{link.name}</span>
                                                 </Link>
                                             </li>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                                         <a
                                             key={i}
                                             href={social.link}
-                                            className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#1A1A1A] border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-[#6366f1] transition-all duration-300 group"
+                                            className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#1A1A1A] border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300 group"
                                             aria-label={social.name}
                                         >
                                             <img src={social.icon} alt={social.name} loading="lazy" className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity invert dark:invert-0" />

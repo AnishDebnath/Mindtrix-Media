@@ -9,7 +9,7 @@ const CareerHeader: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
-                <span className="text-[#6366f1] font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                     <span className="material-symbols-rounded text-sm">groups</span> Careers
                 </span>
             </motion.div>
@@ -21,8 +21,8 @@ const CareerHeader: React.FC = () => {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 max-w-4xl mx-auto"
             >
                 Grow With Us. <br />
-                <span className="text-[#6366f1]">Build The</span>{' '}
-                <span className="text-[#ffc659]">Future.</span>
+                <span className="text-primary">Build The</span>{' '}
+                <span className="text-secondary">Future.</span>
             </motion.h1>
 
             <motion.p
