@@ -36,6 +36,10 @@ export interface ThemeColors {
 
   // Reviews & Rating
   ratingStar: string;           // Star rating color (#feac22)
+
+  // Creative Highlight
+  creative: string;             // Creative menu standout accent (#ec4899)
+  creativeGradient: string;     // Creative gradient
 }
 
 export const THEME: ThemeColors = {
@@ -44,6 +48,8 @@ export const THEME: ThemeColors = {
   primaryDark: '#4f46e5',
   secondary: '#feac22',
   muted: '#94a3b8',
+  creative: '#ec4899',
+  creativeGradient: 'linear-gradient(135deg, #635cf7 0%, #9333ea 50%, #ec4899 100%)',
 
   // Canvas & Backgrounds
   canvas: '#F8FAFC',
