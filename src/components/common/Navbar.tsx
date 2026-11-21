@@ -3,9 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import whiteLogo from '@/assets/white-logo.png';
 import blackLogo from '@/assets/black-logo.png';
-import NavDropdown from './NavDropdown';
-import ClientsDropdown from './ClientsDropdown';
-import MoreDropdown from './MoreDropdown';
+import { Products, Clients, More } from './navbar dropdown';
 
 interface NavItem {
     name: string;
@@ -17,9 +15,9 @@ interface NavItem {
 
 const navLinks: NavItem[] = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/product', hasDropdown: true },
+    { name: 'Products', path: '/products', hasDropdown: true },
     { name: 'Services', path: '/services' },
-    { name: 'Clients', path: '/about', hasDropdown: true },
+    { name: 'Clients', path: '/clients', hasDropdown: true },
     { name: 'Creative', path: 'https://creative.mindtrixmedia.com/', isExternal: true, isNew: true },
     { name: 'About us', path: '/about' },
     { name: 'More', path: '#', hasDropdown: true },
@@ -87,6 +85,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
     const isActive = (path: string) => {
         if (path === '/') return location.pathname === '/';
+        if (path === '/products' || path === '/product') {
+            return location.pathname === '/products' || location.pathname === '/product' || location.pathname.startsWith('/product/');
+        }
+        if (path === '/clients') {
+            return location.pathname === '/clients' || location.pathname.startsWith('/clients/');
+        }
         return location.pathname === path || location.pathname.startsWith(`${path}/`);
     };
 
@@ -169,6 +173,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                     <Link
                                         key={link.name}
                                         to={link.path}
+                                        onClick={() => {
+                                            setActiveDropdown(null);
+                                        }}
                                         onMouseEnter={() => handleLinkMouseEnter(link.name, link.path, link.hasDropdown)}
                                         className={linkClass}
                                     >
@@ -213,13 +220,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                     }`}
                             >
                                 {activeDropdown === 'Products' && (
-                                    <NavDropdown onClose={() => setActiveDropdown(null)} />
+                                    <Products onClose={() => setActiveDropdown(null)} />
                                 )}
                                 {activeDropdown === 'Clients' && (
-                                    <ClientsDropdown onClose={() => setActiveDropdown(null)} />
+                                    <Clients onClose={() => setActiveDropdown(null)} />
                                 )}
                                 {activeDropdown === 'More' && (
-                                    <MoreDropdown onClose={() => setActiveDropdown(null)} />
+                                    <More onClose={() => setActiveDropdown(null)} />
                                 )}
                             </div>
                         )}

@@ -5,77 +5,78 @@ import { motion } from 'framer-motion';
 import tphLogo from '@/assets/brand logo/tph.png';
 import charuLogo from '@/assets/brand logo/charu-enterpirse.png';
 import garulinkLogo from '@/assets/brand logo/garulink.png';
-import crhLogo from '@/assets/brand logo/camera-rental-house.png';
-import goldLogo from '@/assets/brand logo/gold.png';
+import biswabanglaLogo from '@/assets/brand logo/biswabangla-nordic-association.png';
+import { products } from '@/data/products';
 
-export interface ClientDropdownCard {
+export interface ClientCardItem {
     id: string;
     name: string;
     logo: string;
     path: string;
 }
 
-export interface ClientDeploymentItem {
-    id: string;
-    title: string;
-    monogram?: string;
-    icon?: string;
-    path: string;
-}
-
-export interface ClientsDropdownProps {
+export interface ClientsProps {
     onClose?: () => void;
 }
 
-// 5 Featured Clients matching reference layout top row
-const featuredClients: ClientDropdownCard[] = [
+// 4 Active Long-term Partner Clients
+const featuredClients: ClientCardItem[] = [
     {
         id: 'tph',
         name: 'The Photographer House',
         logo: tphLogo,
-        path: '/product/the-photographers-house'
+        path: '/clients'
     },
     {
         id: 'charu',
         name: 'Charu Enterprise',
         logo: charuLogo,
-        path: '/product/charu-enterprise-ecommerce'
+        path: '/clients'
     },
     {
         id: 'garulink',
         name: 'Garulink Global',
         logo: garulinkLogo,
-        path: '/product'
+        path: '/clients'
     },
     {
-        id: 'crh',
-        name: 'Camera Rental House',
-        logo: crhLogo,
-        path: '/product/car-rental-erp'
-    },
-    {
-        id: 'gold',
-        name: 'Gold CRM & Luxury',
-        logo: goldLogo,
-        path: '/product/jewellery-crm-system'
+        id: 'biswabangla',
+        name: 'Biswabangla Nordic',
+        logo: biswabanglaLogo,
+        path: '/clients'
     }
 ];
 
-const clientDeploymentsCol1: ClientDeploymentItem[] = [
-    { id: 'd1', title: 'Biswabangla Nordic Association', monogram: 'BN', path: '/about' },
-    { id: 'd2', title: 'Charu Enterprise Wholesale ERP', monogram: 'CE', path: '/product/charu-enterprise' },
-    { id: 'd3', title: 'Garulink Fleet & Logistics System', monogram: 'GL', path: '/services' },
-    { id: 'd4', title: 'Rent Alone Mobility Architecture', monogram: 'RA', path: '/product/car-rental-erp' },
-];
+// Helper to assign semantic icons based on product id
+const getProjectIcon = (id: string): string => {
+    switch (id) {
+        case 'car-rental-erp':
+            return 'directions_car';
+        case 'jewellery-crm-system':
+            return 'diamond';
+        case 'luxury-jewellery-ecommerce-platform':
+            return 'storefront';
+        case 'ecommerce-platform':
+            return 'shopping_cart';
+        case 'charu-enterprise':
+            return 'badge';
+        case 'charu-enterprise-ecommerce':
+            return 'local_shipping';
+        default:
+            return 'deployed_code';
+    }
+};
 
-const clientDeploymentsCol2: ClientDeploymentItem[] = [
-    { id: 'd5', title: 'Camera Rental House Cloud ERP', icon: 'camera_enhance', path: '/product/car-rental-erp' },
-    { id: 'd6', title: 'Gold CRM & Luxury Jewellery POS', icon: 'diamond', path: '/product/luxury-jewellery-ecommerce-platform' },
-    { id: 'd7', title: 'Custom Cloud Microservices', icon: 'cloud_done', path: '/free-prototype' },
-    { id: 'd8', title: 'Enterprise Security Architecture', icon: 'security', path: '/about' },
-];
+// Filter projects from data folder, excluding TPH as requested
+const projectList = products.filter(
+    (p) => p.id !== 'the-photographers-house' && p.id !== 'tph' && !p.title.toLowerCase().includes('photographer')
+);
 
-export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => {
+const halfLength = Math.ceil(projectList.length / 2);
+const projectsCol1 = projectList.slice(0, halfLength);
+const projectsCol2 = projectList.slice(halfLength);
+
+export const Clients: React.FC<ClientsProps> = ({ onClose }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -87,16 +88,16 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
         >
             <div className="bg-white dark:bg-[#0A0A0A] rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.9)] border border-slate-200 dark:border-white/10 overflow-hidden">
 
-                {/* Top Header: Brand Icon + Title */}
+                {/* Top Header: Enterprise Partners */}
                 <div className="flex items-center gap-2 mb-4">
-                    <span className="material-symbols-rounded text-primary text-xl">verified</span>
+                    <span className="material-symbols-rounded text-primary text-xl">handshake</span>
                     <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
-                        Ecosystem with <span className="text-primary">Industry Leaders</span>
+                        Mindtrix Media <span className="text-primary">Enterprise Partners</span>
                     </h3>
                 </div>
 
-                {/* TOP ROW: 5 Featured App/Client Cards */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 mb-4">
+                {/* TOP ROW: 4 Active Long-term Partner Client Cards */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                     {featuredClients.map((client) => (
                         <Link
                             key={client.id}
@@ -104,15 +105,13 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
                             onClick={onClose}
                             className="group flex flex-col items-center cursor-pointer"
                         >
-                            {/* Card Graphic Viewport: Nested border radius hierarchy */}
-                            <div className="w-full h-22 md:h-24 rounded-xl bg-[#F8FAFC] dark:bg-black border border-slate-200 dark:border-white/10 group-hover:border-primary/50 group-hover:shadow-sm transition-all duration-300 p-2.5 flex items-center justify-center relative overflow-hidden">
-                                <div className="w-10 h-10 rounded-lg flex items-center justify-center p-1.5 bg-white dark:bg-[#141414] border border-slate-200 dark:border-white/10 shadow-xs group-hover:scale-105 transition-transform duration-300">
-                                    <img
-                                        src={client.logo}
-                                        alt={client.name}
-                                        className="max-h-6 max-w-[85%] object-contain filter"
-                                    />
-                                </div>
+                            {/* Card Graphic Viewport: Just Logo like products dropdown */}
+                            <div className="relative w-full h-24 md:h-28 rounded-xl bg-[#F8FAFC] dark:bg-black border border-slate-200 dark:border-white/10 group-hover:border-primary/50 group-hover:shadow-sm transition-all duration-300 p-3 flex items-center justify-center overflow-hidden">
+                                <img
+                                    src={client.logo}
+                                    alt={client.name}
+                                    className="max-h-12 max-w-[80%] object-contain filter group-hover:scale-105 transition-transform duration-300"
+                                />
                             </div>
 
                             {/* Client Name Below Div */}
@@ -123,26 +122,26 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
                     ))}
                 </div>
 
-                {/* SECTION LABEL: Subtle Gray Header */}
+                {/* SECTION LABEL: Projects */}
                 <div className="mb-2 px-1">
                     <span className="text-[11px] font-semibold text-slate-400 dark:text-neutral-500 uppercase tracking-wider">
-                        Deployments
+                        Pre-built Projects
                     </span>
                 </div>
 
-                {/* MIDDLE SECTION: 2-Column List */}
+                {/* MIDDLE SECTION: 2-Column List of Mindtrix Built Projects */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mb-4">
                     {/* Column 1 */}
                     <div className="space-y-0.5">
-                        {clientDeploymentsCol1.map((item) => (
+                        {projectsCol1.map((item) => (
                             <Link
                                 key={item.id}
-                                to={item.path}
+                                to={`/product/${item.id}`}
                                 onClick={onClose}
                                 className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold text-slate-700 dark:text-neutral-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900 transition-all group/item"
                             >
-                                <span className="w-5 text-center text-xs font-black tracking-tight text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors shrink-0">
-                                    {item.monogram}
+                                <span className="material-symbols-rounded text-base text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors shrink-0">
+                                    {getProjectIcon(item.id)}
                                 </span>
                                 <span className="truncate">{item.title}</span>
                             </Link>
@@ -151,17 +150,15 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
 
                     {/* Column 2 */}
                     <div className="space-y-0.5">
-                        {clientDeploymentsCol2.map((item) => (
+                        {projectsCol2.map((item) => (
                             <Link
                                 key={item.id}
-                                to={item.path}
+                                to={`/product/${item.id}`}
                                 onClick={onClose}
                                 className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold text-slate-700 dark:text-neutral-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900 transition-all group/item"
                             >
-                                <span className="w-5 flex items-center justify-center shrink-0">
-                                    <span className="material-symbols-rounded text-base text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors">
-                                        {item.icon}
-                                    </span>
+                                <span className="material-symbols-rounded text-base text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors shrink-0">
+                                    {getProjectIcon(item.id)}
                                 </span>
                                 <span className="truncate">{item.title}</span>
                             </Link>
@@ -171,7 +168,7 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
 
                 {/* BOTTOM BANNER */}
                 <Link
-                    to="/about"
+                    to="/clients"
                     onClick={onClose}
                     className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-4 py-2.5 transition-all duration-300 shadow-xs"
                 >
@@ -180,7 +177,7 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
                             Stories
                         </span>
                         <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
-                            See how enterprise leaders scale with Mindtrix technology
+                            See how our technology scales businesses worldwide
                         </span>
                     </div>
                     <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-1 shrink-0 ml-2">
@@ -194,4 +191,4 @@ export const ClientsDropdown: React.FC<ClientsDropdownProps> = ({ onClose }) => 
     );
 };
 
-export default ClientsDropdown;
+export default Clients;

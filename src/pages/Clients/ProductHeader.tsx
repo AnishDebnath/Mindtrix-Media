@@ -10,7 +10,7 @@ const ProductHeader: React.FC = () => {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
             >
                 <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
-                    <span className="material-symbols-rounded text-sm">apps</span> Products / Projects
+                    <span className="material-symbols-rounded text-sm">verified</span> Client Case Studies
                 </span>
             </motion.div>
 
@@ -18,12 +18,11 @@ const ProductHeader: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 max-w-4xl mx-auto"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 dark:text-white max-w-4xl mx-auto"
             >
-                Our Engineered <br />
-                <span className="text-primary">Products</span>{' '}
-                <span className="text-slate-900">&amp;</span>{' '}
-                <span className="text-secondary">Projects</span>
+                Client Transformations <br />
+                <span className="text-primary">&amp; Engineered</span>{' '}
+                <span className="text-secondary">Deployments</span>
             </motion.h1>
 
             <motion.p
@@ -32,7 +31,7 @@ const ProductHeader: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto mt-6 leading-relaxed font-normal px-4"
             >
-                A showcase of the websites, software platforms, and custom digital systems we’ve engineered for businesses worldwide.
+                A showcase of the websites, enterprise platforms, and digital systems we’ve engineered for our clients worldwide.
             </motion.p>
         </div>
     );

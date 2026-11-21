@@ -8,6 +8,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Product = lazy(() => import('./pages/product'));
+const Clients = lazy(() => import('./pages/Clients'));
 const Contact = lazy(() => import('./pages/Contact'));
 const FreePrototypePage = lazy(() => import('./pages/FreePrototype'));
 const ProductDetail = lazy(() => import('./pages/product/ProductDetail'));
@@ -72,6 +73,9 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
                 <Route path="/blog/:id" element={<BlogPost />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/clients" element={<Clients />} />
+                <Route path="/clients/:id" element={<ProductDetail />} />
+                <Route path="/products" element={<Product />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="/contact" element={<Contact />} />

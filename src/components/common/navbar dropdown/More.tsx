@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export interface MoreDropdownProps {
+export interface MoreProps {
     onClose?: () => void;
 }
 
@@ -20,7 +20,7 @@ const moreItems = [
     },
 ];
 
-export const MoreDropdown: React.FC<MoreDropdownProps> = ({ onClose }) => {
+export const More: React.FC<MoreProps> = ({ onClose }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -61,13 +61,10 @@ export const MoreDropdown: React.FC<MoreDropdownProps> = ({ onClose }) => {
                     <Link
                         to="/free-prototype"
                         onClick={onClose}
-                        className="flex items-center justify-between px-2.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-neutral-300 hover:text-primary transition-colors group"
+                        className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#F8FAFC] dark:hover:bg-black text-xs font-semibold text-slate-600 dark:text-neutral-400 hover:text-primary transition-all group"
                     >
-                        <span className="flex items-center gap-1.5">
-                            <span className="material-symbols-rounded text-sm text-primary">rocket_launch</span>
-                            Free Prototype
-                        </span>
-                        <span className="material-symbols-rounded text-sm group-hover:translate-x-0.5 transition-transform text-slate-400 group-hover:text-primary">
+                        <span>Need a Mindtrix Media prototype?</span>
+                        <span className="material-symbols-rounded text-sm group-hover:translate-x-0.5 transition-transform text-primary">
                             arrow_forward
                         </span>
                     </Link>
@@ -77,4 +74,4 @@ export const MoreDropdown: React.FC<MoreDropdownProps> = ({ onClose }) => {
     );
 };
 
-export default MoreDropdown;
+export default More;
