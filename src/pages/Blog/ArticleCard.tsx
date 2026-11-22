@@ -10,7 +10,7 @@ interface ArticleCardProps {
         title: string;
         desc: string;
         img: string;
-        content?: string[];
+        content?: any;
     };
     delay: number;
 }

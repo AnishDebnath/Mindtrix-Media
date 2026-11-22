@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 import rentaloneLogo from '@/assets/brand logo/rentalone.png';
 import tphLogo from '@/assets/brand logo/tph.png';
@@ -50,6 +50,31 @@ const categories = [
     { id: 'events', label: 'Events & RSVP', icon: 'celebration' },
 ];
 
+const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 10, scale: 0.98 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            duration: 0.22,
+            ease: [0.16, 1, 0.3, 1] as const,
+            staggerChildren: 0.04,
+        },
+    },
+    exit: {
+        opacity: 0,
+        y: 8,
+        scale: 0.98,
+        transition: { duration: 0.15, ease: "easeIn" },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
+
 export const Products: React.FC<ProductsProps> = ({ onClose }) => {
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
@@ -59,52 +84,59 @@ export const Products: React.FC<ProductsProps> = ({ onClose }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 6, scale: 0.98 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             className="w-full pointer-events-auto"
             onClick={(e) => e.stopPropagation()}
         >
             <div className="bg-white dark:bg-[#0A0A0A] rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.9)] border border-slate-200 dark:border-white/10 overflow-hidden">
 
                 {/* Top Header: Semantic Products Icon + Heading */}
-                <div className="flex items-center gap-2 mb-4">
+                <motion.div variants={itemVariants} className="flex items-center gap-2 mb-4">
                     <span className="material-symbols-rounded text-primary text-xl">widgets</span>
                     <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
                         Mindtrix Media <span className="text-primary">Products</span>
                     </h3>
-                </div>
+                </motion.div>
 
                 {/* Category Filter Pills */}
-                <div className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-0.5 scrollbar-none">
+                <motion.div variants={itemVariants} className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-0.5 scrollbar-none">
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
-                            className={`flex items-center px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
-                                selectedCategory === cat.id
-                                    ? 'bg-primary text-white shadow-xs'
-                                    : 'text-slate-600 dark:text-neutral-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900'
-                            }`}
+                            className={`relative flex items-center px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${selectedCategory === cat.id
+                                ? 'text-white'
+                                : 'text-slate-600 dark:text-neutral-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900'
+                                }`}
                         >
-                            <span className="material-symbols-rounded text-sm mr-1.5">{cat.icon}</span>
-                            <span>{cat.label}</span>
+                            {selectedCategory === cat.id && (
+                                <motion.div
+                                    layoutId="category-active-pill"
+                                    className="absolute inset-0 bg-primary rounded-lg shadow-xs"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.35 }}
+                                />
+                            )}
+                            <span className="relative z-10 material-symbols-rounded text-sm mr-1.5">{cat.icon}</span>
+                            <span className="relative z-10">{cat.label}</span>
                         </button>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* 3 Products Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+                <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
                     <AnimatePresence mode="popLayout">
                         {filteredProducts.map((product) => (
                             <motion.div
                                 key={product.id}
                                 layout
-                                initial={{ opacity: 0, scale: 0.96 }}
+                                initial={{ opacity: 0, scale: 0.94 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.96 }}
+                                exit={{ opacity: 0, scale: 0.94 }}
                                 transition={{ duration: 0.2 }}
+                                whileHover={{ y: -2 }}
                             >
                                 <Link
                                     to={product.path}
@@ -145,25 +177,27 @@ export const Products: React.FC<ProductsProps> = ({ onClose }) => {
                             </motion.div>
                         ))}
                     </AnimatePresence>
-                </div>
+                </motion.div>
 
                 {/* BOTTOM ROW: Clean bare icon, proper typography contrast */}
-                <Link
-                    to="/products"
-                    onClick={onClose}
-                    className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-4 py-2.5 transition-all duration-300 shadow-xs"
-                >
-                    <div className="flex items-center gap-2.5 text-xs truncate">
-                        <span className="material-symbols-rounded text-primary text-base shrink-0">groups</span>
-                        <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
-                            Built by Mindtrix Media for modern businesses &amp; scalable teams
+                <motion.div variants={itemVariants}>
+                    <Link
+                        to="/products"
+                        onClick={onClose}
+                        className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-4 py-2.5 transition-all duration-300 shadow-xs"
+                    >
+                        <div className="flex items-center gap-2.5 text-xs truncate">
+                            <span className="material-symbols-rounded text-primary text-base shrink-0">groups</span>
+                            <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
+                                Built by Mindtrix Media for modern businesses &amp; scalable teams
+                            </span>
+                        </div>
+                        <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-1 shrink-0 ml-2">
+                            View all
+                            <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
                         </span>
-                    </div>
-                    <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-1 shrink-0 ml-2">
-                        View all
-                        <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
-                    </span>
-                </Link>
+                    </Link>
+                </motion.div>
 
             </div>
         </motion.div>

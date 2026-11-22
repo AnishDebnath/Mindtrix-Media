@@ -33,6 +33,26 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
     const [hoveredPath, setHoveredPath] = useState<string | null>(null);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const navRef = useRef<HTMLElement | null>(null);
+    const moreBtnRef = useRef<HTMLAnchorElement | null>(null);
+    const [moreDropdownWidth, setMoreDropdownWidth] = useState<number>(245);
+
+    const updateMoreDropdownWidth = () => {
+        if (moreBtnRef.current && navRef.current) {
+            const navRect = navRef.current.getBoundingClientRect();
+            const moreRect = moreBtnRef.current.getBoundingClientRect();
+            const calculatedWidth = Math.round(navRect.right - moreRect.left);
+            if (calculatedWidth > 0) {
+                setMoreDropdownWidth(calculatedWidth);
+            }
+        }
+    };
+
+    useEffect(() => {
+        updateMoreDropdownWidth();
+        window.addEventListener('resize', updateMoreDropdownWidth);
+        return () => window.removeEventListener('resize', updateMoreDropdownWidth);
+    }, []);
 
     const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
@@ -65,6 +85,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
         setHoveredPath(path);
         if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
         if (hasDropdown) {
+            if (name === 'More') {
+                updateMoreDropdownWidth();
+            }
             setActiveDropdown(name);
         } else {
             setActiveDropdown(null);
@@ -96,15 +119,16 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
     return (
         <>
-            <div
-                className={`fixed top-0 left-0 right-0 z-[999] flex justify-center transition-all duration-300 ${scrolled ? 'pt-4' : 'pt-6'} px-4`}
+            <motion.div
+                initial={{ y: -80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className={`fixed top-0 left-0 right-0 z-[999] flex justify-center transition-[padding] duration-300 ease-out ${scrolled ? 'pt-4' : 'pt-6'} px-4`}
                 onMouseLeave={handleNavMouseLeave}
             >
                 <div className="relative flex justify-center w-full lg:w-auto">
-                    <motion.nav
-                        initial={{ y: -100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                    <nav
+                        ref={navRef}
                         className="w-full lg:w-auto bg-white/95 dark:bg-black/60 backdrop-blur-xl border border-slate-300/80 dark:border-white/[0.1] rounded-2xl shadow-md shadow-slate-200/50 dark:shadow-[0_0_24px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)] flex items-center justify-between lg:justify-start lg:gap-3 xl:gap-4 px-3 py-1.5 transition-all duration-300 relative z-20"
                     >
                         {/* Logo */}
@@ -172,6 +196,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 ) : (
                                     <Link
                                         key={link.name}
+                                        ref={link.name === 'More' ? moreBtnRef : undefined}
                                         to={link.path}
                                         onClick={() => {
                                             setActiveDropdown(null);
@@ -206,16 +231,22 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                             </button>
                         </div>
 
-                    </motion.nav>
+                    </nav>
 
                     {/* Mega & Regular Dropdown Menu Views */}
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait">
                         {activeDropdown && (
-                            <div
+                            <motion.div
+                                key={activeDropdown}
                                 onMouseEnter={handleDropdownMouseEnter}
                                 onMouseLeave={handleNavMouseLeave}
+                                initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                                transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                                style={activeDropdown === 'More' && moreDropdownWidth ? { width: `${moreDropdownWidth}px` } : undefined}
                                 className={`absolute top-full pt-2 z-[1000] ${activeDropdown === 'More'
-                                    ? 'right-2 lg:right-24 xl:right-28'
+                                    ? 'right-0'
                                     : 'left-0 right-0 w-full'
                                     }`}
                             >
@@ -228,11 +259,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 {activeDropdown === 'More' && (
                                     <More onClose={() => setActiveDropdown(null)} />
                                 )}
-                            </div>
+                            </motion.div>
                         )}
                     </AnimatePresence>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Mobile Menu */}
             <AnimatePresence>
