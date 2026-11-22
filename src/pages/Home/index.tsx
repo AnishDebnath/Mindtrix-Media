@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                 <Process />
             </Suspense>
             <Suspense fallback={null}>
-                <FeaturedProducts projectIds={['the-photographers-house', 'charu-enterprise', 'ecommerce-platform', 'car-rental-erp']} />
+                <FeaturedProducts projectIds={['the-photographers-house', 'digital-business-card', 'ecommerce-platform', 'car-rental-erp']} />
             </Suspense>
             <Suspense fallback={null}>
                 <OurSolution />

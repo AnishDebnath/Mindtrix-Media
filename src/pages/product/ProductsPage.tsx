@@ -77,7 +77,7 @@ const productList: ProductItem[] = [
         logo: charuLogo,
         description: 'Large-scale multi-branch wholesale inventory, GST billing, vendor replenishment, and B2B dealer distribution management system.',
         features: ['Multi-Warehouse Sync', 'GST Invoicing', 'B2B Dealer Ledger', 'Automated PO Orders'],
-        path: '/product/charu-enterprise'
+        path: '/product/digital-business-card'
     },
     {
         id: 'gold-crm',

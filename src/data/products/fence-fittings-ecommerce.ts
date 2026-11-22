@@ -8,16 +8,16 @@ import contactImg from "@/assets/products/charu enterprise ecommerce/contact.png
 import grid1Img from "@/assets/products/charu enterprise ecommerce/grid1.png";
 import grid2Img from "@/assets/products/charu enterprise ecommerce/grid2.png";
 
-export const charuEnterpriseEcommerce = {
-    id: "charu-enterprise-ecommerce",
-    title: "Charu Enterprise E-Commerce Platform (B2B)",
-    category: "Customized",
+export const fenceFittingsEcommerce = {
+    id: "fence-fittings-ecommerce",
+    title: "Fence Fittings E-Commerce Platform (B2B)",
+    category: "Prebuilt",
     image: coverImg,
-    client: "Charu Enterprise",
+    client: "Mindtrix Media",
     industry: "Manufacturing & Industrial Hardware",
     subtitle: "A modern B2B e-commerce platform designed to help industrial buyers discover, compare, and request bulk pricing for fence fittings and hardware products worldwide.",
 
-    description: "A professional wholesale e-commerce website developed for Charu Enterprise, a manufacturer and exporter of industrial fence fittings and hardware products. The platform enables distributors, contractors, wholesalers, and international buyers to browse products, compare specifications, request bulk quotations, and explore export-ready solutions through a fast, responsive, and user-friendly digital experience.",
+    description: "A professional wholesale e-commerce platform developed for industrial fence fittings and hardware products. The platform enables distributors, contractors, wholesalers, and international buyers to browse products, compare specifications, request bulk quotations, and explore export-ready solutions through a fast, responsive, and user-friendly digital experience.",
 
     services: [
         "UI/UX Design",
@@ -29,7 +29,7 @@ export const charuEnterpriseEcommerce = {
 
     liveLink: "https://charuenterprise-ecommerce.netlify.app/",
     liveLabel: "View Live",
-    buyLink: "/contact?project=charu-enterprise",
+    buyLink: "/contact?project=fence-fittings-ecommerce",
     customiseLink: "/contact?service=ecommerce-development",
     year: "2025-26",
     featured: true,

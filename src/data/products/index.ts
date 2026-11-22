@@ -1,7 +1,7 @@
 import { thePhotographersHouse } from './the-photographers-house';
 import { ecommercePlatform } from './ecommerce-platform';
-import { charuEnterprise } from './charu-enterprise';
-import { charuEnterpriseEcommerce } from './charu-enterprise-ecommerce';
+import { digitalBusinessCard } from './digital-business-card';
+import { fenceFittingsEcommerce } from './fence-fittings-ecommerce';
 import { luxuryJewelleryEcommercePlatform } from './luxury-jewellery-ecommerce-platform';
 import { jewelleryCrmSystem } from './jewellery-crm-system';
 import { carRentalErp } from './car-rental-erp';
@@ -29,13 +29,18 @@ export interface Product {
     customiseLink?: string;
     featured?: boolean;
     featuredTag?: string;
-    content: (
-        | { type: 'image'; src: string; alt: string; className?: string }
-        | { type: 'text'; title?: string; body: string }
-        | { type: 'grid'; images: string[] }
-    )[];
+    content: {
+        type: string;
+        src?: string;
+        alt?: string;
+        className?: string;
+        title?: string;
+        body?: string;
+        images?: string[];
+        [key: string]: any;
+    }[];
 }
 
 export const categories = ["Prebuilt", "Customized"];
 
-export const products: Product[] = [thePhotographersHouse, ecommercePlatform, charuEnterprise, charuEnterpriseEcommerce, luxuryJewelleryEcommercePlatform, jewelleryCrmSystem, carRentalErp];
+export const products: Product[] = [thePhotographersHouse, ecommercePlatform, digitalBusinessCard, fenceFittingsEcommerce, luxuryJewelleryEcommercePlatform, jewelleryCrmSystem, carRentalErp];

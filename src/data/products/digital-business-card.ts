@@ -6,16 +6,16 @@ import contactImg from "@/assets/products/charu enterprise/contact.png";
 import grid1Img from "@/assets/products/charu enterprise/grid1.png";
 import grid2Img from "@/assets/products/charu enterprise/grid2.png";
 
-export const charuEnterprise = {
-    id: "charu-enterprise",
-    title: "Charu Enterprise Digital Business Card & Company Landing Page",
-    category: "Customized",
+export const digitalBusinessCard = {
+    id: "digital-business-card",
+    title: "Digital Business Card & Company Landing Page",
+    category: "Prebuilt",
     image: coverImg,
-    client: "Charu Enterprise",
+    client: "Mindtrix Media",
     industry: "Manufacturing & Industrial Hardware",
     subtitle: "A QR-powered digital business card and company landing page designed to showcase products, manufacturing capabilities, certifications, and business information in a professional and accessible format.",
 
-    description: "A modern business landing page developed for Charu Enterprise, a leading manufacturer and exporter of precision fence fittings and engineering components. Designed as a digital business card, the platform allows visitors to instantly access company information by scanning a QR code from trade shows, exhibitions, stores, or business stalls. The website helps build credibility, showcase manufacturing excellence, and provide potential clients with a seamless way to explore products, certifications, and company achievements.",
+    description: "A modern business landing page developed as a digital business card, allowing visitors to instantly access company information by scanning a QR code from trade shows, exhibitions, stores, or business stalls. The platform helps build credibility, showcase manufacturing excellence, and provide potential clients with a seamless way to explore products, certifications, and company achievements.",
 
     services: [
         "UI/UX Design",
@@ -28,7 +28,7 @@ export const charuEnterprise = {
 
     liveLink: "https://charuenterprise.netlify.app/",
     liveLabel: "View Live",
-    buyLink: "/contact?project=charu-enterprise",
+    buyLink: "/contact?project=digital-business-card",
     customiseLink: "/contact?service=business-website",
     year: "2026",
     featured: true,

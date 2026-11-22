@@ -21,17 +21,17 @@ const carouselItems = [
     },
     {
         id: 2,
-        title: "Charu Enterprise",
+        title: "Digital Business Card Platform",
         category: "Digital Business Card & Company Landing Page",
         img: charuCover,
-        link: "/product/charu-enterprise"
+        link: "/product/digital-business-card"
     },
     {
         id: 3,
-        title: "Charu Enterprise E-Commerce",
+        title: "Fence Fittings E-Commerce",
         category: "E-Commerce Platform",
         img: charuEcommerceCover,
-        link: "/product/charu-enterprise-ecommerce"
+        link: "/product/fence-fittings-ecommerce"
     },
     {
         id: 4,

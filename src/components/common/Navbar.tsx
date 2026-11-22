@@ -155,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 );
 
                                 const linkClass = link.isNew
-                                    ? `relative px-3 py-1 rounded-lg text-xs lg:text-sm font-bold transition-all duration-200 bg-gradient-to-r from-primary via-purple-600 to-pink-500 text-white shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/40 hover:scale-105 hover:brightness-110 flex items-center gap-1.5 group select-none`
+                                    ? `relative px-3 py-1 rounded-lg text-xs lg:text-sm font-bold transition-all duration-200 bg-gradient-to-r from-primary via-purple-600 to-pink-500 text-white shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/40 hover:brightness-110 flex items-center gap-1.5 group select-none`
                                     : `relative px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${isLinkActive ? 'text-primary font-bold dark:text-white' : 'text-slate-700 dark:text-neutral-400 hover:text-slate-950 dark:hover:text-white'}`;
 
                                 return link.isExternal ? (
@@ -215,7 +215,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                                 onMouseEnter={handleDropdownMouseEnter}
                                 onMouseLeave={handleNavMouseLeave}
                                 className={`absolute top-full pt-2 z-[1000] ${activeDropdown === 'More'
-                                    ? 'right-0'
+                                    ? 'right-2 lg:right-24 xl:right-28'
                                     : 'left-0 right-0 w-full'
                                     }`}
                             >

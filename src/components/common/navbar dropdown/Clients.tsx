@@ -58,9 +58,9 @@ const getProjectIcon = (id: string): string => {
             return 'storefront';
         case 'ecommerce-platform':
             return 'shopping_cart';
-        case 'charu-enterprise':
+        case 'digital-business-card':
             return 'badge';
-        case 'charu-enterprise-ecommerce':
+        case 'fence-fittings-ecommerce':
             return 'local_shipping';
         default:
             return 'deployed_code';
