@@ -1,7 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
 import logo from '@/assets/mindtrix-media-logo.png';
+
+const buildIcons = [
+    { icon: 'rocket_launch', color: 'text-primary' },
+    { icon: 'flight_takeoff', color: 'text-secondary' },
+    { icon: 'bolt', color: 'text-primary' },
+    { icon: 'speed', color: 'text-secondary' },
+];
+
+const partnerIcons = [
+    { icon: 'handshake', color: 'text-secondary' },
+    { icon: 'group', color: 'text-primary' },
+    { icon: 'thumb_up', color: 'text-secondary' },
+    { icon: 'verified', color: 'text-primary' },
+];
 
 const CTA: React.FC = () => {
     return (
@@ -32,8 +47,11 @@ const CTA: React.FC = () => {
                             </span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-8 tracking-tight">
-                            Ready to build <br />
+                            Ready to build{' '}
+                            <TitleIconCapsule icons={buildIcons} delay={0} />
+                            <br />
                             <span className="text-primary">your next project</span>{' '}
+                            <TitleIconCapsule icons={partnerIcons} delay={700} initialIndex={1} />{' '}
                             <span className="text-secondary">with us?</span>
                         </h2>
                         <Link

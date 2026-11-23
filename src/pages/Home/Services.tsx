@@ -1,6 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
+
+const buildIcons = [
+    { icon: 'code_blocks', color: 'text-primary' },
+    { icon: 'web', color: 'text-secondary' },
+    { icon: 'terminal', color: 'text-primary' },
+    { icon: 'database', color: 'text-secondary' },
+];
+
+const deliverIcons = [
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'shopping_bag', color: 'text-primary' },
+    { icon: 'dashboard', color: 'text-secondary' },
+    { icon: 'hub', color: 'text-primary' },
+];
 const services = [
     {
         title: "Custom Website Development",
@@ -66,10 +81,12 @@ const Services: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
                         What <span className="text-primary">We Build</span>{' '}
-                        <span className="text-secondary">For You</span>
+                        <TitleIconCapsule icons={buildIcons} delay={0} />{' '}
+                        For <span className="text-secondary">Your Business</span>{' '}
+                        <TitleIconCapsule icons={deliverIcons} delay={700} initialIndex={1} />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

@@ -1,7 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import { products } from '../../data/products';
+
+const productIcons = [
+    { icon: 'deployed_code', color: 'text-primary' },
+    { icon: 'apps', color: 'text-secondary' },
+    { icon: 'widgets', color: 'text-primary' },
+    { icon: 'layers', color: 'text-secondary' },
+];
+
+const qualityIcons = [
+    { icon: 'auto_awesome', color: 'text-secondary' },
+    { icon: 'star', color: 'text-primary' },
+    { icon: 'verified', color: 'text-secondary' },
+    { icon: 'diamond', color: 'text-primary' },
+];
 
 interface FeaturedProductsProps {
     projectIds?: string[];
@@ -30,9 +45,12 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        Products <span className="text-primary">That Speak</span>{' '}
+                        Products{' '}
+                        <TitleIconCapsule icons={productIcons} delay={0} />{' '}
+                        <span className="text-primary">That Speak</span>{' '}
+                        <TitleIconCapsule icons={qualityIcons} delay={700} initialIndex={1} />{' '}
                         <span className="text-secondary">for Themselves</span>
                     </motion.h2>
                     <motion.p

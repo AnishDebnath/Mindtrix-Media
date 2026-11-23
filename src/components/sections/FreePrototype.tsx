@@ -1,8 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
 // ponytail: local asset import
 import freePrototypeImg from '@/assets/free-prototype.png';
+
+const seeIcons = [
+    { icon: 'visibility', color: 'text-primary' },
+    { icon: 'preview', color: 'text-secondary' },
+    { icon: 'auto_awesome', color: 'text-primary' },
+    { icon: 'search', color: 'text-secondary' },
+];
+
+const buildIcons = [
+    { icon: 'code_blocks', color: 'text-secondary' },
+    { icon: 'architecture', color: 'text-primary' },
+    { icon: 'terminal', color: 'text-secondary' },
+    { icon: 'rocket_launch', color: 'text-primary' },
+];
 
 const FreePrototype: React.FC = () => {
     return (
@@ -37,10 +52,13 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight"
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight"
                             >
-                                See It First. <br />
-                                Then We <span className="text-primary">Build It.</span>
+                                See It First{' '}
+                                <TitleIconCapsule icons={seeIcons} delay={0} />
+                                . <br />
+                                Then We <span className="text-primary">Build It</span>{' '}
+                                <TitleIconCapsule icons={buildIcons} delay={700} initialIndex={1} />.
                             </motion.h2>
 
                             <motion.p

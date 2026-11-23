@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
 import { homeFaqs } from '@/data/faqData';
+
+const askIcons = [
+    { icon: 'live_help', color: 'text-primary' },
+    { icon: 'quiz', color: 'text-secondary' },
+    { icon: 'help', color: 'text-primary' },
+    { icon: 'contact_support', color: 'text-secondary' },
+];
+
+const answerIcons = [
+    { icon: 'verified', color: 'text-secondary' },
+    { icon: 'task_alt', color: 'text-primary' },
+    { icon: 'info', color: 'text-secondary' },
+    { icon: 'check', color: 'text-primary' },
+];
 
 const FAQ: React.FC = () => {
     const [openFAQ, setOpenFAQ] = useState<number | null>(0);
@@ -26,10 +41,13 @@ const FAQ: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                         >
-                            Questions We <br />
+                            Questions We{' '}
+                            <TitleIconCapsule icons={askIcons} delay={0} />
+                            <br />
                             <span className="text-primary">Get Asked</span>{' '}
+                            <TitleIconCapsule icons={answerIcons} delay={700} initialIndex={1} />{' '}
                             <span className="text-secondary">Often</span>
                         </motion.h2>
                         <motion.p

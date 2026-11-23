@@ -1,9 +1,24 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
 
 // ponytail: local video assets
 import builtForBusinessVid from '@/assets/why-choose-us/built-for-business.mp4';
 import startSmallVid from '@/assets/why-choose-us/start-small.mp4';
+
+const chooseIcons = [
+    { icon: 'handshake', color: 'text-primary' },
+    { icon: 'star', color: 'text-secondary' },
+    { icon: 'military_tech', color: 'text-primary' },
+    { icon: 'verified', color: 'text-secondary' },
+];
+
+const mediaIcons = [
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'bolt', color: 'text-primary' },
+    { icon: 'speed', color: 'text-secondary' },
+    { icon: 'public', color: 'text-primary' },
+];
 
 const WhyChooseUs: React.FC = () => {
     return (
@@ -33,10 +48,13 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 dark:text-white leading-tight"
                     >
-                        Why Clients Choose <br />
+                        Why Clients Choose{' '}
+                        <TitleIconCapsule icons={chooseIcons} delay={0} />
+                        <br />
                         <span className="text-primary">Mindtrix</span>{' '}
+                        <TitleIconCapsule icons={mediaIcons} delay={700} initialIndex={1} />{' '}
                         <span className="text-secondary">Media</span>
                     </motion.h2>
                     <motion.p

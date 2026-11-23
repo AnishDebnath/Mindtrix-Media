@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { motion, animate } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '@/components/ui/TitleIconCapsule';
+import mindtrixLogo from '@/assets/mindtrix-media-logo.png';
 
-const CountUp: React.FC<{ val: number }> = ({ val }) => {
-    const [count, setCount] = useState(0);
-    useEffect(() => {
-        const controls = animate(0, val, {
-            duration: 2,
-            ease: "easeOut",
-            onUpdate: (value) => setCount(Math.floor(value)),
-        });
-        return () => controls.stop();
-    }, [val]);
-    return <>{count.toLocaleString()}</>;
-};
+const webIcons = [
+    { icon: 'language', color: 'text-primary' },
+    { icon: 'terminal', color: 'text-purple-500' },
+    { icon: 'devices', color: 'text-blue-500' },
+    { icon: 'code', color: 'text-indigo-500' },
+];
+
+const scaleIcons = [
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'trending_up', color: 'text-emerald-500' },
+    { icon: 'database', color: 'text-cyan-500' },
+    { icon: 'auto_awesome', color: 'text-amber-500' },
+];
 
 const Hero: React.FC = () => {
-    const [isAvatarHovered, setIsAvatarHovered] = useState(false);
-
     return (
         <header className="pt-28 md:pt-36 2xl:pt-40 relative flex flex-col items-center justify-center">
 
@@ -41,94 +42,26 @@ const Hero: React.FC = () => {
                     </div>
                 </motion.div>
 
-                {/* Trusted Badge */}
-                <motion.div
-                    initial="hidden"
-                    animate="show"
-                    variants={{
-                        hidden: { opacity: 0, y: -20 },
-                        show: {
-                            opacity: 1,
-                            y: 0,
-                            transition: {
-                                duration: 0.6,
-                                ease: "easeOut",
-                                staggerChildren: 0.15
-                            }
-                        }
-                    }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8"
-                >
-                    <div
-                        className="flex items-center h-12 cursor-pointer"
-                        onMouseEnter={() => setIsAvatarHovered(true)}
-                        onMouseLeave={() => setIsAvatarHovered(false)}
-                    >
-                        {[
-                            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
-                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                        ].map((src, i) => (
-                            <motion.div
-                                key={i}
-                                variants={{
-                                    hidden: { opacity: 0, x: -15, scale: 0.8 },
-                                    show: { opacity: 1, x: 0, scale: 1 }
-                                }}
-                                animate={{
-                                    marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -16),
-                                    zIndex: i,
-                                }}
-                                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                                className="relative rounded-full border-2 border-white dark:border-neutral-900 overflow-hidden w-8 h-8 md:w-9 md:h-9 shadow-sm"
-                            >
-                                <img
-                                    className="w-full h-full object-cover"
-                                    src={src}
-                                    alt="Founder"
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
-                    <motion.div
-                        variants={{
-                            hidden: { opacity: 0, x: 10 },
-                            show: { opacity: 1, x: 0 }
-                        }}
-                        className="text-center sm:text-left"
-                    >
-                        <div className="flex items-center justify-center sm:justify-start gap-1 mb-0.5">
-                            {[1, 2, 3, 4, 5].map((_, i) => (
-                                <motion.span
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0, rotate: -45 }}
-                                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                                    transition={{ delay: 0.8 + (i * 0.1), type: "spring", stiffness: 300, damping: 15 }}
-                                    className="material-symbols-rounded text-secondary text-[14px] md:text-[15px]"
-                                >
-                                    star
-                                </motion.span>
-                            ))}
-                        </div>
-                        <p className="text-[11px] md:text-xs font-semibold text-slate-700 dark:text-neutral-300 flex items-center justify-center sm:justify-start gap-1">
-                            Trusted by <CountUp val={10} />+ clients worldwide
-                        </p>
-                    </motion.div>
-                </motion.div>
-
-                {/* Heading */}
+                {/* Heading: 3-4 lines on mobile for readability, strictly 2 lines on desktop */}
                 <motion.h1
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 max-w-5xl mx-auto"
+                    className="text-[1.75rem] min-[360px]:text-3xl min-[410px]:text-[2.15rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] font-bold tracking-tight leading-[1.22] sm:leading-[1.14] text-slate-900 dark:text-white max-w-6xl mx-auto"
                 >
-                    <span className="block text-slate-900">
-                        Websites & Business Software
+                    <span className="sm:block sm:whitespace-nowrap">
+                        <span className="inline-block">
+                            Websites
+                            <TitleIconCapsule icons={webIcons} delay={0} />
+                        </span>{' '}
+                        <span className="inline-block">& Business Software</span>
                     </span>
-                    <span className="block mt-2">
-                        <span className="text-primary">Built to Scale</span>{' '}
-                        <span className="text-secondary">Worldwide.</span>
+                    <span className="block mt-1 sm:mt-2.5 sm:whitespace-nowrap">
+                        <span className="text-primary inline-block">
+                            Built to Scale{' '}
+                            <TitleIconCapsule icons={scaleIcons} delay={700} initialIndex={1} />
+                        </span>{' '}
+                        <span className="text-secondary inline-block">Worldwide.</span>
                     </span>
                 </motion.h1>
 
@@ -168,6 +101,56 @@ const Hero: React.FC = () => {
                 <p className="mt-3 text-xs text-slate-600 dark:text-neutral-400 font-medium tracking-tight">
                     <span className="text-secondary font-bold">Zero risk</span> <span className="text-muted-slate">|</span> we build a working prototype before you pay anything.
                 </p>
+
+                {/* 2 Featured Products: Repositioned as sleek live showcase cards below CTA, side-by-side on all screens */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.85, ease: "easeOut" }}
+                    className="w-full max-w-md sm:max-w-lg mx-auto grid grid-cols-2 gap-2.5 sm:gap-4 mt-7 sm:mt-8"
+                >
+                    {/* Product 1: Digital Album */}
+                    <Link
+                        to="/product/the-photographers-house"
+                        className="group flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-neutral-900/70 border border-slate-200/90 dark:border-white/10 hover:border-primary/60 dark:hover:border-primary/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-sm backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
+                    >
+                        {/* Logo Viewport */}
+                        <div className="h-8 sm:h-9 w-8 sm:w-9 rounded-xl bg-transparent border border-slate-200/70 dark:border-white/10 flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
+                            <img src={mindtrixLogo} alt="Mindtrix Media" className="h-full w-full object-contain" />
+                        </div>
+
+                        {/* Product Name */}
+                        <div className="min-w-0 flex-1 text-left">
+                            <span className="text-[10px] text-muted-slate dark:text-neutral-500 font-semibold uppercase tracking-wider block leading-none mb-0.5">
+                                Featured
+                            </span>
+                            <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors truncate block">
+                                Digital Album
+                            </span>
+                        </div>
+                    </Link>
+
+                    {/* Product 2: Digital Invitation */}
+                    <Link
+                        to="/product"
+                        className="group flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-neutral-900/70 border border-slate-200/90 dark:border-white/10 hover:border-secondary/60 dark:hover:border-secondary/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-sm backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
+                    >
+                        {/* Logo Viewport */}
+                        <div className="h-8 sm:h-9 w-8 sm:w-9 rounded-xl bg-transparent border border-slate-200/70 dark:border-white/10 flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
+                            <img src={mindtrixLogo} alt="Mindtrix Media" className="h-full w-full object-contain" />
+                        </div>
+
+                        {/* Product Name */}
+                        <div className="min-w-0 flex-1 text-left">
+                            <span className="text-[10px] text-muted-slate dark:text-neutral-500 font-semibold uppercase tracking-wider block leading-none mb-0.5">
+                                Featured
+                            </span>
+                            <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-secondary transition-colors truncate block">
+                                Digital Invitation
+                            </span>
+                        </div>
+                    </Link>
+                </motion.div>
             </div>
         </header>
     );

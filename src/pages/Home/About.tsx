@@ -1,5 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
+
+const webIcons = [
+    { icon: 'domain', color: 'text-primary' },
+    { icon: 'web', color: 'text-secondary' },
+    { icon: 'devices', color: 'text-primary' },
+    { icon: 'laptop_mac', color: 'text-secondary' },
+];
+
+const growthIcons = [
+    { icon: 'trending_up', color: 'text-primary' },
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'auto_awesome', color: 'text-primary' },
+    { icon: 'bolt', color: 'text-secondary' },
+];
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -78,10 +93,13 @@ const About: React.FC = () => {
                         <span className="material-symbols-rounded text-sm">info</span> About
                     </span>
                 </motion.div>
-                <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-[1.15] tracking-tight text-slate-900 text-center">
-                    We help businesses build better websites, smarter software, and stronger digital systems.{' '}
-                    <span className="text-primary">Simple, effective,</span>{' '}
-                    and <span className="text-secondary">built for growth.</span>
+                <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-[1.25] sm:leading-[1.18] tracking-tight text-slate-900 dark:text-white text-center">
+                    We help businesses build better websites{' '}
+                    <TitleIconCapsule icons={webIcons} delay={0} />
+                    , smarter software, and stronger digital systems.{' '}
+                    <span className="text-primary">Simple, effective</span>{' '}
+                    <TitleIconCapsule icons={growthIcons} delay={600} initialIndex={1} />
+                    , and <span className="text-secondary">built for growth.</span>
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

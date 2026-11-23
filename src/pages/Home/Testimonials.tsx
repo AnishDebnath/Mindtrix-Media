@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import { imageTestimonials, scrollTestimonials } from '@/data/testimonialData';
+
+const quoteIcons = [
+    { icon: 'format_quote', color: 'text-primary' },
+    { icon: 'forum', color: 'text-secondary' },
+    { icon: 'chat', color: 'text-primary' },
+    { icon: 'record_voice_over', color: 'text-secondary' },
+];
+
+const worldIcons = [
+    { icon: 'public', color: 'text-secondary' },
+    { icon: 'favorite', color: 'text-primary' },
+    { icon: 'thumb_up', color: 'text-secondary' },
+    { icon: 'star', color: 'text-primary' },
+];
 
 const Testimonials: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,9 +50,12 @@ const Testimonials: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        Kind Words <span className="text-primary">from Clients</span>{' '}
+                        Kind Words{' '}
+                        <TitleIconCapsule icons={quoteIcons} delay={0} />{' '}
+                        <span className="text-primary">from Clients</span>{' '}
+                        <TitleIconCapsule icons={worldIcons} delay={700} initialIndex={1} />{' '}
                         <span className="text-secondary">Worldwide</span>
                     </motion.h2>
                     <motion.p

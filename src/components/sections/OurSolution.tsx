@@ -1,5 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
+
+const problemIcons = [
+    { icon: 'lightbulb', color: 'text-primary' },
+    { icon: 'psychology', color: 'text-secondary' },
+    { icon: 'tips_and_updates', color: 'text-primary' },
+    { icon: 'help', color: 'text-secondary' },
+];
+
+const solutionIcons = [
+    { icon: 'magic_button', color: 'text-secondary' },
+    { icon: 'bolt', color: 'text-primary' },
+    { icon: 'task_alt', color: 'text-secondary' },
+    { icon: 'check_circle', color: 'text-primary' },
+];
 
 const OurSolution: React.FC = () => {
     const [highlightSolution, setHighlightSolution] = React.useState(true);
@@ -38,10 +53,12 @@ const OurSolution: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        Common Problems.{' '}
+                        Common Problems{' '}
+                        <TitleIconCapsule icons={problemIcons} delay={0} />.{' '}
                         <span className="text-primary">Simple</span>{' '}
+                        <TitleIconCapsule icons={solutionIcons} delay={700} initialIndex={1} />{' '}
                         <span className="text-secondary">Solutions.</span>
                     </motion.h2>
                     <motion.div

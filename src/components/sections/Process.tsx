@@ -1,11 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
 
 // ponytail: local process video assets
 import dropRequirementVid from '@/assets/process/drop-requirement.mp4';
 import magicVid from '@/assets/process/magic.mp4';
 import feedbackVid from '@/assets/process/feedback.mp4';
 import launchVid from '@/assets/process/launch.mp4';
+
+const planIcons = [
+    { icon: 'conversion_path', color: 'text-primary' },
+    { icon: 'schema', color: 'text-secondary' },
+    { icon: 'draw', color: 'text-primary' },
+    { icon: 'assignment', color: 'text-secondary' },
+];
+
+const workIcons = [
+    { icon: 'published_with_changes', color: 'text-secondary' },
+    { icon: 'check_circle', color: 'text-primary' },
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'speed', color: 'text-primary' },
+];
 
 const Process: React.FC = () => {
     return (
@@ -26,10 +41,12 @@ const Process: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
                     >
-                        How <span className="text-primary">We</span>{' '}
-                        <span className="text-secondary">Work</span>
+                        How <span className="text-primary">We Plan</span>{' '}
+                        <TitleIconCapsule icons={planIcons} delay={0} />{' '}
+                        & <span className="text-secondary">Work</span>{' '}
+                        <TitleIconCapsule icons={workIcons} delay={700} initialIndex={1} />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

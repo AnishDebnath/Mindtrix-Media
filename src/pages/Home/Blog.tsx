@@ -1,7 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import { articles } from '../../data/blog';
+
+const articleIcons = [
+    { icon: 'article', color: 'text-primary' },
+    { icon: 'feed', color: 'text-secondary' },
+    { icon: 'menu_book', color: 'text-primary' },
+    { icon: 'newspaper', color: 'text-secondary' },
+];
+
+const trendIcons = [
+    { icon: 'trending_up', color: 'text-secondary' },
+    { icon: 'edit_square', color: 'text-primary' },
+    { icon: 'auto_awesome', color: 'text-secondary' },
+    { icon: 'share', color: 'text-primary' },
+];
 
 const Blog: React.FC = () => {
     const featuredArticles = articles.filter(article => article.featured).slice(0, 4);
@@ -24,9 +39,12 @@ const Blog: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 tracking-tight leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 dark:text-white tracking-tight leading-tight"
                     >
-                        Insights & <span className="text-primary">Expertise</span>{' '}
+                        Insights{' '}
+                        <TitleIconCapsule icons={articleIcons} delay={0} />{' '}
+                        & <span className="text-primary">Expertise</span>{' '}
+                        <TitleIconCapsule icons={trendIcons} delay={700} initialIndex={1} />{' '}
                         <span className="text-secondary">Shared.</span>
                     </motion.h2>
                     <motion.p
