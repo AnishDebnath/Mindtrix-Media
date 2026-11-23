@@ -17,6 +17,7 @@ export interface ClientCardItem {
 
 export interface ClientsProps {
     onClose?: () => void;
+    isMobile?: boolean;
 }
 
 // 4 Active Long-term Partner Clients
@@ -97,7 +98,7 @@ const itemVariants: Variants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
 };
 
-export const Clients: React.FC<ClientsProps> = ({ onClose }) => {
+export const Clients: React.FC<ClientsProps> = ({ onClose, isMobile = false }) => {
     return (
         <motion.div
             variants={containerVariants}
@@ -107,36 +108,38 @@ export const Clients: React.FC<ClientsProps> = ({ onClose }) => {
             className="w-full pointer-events-auto"
             onClick={(e) => e.stopPropagation()}
         >
-            <div className="bg-white dark:bg-[#0A0A0A] rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.9)] border border-slate-200 dark:border-white/10 overflow-hidden">
+            <div className={isMobile ? 'w-full' : 'bg-white dark:bg-[#0A0A0A] rounded-2xl p-3.5 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.9)] border border-slate-200 dark:border-white/10 overflow-hidden'}>
 
-                {/* Top Header: Enterprise Partners */}
-                <motion.div variants={itemVariants} className="flex items-center gap-2 mb-4">
-                    <span className="material-symbols-rounded text-primary text-xl">handshake</span>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
-                        Mindtrix Media <span className="text-primary">Enterprise Partners</span>
-                    </h3>
-                </motion.div>
+                {/* Top Header: Enterprise Partners (Desktop only, mobile sheet has own header) */}
+                {!isMobile && (
+                    <motion.div variants={itemVariants} className="flex items-center gap-2 mb-4">
+                        <span className="material-symbols-rounded text-primary text-xl">handshake</span>
+                        <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                            Mindtrix Media <span className="text-primary">Enterprise Partners</span>
+                        </h3>
+                    </motion.div>
+                )}
 
                 {/* TOP ROW: 4 Active Long-term Partner Client Cards */}
-                <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-3.5">
                     {featuredClients.map((client) => (
-                        <motion.div key={client.id} whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
+                        <motion.div key={client.id} whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
                             <Link
                                 to={client.path}
                                 onClick={onClose}
                                 className="group flex flex-col items-center cursor-pointer"
                             >
                                 {/* Card Graphic Viewport: Just Logo like products dropdown */}
-                                <div className="relative w-full h-24 md:h-28 rounded-xl bg-[#F8FAFC] dark:bg-black border border-slate-200 dark:border-white/10 group-hover:border-primary/50 group-hover:shadow-sm transition-all duration-300 p-3 flex items-center justify-center overflow-hidden">
+                                <div className="relative w-full h-18 sm:h-24 md:h-28 rounded-xl bg-[#F8FAFC] dark:bg-black border border-slate-200 dark:border-white/10 group-hover:border-primary/50 group-hover:shadow-sm transition-all duration-300 p-2 sm:p-3 flex items-center justify-center overflow-hidden">
                                     <img
                                         src={client.logo}
                                         alt={client.name}
-                                        className="max-h-12 max-w-[80%] object-contain filter group-hover:scale-105 transition-transform duration-300"
+                                        className="max-h-8 sm:max-h-12 max-w-[80%] object-contain filter group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
 
                                 {/* Client Name Below Div */}
-                                <span className="text-xs font-semibold text-slate-800 dark:text-neutral-200 mt-2 group-hover:text-primary transition-colors text-center truncate w-full px-1">
+                                <span className="text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-neutral-200 mt-1.5 group-hover:text-primary transition-colors text-center truncate w-full px-1">
                                     {client.name}
                                 </span>
                             </Link>
@@ -145,25 +148,34 @@ export const Clients: React.FC<ClientsProps> = ({ onClose }) => {
                 </motion.div>
 
                 {/* SECTION LABEL: Projects */}
-                <motion.div variants={itemVariants} className="mb-2 px-1">
-                    <span className="text-[11px] font-semibold text-slate-400 dark:text-neutral-500 uppercase tracking-wider">
+                <motion.div variants={itemVariants} className="mb-1.5 px-0.5">
+                    <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 dark:text-neutral-500 uppercase tracking-wider">
                         Pre-built Projects
                     </span>
                 </motion.div>
 
-                {/* MIDDLE SECTION: 2-Column List of Mindtrix Built Projects */}
-                <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-0.5 mb-4">
+                {/* MIDDLE SECTION: List of Mindtrix Built Projects */}
+                <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-x-6 sm:gap-y-0.5 mb-3.5">
                     {projectList.map((item) => (
-                        <motion.div key={item.id} whileHover={{ x: 2 }} transition={{ duration: 0.15 }}>
+                        <motion.div key={item.id} whileHover={{ x: 2 }} whileTap={{ scale: 0.99 }} transition={{ duration: 0.15 }}>
                             <Link
                                 to={`/product/${item.id}`}
                                 onClick={onClose}
-                                className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold text-slate-700 dark:text-neutral-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900 transition-all group/item"
+                                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all group/item ${
+                                    isMobile
+                                        ? 'bg-slate-50 dark:bg-[#141414] border border-slate-100 dark:border-white/[0.06] text-slate-800 dark:text-neutral-200 hover:border-primary/40'
+                                        : 'text-slate-700 dark:text-neutral-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900'
+                                }`}
                             >
                                 <span className="material-symbols-rounded text-base text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors shrink-0">
                                     {getProjectIcon(item.id)}
                                 </span>
-                                <span className="truncate">{item.title}</span>
+                                <span className="truncate flex-1">{item.title}</span>
+                                {isMobile && (
+                                    <span className="material-symbols-rounded text-xs text-slate-400 dark:text-neutral-500 group-hover/item:text-primary shrink-0">
+                                        chevron_right
+                                    </span>
+                                )}
                             </Link>
                         </motion.div>
                     ))}
@@ -174,17 +186,17 @@ export const Clients: React.FC<ClientsProps> = ({ onClose }) => {
                     <Link
                         to="/clients"
                         onClick={onClose}
-                        className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-4 py-2.5 transition-all duration-300 shadow-xs"
+                        className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 shadow-xs active:scale-[0.99]"
                     >
-                        <div className="flex items-center gap-2.5 text-xs truncate">
-                            <span className="px-2 py-0.5 text-[9.5px] font-black uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/25 rounded-md leading-none shrink-0">
+                        <div className="flex items-center gap-2 text-xs truncate">
+                            <span className="px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/25 rounded leading-none shrink-0">
                                 Stories
                             </span>
                             <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
                                 See how our technology scales businesses worldwide
                             </span>
                         </div>
-                        <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-1 shrink-0 ml-2">
+                        <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-0.5 shrink-0 ml-1.5">
                             Explore
                             <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
                         </span>

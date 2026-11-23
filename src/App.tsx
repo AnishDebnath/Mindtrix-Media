@@ -17,7 +17,7 @@ const Careers = lazy(() => import('./pages/Careers'));
 const Footer = lazy(() => import('./components/common/Footer'));
 
 // Components
-import { Navbar } from './components/common';
+import { Navbar, MobileNavbar } from './components/common';
 import { Layout } from './components/layout';
 
 // Scroll to top component
@@ -56,6 +56,7 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
   return (
     <div className="font-sans">
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      <MobileNavbar darkMode={darkMode} toggleTheme={toggleTheme} />
       <Layout>
         <AnimatePresence mode="wait">
           <motion.div
