@@ -25,7 +25,7 @@ const mobileDockItems: MobileDockItem[] = [
     { name: 'Products', path: '/products', icon: 'widgets', hasDropdown: true, dropdownType: 'Products' },
     { name: 'Services', path: '/services', icon: 'design_services' },
     { name: 'Clients', path: '/clients', icon: 'handshake', hasDropdown: true, dropdownType: 'Clients' },
-    { name: 'More', path: '#', icon: 'more_horiz', hasDropdown: true, dropdownType: 'More' },
+    { name: 'More', path: '#', icon: 'menu', hasDropdown: true, dropdownType: 'More' },
 ];
 
 const MobileNavbar: React.FC<MobileNavbarProps> = ({ darkMode = false }) => {
@@ -78,28 +78,45 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ darkMode = false }) => {
                 initial={{ y: -60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className={`fixed top-0 left-0 right-0 z-[990] px-4 transition-[padding] duration-300 ${scrolled ? 'pt-3' : 'pt-5'
+                className={`fixed top-0 left-0 right-0 z-[990] px-3 sm:px-4 transition-[padding] duration-300 ${scrolled ? 'pt-2.5 sm:pt-3' : 'pt-4 sm:pt-5'
                     }`}
             >
-                <div className="max-w-md mx-auto bg-white dark:bg-[#0A0A0A] border border-slate-300 dark:border-white/[0.1] rounded-2xl shadow-md shadow-slate-200/50 dark:shadow-[0_0_24px_rgba(0,0,0,0.5)] px-3.5 py-2 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center group py-0.5">
+                <div className="max-w-md mx-auto bg-white dark:bg-[#0A0A0A] border border-slate-300 dark:border-white/[0.1] rounded-2xl shadow-md shadow-slate-200/50 dark:shadow-[0_0_24px_rgba(0,0,0,0.5)] px-3 sm:px-3.5 py-1.5 sm:py-2 flex items-center justify-between gap-2">
+                    {/* Left Side: Brand Logo */}
+                    <Link to="/" className="flex items-center group py-0.5 shrink-0">
                         <img
                             src={darkMode ? whiteLogo : blackLogo}
                             alt="Mindtrix Media"
-                            className="h-6 w-auto object-contain"
+                            className="h-7 sm:h-8 w-auto object-contain"
                         />
                     </Link>
 
-                    {/* Top Action Buttons */}
-                    <div className="flex items-center gap-2">
-                        {/* Quick Contact CTA */}
+                    {/* Right Side: Creative & Contact CTA */}
+                    <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                        {/* Creative Menu Pill with New Badge */}
+                        <a
+                            href="https://creative.mindtrixmedia.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="h-7 sm:h-8 px-2.5 sm:px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-primary via-purple-600 to-pink-500 text-white shadow-xs hover:shadow-md hover:brightness-110 flex items-center gap-1.5 shrink-0 select-none"
+                        >
+                            <span>Creative</span>
+                            <span className="px-1 py-0.5 text-[8px] font-black uppercase tracking-wider bg-white text-slate-950 rounded shadow-xs leading-none">
+                                New
+                            </span>
+                        </a>
+
+                        {/* Contact CTA matching desktop design and Creative size */}
                         <Link
                             to="/contact"
-                            className="bg-slate-950 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-xl font-medium text-xs flex items-center gap-1.5 shadow-xs active:scale-95 transition-all"
+                            className="h-7 sm:h-8 pl-2.5 sm:pl-3 pr-1 rounded-xl text-xs font-semibold transition-all bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black shadow-xs hover:shadow-md active:scale-95 flex items-center gap-1.5 shrink-0 select-none group"
                         >
-                            Contact
-                            <span className="material-symbols-rounded text-xs">arrow_outward</span>
+                            <span>Contact us</span>
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white shrink-0">
+                                <span className="material-symbols-rounded text-xs sm:text-sm group-hover:rotate-45 transition-transform duration-300">
+                                    arrow_outward
+                                </span>
+                            </div>
                         </Link>
                     </div>
                 </div>
@@ -210,7 +227,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ darkMode = false }) => {
                                 <div className="flex items-center gap-2 min-w-0">
                                     <div className="w-7 h-7 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary shrink-0">
                                         <span className="material-symbols-rounded text-base">
-                                            {activeDropdown === 'Products' ? 'widgets' : activeDropdown === 'Clients' ? 'handshake' : 'more_horiz'}
+                                            {activeDropdown === 'Products' ? 'widgets' : activeDropdown === 'Clients' ? 'handshake' : 'menu'}
                                         </span>
                                     </div>
                                     <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight">
