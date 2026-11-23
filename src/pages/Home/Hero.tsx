@@ -102,24 +102,22 @@ const Hero: React.FC = () => {
                     <span className="text-secondary font-bold">Zero risk</span> <span className="text-muted-slate">|</span> we build a working prototype before you pay anything.
                 </p>
 
-                {/* 2 Featured Products: Repositioned as sleek live showcase cards below CTA, side-by-side on all screens */}
+                {/* 2 Featured Products (temporarily commented out) */}
+                {/* 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.85, ease: "easeOut" }}
                     className="w-full max-w-md sm:max-w-lg mx-auto grid grid-cols-2 gap-2.5 sm:gap-4 mt-7 sm:mt-8"
                 >
-                    {/* Product 1: Digital Album */}
                     <Link
                         to="/product/the-photographers-house"
                         className="group flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-neutral-900/70 border border-slate-200/90 dark:border-white/10 hover:border-primary/60 dark:hover:border-primary/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-sm backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
                     >
-                        {/* Logo Viewport */}
                         <div className="h-8 sm:h-9 w-8 sm:w-9 rounded-xl bg-transparent border border-slate-200/70 dark:border-white/10 flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
                             <img src={mindtrixLogo} alt="Mindtrix Media" className="h-full w-full object-contain" />
                         </div>
 
-                        {/* Product Name */}
                         <div className="min-w-0 flex-1 text-left">
                             <span className="text-[10px] text-muted-slate dark:text-neutral-500 font-semibold uppercase tracking-wider block leading-none mb-0.5">
                                 Featured
@@ -130,17 +128,14 @@ const Hero: React.FC = () => {
                         </div>
                     </Link>
 
-                    {/* Product 2: Digital Invitation */}
                     <Link
                         to="/product"
                         className="group flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-neutral-900/70 border border-slate-200/90 dark:border-white/10 hover:border-secondary/60 dark:hover:border-secondary/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-sm backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
                     >
-                        {/* Logo Viewport */}
                         <div className="h-8 sm:h-9 w-8 sm:w-9 rounded-xl bg-transparent border border-slate-200/70 dark:border-white/10 flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
                             <img src={mindtrixLogo} alt="Mindtrix Media" className="h-full w-full object-contain" />
                         </div>
 
-                        {/* Product Name */}
                         <div className="min-w-0 flex-1 text-left">
                             <span className="text-[10px] text-muted-slate dark:text-neutral-500 font-semibold uppercase tracking-wider block leading-none mb-0.5">
                                 Featured
@@ -151,6 +146,7 @@ const Hero: React.FC = () => {
                         </div>
                     </Link>
                 </motion.div>
+                */}
             </div>
         </header>
     );
