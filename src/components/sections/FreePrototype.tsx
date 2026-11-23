@@ -52,7 +52,7 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight"
+                                className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight tracking-tight"
                             >
                                 See It First{' '}
                                 <TitleIconCapsule icons={seeIcons} delay={0} />
@@ -66,7 +66,7 @@ const FreePrototype: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-sm md:text-base text-slate-600 dark:text-neutral-400 mb-8 leading-relaxed font-normal"
+                                className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 mb-6 sm:mb-8 leading-relaxed font-normal"
                             >
                                 Most agencies ask you to pay first. We don't.
                                 Before development starts, we build a <strong className="text-slate-900 dark:text-white font-semibold">free, working prototype</strong> of your website or system.

@@ -93,7 +93,7 @@ const About: React.FC = () => {
                         <span className="material-symbols-rounded text-sm">info</span> About
                     </span>
                 </motion.div>
-                <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-[1.25] sm:leading-[1.18] tracking-tight text-slate-900 dark:text-white text-center">
+                <motion.h2 {...fadeInUp} className="text-[1.6rem] sm:text-3xl md:text-[2.35rem] lg:text-[2.65rem] font-bold mb-7 md:mb-10 leading-[1.22] sm:leading-[1.18] tracking-tight text-slate-900 dark:text-white text-center">
                     We help businesses build better websites{' '}
                     <TitleIconCapsule icons={webIcons} delay={0} />
                     , smarter software, and stronger digital systems.{' '}

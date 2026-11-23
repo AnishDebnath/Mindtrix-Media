@@ -81,7 +81,7 @@ const Services: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
                     >
                         What <span className="text-primary">We Build</span>{' '}
                         <TitleIconCapsule icons={buildIcons} delay={0} />{' '}
@@ -93,7 +93,7 @@ const Services: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto font-normal"
+                        className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed max-w-xl mx-auto font-normal"
                     >
                         Mindtrix Media builds custom websites, e-commerce stores, CRM systems, business platforms, and more for businesses of all sizes across the world.
                     </motion.p>

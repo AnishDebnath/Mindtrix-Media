@@ -41,7 +41,7 @@ const FAQ: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight"
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
                         >
                             Questions We{' '}
                             <TitleIconCapsule icons={askIcons} delay={0} />
@@ -55,7 +55,7 @@ const FAQ: React.FC = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-sm md:text-base text-slate-600 dark:text-neutral-400 leading-relaxed max-w-md font-normal"
+                            className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed max-w-md font-normal"
                         >
                             Clear answers about our website development, CRM, ERP, and software solutions.
                         </motion.p>

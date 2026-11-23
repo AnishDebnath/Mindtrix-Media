@@ -48,7 +48,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4 text-slate-900 dark:text-white leading-tight"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mt-2 mb-3 text-slate-900 dark:text-white leading-tight"
                     >
                         Why Clients Choose{' '}
                         <TitleIconCapsule icons={chooseIcons} delay={0} />
@@ -62,7 +62,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
+                        className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                     >
                         We are a website and software development agency based in Kolkata, India, building digital solutions for businesses worldwide. We keep things simple, fast, and built to last.
                     </motion.p>

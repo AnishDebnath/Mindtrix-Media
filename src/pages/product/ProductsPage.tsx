@@ -169,8 +169,8 @@ export const ProductsPage: React.FC = () => {
                                 key={tab.id}
                                 onClick={() => setSelectedCategory(tab.id)}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${selectedCategory === tab.id
-                                        ? 'bg-primary text-white shadow-md shadow-primary/25 scale-105'
-                                        : 'bg-white dark:bg-[#0A0A0A] text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-white/10 hover:border-primary/50'
+                                    ? 'bg-primary text-white shadow-md shadow-primary/25 scale-105'
+                                    : 'bg-white dark:bg-[#0A0A0A] text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-white/10 hover:border-primary/50'
                                     }`}
                             >
                                 <span className="material-symbols-rounded text-base">{tab.icon}</span>
@@ -203,8 +203,8 @@ export const ProductsPage: React.FC = () => {
                                             {product.categoryLabel}
                                         </span>
                                         <span className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg ${product.status === 'Coming Soon'
-                                                ? 'bg-secondary text-slate-950 shadow-xs'
-                                                : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
+                                            ? 'bg-secondary text-slate-950 shadow-xs'
+                                            : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
                                             }`}>
                                             {product.status}
                                         </span>

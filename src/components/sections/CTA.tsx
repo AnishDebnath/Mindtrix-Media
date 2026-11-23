@@ -46,7 +46,7 @@ const CTA: React.FC = () => {
                                 <span className="material-symbols-rounded text-sm">handshake</span> Let's Work Together
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-8 tracking-tight">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight mb-5 sm:mb-6 tracking-tight">
                             Ready to build{' '}
                             <TitleIconCapsule icons={buildIcons} delay={0} />
                             <br />

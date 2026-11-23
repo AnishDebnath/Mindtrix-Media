@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-[1.75rem] min-[360px]:text-3xl min-[410px]:text-[2.15rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] font-bold tracking-tight leading-[1.22] sm:leading-[1.14] text-slate-900 dark:text-white max-w-6xl mx-auto"
+                    className="text-2xl min-[360px]:text-[1.65rem] min-[410px]:text-[1.85rem] sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-bold tracking-tight leading-[1.24] sm:leading-[1.18] text-slate-900 dark:text-white max-w-5xl mx-auto"
                 >
                     <span className="sm:block sm:whitespace-nowrap">
                         <span className="inline-block">
@@ -70,9 +70,9 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto mt-6 leading-relaxed font-normal"
+                    className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-lg mx-auto mt-3.5 sm:mt-4 leading-relaxed font-normal"
                 >
-                    We build high-performance business websites, e-commerce platforms, custom CRM systems, and ERP solutions for businesses worldwide. Fast, secure, and built to grow with you.
+                    Custom websites, e-commerce stores, and software systems built to scale with your business.
                 </motion.p>
 
                 {/* CTA */}

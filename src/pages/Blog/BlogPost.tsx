@@ -41,12 +41,12 @@ const BlogPost: React.FC = () => {
                     keywords: article.tags.join(', '),
                     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://mindtrixmedia.com/blog/${article.id}` },
                 },
-              }
+            }
             : {
                 title: 'Article Not Found — Mindtrix Media Blog',
                 description: 'The article you are looking for could not be found.',
                 canonicalPath: '/blog',
-              }
+            }
     );
 
     if (!article) {

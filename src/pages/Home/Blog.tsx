@@ -39,7 +39,7 @@ const Blog: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900 dark:text-white tracking-tight leading-tight"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2.5 text-slate-900 dark:text-white tracking-tight leading-tight"
                     >
                         Insights{' '}
                         <TitleIconCapsule icons={articleIcons} delay={0} />{' '}
@@ -52,7 +52,7 @@ const Blog: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
+                        className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                     >
                         Fresh perspectives on custom software architecture, e-commerce engineering, and system automation.
                     </motion.p>
