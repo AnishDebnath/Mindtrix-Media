@@ -161,11 +161,10 @@ export const Clients: React.FC<ClientsProps> = ({ onClose, isMobile = false }) =
                             <Link
                                 to={`/product/${item.id}`}
                                 onClick={onClose}
-                                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all group/item ${
-                                    isMobile
+                                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all group/item ${isMobile
                                         ? 'bg-slate-50 dark:bg-[#141414] border border-slate-100 dark:border-white/[0.06] text-slate-800 dark:text-neutral-200 hover:border-primary/40'
                                         : 'text-slate-700 dark:text-neutral-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900'
-                                }`}
+                                    }`}
                             >
                                 <span className="material-symbols-rounded text-base text-slate-400 dark:text-neutral-500 group-hover/item:text-primary transition-colors shrink-0">
                                     {getProjectIcon(item.id)}
@@ -181,26 +180,42 @@ export const Clients: React.FC<ClientsProps> = ({ onClose, isMobile = false }) =
                     ))}
                 </motion.div>
 
-                {/* BOTTOM BANNER */}
+                {/* BOTTOM BANNER: Direct page redirect on mobile, full banner on desktop */}
                 <motion.div variants={itemVariants}>
-                    <Link
-                        to="/clients"
-                        onClick={onClose}
-                        className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 shadow-xs active:scale-[0.99]"
-                    >
-                        <div className="flex items-center gap-2 text-xs truncate">
-                            <span className="px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/25 rounded leading-none shrink-0">
-                                Stories
+                    {isMobile ? (
+                        <Link
+                            to="/clients"
+                            onClick={onClose}
+                            className="group/banner flex items-center justify-between bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 transition-all duration-200 active:scale-[0.99]"
+                        >
+                            <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                                <span className="material-symbols-rounded text-primary text-base">handshake</span>
+                                <span>View All Clients and Projects</span>
+                            </div>
+                            <span className="material-symbols-rounded text-sm text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary group-hover/banner:translate-x-0.5 transition-all">
+                                arrow_forward
                             </span>
-                            <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
-                                See how our technology scales businesses worldwide
+                        </Link>
+                    ) : (
+                        <Link
+                            to="/clients"
+                            onClick={onClose}
+                            className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 shadow-xs active:scale-[0.99]"
+                        >
+                            <div className="flex items-center gap-2 text-xs truncate">
+                                <span className="px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/25 rounded leading-none shrink-0">
+                                    Stories
+                                </span>
+                                <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
+                                    See how our technology scales businesses worldwide
+                                </span>
+                            </div>
+                            <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-0.5 shrink-0 ml-1.5">
+                                Explore
+                                <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
                             </span>
-                        </div>
-                        <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-0.5 shrink-0 ml-1.5">
-                            Explore
-                            <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
-                        </span>
-                    </Link>
+                        </Link>
+                    )}
                 </motion.div>
 
             </div>

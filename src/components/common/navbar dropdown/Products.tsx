@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
@@ -78,6 +78,46 @@ const itemVariants: Variants = {
 
 export const Products: React.FC<ProductsProps> = ({ onClose, isMobile = false }) => {
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [hasDragged, setHasDragged] = useState(false);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!scrollRef.current) return;
+        setIsDragging(true);
+        setHasDragged(false);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        if (Math.abs(walk) > 4) {
+            setHasDragged(true);
+        }
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const handleWheel = (e: React.WheelEvent) => {
+        if (!scrollRef.current) return;
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+        if (e.deltaY !== 0) {
+            scrollRef.current.scrollLeft += e.deltaY;
+        }
+    };
 
     const filteredProducts = selectedCategory === 'all'
         ? featuredProducts
@@ -104,13 +144,27 @@ export const Products: React.FC<ProductsProps> = ({ onClose, isMobile = false })
                     </motion.div>
                 )}
 
-                {/* Category Filter Pills */}
-                <motion.div variants={itemVariants} className="flex items-center gap-1.5 mb-3.5 overflow-x-auto pb-1 scrollbar-none">
+                {/* Category Filter Pills: Draggable on mouse and touch */}
+                <motion.div
+                    ref={scrollRef}
+                    variants={itemVariants}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}
+                    onWheel={handleWheel}
+                    style={{ WebkitOverflowScrolling: 'touch' }}
+                    className="flex items-center gap-1.5 mb-3.5 overflow-x-auto pb-1 scrollbar-none select-none cursor-grab active:cursor-grabbing touch-pan-x"
+                >
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
-                            onClick={() => setSelectedCategory(cat.id)}
-                            className={`relative flex items-center px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer shrink-0 ${selectedCategory === cat.id
+                            onClick={() => {
+                                if (!hasDragged) {
+                                    setSelectedCategory(cat.id);
+                                }
+                            }}
+                            className={`relative flex items-center px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer shrink-0 select-none ${selectedCategory === cat.id
                                 ? 'text-white'
                                 : 'text-slate-600 dark:text-neutral-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-neutral-900'
                                 }`}
@@ -123,7 +177,7 @@ export const Products: React.FC<ProductsProps> = ({ onClose, isMobile = false })
                                 />
                             )}
                             <span className="relative z-10 material-symbols-rounded text-sm mr-1.5">{cat.icon}</span>
-                            <span className="relative z-10">{cat.label}</span>
+                            <span className="relative z-10 whitespace-nowrap">{cat.label}</span>
                         </button>
                     ))}
                 </motion.div>
@@ -183,24 +237,40 @@ export const Products: React.FC<ProductsProps> = ({ onClose, isMobile = false })
                     </AnimatePresence>
                 </motion.div>
 
-                {/* BOTTOM ROW: Clean bare icon, proper typography contrast */}
+                {/* BOTTOM ROW: Direct page redirect on mobile, full banner on desktop */}
                 <motion.div variants={itemVariants}>
-                    <Link
-                        to="/products"
-                        onClick={onClose}
-                        className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 shadow-xs active:scale-[0.99]"
-                    >
-                        <div className="flex items-center gap-2 text-xs truncate">
-                            <span className="material-symbols-rounded text-primary text-base shrink-0">groups</span>
-                            <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
-                                Built by Mindtrix Media for modern businesses
+                    {isMobile ? (
+                        <Link
+                            to="/products"
+                            onClick={onClose}
+                            className="group/banner flex items-center justify-between bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 transition-all duration-200 active:scale-[0.99]"
+                        >
+                            <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                                <span className="material-symbols-rounded text-primary text-base">widgets</span>
+                                <span>View All Mindtrix Media Products</span>
+                            </div>
+                            <span className="material-symbols-rounded text-sm text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary group-hover/banner:translate-x-0.5 transition-all">
+                                arrow_forward
                             </span>
-                        </div>
-                        <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-0.5 shrink-0 ml-1.5">
-                            View all
-                            <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
-                        </span>
-                    </Link>
+                        </Link>
+                    ) : (
+                        <Link
+                            to="/products"
+                            onClick={onClose}
+                            className="group/banner flex items-center justify-between bg-[#F8FAFC] dark:bg-black hover:bg-slate-100 dark:hover:bg-neutral-900 border border-slate-200 dark:border-white/10 hover:border-primary/40 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 shadow-xs active:scale-[0.99]"
+                        >
+                            <div className="flex items-center gap-2 text-xs truncate">
+                                <span className="material-symbols-rounded text-primary text-base shrink-0">groups</span>
+                                <span className="font-semibold text-slate-800 dark:text-neutral-200 truncate">
+                                    Built by Mindtrix Media for modern businesses
+                                </span>
+                            </div>
+                            <span className="text-xs font-semibold text-slate-500 dark:text-neutral-400 group-hover/banner:text-primary transition-colors flex items-center gap-0.5 shrink-0 ml-1.5">
+                                View all
+                                <span className="material-symbols-rounded text-sm group-hover/banner:translate-x-0.5 transition-transform">chevron_right</span>
+                            </span>
+                        </Link>
+                    )}
                 </motion.div>
 
             </div>
