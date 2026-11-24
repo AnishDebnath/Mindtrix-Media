@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
                 >
                     <Link
                         to="/free-prototype"
-                        className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
+                        className="inline-flex items-center justify-center gap-2 h-10 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black font-medium text-xs sm:text-sm pl-4 pr-1.5 rounded-xl shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
                     >
                         <span>Get Your Free Prototype</span>
                         <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
                     </Link>
                     <Link
                         to="/product"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 hover:text-slate-950 dark:text-neutral-200 dark:hover:text-white bg-white hover:bg-slate-50 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 border border-slate-300 dark:border-white/[0.1] shadow-sm backdrop-blur-md transition-all active:scale-95"
+                        className="inline-flex items-center justify-center gap-2 h-10 px-5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 hover:text-slate-950 dark:text-neutral-200 dark:hover:text-white bg-white hover:bg-slate-50 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 border border-slate-300 dark:border-white/[0.1] shadow-sm backdrop-blur-md transition-all active:scale-95"
                     >
                         <span>Explore Work</span>
                     </Link>
