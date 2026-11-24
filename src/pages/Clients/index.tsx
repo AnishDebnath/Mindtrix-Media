@@ -1,9 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import ProductCard from './ProductCard';
-import ProductHeader from './ProductHeader';
-import ProductFilter from './ProductFilter';
+import ProjectCard from './ProjectCard';
+import ProjectHeader from './ProjectHeader';
+import ProjectFilter from './ProjectFilter';
 import { products, categories } from '../../data/products';
 import useSEO from '../../utils/useSEO';
 
@@ -16,10 +16,10 @@ const CTA = lazy(() => import('../../components/sections/CTA'));
 const ProductPage: React.FC = () => {
     const [searchParams] = useSearchParams();
     const initialCategory = searchParams.get('category');
-    
+
     // Check if the query category exists in our categories list
-    const validInitialCategory = initialCategory && categories.includes(initialCategory) 
-        ? initialCategory 
+    const validInitialCategory = initialCategory && categories.includes(initialCategory)
+        ? initialCategory
         : categories[0];
 
     const [activeCategory, setActiveCategory] = useState(validInitialCategory);
@@ -49,13 +49,17 @@ const ProductPage: React.FC = () => {
         }
     }, [searchParams]);
 
-    const filteredProducts = products.filter(p => p.category === activeCategory);
+    const filteredProducts = products.filter(p =>
+        activeCategory === "Clients"
+            ? p.category === "Customized"
+            : p.category === "Prebuilt"
+    );
 
     return (
         <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
             <div className="pb-8 md:pb-12 2xl:pb-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
-                <ProductHeader />
-                <ProductFilter
+                <ProjectHeader />
+                <ProjectFilter
                     activeCategory={activeCategory}
                     setActiveCategory={setActiveCategory}
                 />
@@ -66,7 +70,7 @@ const ProductPage: React.FC = () => {
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredProducts.map((product, index) => (
-                            <ProductCard key={product.title} product={product} index={index} />
+                            <ProjectCard key={product.title} product={product} index={index} />
                         ))}
                     </AnimatePresence>
                 </motion.div>

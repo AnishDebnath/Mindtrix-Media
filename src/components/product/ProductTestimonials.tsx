@@ -1,17 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { productTestimonials as testimonials, ProductTestimonial } from '@/data/testimonialData';
+import TitleIconCapsule from '../ui/TitleIconCapsule';
+
+const trustIcons = [
+    { icon: 'verified', color: 'text-primary' },
+    { icon: 'stars', color: 'text-secondary' },
+    { icon: 'favorite', color: 'text-primary' },
+    { icon: 'thumb_up', color: 'text-secondary' },
+];
+
+const growthIcons = [
+    { icon: 'trending_up', color: 'text-secondary' },
+    { icon: 'rocket_launch', color: 'text-primary' },
+    { icon: 'public', color: 'text-secondary' },
+    { icon: 'storefront', color: 'text-primary' },
+];
 
 const TestimonialCard: React.FC<{ item: ProductTestimonial }> = ({ item }) => (
     <motion.div
-        whileHover={{ scale: 1.02, translateY: -5 }}
-        className="flex-shrink-0 w-[280px] md:w-[340px] 2xl:w-[380px] bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[1rem] md:rounded-[1.2rem] p-5 md:p-6 mr-4 md:mr-6 shadow-xl shadow-black/5"
+        whileHover={{ scale: 1.02, translateY: -4 }}
+        className="flex-shrink-0 w-[260px] md:w-[300px] 2xl:w-[340px] bg-white dark:bg-neutral-950/70 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] rounded-xl md:rounded-2xl p-3 md:p-3.5 mr-3 md:mr-4 shadow-sm"
     >
-        <div className="flex flex-col gap-3 md:gap-4">
-            <div className="flex items-center gap-3 pb-2">
+        <div className="flex flex-col gap-1.5 md:gap-2">
+            <div className="flex items-center gap-2.5 pb-1">
                 <div className="flex-shrink-0 relative">
-                    <img src={item.avatar} alt={item.handle} loading="lazy" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-100 dark:bg-slate-800 object-cover border-2 border-primary/20" />
-                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-slate-900">
+                    <img src={item.avatar} alt={item.handle} loading="lazy" className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-slate-100 dark:bg-neutral-800 object-cover border border-slate-200 dark:border-white/[0.1]" />
+                    <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center border-2 border-white dark:border-neutral-900">
                         <span className="material-symbols-rounded text-[6px] md:text-[8px] text-white">verified</span>
                     </div>
                 </div>
@@ -20,7 +35,7 @@ const TestimonialCard: React.FC<{ item: ProductTestimonial }> = ({ item }) => (
                     <p className="text-primary font-bold text-[9px] md:text-[10px] tracking-wider uppercase">{item.handle}</p>
                 </div>
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-[11px] md:text-xs leading-relaxed font-medium line-clamp-2">
+            <p className="text-slate-600 dark:text-neutral-400 text-[11px] md:text-xs leading-relaxed font-normal line-clamp-2">
                 "{item.text}"
             </p>
         </div>
@@ -52,9 +67,13 @@ const ProductTestimonials: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
                 >
-                    Trusted by Growing <span className="text-primary">Businesses</span>
+                    Trusted by{' '}
+                    <TitleIconCapsule icons={trustIcons} delay={0} />{' '}
+                    <span className="text-primary">Growing</span>{' '}
+                    <TitleIconCapsule icons={growthIcons} delay={700} initialIndex={1} />{' '}
+                    <span className="text-secondary">Businesses</span>
                 </motion.h2>
 
                 <motion.p
@@ -62,7 +81,7 @@ const ProductTestimonials: React.FC = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal"
+                    className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal"
                 >
                     Join 20+ businesses and brands who have accelerated their growth with our premium digital solutions and strategic expertise.
                 </motion.p>

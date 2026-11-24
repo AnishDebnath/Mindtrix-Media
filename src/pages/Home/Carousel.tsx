@@ -390,7 +390,7 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                                             e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
                                         }
                                     }}
-                                    className={`group relative flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 whitespace-nowrap select-none cursor-pointer shrink-0 ${isActive
+                                    className={`group relative flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-[14px] font-semibold tracking-tight transition-all duration-200 whitespace-nowrap select-none cursor-pointer shrink-0 ${isActive
                                             ? 'text-white'
                                             : 'text-slate-600 dark:text-neutral-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-neutral-900'
                                         }`}

@@ -33,7 +33,7 @@ const MarqueeTag: React.FC = () => {
                     {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white border border-slate-300 shadow-sm whitespace-nowrap min-w-max transition-colors duration-300"
+                            className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-slate-300 shadow-sm whitespace-nowrap min-w-max transition-colors duration-300"
                         >
                             <span className={`text-xs ${i % 2 === 0 ? 'text-primary' : 'text-secondary'}`}>✦</span>
                             <span className="font-sans font-semibold text-slate-900 text-xs md:text-sm tracking-tight">

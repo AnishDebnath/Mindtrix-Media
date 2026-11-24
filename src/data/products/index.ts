@@ -1,8 +1,5 @@
-import { thePhotographersHouse } from './the-photographers-house';
-import { ecommercePlatform } from './ecommerce-platform';
-import { digitalBusinessCard } from './digital-business-card';
-import { fenceFittingsEcommerce } from './fence-fittings-ecommerce';
-import { luxuryJewelleryEcommercePlatform } from './luxury-jewellery-ecommerce-platform';
+import { clientProjects } from '../clients';
+import { prebuiltProjects } from '../pre-built-projects';
 import { jewelleryCrmSystem } from './jewellery-crm-system';
 import { carRentalErp } from './car-rental-erp';
 
@@ -41,6 +38,8 @@ export interface Product {
     }[];
 }
 
-export const categories = ["Prebuilt", "Customized"];
+export const categories = ["Clients", "Pre-built"];
 
-export const products: Product[] = [thePhotographersHouse, ecommercePlatform, digitalBusinessCard, fenceFittingsEcommerce, luxuryJewelleryEcommercePlatform, jewelleryCrmSystem, carRentalErp];
+export const productItems = [jewelleryCrmSystem, carRentalErp];
+
+export const products: Product[] = [...clientProjects, ...prebuiltProjects, ...productItems];
