@@ -42,7 +42,13 @@ const Home: React.FC = () => {
                     description: 'Website development and software solutions agency specialising in custom CRM, ERP, SaaS and e-commerce platforms for businesses worldwide.',
                     address: { '@type': 'PostalAddress', addressLocality: 'Kolkata', addressCountry: 'IN' },
                     contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'mindtrixmediaindia@gmail.com' },
-                    // sameAs: ['https://www.linkedin.com/company/mindtrix-media', 'https://twitter.com/MindtrixMedia'],
+                    sameAs: [
+                        'https://www.youtube.com/@Mindtrixmediaindia',
+                        'https://x.com/Mindtrixmediain',
+                        'https://www.linkedin.com/company/mindtrix-media',
+                        'https://www.instagram.com/mindtrixmedia',
+                        'https://www.facebook.com/people/Mindtrix-Media/61579576556432/'
+                    ],
                 },
                 {
                     '@type': 'WebSite',
