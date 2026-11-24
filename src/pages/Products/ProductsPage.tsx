@@ -71,50 +71,6 @@ const productList: ProductItem[] = [
         description: 'Interactive multimedia invitation platform for high-end weddings, VIP galas, and corporate summits with live RSVP tracking and QR guest check-in.',
         features: ['Custom Micro-Site', 'Live RSVP Sync', 'QR Ticket Check-In', 'Google Maps / Calendar'],
         path: '/free-prototype'
-    },
-    {
-        id: 'crh-erp',
-        title: 'Camera Rental House Cloud ERP',
-        category: 'erp',
-        categoryLabel: 'ERP & Fleet',
-        status: 'Live in Production',
-        logo: crhLogo,
-        description: 'Specialized cinema gear, lens, and camera rental management software with serial-number tracking, crew dispatch, and multi-day invoicing.',
-        features: ['Serial Number Inventory', 'Multi-day Booking', 'Crew Management', 'Damage & Deposit Logs'],
-        path: '/product/car-rental-erp'
-    },
-    {
-        id: 'charu-wholesale',
-        title: 'Charu Wholesale & Distribution ERP',
-        category: 'erp',
-        categoryLabel: 'ERP & Fleet',
-        status: 'Live in Production',
-        logo: charuLogo,
-        description: 'Large-scale multi-branch wholesale inventory, GST billing, vendor replenishment, and B2B dealer distribution management system.',
-        features: ['Multi-Warehouse Sync', 'GST Invoicing', 'B2B Dealer Ledger', 'Automated PO Orders'],
-        path: '/product/digital-business-card'
-    },
-    {
-        id: 'gold-crm',
-        title: 'Gold CRM & Luxury POS System',
-        category: 'crm',
-        categoryLabel: 'Retail & CRM',
-        status: 'Live in Production',
-        logo: goldLogo,
-        description: 'High-precision jewellery retail point-of-sale, live bullion rate integration, bespoke order tracking, and VIP customer lifecycle management.',
-        features: ['Live Gold/Silver Rates', 'Hallmark Tracking', 'Custom Order Pipeline', 'VIP Loyalty Points'],
-        path: '/product/jewellery-crm-system'
-    },
-    {
-        id: 'garulink-logistics',
-        title: 'Garulink Global Logistics Engine',
-        category: 'erp',
-        categoryLabel: 'ERP & Fleet',
-        status: 'Live in Production',
-        logo: garulinkLogo,
-        description: 'Global freight forwarding, automated bill-of-lading generation, customs clearance workflow, and real-time cargo container tracking.',
-        features: ['Container Tracking', 'Customs Doc Automation', 'Route Optimization', 'Multi-Currency Settlement'],
-        path: '/services'
     }
 ];
 
@@ -122,8 +78,7 @@ const categoryTabs = [
     { id: 'all', label: 'All Products', icon: 'grid_view' },
     { id: 'erp', label: 'ERP & Fleet', icon: 'directions_car' },
     { id: 'media', label: 'Media & Studio', icon: 'photo_camera' },
-    { id: 'events', label: 'Events & RSVP', icon: 'celebration' },
-    { id: 'crm', label: 'Retail & CRM', icon: 'diamond' }
+    { id: 'events', label: 'Events & RSVP', icon: 'celebration' }
 ];
 
 export const ProductsPage: React.FC = () => {

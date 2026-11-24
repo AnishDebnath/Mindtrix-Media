@@ -11,7 +11,7 @@ import grid2Img from "@/assets/products/charu enterprise ecommerce/grid2.png";
 export const fenceFittingsEcommerce = {
     id: "fence-fittings-ecommerce",
     title: "Fence Fittings E-Commerce Platform (B2B)",
-    category: "Prebuilt",
+    category: "Customized",
     image: coverImg,
     client: "Mindtrix Media",
     industry: "Manufacturing & Industrial Hardware",

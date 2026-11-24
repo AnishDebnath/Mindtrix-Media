@@ -9,7 +9,7 @@ import grid2Img from "@/assets/products/charu enterprise/grid2.png";
 export const digitalBusinessCard = {
     id: "digital-business-card",
     title: "Digital Business Card & Company Landing Page",
-    category: "Prebuilt",
+    category: "Customized",
     image: coverImg,
     client: "Mindtrix Media",
     industry: "Manufacturing & Industrial Hardware",
