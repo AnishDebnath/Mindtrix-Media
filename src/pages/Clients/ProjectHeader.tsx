@@ -25,7 +25,7 @@ const ProductHeader: React.FC = () => {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md shadow-sm mb-4"
             >
                 <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
-                    <span className="material-symbols-rounded text-sm">verified</span> Client Case Studies
+                    <span className="material-symbols-rounded text-sm">deployed_code</span> Our Clients &amp; Projects
                 </span>
             </motion.div>
 

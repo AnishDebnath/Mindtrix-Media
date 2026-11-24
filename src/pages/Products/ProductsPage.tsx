@@ -2,6 +2,21 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import useSEO from '../../utils/useSEO';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
+
+const scaleIcons = [
+    { icon: 'deployed_code', color: 'text-primary' },
+    { icon: 'rocket_launch', color: 'text-secondary' },
+    { icon: 'auto_awesome', color: 'text-primary' },
+    { icon: 'apps', color: 'text-secondary' },
+];
+
+const leadIcons = [
+    { icon: 'trending_up', color: 'text-secondary' },
+    { icon: 'terminal', color: 'text-primary' },
+    { icon: 'verified', color: 'text-secondary' },
+    { icon: 'bolt', color: 'text-primary' },
+];
 
 import rentaloneLogo from '@/assets/brand logo/rentalone.png';
 import tphLogo from '@/assets/brand logo/tph.png';
@@ -130,199 +145,189 @@ export const ProductsPage: React.FC = () => {
             {/* Top Container */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
 
-                {/* Hero Header */}
-                <div className="text-center mb-12 md:mb-16">
+                {/* Hero Header (Same as Clients Page Header) */}
+                <div className="text-center mb-10 md:mb-12">
                     <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A0A0A] shadow-xs mb-4"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md shadow-sm mb-4"
                     >
-                        <span className="material-symbols-rounded text-primary text-base">widgets</span>
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-neutral-200">
-                            Mindtrix Product Ecosystem
+                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
+                            <span className="material-symbols-rounded text-sm">widgets</span> Mindtrix Product Ecosystem
                         </span>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-950 dark:text-white max-w-4xl mx-auto"
+                        transition={{ duration: 0.8 }}
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white max-w-3xl mx-auto mb-3"
                     >
-                        Engineered for <span className="text-primary">Scale</span>, Built to{' '}
-                        <span className="text-secondary">Lead</span>
+                        Engineered for <span className="text-primary">Scale</span>{' '}
+                        <TitleIconCapsule icons={scaleIcons} delay={0} />{' '}
+                        <br className="hidden sm:inline" />
+                        Built to <span className="text-secondary">Lead</span>{' '}
+                        <TitleIconCapsule icons={leadIcons} delay={700} initialIndex={1} />
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                        className="text-sm md:text-base text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto mt-5 leading-relaxed font-normal"
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                        className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal px-4"
                     >
                         Explore Mindtrix Media's suite of proprietary ERP platforms, media studio software, and specialized business solutions engineered for maximum operational throughput.
                     </motion.p>
+                </div>
 
-                    {/* Filter Tabs */}
-                    <div className="flex items-center justify-center gap-2 mt-8 flex-wrap">
-                        {categoryTabs.map((tab) => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setSelectedCategory(tab.id)}
-                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${selectedCategory === tab.id
-                                    ? 'bg-primary text-white shadow-md shadow-primary/25 scale-105'
-                                    : 'bg-white dark:bg-[#0A0A0A] text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-white/10 hover:border-primary/50'
+                {/* Filter Tabs (Same scrollable segmented pill bar as Marquee/Home) */}
+                <div className="flex justify-center mb-8 md:mb-10 px-4">
+                    <div
+                        className="inline-flex items-center gap-1 sm:gap-1.5 p-1 rounded-2xl bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/[0.12] shadow-sm backdrop-blur-md max-w-full overflow-x-auto no-scrollbar scrollbar-none touch-pan-x select-none"
+                    >
+                        {categoryTabs.map((tab) => {
+                            const isActive = selectedCategory === tab.id;
+                            return (
+                                <button
+                                    key={tab.id}
+                                    onClick={(e) => {
+                                        setSelectedCategory(tab.id);
+                                        e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                                    }}
+                                    className={`group relative flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-[14px] font-semibold tracking-tight transition-all duration-200 whitespace-nowrap select-none cursor-pointer shrink-0 ${
+                                        isActive
+                                            ? 'text-white'
+                                            : 'text-slate-600 dark:text-neutral-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-neutral-900'
                                     }`}
-                            >
-                                <span className="material-symbols-rounded text-base">{tab.icon}</span>
-                                <span>{tab.label}</span>
-                            </button>
-                        ))}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="activeProductFilterPill"
+                                            className="absolute inset-0 rounded-xl bg-primary shadow-xs"
+                                            transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                                        />
+                                    )}
+                                    <span
+                                        className={`material-symbols-rounded text-sm relative z-10 transition-colors ${
+                                            isActive ? 'text-white' : 'text-slate-400 dark:text-neutral-500 group-hover:text-primary dark:group-hover:text-primary'
+                                        }`}
+                                    >
+                                        {tab.icon}
+                                    </span>
+                                    <span className="relative z-10">{tab.label}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
 
-                {/* Products Grid */}
+                {/* Products Stack (Same card design as Clients Page ProjectCard) */}
                 <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
+                    className="flex flex-col max-w-6xl mx-auto"
                 >
                     <AnimatePresence mode="popLayout">
-                        {filtered.map((product) => (
-                            <motion.div
-                                key={product.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.96 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.96 }}
-                                transition={{ duration: 0.25 }}
-                                className="group flex flex-col justify-between bg-white dark:bg-[#0A0A0A] rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-300"
-                            >
-                                <div>
-                                    {/* Top Bar: Category Pill & Status Badge */}
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-neutral-300 rounded-lg">
-                                            {product.categoryLabel}
-                                        </span>
-                                        <span className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg ${product.status === 'Coming Soon'
-                                            ? 'bg-secondary text-slate-950 shadow-xs'
-                                            : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
-                                            }`}>
-                                            {product.status}
-                                        </span>
-                                    </div>
+                        {filtered.map((product, index) => {
+                            const isAlternate = index % 2 === 1;
+                            return (
+                                <motion.div
+                                    key={product.id}
+                                    layout
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.96 }}
+                                    viewport={{ once: true, margin: '-10%' }}
+                                    transition={{ duration: 0.5, delay: 0.05 }}
+                                    className="mb-6 md:mb-8"
+                                >
+                                    <div className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md overflow-hidden">
+                                        <div className={`flex flex-col lg:flex-row items-stretch gap-4 lg:gap-6 ${isAlternate ? 'lg:flex-row-reverse' : ''}`}>
 
-                                    {/* Brand Logo Card Viewport */}
-                                    <div className="w-full h-32 rounded-xl bg-[#F8FAFC] dark:bg-black border border-slate-200 dark:border-white/10 flex items-center justify-center p-4 mb-5 group-hover:border-primary/40 transition-colors">
-                                        <img
-                                            src={product.logo}
-                                            alt={product.title}
-                                            className="max-h-16 max-w-[80%] object-contain filter group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                    </div>
-
-                                    {/* Title & Description */}
-                                    <h3 className="text-lg md:text-xl font-bold text-slate-950 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors">
-                                        {product.title}
-                                    </h3>
-                                    <p className="text-xs md:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed mb-5">
-                                        {product.description}
-                                    </p>
-
-                                    {/* Feature Pills */}
-                                    <div className="flex flex-wrap gap-1.5 mb-6">
-                                        {product.features.map((feat, i) => (
-                                            <span
-                                                key={i}
-                                                className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-[#F8FAFC] dark:bg-black border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-neutral-300"
+                                            {/* Left/Right Visual Box: Gradient Frame + Floating Brand Logo Window */}
+                                            <div
+                                                className={`w-full lg:w-[46%] rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-5 flex items-center justify-center relative overflow-hidden group ${
+                                                    isAlternate
+                                                        ? 'bg-gradient-to-br from-secondary/20 via-amber-100/70 to-primary/15 dark:from-secondary/15 dark:via-neutral-900 dark:to-primary/10'
+                                                        : 'bg-gradient-to-br from-primary/20 via-indigo-100/70 to-secondary/15 dark:from-primary/20 dark:via-neutral-900 dark:to-secondary/10'
+                                                }`}
                                             >
-                                                {feat}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
+                                                {/* Subtle Grid Line Pattern */}
+                                                <div
+                                                    className="absolute inset-0 opacity-30 dark:opacity-15 pointer-events-none"
+                                                    style={{
+                                                        backgroundImage: 'linear-gradient(to right, rgba(99,92,247,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,92,247,0.12) 1px, transparent 1px)',
+                                                        backgroundSize: '36px 36px',
+                                                    }}
+                                                />
 
-                                {/* Bottom Action */}
-                                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
-                                    <Link
-                                        to={product.path}
-                                        className="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
-                                    >
-                                        Explore Architecture
-                                        <span className="material-symbols-rounded text-sm">arrow_forward</span>
-                                    </Link>
-                                    <Link
-                                        to="/contact"
-                                        className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-colors"
-                                    >
-                                        Inquire
-                                    </Link>
-                                </div>
-                            </motion.div>
-                        ))}
+                                                {/* Floating Inner Clean Logo Frame (4/3 Ratio) */}
+                                                <div className="relative z-10 w-full max-w-[440px] bg-white dark:bg-neutral-950 rounded-xl md:rounded-2xl border border-slate-200/90 dark:border-white/10 shadow-xl overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
+                                                    <div className="aspect-[4/3] w-full flex items-center justify-center p-8 bg-slate-50/70 dark:bg-black/60">
+                                                        <img
+                                                            src={product.logo}
+                                                            alt={product.title}
+                                                            loading="lazy"
+                                                            className="max-h-24 max-w-[75%] object-contain filter group-hover:scale-105 transition-transform duration-500"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Right/Left Details Content */}
+                                            <div className="w-full lg:w-[54%] p-4 sm:p-5 md:p-6 flex flex-col justify-center items-start text-left">
+                                                {/* Category Label */}
+                                                <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
+                                                    {product.categoryLabel}
+                                                </span>
+
+                                                {/* Title */}
+                                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2.5 tracking-tight leading-tight">
+                                                    {product.title}
+                                                </h3>
+
+                                                {/* Description */}
+                                                <p className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed mb-4">
+                                                    {product.description}
+                                                </p>
+
+                                                {/* Features List */}
+                                                <ul className="space-y-1.5 mb-6">
+                                                    {product.features.slice(0, 4).map((feat, idx) => (
+                                                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-neutral-400">
+                                                            <span className="w-4 h-4 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                                                                <span className="material-symbols-rounded text-xs font-bold">check</span>
+                                                            </span>
+                                                            <span className="leading-snug">{feat}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+
+                                                {/* Action Area */}
+                                                <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+                                                    <Link
+                                                        to={product.path}
+                                                        className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-4 py-2 rounded-xl font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all group/btn"
+                                                    >
+                                                        <span>Explore Architecture</span>
+                                                        <span className="material-symbols-rounded text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+                                                    </Link>
+
+                                                    <Link
+                                                        to="/contact"
+                                                        className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900/60 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 px-4 py-2 rounded-xl border border-slate-200/80 dark:border-white/[0.1] font-medium text-xs sm:text-sm backdrop-blur-md hover:scale-[1.02] active:scale-95 transition-all"
+                                                    >
+                                                        <span>Inquire</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </AnimatePresence>
                 </motion.div>
-
-                {/* Enterprise Pillars Banner */}
-                <div className="rounded-2xl bg-white dark:bg-[#0A0A0A] border border-slate-200 dark:border-white/10 p-8 md:p-12 mb-16 shadow-sm">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                        <div>
-                            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto md:mx-0">
-                                <span className="material-symbols-rounded text-2xl">verified</span>
-                            </div>
-                            <h4 className="text-base font-bold text-slate-950 dark:text-white mb-2">
-                                Zero Legacy Debt
-                            </h4>
-                            <p className="text-xs md:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                                Built from the ground up with modern high-performance microservices and cloud-native databases.
-                            </p>
-                        </div>
-
-                        <div>
-                            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto md:mx-0">
-                                <span className="material-symbols-rounded text-2xl">speed</span>
-                            </div>
-                            <h4 className="text-base font-bold text-slate-950 dark:text-white mb-2">
-                                Rapid Custom Deployment
-                            </h4>
-                            <p className="text-xs md:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                                Tailored to your company's workflows with instant API integrations and bespoke interface adaptations.
-                            </p>
-                        </div>
-
-                        <div>
-                            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto md:mx-0">
-                                <span className="material-symbols-rounded text-2xl">security</span>
-                            </div>
-                            <h4 className="text-base font-bold text-slate-950 dark:text-white mb-2">
-                                Enterprise Security & SLA
-                            </h4>
-                            <p className="text-xs md:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                                Complete role-based access control, cryptographic data safety, and guaranteed 99.9% system availability.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom Call to Action */}
-                <div className="rounded-2xl bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10 border border-primary/20 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div>
-                        <span className="text-[11px] font-black uppercase tracking-wider text-primary mb-1 block">
-                            Need a Tailored System?
-                        </span>
-                        <h3 className="text-xl md:text-2xl font-extrabold text-slate-950 dark:text-white tracking-tight">
-                            Build a Custom Enterprise Platform with Mindtrix
-                        </h3>
-                        <p className="text-xs md:text-sm text-slate-600 dark:text-neutral-400 mt-1 max-w-xl">
-                            Our engineering team designs and ships bespoke ERPs, internal portals, and customer-facing SaaS platforms.
-                        </p>
-                    </div>
-                    <Link
-                        to="/free-prototype"
-                        className="px-6 py-3 rounded-xl bg-primary text-white font-bold text-sm shadow-md hover:bg-primaryDark hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center gap-2"
-                    >
-                        Request Free Prototype
-                        <span className="material-symbols-rounded text-base">arrow_forward</span>
-                    </Link>
-                </div>
 
             </div>
         </div>

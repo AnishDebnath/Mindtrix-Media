@@ -66,13 +66,18 @@ const ProjectCard: React.FC<ProductCardProps> = ({ product, index }) => {
                         {/* Title */}
                         <h3
                             onClick={() => navigate(`/product/${product.id}`)}
-                            className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight hover:text-primary transition-colors"
+                            className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2.5 tracking-tight leading-tight hover:text-primary transition-colors"
                         >
                             {product.title.split(':')[0]}
                         </h3>
 
+                        {/* Description */}
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-2">
+                            {product.description}
+                        </p>
+
                         {/* Services/Highlights List */}
-                        <ul className="space-y-2 mb-6">
+                        <ul className="space-y-1.5 mb-6">
                             {product.services.slice(0, 4).map((service, idx) => (
                                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-neutral-400">
                                     <span className="w-4 h-4 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
