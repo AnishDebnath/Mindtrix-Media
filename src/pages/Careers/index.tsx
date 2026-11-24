@@ -47,7 +47,7 @@ const CareersPage: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="py-8 md:py-12 2xl:py-16 relative"
+                    className="pt-2 pb-8 md:pt-4 md:pb-12 relative"
                 >
                     {openings.length > 0 ? (
                         <div className="grid grid-cols-1 gap-4 md:gap-6">

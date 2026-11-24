@@ -55,42 +55,42 @@ const ContactForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative h-full overflow-hidden bg-white/95 backdrop-blur-2xl p-6 md:p-8 2xl:p-10 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-slate-200/90"
+            className="relative h-full overflow-hidden bg-white dark:bg-neutral-950/70 backdrop-blur-md p-4 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08]"
         >
             {/* Decorative background gradients */}
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
 
-            <form onSubmit={handleSubmit} className="relative h-full flex flex-col space-y-5">
-                <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Full Name <span className="text-primary">*</span></label>
+            <form onSubmit={handleSubmit} className="relative h-full flex flex-col space-y-3.5">
+                <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Full Name <span className="text-primary">*</span></label>
                     <input
                         required
                         type="text"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-300 rounded-xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                        className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="John Doe"
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Email Address <span className="text-primary">*</span></label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Email Address <span className="text-primary">*</span></label>
                         <input
                             required
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-white border border-slate-300 rounded-xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="john@example.com"
                         />
                     </div>
-                    <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Phone No <span className="text-primary">*</span></label>
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Phone No <span className="text-primary">*</span></label>
                         <input
                             required
                             type="tel"
@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             pattern="[0-9+ ]*"
-                            className="w-full bg-white border border-slate-300 rounded-xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="+91 XXXXX-XXXXX"
                         />
                     </div>

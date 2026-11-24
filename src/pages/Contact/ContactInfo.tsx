@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, animate } from 'framer-motion';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
+
+const contactIcons = [
+    { icon: 'mail', color: 'text-primary' },
+    { icon: 'chat', color: 'text-secondary' },
+    { icon: 'call', color: 'text-primary' },
+    { icon: 'auto_awesome', color: 'text-secondary' },
+];
 
 const contactInfo = [
     {
@@ -63,7 +71,7 @@ const ContactInfo: React.FC = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white shadow-sm mb-4"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
             >
                 <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                     <span className="material-symbols-rounded text-sm">mail</span> Contact Us
@@ -72,12 +80,11 @@ const ContactInfo: React.FC = () => {
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 md:mb-8 tracking-tight leading-[1.08]"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
             >
-                Let's start a <br />
-                <span className="text-primary">
-                    conversation.
-                </span>
+                Let's Start a{' '}
+                <TitleIconCapsule icons={contactIcons} delay={0} />{' '}
+                <span className="text-primary">Conversation</span>
             </motion.h1>
             <motion.p
                 initial={{ opacity: 0 }}
@@ -98,12 +105,12 @@ const ContactInfo: React.FC = () => {
                             <span className="material-symbols-rounded text-[18px]">{info.icon}</span>
                         </div>
                         <div>
-                            <h3 className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-0.5">{info.title}</h3>
+                            <h3 className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-0.5">{info.title}</h3>
                             <a
                                 href={info.href}
                                 target={info.title === "Office" ? "_blank" : undefined}
                                 rel={info.title === "Office" ? "noopener noreferrer" : undefined}
-                                className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-300"
+                                className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-primary dark:hover:text-secondary transition-colors duration-300"
                             >
                                 {info.value}
                             </a>
@@ -120,10 +127,10 @@ const ContactInfo: React.FC = () => {
                     hidden: { opacity: 0, y: 20 },
                     show: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } }
                 }}
-                className="flex flex-row items-center justify-start gap-4 mt-10 pt-10 border-t border-slate-300 dark:border-slate-600"
+                className="flex flex-row items-center justify-start gap-3 mt-6 pt-6 border-t border-slate-300 dark:border-slate-600"
             >
                 <div
-                    className="flex items-center h-16 cursor-pointer"
+                    className="flex items-center h-10 cursor-pointer"
                     onMouseEnter={() => setIsAvatarHovered(true)}
                     onMouseLeave={() => setIsAvatarHovered(false)}
                 >
@@ -135,22 +142,22 @@ const ContactInfo: React.FC = () => {
                         <motion.div
                             key={i}
                             animate={{
-                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -4 : -16),
+                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -4 : -12),
                                 zIndex: i,
                             }}
-                            className="relative rounded-full border-[3px] border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-10 h-10 shadow-sm"
+                            className="relative rounded-full border-2 border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-8 h-8 shadow-sm"
                         >
                             <img className="w-full h-full object-cover" src={src} alt="Client" />
                         </motion.div>
                     ))}
                 </div>
                 <div>
-                    <div className="flex gap-1 mb-1">
+                    <div className="flex gap-0.5 mb-0.5">
                         {[1, 2, 3, 4, 5].map((_, i) => (
-                            <span key={i} className="material-symbols-rounded text-secondary text-[16px]">star</span>
+                            <span key={i} className="material-symbols-rounded text-secondary text-[13px]">star</span>
                         ))}
                     </div>
-                    <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300">
+                    <p className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
                         Trusted by <CountUp val={10} />+ clients
                     </p>
                 </div>

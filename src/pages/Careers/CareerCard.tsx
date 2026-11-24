@@ -15,29 +15,29 @@ const CareerCard: React.FC<CareerCardProps> = ({ opening, index }) => {
             whileHover={{ y: -5, scale: 1.005 }}
             viewport={{ once: true }}
             transition={{ type: "tween", duration: 0.3, ease: "easeOut", delay: index * 0.1 }}
-            className="bg-white rounded-[1.5rem] p-6 md:p-8 border border-slate-200/90 shadow-[0_2px_12px_rgba(0,0,0,0.04)] group hover:shadow-xl hover:border-slate-300 overflow-hidden relative transition-all duration-300"
+            className="bg-white dark:bg-neutral-950/70 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 md:p-5 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] group hover:shadow-xl hover:border-slate-300 overflow-hidden relative transition-all duration-300"
         >
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-10">
                 {/* Left - Role Info */}
                 <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-4">
-                        <span className="px-3 py-1 bg-indigo-50 border border-indigo-100/80 rounded-lg text-xs font-semibold uppercase tracking-wider text-primary">
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="px-3 py-1 bg-indigo-50 dark:bg-primary/10 border border-indigo-100/80 dark:border-primary/20 rounded-lg text-[10px] md:text-xs font-semibold uppercase tracking-wider text-primary">
                             {opening.type}
                         </span>
-                        <span className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-700">
+                        <span className="px-3 py-1 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg text-[10px] md:text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
                             {opening.location}
                         </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
                         {opening.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-5 font-normal">
+                    <p className="text-slate-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
                         {opening.description}
                     </p>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {opening.perks.map((perk, i) => (
-                            <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-xs md:text-sm">
+                            <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
                                 <span className="material-symbols-rounded text-sm text-primary mt-0.5 flex-shrink-0">check_circle</span>
                                 {perk}
                             </li>
