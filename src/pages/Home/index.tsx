@@ -9,6 +9,7 @@ import useSEO from '../../utils/useSEO';
 const FreePrototype = lazy(() => import('../../components/sections/FreePrototype'));
 const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
 const Process = lazy(() => import('../../components/sections/Process'));
+const Pricing = lazy(() => import('../../components/sections/Pricing'));
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
 const OurSolution = lazy(() => import('../../components/sections/OurSolution'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
@@ -99,6 +100,9 @@ const Home: React.FC = () => {
             </Suspense>
             <Suspense fallback={null}>
                 <Testimonials />
+            </Suspense>
+            <Suspense fallback={null}>
+                <Pricing />
             </Suspense>
             <Suspense fallback={null}>
                 <FAQ />
