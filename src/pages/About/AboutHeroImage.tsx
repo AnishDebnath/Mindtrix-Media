@@ -11,7 +11,7 @@ const AboutHeroImage: React.FC = () => {
                 initial={{ opacity: 0, y: 40, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-[16/9] md:aspect-[21/9] shadow-xl border border-white/10"
+                className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9] shadow-xl border border-slate-200/80 dark:border-white/10"
             >
                 <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80"

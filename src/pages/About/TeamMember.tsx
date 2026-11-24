@@ -19,9 +19,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
             transition={{ delay, duration: 0.6, ease: "easeOut" }}
             className="group"
         >
-            <div className="bg-white dark:bg-slate-900/40 backdrop-blur-xl rounded-[1.5rem] border border-slate-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 p-2.5 h-full flex flex-col">
+            <div className="bg-white dark:bg-neutral-950/70 backdrop-blur-md rounded-2xl md:rounded-3xl border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 p-2 h-full flex flex-col">
                 {/* Image Container */}
-                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 rounded-[1rem] mb-3 border border-slate-100 dark:border-white/5">
+                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-800/50 rounded-xl md:rounded-2xl mb-2 border border-slate-200/60 dark:border-white/[0.06]">
                     <img
                         src={member.image}
                         alt={member.name}
@@ -31,8 +31,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ member, delay }) => {
                 </div>
 
                 {/* Content Area */}
-                <div className="p-4 pt-1 lg:p-3 lg:pt-0.5 xl:p-4 xl:pt-1 flex flex-col flex-1 relative">
-                    <div className="flex flex-col gap-1.5">
+                <div className="px-2 pb-1.5 pt-0 flex flex-col flex-1 relative">
+                    <div className="flex flex-col gap-1">
                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight">
                             {member.name}
                         </h3>
