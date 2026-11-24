@@ -38,7 +38,7 @@ const OurSolution: React.FC = () => {
     return (
         <section className="py-8 md:py-12 2xl:py-16 bg-transparent" id="solution">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -90,65 +90,85 @@ const OurSolution: React.FC = () => {
                     </motion.div>
                 </div>
 
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-3 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md relative overflow-hidden"
+                        className="rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-2.5 sm:p-3 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md overflow-hidden"
                     >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 items-stretch">
                             {/* Problems Column */}
-                            <div className={`flex flex-col p-6 md:p-10 transition-all duration-500 ${highlightSolution ? 'opacity-50 blur-[0.5px] grayscale' : 'opacity-100'}`}>
-                                <h3 className="text-lg md:text-xl font-bold text-slate-800 dark:text-slate-200 mb-8 text-center tracking-tight">Business Challenges</h3>
-                                <ul className="space-y-6">
-                                    {problems.map((problem, idx) => (
-                                        <motion.li
-                                            key={idx}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: idx * 0.1 }}
-                                            className="flex items-center gap-4 text-slate-600 dark:text-neutral-400 font-medium text-sm md:text-base"
-                                        >
-                                            <div className="flex-shrink-0 w-6 h-6 rounded-full border border-red-500/20 bg-red-500/10 flex items-center justify-center">
-                                                <span className="material-symbols-rounded text-red-500 text-xs font-bold">close</span>
-                                            </div>
-                                            {problem}
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Solutions Column */}
                             <motion.div
-                                className="flex flex-col bg-slate-50 dark:bg-neutral-900/80 rounded-xl md:rounded-2xl p-6 md:p-10 border border-slate-200/90 dark:border-white/[0.08] shadow-md relative overflow-hidden transition-all duration-500"
+                                className="p-5 sm:p-6 md:p-7 flex flex-col justify-between relative transition-all duration-500"
+                                animate={{
+                                    opacity: !highlightSolution ? 1 : 0.45,
+                                    scale: !highlightSolution ? 1 : 0.99,
+                                    filter: !highlightSolution ? 'grayscale(0%)' : 'grayscale(100%)'
+                                }}
+                            >
+                                <div>
+                                    <div className="pb-4 mb-4 border-b border-slate-100 dark:border-white/[0.06] h-10 flex items-center justify-between">
+                                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight leading-none">
+                                            Business Challenges
+                                        </h3>
+                                    </div>
+                                    <ul className="space-y-3">
+                                        {problems.map((problem, idx) => (
+                                            <motion.li
+                                                key={idx}
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: idx * 0.1 }}
+                                                className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-neutral-400 font-medium"
+                                            >
+                                                <span className="w-4 h-4 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
+                                                    <span className="material-symbols-rounded text-[11px] font-bold">close</span>
+                                                </span>
+                                                <span className="leading-snug">{problem}</span>
+                                            </motion.li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </motion.div>
+
+                            {/* Solutions Column (Separate Inset Div) */}
+                            <motion.div
+                                className="p-5 sm:p-6 md:p-7 flex flex-col justify-between relative bg-slate-50 dark:bg-neutral-900/80 rounded-xl md:rounded-2xl border border-slate-200/90 dark:border-white/[0.08] shadow-md transition-all duration-500 overflow-hidden"
                                 animate={{
                                     opacity: highlightSolution ? 1 : 0.3,
                                     scale: highlightSolution ? 1 : 0.98,
                                     filter: highlightSolution ? 'grayscale(0%)' : 'grayscale(100%)'
                                 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-primary mb-12 text-center relative z-10">Our Solution</h3>
-                                <ul className="space-y-8 relative z-10">
-                                    {solutions.map((solution, idx) => (
-                                        <motion.li
-                                            key={idx}
-                                            initial={{ opacity: 0, x: 20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: idx * 0.1 }}
-                                            className="flex items-center gap-5 text-slate-800 dark:text-white/90 font-medium text-sm sm:text-base"
-                                        >
-                                            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-md shadow-primary/30">
-                                                <span className="material-symbols-rounded text-white text-sm font-bold">check</span>
-                                            </div>
-                                            {solution}
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                                {/* Subtle decorative glow */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
+                                {/* Accent Glow Top Right */}
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-[70px] pointer-events-none" />
+
+                                <div className="relative z-10">
+                                    <div className="pb-4 mb-4 border-b border-slate-200/70 dark:border-white/[0.08] h-10 flex items-center justify-between gap-2">
+                                        <h3 className="text-lg sm:text-xl font-bold text-primary tracking-tight leading-none">
+                                            Our Solution
+                                        </h3>
+                                    </div>
+                                    <ul className="space-y-3">
+                                        {solutions.map((solution, idx) => (
+                                            <motion.li
+                                                key={idx}
+                                                initial={{ opacity: 0, x: 20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: idx * 0.1 }}
+                                                className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 dark:text-neutral-200 font-medium"
+                                            >
+                                                <span className="w-4 h-4 rounded-full bg-primary/15 dark:bg-primary/25 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                                                    <span className="material-symbols-rounded text-xs font-bold">check</span>
+                                                </span>
+                                                <span className="leading-snug">{solution}</span>
+                                            </motion.li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </motion.div>
                         </div>
                     </motion.div>
