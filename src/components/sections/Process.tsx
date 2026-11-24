@@ -66,7 +66,7 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 mx-auto w-full">
                             <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-primary bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-muted-slate/40 shadow-sm">01</span>
@@ -82,7 +82,7 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-3 pt-1">
+                        <div className="px-2 pb-2 pt-0.5">
                             <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Drop Your Requirement</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Share your idea, business goals, and project requirements with us. We listen carefully to understand exactly what you want to build.</p>
                         </div>
@@ -94,7 +94,7 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
                             <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-secondary bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-muted-slate/40 shadow-sm">02</span>
@@ -110,7 +110,7 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-3 pt-1">
+                        <div className="px-2 pb-2 pt-0.5">
                             <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">We Do Our Magic</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Our team designs and develops your website or software using the best technologies built for your business needs.</p>
                         </div>
@@ -122,7 +122,7 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
                             <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-primary bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-muted-slate/40 shadow-sm">03</span>
@@ -138,7 +138,7 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-3 pt-1">
+                        <div className="px-2 pb-2 pt-0.5">
                             <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Feedback? Easy</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">You review the project and share feedback. We refine and improve everything until it matches your expectations perfectly.</p>
                         </div>
@@ -150,7 +150,7 @@ const Process: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
+                        className="bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 group"
                     >
                         <div className="aspect-[16/10] relative mb-3 bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06] overflow-hidden shrink-0 w-full">
                             <span className="absolute top-3 left-3 z-30 text-xs font-mono font-bold text-secondary bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-muted-slate/40 shadow-sm">04</span>
@@ -166,7 +166,7 @@ const Process: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-3 pt-1">
+                        <div className="px-2 pb-2 pt-0.5">
                             <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">Launch & Ongoing Support</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">We launch your website or system and stay available for support. We monitor performance, fix issues quickly, and provide updates to help your business grow.</p>
                         </div>

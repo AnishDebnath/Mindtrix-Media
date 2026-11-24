@@ -91,7 +91,7 @@ const Pricing: React.FC = () => {
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200/80 dark:divide-white/[0.08]">
                         {/* Plan 1: One Pager */}
-                        <div className="p-5 sm:p-6 md:p-7 flex flex-col justify-between relative group">
+                        <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-between relative group">
                             <div>
                                 {/* Top Header Row: Aligned with Company Site card */}
                                 <div className="flex items-center justify-between gap-3 mb-1.5 h-6 sm:h-7">
@@ -141,7 +141,7 @@ const Pricing: React.FC = () => {
                         </div>
 
                         {/* Plan 2: Company Site */}
-                        <div className="p-5 sm:p-6 md:p-7 flex flex-col justify-between relative bg-gradient-to-b from-primary/[0.03] to-transparent dark:from-primary/[0.06] group">
+                        <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-between relative bg-gradient-to-b from-primary/[0.03] to-transparent dark:from-primary/[0.06] group">
                             {/* Accent Glow Top Right */}
                             <div className="absolute top-0 right-0 w-56 h-56 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
 
@@ -236,7 +236,7 @@ const Pricing: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="max-w-5xl mx-auto mt-5 sm:mt-6 p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                    className="max-w-5xl mx-auto mt-5 sm:mt-6 p-3.5 sm:p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                 >
                     <div className="max-w-2xl">
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 tracking-tight">

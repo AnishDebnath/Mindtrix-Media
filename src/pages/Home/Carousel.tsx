@@ -452,34 +452,28 @@ const Carousel: React.FC<CarouselProps> = ({ windowWidth }) => {
                             className="flex gap-4 md:gap-6 px-4 min-w-max"
                         >
                             {marqueeItems.map((item, index) => (
-                                <Link
-                                    key={`${item.id}-${index}`}
-                                    to={item.link}
-                                    className="relative flex-shrink-0 w-[290px] sm:w-[420px] md:w-[480px] lg:w-[520px] bg-white dark:bg-neutral-950/70 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300 group flex flex-col"
-                                >
-                                    {/* 4/3 Aspect Ratio Image & Content Frame */}
-                                    <div className="w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative isolate group/image border border-slate-100 dark:border-white/[0.05]">
-                                        <img
-                                            src={item.img}
-                                            alt={item.title}
-                                            className="w-full h-full object-cover transform group-hover/image:scale-105 transition-transform duration-700 ease-out"
-                                        />
-
-                                        {/* Floating Glass Content Card */}
-                                        <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3.5 sm:left-3.5 sm:right-3.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-white/85 dark:bg-black/65 backdrop-blur-md border border-slate-200/60 dark:border-white/[0.1] shadow-lg flex items-center justify-between gap-2.5 z-10 transition-transform duration-300 group-hover:scale-[1.01]">
-                                            <div className="flex-1 min-w-0">
-                                                <h3 className="text-sm sm:text-base md:text-lg font-display font-bold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">{item.title}</h3>
-                                                <p className="text-muted-slate dark:text-neutral-400 font-bold text-[10px] md:text-xs tracking-wider uppercase truncate">{item.category}</p>
-                                            </div>
-
-                                            <div
-                                                className="w-7 h-7 sm:w-9 sm:h-9 flex-shrink-0 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-md"
-                                            >
-                                                <span className="material-symbols-rounded text-[14px] sm:text-[18px] transition-transform duration-300 group-hover:rotate-45">arrow_outward</span>
-                                            </div>
-                                        </div>
+                                <div key={`${item.id}-${index}`} className="flex flex-col flex-shrink-0 w-[290px] sm:w-[420px] md:w-[480px] lg:w-[520px] group">
+                                    {/* Outside Upper Title Row: Bold Name centered */}
+                                    <div className="flex items-center justify-center px-2 mb-2 min-w-0 text-center">
+                                        <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors truncate">
+                                            {item.title}
+                                        </span>
                                     </div>
-                                </Link>
+
+                                    <Link
+                                        to={item.link}
+                                        className="relative w-full bg-white dark:bg-neutral-950/70 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 border border-slate-200/80 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300 flex flex-col"
+                                    >
+                                        {/* Clean 4/3 Aspect Ratio Image Frame (Nothing overlaid on card) */}
+                                        <div className="w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative isolate group/image border border-slate-100 dark:border-white/[0.05]">
+                                            <img
+                                                src={item.img}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover transform group-hover/image:scale-105 transition-transform duration-700 ease-out"
+                                            />
+                                        </div>
+                                    </Link>
+                                </div>
                             ))}
                         </motion.div>
                     </AnimatePresence>

@@ -171,8 +171,8 @@ const Testimonials: React.FC = () => {
                                 className="flex gap-5 w-max"
                             >
                                 {[...marqueeTestimonials, ...marqueeTestimonials, ...marqueeTestimonials].map((item, i) => (
-                                    <div key={i} className="flex-shrink-0 w-[280px] md:w-[320px] 2xl:w-[360px] bg-white dark:bg-neutral-950/70 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] rounded-xl md:rounded-2xl p-4 md:p-5 mr-4 shadow-sm">
-                                        <div className="flex flex-col gap-2 md:gap-3">
+                                    <div key={i} className="flex-shrink-0 w-[260px] md:w-[300px] 2xl:w-[340px] bg-white dark:bg-neutral-950/70 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] rounded-xl md:rounded-2xl p-3 md:p-3.5 mr-3 shadow-sm">
+                                        <div className="flex flex-col gap-1.5 md:gap-2">
                                             <div className="flex items-center gap-3">
                                                 <div className="flex-shrink-0 relative">
                                                     <img src={item.avatar} alt={item.handle} className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-slate-100 dark:bg-neutral-800 object-cover border border-slate-200 dark:border-white/[0.1]" />

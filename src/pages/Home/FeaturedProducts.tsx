@@ -73,10 +73,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md backdrop-blur-md transition-all duration-300 h-full"
+                                className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 pb-3 border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md backdrop-blur-md transition-all duration-300 h-full"
                             >
                                 {/* Image Frame */}
-                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-3 md:mb-4 border border-slate-100 dark:border-white/[0.06]">
+                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-2.5 md:mb-3 border border-slate-100 dark:border-white/[0.06]">
                                     <img
                                         src={product.image}
                                         alt={product.title}
@@ -92,7 +92,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                 </div>
 
                                 {/* Info Area */}
-                                <div className="px-3 flex justify-between items-end gap-4">
+                                <div className="px-2 flex justify-between items-end gap-4">
                                     <div className="flex-1 min-w-0">
                                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors duration-300 truncate">
                                             {product.title}

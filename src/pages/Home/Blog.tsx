@@ -68,9 +68,9 @@ const Blog: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                                 whileHover={{ y: -4 }}
-                                className="group cursor-pointer bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 pb-4 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300"
+                                className="group cursor-pointer bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 pb-3 border border-slate-200/80 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md transition-all duration-300"
                             >
-                                <div className="mb-3 overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06]">
+                                <div className="mb-2.5 overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/[0.06]">
                                     <img
                                         src={post.img}
                                         alt={post.title}
@@ -78,7 +78,7 @@ const Blog: React.FC = () => {
                                         className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="px-2">
+                                <div className="px-1.5">
                                     <h3 className="text-base md:text-lg font-bold mb-1.5 text-slate-900 dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-2">
                                         {post.title}
                                     </h3>

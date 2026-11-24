@@ -119,7 +119,7 @@ const Services: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                                 whileHover={{ y: -4 }}
-                                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-5 md:p-7 flex flex-col justify-between min-h-[200px] md:min-h-[220px] 2xl:min-h-[250px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 hover:shadow-md dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 ${colSpan}`}
+                                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white dark:bg-neutral-950/70 p-4 md:p-5 flex flex-col justify-between min-h-[175px] md:min-h-[195px] 2xl:min-h-[215px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:border-slate-300 hover:shadow-md dark:border-white/[0.08] dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300 ${colSpan}`}
                             >
                                 <div className="absolute inset-0 opacity-20 pointer-events-none"
                                     style={{
@@ -134,7 +134,7 @@ const Services: React.FC = () => {
                                     <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">{service.desc}</p>
                                 </div>
 
-                                <div className="relative z-10 flex flex-wrap gap-2 mt-6 md:mt-8 mb-1">
+                                <div className="relative z-10 flex flex-wrap gap-2 mt-4 md:mt-5 mb-0">
                                     {service.tags.map((tag, i) => {
                                         const iconColor = (idx + i) % 2 === 0 ? 'text-primary' : 'text-secondary';
                                         return (

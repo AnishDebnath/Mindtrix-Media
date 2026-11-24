@@ -75,9 +75,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-3 md:mb-0 lg:mb-3 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -90,7 +90,7 @@ const WhyChooseUs: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                        <div className="px-2 pb-2 pt-0.5 md:pb-0 md:px-4 lg:px-2 lg:pb-2 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">Built For Your Business</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Every website and system we build is designed around how your business actually works. No cookie-cutter templates. No generic solutions. Just something that fits you perfectly.</p>
                         </div>
@@ -102,9 +102,9 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row-reverse lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-3 md:mb-0 lg:mb-3 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
                             <video
                                 className="w-full h-full object-cover"
                                 autoPlay
@@ -117,7 +117,7 @@ const WhyChooseUs: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                        <div className="px-2 pb-2 pt-0.5 md:pb-0 md:px-4 lg:px-2 lg:pb-2 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">Start Small, Own Anytime</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">Start with our affordable yearly subscription to launch your website or software without high upfront costs. Upgrade anytime to full ownership with complete source files and total control.</p>
                         </div>
@@ -129,7 +129,7 @@ const WhyChooseUs: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-3 md:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
+                        className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
                         <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-white/[0.06] shrink-0">
                             {/* Animated Mouse Pointer */}
@@ -175,7 +175,7 @@ const WhyChooseUs: React.FC = () => {
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="px-3 pb-4 pt-1 md:pb-0 md:px-6 lg:px-3 lg:pb-4 md:flex-1 md:flex md:flex-col md:justify-center">
+                        <div className="px-2 pb-2 pt-0.5 md:pb-0 md:px-4 lg:px-2 lg:pb-2 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">On Time, Every Time</h3>
                             <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">We follow a clear process: prototype, build, test, launch. Projects stay on track and within scope. You always know what's happening and when it will be ready.</p>
                         </div>

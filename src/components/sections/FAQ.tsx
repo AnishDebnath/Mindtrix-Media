@@ -62,7 +62,7 @@ const FAQ: React.FC = () => {
                     </div>
 
                     {/* Right Column - Accordion */}
-                    <div className="lg:col-span-7 flex flex-col gap-3.5">
+                    <div className="lg:col-span-7 flex flex-col gap-2.5">
                         {homeFaqs.map((faq, index) => {
                             const isOpen = openFAQ === index;
                             return (
@@ -72,7 +72,7 @@ const FAQ: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className={`rounded-xl md:rounded-2xl transition-all duration-300 border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm ${isOpen ? 'bg-white dark:bg-neutral-950/80 p-4 md:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border-slate-300' : 'bg-white dark:bg-neutral-950/50 px-4 py-3.5 hover:bg-slate-50 dark:hover:bg-neutral-950/70'}`}
+                                    className={`rounded-xl md:rounded-2xl transition-all duration-300 border border-slate-200/90 hover:border-slate-300 dark:border-white/[0.08] dark:hover:border-neutral-700 shadow-sm ${isOpen ? 'bg-white dark:bg-neutral-950/80 p-3 md:p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border-slate-300' : 'bg-white dark:bg-neutral-950/50 px-3.5 py-2.5 hover:bg-slate-50 dark:hover:bg-neutral-950/70'}`}
                                 >
                                     <button
                                         onClick={() => setOpenFAQ(isOpen ? null : index)}
@@ -91,11 +91,11 @@ const FAQ: React.FC = () => {
                                         {isOpen && (
                                             <motion.div
                                                 initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                                                animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                                                animate={{ height: "auto", opacity: 1, marginTop: 10 }}
                                                 exit={{ height: 0, opacity: 0, marginTop: 0 }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="p-3.5 md:p-4 bg-slate-50 dark:bg-black/50 rounded-lg md:rounded-xl border border-slate-100 dark:border-white/[0.04]">
+                                                <div className="p-2.5 md:p-3 bg-slate-50 dark:bg-black/50 rounded-lg md:rounded-xl border border-slate-100 dark:border-white/[0.04]">
                                                     <p className="text-slate-600 dark:text-neutral-400 text-xs md:text-sm leading-relaxed">
                                                         {faq.a}
                                                     </p>
