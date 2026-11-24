@@ -63,12 +63,14 @@ const StatItem: React.FC<{ stat: Stat; idx: number }> = ({ stat, idx }) => {
             : 'text-slate-900 dark:text-white';
 
     return (
-        <div className="text-center min-w-[100px] md:min-w-[140px]" ref={ref}>
-            <div className={`text-3xl md:text-4xl font-bold mb-1 tracking-tight ${colorClass}`}>
+        <div className="text-center w-full" ref={ref}>
+            <div className={`text-xl min-[360px]:text-2xl sm:text-3xl md:text-4xl font-bold mb-0.5 sm:mb-1 tracking-tight ${colorClass}`}>
                 {getFormattedCount()}
-                {isDecimal && <span className="text-secondary text-2xl md:text-3xl ml-1">★</span>}
+                {isDecimal && <span className="text-secondary text-base min-[360px]:text-lg sm:text-2xl md:text-3xl ml-0.5">★</span>}
             </div>
-            <div className="text-muted-slate font-bold text-[10px] md:text-xs tracking-wider uppercase whitespace-nowrap">{stat.label}</div>
+            <div className="text-muted-slate font-bold text-[9px] min-[360px]:text-[10px] md:text-xs tracking-wider uppercase leading-tight">
+                {stat.label}
+            </div>
         </div>
     );
 };
@@ -105,10 +107,17 @@ const About: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="inline-flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 2xl:gap-16 bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl px-8 md:px-14 py-6 md:py-8 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-xl divide-y md:divide-y-0 md:divide-x divide-muted-slate/30"
+                    className="w-full max-w-sm sm:max-w-xl md:max-w-3xl mx-auto flex flex-row items-center justify-between sm:justify-center bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl py-3.5 sm:py-5 md:py-7 px-2.5 sm:px-6 md:px-8 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-xl"
                 >
                     {stats.map((stat, idx) => (
-                        <StatItem key={idx} stat={stat} idx={idx} />
+                        <React.Fragment key={idx}>
+                            <div className="flex-1 px-1 sm:px-4 md:px-8 2xl:px-10 py-0 flex items-center justify-center">
+                                <StatItem stat={stat} idx={idx} />
+                            </div>
+                            {idx < stats.length - 1 && (
+                                <div className="w-px h-8 sm:h-10 md:h-12 bg-slate-200 dark:bg-white/[0.12] shrink-0 self-center" />
+                            )}
+                        </React.Fragment>
                     ))}
                 </motion.div>
             </div>
