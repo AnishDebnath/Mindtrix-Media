@@ -151,7 +151,7 @@ const WhyChooseUs: React.FC = () => {
 
                             {[
                                 { d: 13, l: 'Planning' },
-                                { d: 14, l: 'Develope' },
+                                { d: 14, l: 'Develop' },
                                 { d: 24, l: 'Deliver', highlight: true }
                             ].map((item, i) => (
                                 <motion.div
@@ -162,7 +162,7 @@ const WhyChooseUs: React.FC = () => {
                                     <div className={`
                                         flex-1 flex items-center justify-center rounded-lg mb-0.5 xl:mb-1 border
                                         ${item.highlight
-                                            ? 'bg-secondary text-slate-950 font-bold border-secondary shadow-sm'
+                                            ? 'bg-emerald-500 text-white font-bold border-emerald-500 shadow-sm shadow-emerald-500/20'
                                             : 'bg-slate-50 dark:bg-black text-slate-900 dark:text-white border-slate-200 dark:border-white/[0.06]'}
                                      `}>
                                         <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
