@@ -72,7 +72,7 @@ const PrototypeForm: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="relative overflow-hidden bg-white/95 backdrop-blur-2xl p-6 md:p-10 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-slate-200/90"
+            className="relative overflow-hidden bg-white dark:bg-neutral-950/70 backdrop-blur-md p-4 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08]"
         >
             <style>{`
                 .custom-scrollbar::-webkit-scrollbar {
@@ -101,35 +101,35 @@ const PrototypeForm: React.FC = () => {
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
-            <form onSubmit={handleSubmit} className="relative space-y-5 z-0" onClick={() => isDropdownOpen && setIsDropdownOpen(false)}>
-                <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Full Name <span className="text-primary">*</span></label>
+            <form onSubmit={handleSubmit} className="relative space-y-3.5 z-0" onClick={() => isDropdownOpen && setIsDropdownOpen(false)}>
+                <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Full Name <span className="text-primary">*</span></label>
                     <input
                         required
                         type="text"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                        className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                         placeholder="John Doe"
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Email <span className="text-primary">*</span></label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Email <span className="text-primary">*</span></label>
                         <input
                             required
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="john@example.com"
                         />
                     </div>
-                    <div className="space-y-2">
-                        <label className="text-xs font-semibold text-slate-800 ml-1">Phone No <span className="text-primary">*</span></label>
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Phone No <span className="text-primary">*</span></label>
                         <input
                             required
                             type="tel"
@@ -137,14 +137,14 @@ const PrototypeForm: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             pattern="[0-9+ ]*"
-                            className="w-full bg-white border border-slate-300 rounded-2xl px-5 py-4 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-white dark:bg-neutral-900/60 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 shadow-sm"
                             placeholder="+91 XXXXX-XXXXX"
                         />
                     </div>
                 </div>
 
-                <div className="space-y-2 relative">
-                    <label className="text-xs font-semibold text-slate-800 ml-1">Project Type <span className="text-primary">*</span></label>
+                <div className="space-y-1.5 relative">
+                    <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 ml-1">Project Type <span className="text-primary">*</span></label>
                     <div className="relative">
                         <button
                             type="button"
@@ -152,7 +152,7 @@ const PrototypeForm: React.FC = () => {
                                 e.stopPropagation();
                                 setIsDropdownOpen(!isDropdownOpen);
                             }}
-                            className={`w-full text-left bg-white border rounded-2xl px-5 py-4 flex items-center justify-between text-sm outline-none transition-all shadow-sm ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-300 hover:border-primary/50'}`}
+                            className={`w-full text-left bg-white dark:bg-neutral-900/60 border rounded-xl px-4 py-2.5 flex items-center justify-between text-xs sm:text-sm outline-none transition-all shadow-sm ${isDropdownOpen ? 'border-primary ring-2 ring-primary/20' : 'border-slate-300 dark:border-white/10 hover:border-primary/50'}`}
                         >
                             <span className={formData.projectType ? "text-slate-900 font-medium" : "text-slate-400"}>
                                 {formData.projectType ? projectTypes.find(t => t.value === formData.projectType)?.label : "Select a project type"}
@@ -177,7 +177,7 @@ const PrototypeForm: React.FC = () => {
                                                 e.stopPropagation();
                                                 handleSelect(type.value);
                                             }}
-                                            className={`px-5 py-3 cursor-pointer transition-colors flex items-center justify-between ${formData.projectType === type.value
+                                            className={`px-4 py-2.5 text-xs sm:text-sm cursor-pointer transition-colors flex items-center justify-between ${formData.projectType === type.value
                                                 ? 'bg-primary/10 text-primary font-medium'
                                                 : 'text-slate-700 hover:bg-slate-50'
                                                 }`}

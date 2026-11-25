@@ -1,7 +1,15 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, animate } from 'framer-motion';
 import PrototypeForm from './PrototypeForm';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import useSEO from '../../utils/useSEO';
+
+const prototypeIcons = [
+    { icon: 'visibility', color: 'text-primary' },
+    { icon: 'palette', color: 'text-secondary' },
+    { icon: 'design_services', color: 'text-primary' },
+    { icon: 'auto_awesome', color: 'text-secondary' },
+];
 
 // Lazy Components
 const Process = lazy(() => import('../../components/sections/Process'));
@@ -53,7 +61,7 @@ const FreePrototypePage: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                         {/* Info Section */}
                         <div className="lg:sticky lg:top-32">
-                            <div className="flex flex-col gap-4 mb-8">
+                            <div className="flex flex-col gap-3 mb-4">
                                 {/* Available for New Projects Badge */}
                                 <motion.div
                                     initial={{ opacity: 0, y: -10 }}
@@ -76,7 +84,7 @@ const FreePrototypePage: React.FC = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     whileHover={{ scale: 1.02 }}
-                                    className="relative flex items-center gap-2 px-4 py-2 bg-secondary rounded-xl shadow-sm border border-secondary/60 transition-all duration-300 w-fit cursor-default"
+                                    className="relative flex items-center gap-2 px-3.5 py-1.5 bg-secondary rounded-xl shadow-sm border border-secondary/60 transition-all duration-300 w-fit cursor-default"
                                 >
                                     <span className="material-symbols-rounded text-slate-950 text-[18px]">timer</span>
                                     <span className="text-xs font-bold text-slate-950 tracking-widest uppercase">Limited Time Offer</span>
@@ -86,9 +94,10 @@ const FreePrototypePage: React.FC = () => {
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-[1.08] tracking-tight"
+                                className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
                             >
-                                See It Before <br />
+                                See It Before{' '}
+                                <TitleIconCapsule icons={prototypeIcons} delay={0} />{' '}
                                 <span className="text-primary">
                                     You Sign.
                                 </span>
@@ -98,12 +107,12 @@ const FreePrototypePage: React.FC = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-base md:text-lg text-slate-600 dark:text-neutral-400 mb-10 leading-relaxed max-w-xl font-normal"
+                                className="text-[18px] text-slate-600 dark:text-neutral-400 mb-8 leading-relaxed max-w-xl font-normal"
                             >
                                 We're so confident in our design skills that we'll design a high-detailed prototype of your new website for <strong className="text-slate-900 dark:text-secondary underline decoration-primary/30 decoration-4 underline-offset-4">free</strong>. No hidden conditions.
                             </motion.p>
 
-                            <div className="space-y-8">
+                            <div className="space-y-6">
                                 {[
                                     { title: "Review Your Strategy", desc: "In-depth competitor and market analysis.", icon: "analytics", color: "blue" },
                                     { title: "Visual Prototype", desc: "Preview the product before development.", icon: "palette", color: "orange" },
@@ -114,17 +123,17 @@ const FreePrototypePage: React.FC = () => {
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.3 + (i * 0.1) }}
-                                        className="flex items-center gap-4 group"
+                                        className="flex items-center gap-3 group"
                                     >
-                                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${item.color === 'blue'
+                                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${item.color === 'blue'
                                             ? 'bg-primary/10 text-primary'
                                             : 'bg-secondary/20 text-amber-700'
                                             }`}>
-                                            <span className="material-symbols-rounded text-[22px]">{item.icon}</span>
+                                            <span className="material-symbols-rounded text-[18px]">{item.icon}</span>
                                         </div>
                                         <div>
-                                            <h3 className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-0.5">{item.title}</h3>
-                                            <p className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
+                                            <h3 className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-0.5">{item.title}</h3>
+                                            <p className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-tight">{item.desc}</p>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -138,10 +147,10 @@ const FreePrototypePage: React.FC = () => {
                                     hidden: { opacity: 0, y: 20 },
                                     show: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } }
                                 }}
-                                className="flex flex-row sm:flex-row items-center justify-start gap-4 mt-10 pt-10 border-t border-slate-300 dark:border-slate-600"
+                                className="flex flex-row items-center justify-start gap-3 mt-6 pt-6 border-t border-slate-300 dark:border-slate-600"
                             >
                                 <div
-                                    className="flex items-center h-16 cursor-pointer"
+                                    className="flex items-center h-10 cursor-pointer"
                                     onMouseEnter={() => setIsAvatarHovered(true)}
                                     onMouseLeave={() => setIsAvatarHovered(false)}
                                 >
@@ -153,22 +162,22 @@ const FreePrototypePage: React.FC = () => {
                                         <motion.div
                                             key={i}
                                             animate={{
-                                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -6 : -20),
+                                                marginLeft: i === 0 ? 0 : (isAvatarHovered ? -4 : -12),
                                                 zIndex: i,
                                             }}
-                                            className="relative rounded-full border-[4px] border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-12 h-12 shadow-sm"
+                                            className="relative rounded-full border-2 border-[#FAFAFA] dark:border-slate-900 overflow-hidden w-8 h-8 shadow-sm"
                                         >
                                             <img className="w-full h-full object-cover" src={src} alt="Client" />
                                         </motion.div>
                                     ))}
                                 </div>
                                 <div>
-                                    <div className="flex gap-1 mb-1">
+                                    <div className="flex gap-0.5 mb-0.5">
                                         {[1, 2, 3, 4, 5].map((_, i) => (
-                                            <span key={i} className="material-symbols-rounded text-secondary text-[16px]">star</span>
+                                            <span key={i} className="material-symbols-rounded text-secondary text-[13px]">star</span>
                                         ))}
                                     </div>
-                                    <p className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                                    <p className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
                                         Trusted by <CountUp val={10} />+ clients
                                     </p>
                                 </div>
