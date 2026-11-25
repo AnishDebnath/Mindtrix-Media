@@ -198,9 +198,6 @@ const FreePrototypePage: React.FC = () => {
                 <Process />
             </Suspense>
             <Suspense fallback={null}>
-                <OurSolution />
-            </Suspense>
-            <Suspense fallback={null}>
                 <FAQ />
             </Suspense>
             <Suspense fallback={null}>

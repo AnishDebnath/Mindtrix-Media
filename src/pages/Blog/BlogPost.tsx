@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { articles } from '../../data/blog';
@@ -16,6 +16,7 @@ const blogPostIcons = [
 
 const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const [copied, setCopied] = useState(false);
     const article = articles.find(a => a.id === id);
     const { scrollYProgress } = useScroll();
     const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
@@ -124,7 +125,7 @@ const BlogPost: React.FC = () => {
                 </motion.div>
 
                 {/* Content Sections */}
-                <div className="mx-auto mb-20 md:mb-32 space-y-8 md:space-y-12">
+                <div className="mx-auto mb-8 md:mb-10 space-y-8 md:space-y-12">
                     {article.content && (article.content as any[]).map((block: any, index: number) => {
                         if (block.type === 'image') {
                             return (
@@ -153,6 +154,49 @@ const BlogPost: React.FC = () => {
                             </motion.div>
                         );
                     })}
+                </div>
+
+                {/* Share Article */}
+                <div className="flex flex-wrap items-center justify-center gap-2.5 mt-4 mb-10">
+                    <button
+                        type="button"
+                        onClick={() => {
+                            navigator.clipboard.writeText(window.location.href);
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                        }}
+                        className="inline-flex items-center gap-2 px-4 h-9 sm:h-10 rounded-xl bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black text-xs sm:text-sm font-medium shadow-sm transition-all"
+                    >
+                        <span className="material-symbols-rounded text-sm">{copied ? 'check' : 'content_copy'}</span>
+                        {copied ? 'Copied' : 'Copy Link'}
+                    </button>
+                    <a
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 h-9 sm:h-10 rounded-xl bg-white dark:bg-neutral-950/70 hover:border-secondary/60 border border-slate-200/90 dark:border-white/[0.08] text-xs sm:text-sm font-medium text-slate-800 dark:text-neutral-200 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all"
+                    >
+                        <span className="material-symbols-rounded text-sm text-secondary">share</span>
+                        X / Twitter
+                    </a>
+                    <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 h-9 sm:h-10 rounded-xl bg-white dark:bg-neutral-950/70 hover:border-primary/60 border border-slate-200/90 dark:border-white/[0.08] text-xs sm:text-sm font-medium text-slate-800 dark:text-neutral-200 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all"
+                    >
+                        <span className="material-symbols-rounded text-sm text-primary">work</span>
+                        LinkedIn
+                    </a>
+                    <a
+                        href={`https://wa.me/?text=${encodeURIComponent(article.title + ' ' + window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 h-9 sm:h-10 rounded-xl bg-white dark:bg-neutral-950/70 hover:border-secondary/60 border border-slate-200/90 dark:border-white/[0.08] text-xs sm:text-sm font-medium text-slate-800 dark:text-neutral-200 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all"
+                    >
+                        <span className="material-symbols-rounded text-sm text-secondary">chat</span>
+                        WhatsApp
+                    </a>
                 </div>
 
                 <div className="border-t border-slate-200 dark:border-white/10 my-16 w-full" />

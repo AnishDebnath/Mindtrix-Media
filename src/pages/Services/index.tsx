@@ -7,6 +7,7 @@ import useSEO from '../../utils/useSEO';
 // Lazy Components
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
 const Process = lazy(() => import('../../components/sections/Process'));
+const OurSolution = lazy(() => import('../../components/sections/OurSolution'));
 const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
 
@@ -47,6 +48,7 @@ const ServicesPage: React.FC = () => {
             <Suspense fallback={null}>
                 <WhyChooseUs />
                 <Process />
+                <OurSolution />
                 <FAQ />
                 <CTA />
             </Suspense>

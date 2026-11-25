@@ -10,7 +10,7 @@ import useSEO from '../../utils/useSEO';
 // Lazy Components
 const FreePrototype = lazy(() => import('../../components/sections/FreePrototype'));
 const Process = lazy(() => import('../../components/sections/Process'));
-const ProductTestimonials = lazy(() => import('../../components/product/ProductTestimonials'));
+const ProductTestimonials = lazy(() => import('../../components/sections/ProductTestimonials'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const ProductPage: React.FC = () => {
@@ -57,7 +57,7 @@ const ProductPage: React.FC = () => {
 
     return (
         <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
-            <div className="pb-8 md:pb-12 2xl:pb-16 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
+            <div className="pb-0 max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
                 <ProjectHeader />
                 <ProjectFilter
                     activeCategory={activeCategory}
@@ -77,15 +77,7 @@ const ProductPage: React.FC = () => {
             </div>
 
             <Suspense fallback={null}>
-                <FreePrototype />
-            </Suspense>
-            <Suspense fallback={null}>
-                <Process />
-            </Suspense>
-            <Suspense fallback={null}>
                 <ProductTestimonials />
-            </Suspense>
-            <Suspense fallback={null}>
                 <CTA />
             </Suspense>
         </div>

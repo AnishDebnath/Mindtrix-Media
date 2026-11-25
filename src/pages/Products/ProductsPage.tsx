@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import useSEO from '../../utils/useSEO';
 import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
+
+const ProductTestimonials = lazy(() => import('../../components/sections/ProductTestimonials'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const scaleIcons = [
     { icon: 'deployed_code', color: 'text-primary' },
@@ -96,7 +99,7 @@ export const ProductsPage: React.FC = () => {
         : productList.filter(item => item.category === selectedCategory);
 
     return (
-        <div className="pt-28 md:pt-36 2xl:pt-40 pb-20 relative bg-[#F8FAFC] dark:bg-black text-slate-900 dark:text-white min-h-screen">
+        <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative bg-[#F8FAFC] dark:bg-black text-slate-900 dark:text-white min-h-screen">
             {/* Top Container */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 2xl:px-20 relative z-10">
 
@@ -149,11 +152,10 @@ export const ProductsPage: React.FC = () => {
                                         setSelectedCategory(tab.id);
                                         e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
                                     }}
-                                    className={`group relative flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-[14px] font-semibold tracking-tight transition-all duration-200 whitespace-nowrap select-none cursor-pointer shrink-0 ${
-                                        isActive
-                                            ? 'text-white'
-                                            : 'text-slate-600 dark:text-neutral-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-neutral-900'
-                                    }`}
+                                    className={`group relative flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-[14px] font-semibold tracking-tight transition-all duration-200 whitespace-nowrap select-none cursor-pointer shrink-0 ${isActive
+                                        ? 'text-white'
+                                        : 'text-slate-600 dark:text-neutral-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-neutral-900'
+                                        }`}
                                 >
                                     {isActive && (
                                         <motion.div
@@ -163,9 +165,8 @@ export const ProductsPage: React.FC = () => {
                                         />
                                     )}
                                     <span
-                                        className={`material-symbols-rounded text-sm relative z-10 transition-colors ${
-                                            isActive ? 'text-white' : 'text-slate-400 dark:text-neutral-500 group-hover:text-primary dark:group-hover:text-primary'
-                                        }`}
+                                        className={`material-symbols-rounded text-sm relative z-10 transition-colors ${isActive ? 'text-white' : 'text-slate-400 dark:text-neutral-500 group-hover:text-primary dark:group-hover:text-primary'
+                                            }`}
                                     >
                                         {tab.icon}
                                     </span>
@@ -200,11 +201,10 @@ export const ProductsPage: React.FC = () => {
 
                                             {/* Left/Right Visual Box: Gradient Frame + Floating Brand Logo Window */}
                                             <div
-                                                className={`w-full lg:w-[46%] rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-5 flex items-center justify-center relative overflow-hidden group ${
-                                                    isAlternate
-                                                        ? 'bg-gradient-to-br from-secondary/20 via-amber-100/70 to-primary/15 dark:from-secondary/15 dark:via-neutral-900 dark:to-primary/10'
-                                                        : 'bg-gradient-to-br from-primary/20 via-indigo-100/70 to-secondary/15 dark:from-primary/20 dark:via-neutral-900 dark:to-secondary/10'
-                                                }`}
+                                                className={`w-full lg:w-[46%] rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-5 flex items-center justify-center relative overflow-hidden group ${isAlternate
+                                                    ? 'bg-gradient-to-br from-secondary/20 via-amber-100/70 to-primary/15 dark:from-secondary/15 dark:via-neutral-900 dark:to-primary/10'
+                                                    : 'bg-gradient-to-br from-primary/20 via-indigo-100/70 to-secondary/15 dark:from-primary/20 dark:via-neutral-900 dark:to-secondary/10'
+                                                    }`}
                                             >
                                                 {/* Subtle Grid Line Pattern */}
                                                 <div
@@ -285,6 +285,11 @@ export const ProductsPage: React.FC = () => {
                 </motion.div>
 
             </div>
+
+            <Suspense fallback={null}>
+                <ProductTestimonials />
+                <CTA />
+            </Suspense>
         </div>
     );
 };

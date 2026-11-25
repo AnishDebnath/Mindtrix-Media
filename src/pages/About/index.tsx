@@ -9,7 +9,7 @@ import useSEO from '../../utils/useSEO';
 
 // Lazy Components
 const WhyChooseUs = lazy(() => import('../../components/sections/WhyChooseUs'));
-const ProductTestimonials = lazy(() => import('../../components/product/ProductTestimonials'));
+const ProductTestimonials = lazy(() => import('../../components/sections/ProductTestimonials'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const AboutPage: React.FC = () => {
