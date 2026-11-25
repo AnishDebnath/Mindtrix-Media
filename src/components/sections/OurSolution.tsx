@@ -59,7 +59,7 @@ const OurSolution: React.FC = () => {
                         <TitleIconCapsule icons={problemIcons} delay={0} />.{' '}
                         <span className="text-primary">Simple</span>{' '}
                         <TitleIconCapsule icons={solutionIcons} delay={700} initialIndex={1} />{' '}
-                        <span className="text-secondary">Solutions.</span>
+                        <span className="text-secondary">Solutions</span>
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}

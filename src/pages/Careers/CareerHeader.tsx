@@ -28,10 +28,10 @@ const CareerHeader: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight"
             >
-                Grow With Us.{' '}
+                Grow With Us{' '}
                 <TitleIconCapsule icons={careerIcons} delay={0} />{' '}
                 <span className="text-primary">Build The</span>{' '}
-                <span className="text-secondary">Future.</span>
+                <span className="text-secondary">Future</span>
             </motion.h1>
 
             <motion.p

@@ -40,7 +40,7 @@ const AboutHeader: React.FC = () => {
                 <br className="hidden sm:inline" />
                 <span className="text-primary">Solutions</span>{' '}
                 <TitleIconCapsule icons={partnerIcons} delay={700} initialIndex={1} />{' '}
-                <span className="text-secondary">Partner.</span>
+                <span className="text-secondary">Partner</span>
             </motion.h1>
 
             <motion.p

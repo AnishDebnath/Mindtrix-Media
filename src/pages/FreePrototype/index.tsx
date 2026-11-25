@@ -99,7 +99,7 @@ const FreePrototypePage: React.FC = () => {
                                 See It Before{' '}
                                 <TitleIconCapsule icons={prototypeIcons} delay={0} />{' '}
                                 <span className="text-primary">
-                                    You Sign.
+                                    You Sign
                                 </span>
                             </motion.h1>
 

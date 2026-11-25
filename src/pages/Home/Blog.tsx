@@ -45,7 +45,7 @@ const Blog: React.FC = () => {
                         <TitleIconCapsule icons={articleIcons} delay={0} />{' '}
                         & <span className="text-primary">Expertise</span>{' '}
                         <TitleIconCapsule icons={trendIcons} delay={700} initialIndex={1} />{' '}
-                        <span className="text-secondary">Shared.</span>
+                        <span className="text-secondary">Shared</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

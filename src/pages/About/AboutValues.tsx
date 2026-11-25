@@ -41,7 +41,7 @@ const AboutValues: React.FC = () => {
                         Our <span className="text-primary">Mission</span>{' '}
                         <TitleIconCapsule icons={missionIcons} delay={0} />{' '}
                         &amp; <span className="text-secondary">Vision</span>{' '}
-                        <TitleIconCapsule icons={visionIcons} delay={700} initialIndex={1} />.
+                        <TitleIconCapsule icons={visionIcons} delay={700} initialIndex={1} />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
