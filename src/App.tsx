@@ -11,7 +11,7 @@ const Product = lazy(() => import('./pages/Products'));
 const Clients = lazy(() => import('./pages/Clients'));
 const Contact = lazy(() => import('./pages/Contact'));
 const FreePrototypePage = lazy(() => import('./pages/FreePrototype'));
-const ProductDetail = lazy(() => import('./pages/Products/ProductDetail'));
+const ProductDetail = lazy(() => import('./pages/ProjectDetails'));
 const BlogPost = lazy(() => import('./pages/Blog/BlogPost'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Footer = lazy(() => import('./components/common/Footer'));

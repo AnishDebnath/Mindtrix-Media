@@ -3,7 +3,16 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { products } from '../../data/products';
 import { CTA } from '../../components/sections';
+import ProjectDetailHeader from './ProjectDetailHeader';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import useSEO from '../../utils/useSEO';
+
+const moreIcons = [
+    { icon: 'deployed_code', color: 'text-primary' },
+    { icon: 'auto_awesome', color: 'text-secondary' },
+    { icon: 'rocket_launch', color: 'text-primary' },
+    { icon: 'layers', color: 'text-secondary' },
+];
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -61,52 +70,11 @@ const ProductDetail: React.FC = () => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="mb-16 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
-                    >
-                        <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
-                            <span className="material-symbols-rounded text-sm">description</span> Case Study
-                        </span>
-                    </motion.div>
-
-                    <div className="flex flex-col items-center justify-center text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="max-w-3xl"
-                        >
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
-                                {product.title.split(":")[0]}
-                            </h1>
-                            <p className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal">
-                                {product.subtitle}
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="mt-10"
-                        >
-                            <a
-                                href={product.liveLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black pl-4 pr-1.5 py-1.5 rounded-xl font-medium text-xs sm:text-sm shadow-sm hover:scale-[1.02] active:scale-95 transition-all group"
-                            >
-                                <span>Visit Live Site</span>
-                                <div className="w-6 h-6 bg-white dark:bg-black rounded-lg flex items-center justify-center text-black dark:text-white">
-                                    <span className="material-symbols-rounded text-sm group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
-                                </div>
-                            </a>
-                        </motion.div>
-                    </div>
-
-                </div>
+                <ProjectDetailHeader
+                    title={product.title}
+                    subtitle={product.subtitle}
+                    liveLink={product.liveLink}
+                />
 
                 {/* Main Hero Image with Parallax */}
                 <motion.div
@@ -114,7 +82,6 @@ const ProductDetail: React.FC = () => {
                     className="aspect-[4/3] w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={product.image} alt={product.title} className="w-full h-full object-cover will-change-transform" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </motion.div>
 
                 {/* Overview Section */}
@@ -223,10 +190,12 @@ const ProductDetail: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 md:gap-8 mb-10 md:mb-16"
+                        className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 md:gap-8 mb-8 md:mb-10"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            More <span className="text-primary">Products</span>
+                            More{' '}
+                            <TitleIconCapsule icons={moreIcons} delay={0} />{' '}
+                            <span className="text-primary">Products</span>
                         </h2>
                         <Link to="/product" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400 hover:text-primary transition-colors">
                             View All Products
@@ -243,11 +212,11 @@ const ProductDetail: React.FC = () => {
                                 whileHover="hover"
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group bg-white dark:bg-slate-900/50 rounded-[1.5rem] p-3 pb-6 border border-slate-200/90 dark:border-slate-800 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-500"
+                                className="group bg-white dark:bg-neutral-950/70 backdrop-blur-md rounded-2xl md:rounded-3xl p-2 pb-3 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-300"
                             >
                                 <div
                                     onClick={() => navigate(`/product/${p.id}`)}
-                                    className="relative aspect-[4/3] rounded-[1rem] overflow-hidden bg-slate-100 mb-6 border border-slate-100 dark:border-slate-800 cursor-pointer"
+                                    className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-3 border border-slate-100 dark:border-slate-800 cursor-pointer"
                                 >
                                     <img
                                         src={p.image}
@@ -255,15 +224,15 @@ const ProductDetail: React.FC = () => {
                                         loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     />
-                                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-slate-950/85 backdrop-blur-md text-secondary text-xs font-semibold uppercase tracking-wider rounded-lg z-10 border border-secondary/50">
+                                    <div className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/85 backdrop-blur-md text-secondary text-[9px] font-semibold uppercase tracking-wider rounded-lg z-10 border border-secondary/50">
                                         {p.category}
                                     </div>
                                 </div>
 
-                                <div className="px-4 flex justify-between items-end">
-                                    <div>
-                                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-1 leading-tight">{p.title.split(':')[0]}</h3>
-                                        <p className="text-slate-600 dark:text-slate-400 font-medium text-sm">{p.client}</p>
+                                <div className="px-2 flex justify-between items-end gap-3">
+                                    <div className="min-w-0 flex-1">
+                                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 leading-tight truncate">{p.title.split(':')[0]}</h3>
+                                        <p className="text-slate-600 dark:text-slate-400 font-medium text-sm truncate">{p.client}</p>
                                     </div>
                                     <motion.div className="w-10 h-10 rounded-xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-neutral-900 flex items-center justify-center group-hover:bg-slate-950 group-hover:border-slate-950 group-hover:text-white dark:group-hover:bg-primary dark:group-hover:border-primary transition-all duration-300 overflow-hidden shadow-sm">
                                         <motion.span
