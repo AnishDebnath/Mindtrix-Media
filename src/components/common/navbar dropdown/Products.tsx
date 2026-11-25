@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 import rentaloneLogo from '@/assets/brand logo/rentalone.png';
-import tphLogo from '@/assets/brand logo/tph.png';
-import goldLogo from '@/assets/brand logo/gold.png';
+import tphLogo from '@/assets/brand logo/the-photographer-house.png';
+import goldLogo from '@/assets/brand logo/rajkiya-jewellers.png';
 
 export interface ProductCardItem {
     id: string;

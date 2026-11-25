@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, Variants } from 'framer-motion';
 
-import tphLogo from '@/assets/brand logo/tph.png';
-import charuLogo from '@/assets/brand logo/charu-enterpirse.png';
-import garulinkLogo from '@/assets/brand logo/garulink.png';
+import tphLogo from '@/assets/brand logo/the-photographer-house.png';
+import charuLogo from '@/assets/brand logo/charu-enterprises.png';
+import garulinkLogo from '@/assets/brand logo/gaurlink.png';
 import biswabanglaLogo from '@/assets/brand logo/biswabangla-nordic-association.png';
 import { products } from '@/data/products';
 

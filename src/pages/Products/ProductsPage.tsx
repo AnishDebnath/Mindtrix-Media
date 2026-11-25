@@ -19,11 +19,11 @@ const leadIcons = [
 ];
 
 import rentaloneLogo from '@/assets/brand logo/rentalone.png';
-import tphLogo from '@/assets/brand logo/tph.png';
-import goldLogo from '@/assets/brand logo/gold.png';
-import charuLogo from '@/assets/brand logo/charu-enterpirse.png';
+import tphLogo from '@/assets/brand logo/the-photographer-house.png';
+import goldLogo from '@/assets/brand logo/rajkiya-jewellers.png';
+import charuLogo from '@/assets/brand logo/charu-enterprises.png';
 import crhLogo from '@/assets/brand logo/camera-rental-house.png';
-import garulinkLogo from '@/assets/brand logo/garulink.png';
+import garulinkLogo from '@/assets/brand logo/gaurlink.png';
 
 interface ProductItem {
     id: string;
