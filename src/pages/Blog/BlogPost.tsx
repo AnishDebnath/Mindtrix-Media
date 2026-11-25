@@ -2,9 +2,17 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { articles } from '../../data/blog';
-import ArticleCard from './ArticleCard';
+import BlogCard from './BlogCard';
 import { CTA } from '../../components/sections';
+import TitleIconCapsule from '../../components/ui/TitleIconCapsule';
 import useSEO from '../../utils/useSEO';
+
+const blogPostIcons = [
+    { icon: 'article', color: 'text-primary' },
+    { icon: 'edit_note', color: 'text-secondary' },
+    { icon: 'lightbulb', color: 'text-primary' },
+    { icon: 'auto_awesome', color: 'text-secondary' },
+];
 
 const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -67,11 +75,11 @@ const BlogPost: React.FC = () => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="mb-16 text-center">
+                <div className="mb-12 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200/80 dark:border-white/[0.12] bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-white/[0.12] bg-white dark:bg-neutral-900/60 backdrop-blur-md mb-4 shadow-sm"
                     >
                         <span className="text-primary font-semibold uppercase text-xs tracking-wider flex items-center gap-1.5">
                             <span className="material-symbols-rounded text-sm">article</span> Blog Post
@@ -84,10 +92,22 @@ const BlogPost: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="max-w-3xl"
                         >
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
-                                {article.title}
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight">
+                                {(() => {
+                                    const words = article.title.trim().split(' ');
+                                    const last = words.pop();
+                                    const secondLast = words.length > 1 ? words.pop() : null;
+                                    return (
+                                        <>
+                                            {words.join(' ')}{' '}
+                                            {secondLast && <span className="text-primary">{secondLast} </span>}
+                                            <TitleIconCapsule icons={blogPostIcons} delay={0} />{' '}
+                                            <span className={secondLast ? 'text-secondary' : 'text-primary'}>{last}</span>
+                                        </>
+                                    );
+                                })()}
                             </h1>
-                            <p className="text-base md:text-lg text-slate-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal">
+                            <p className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal">
                                 {article.desc}
                             </p>
                         </motion.div>
@@ -143,12 +163,14 @@ const BlogPost: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex flex-col items-center md:flex-row justify-between items-end gap-8 mb-16"
+                        className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 md:gap-8 mb-8 md:mb-10"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            Read <span className="text-primary">Next</span>
+                            Read{' '}
+                            <TitleIconCapsule icons={blogPostIcons} delay={0} />{' '}
+                            <span className="text-primary">Next</span>
                         </h2>
-                        <Link to="/blog" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+                        <Link to="/blog" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400 hover:text-primary transition-colors">
                             View All Blogs
                             <span className="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </Link>
@@ -156,7 +178,7 @@ const BlogPost: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                         {moreArticles.map((a, i) => (
-                            <ArticleCard key={i} article={a as any} delay={i * 0.1} />
+                            <BlogCard key={i} article={a as any} delay={i * 0.1} />
                         ))}
                     </div>
                 </div>

@@ -35,8 +35,19 @@ const ProjectDetailHeader: React.FC<ProjectDetailHeaderProps> = ({ title, subtit
                     className="max-w-3xl"
                 >
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-tight">
-                        <span className="text-primary">{title.split(':')[0]}</span>{' '}
-                        <TitleIconCapsule icons={caseStudyIcons} delay={0} />
+                        {(() => {
+                            const words = title.split(':')[0].trim().split(' ');
+                            const last = words.pop();
+                            const secondLast = words.length > 1 ? words.pop() : null;
+                            return (
+                                <>
+                                    {words.join(' ')}{' '}
+                                    {secondLast && <span className="text-primary">{secondLast} </span>}
+                                    <TitleIconCapsule icons={caseStudyIcons} delay={0} />{' '}
+                                    <span className={secondLast ? 'text-secondary' : 'text-primary'}>{last}</span>
+                                </>
+                            );
+                        })()}
                     </h1>
                     <p className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed font-normal">
                         {subtitle}

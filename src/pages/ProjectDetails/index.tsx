@@ -195,10 +195,10 @@ const ProductDetail: React.FC = () => {
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                             More{' '}
                             <TitleIconCapsule icons={moreIcons} delay={0} />{' '}
-                            <span className="text-primary">Products</span>
+                            <span className="text-primary">Projects</span>
                         </h2>
-                        <Link to="/product" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400 hover:text-primary transition-colors">
-                            View All Products
+                        <Link to="/clients" className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400 hover:text-primary transition-colors">
+                            View All Projects
                             <span className="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </Link>
                     </motion.div>
