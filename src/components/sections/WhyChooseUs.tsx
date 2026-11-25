@@ -5,6 +5,7 @@ import TitleIconCapsule from '../ui/TitleIconCapsule';
 // ponytail: local video assets
 import builtForBusinessVid from '@/assets/why-choose-us/built-for-business.mp4';
 import startSmallVid from '@/assets/why-choose-us/start-small.mp4';
+import onTimeVid from '@/assets/why-choose-us/on-time.mp4';
 
 const chooseIcons = [
     { icon: 'handshake', color: 'text-primary' },
@@ -131,49 +132,17 @@ const WhyChooseUs: React.FC = () => {
                         transition={{ delay: 0.5 }}
                         className="flex flex-col md:flex-row lg:flex-col group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-neutral-700 backdrop-blur-md transition-all duration-300"
                     >
-                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden flex items-center justify-center gap-3 md:gap-4 lg:gap-2 xl:gap-4 px-4 md:px-6 lg:px-12 xl:px-6 border border-slate-100 dark:border-white/[0.06] shrink-0">
-                            {/* Animated Mouse Pointer */}
-                            <motion.div
-                                animate={{
-                                    x: [-110, -55, 0, 55, 110, 55, 0, -55, -110],
-                                    y: [0, 100, 0, 100, 0, 100, 0, 100, 0],
-                                    rotate: [0, 45, 0, 45, 0, -45, 0, -45, 0],
-                                }}
-                                transition={{
-                                    duration: 12,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                }}
-                                className="absolute z-20 pointer-events-none"
+                        <div className="bg-slate-50 dark:bg-black rounded-xl md:rounded-2xl aspect-[4/3] md:w-1/2 lg:w-full mb-4 md:mb-0 lg:mb-4 relative overflow-hidden border border-slate-100 dark:border-white/[0.06] shrink-0">
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover"
                             >
-                                <span className="material-symbols-rounded text-3xl text-primary drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]">near_me</span>
-                            </motion.div>
-
-                            {[
-                                { d: 13, l: 'Planning' },
-                                { d: 14, l: 'Develop' },
-                                { d: 24, l: 'Deliver', highlight: true }
-                            ].map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    whileHover={{ y: -5 }}
-                                    className="bg-white dark:bg-neutral-900/80 p-2 md:p-2.5 lg:p-1 xl:p-2.5 rounded-xl shadow-md border border-slate-200/80 dark:border-white/[0.08] w-[28%] min-w-[70px] md:w-28 lg:w-[70px] xl:w-28 aspect-[3/4] flex flex-col"
-                                >
-                                    <div className={`
-                                        flex-1 flex items-center justify-center rounded-lg mb-0.5 xl:mb-1 border
-                                        ${item.highlight
-                                            ? 'bg-emerald-500 text-white font-bold border-emerald-500 shadow-sm shadow-emerald-500/20'
-                                            : 'bg-slate-50 dark:bg-black text-slate-900 dark:text-white border-slate-200 dark:border-white/[0.06]'}
-                                     `}>
-                                        <span className="text-xl md:text-2xl lg:text-[18px] xl:text-2xl font-bold tracking-tight">
-                                            {item.d.toString().padStart(2, '0')}
-                                        </span>
-                                    </div>
-                                    <div className="text-center py-1.5 lg:py-0.5 xl:py-2">
-                                        <div className={`text-[8px] md:text-[10px] lg:text-[7.5px] xl:text-[10px] font-semibold ${item.highlight ? 'text-slate-950 font-bold' : 'text-muted-slate'}`}>{item.l}</div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                <source src={onTimeVid} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className="px-2 pb-2 pt-0.5 md:pb-0 md:px-4 lg:px-2 lg:pb-2 md:flex-1 md:flex md:flex-col md:justify-center">
                             <h3 className="text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-white tracking-tight">On Time, Every Time</h3>
