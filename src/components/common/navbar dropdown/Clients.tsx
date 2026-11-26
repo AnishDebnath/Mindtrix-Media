@@ -7,6 +7,7 @@ import charuLogo from '@/assets/brand logo/charu-enterprises.png';
 import garulinkLogo from '@/assets/brand logo/gaurlink.png';
 import biswabanglaLogo from '@/assets/brand logo/biswabangla-nordic-association.png';
 import { products } from '@/data/products';
+import { clientProjects } from '@/data/clients';
 
 export interface ClientCardItem {
     id: string;
@@ -26,25 +27,25 @@ const featuredClients: ClientCardItem[] = [
         id: 'tph',
         name: 'The Photographer House',
         logo: tphLogo,
-        path: '/clients'
+        path: '/clients/the-photographers-house'
     },
     {
         id: 'charu',
         name: 'Charu Enterprise',
         logo: charuLogo,
-        path: '/clients'
+        path: '/clients/charufence'
     },
     {
-        id: 'garulink',
-        name: 'Garulink Global',
+        id: 'gaurlink',
+        name: 'GaurLink',
         logo: garulinkLogo,
-        path: '/clients'
+        path: '/clients/gaurlink'
     },
     {
         id: 'biswabangla',
         name: 'Biswabangla Nordic',
         logo: biswabanglaLogo,
-        path: '/clients'
+        path: '/clients/biswabangla-nordic-association'
     }
 ];
 
@@ -68,9 +69,10 @@ const getProjectIcon = (id: string): string => {
     }
 };
 
-// Filter projects from data folder, excluding TPH as requested
+// Exclude client projects from pre-built/products list
+const clientIds = new Set(clientProjects.map((c) => c.id));
 const projectList = products.filter(
-    (p) => p.id !== 'the-photographers-house' && p.id !== 'tph' && !p.title.toLowerCase().includes('photographer')
+    (p) => !clientIds.has(p.id)
 );
 
 const containerVariants: Variants = {
