@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
                     className="w-full max-w-md sm:max-w-lg mx-auto grid grid-cols-2 gap-2.5 sm:gap-4 mt-7 sm:mt-8"
                 >
                     <Link
-                        to="/product/the-photographers-house"
+                        to="/clients/the-photographers-house"
                         className="group flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-neutral-900/70 border border-slate-200/90 dark:border-white/10 hover:border-primary/60 dark:hover:border-primary/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-sm backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
                     >
                         <div className="h-8 sm:h-9 w-8 sm:w-9 rounded-xl bg-transparent border border-slate-200/70 dark:border-white/10 flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform overflow-hidden">

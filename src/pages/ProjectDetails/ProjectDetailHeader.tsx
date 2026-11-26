@@ -13,9 +13,10 @@ interface ProjectDetailHeaderProps {
     title: string;
     subtitle: string;
     liveLink?: string;
+    logo?: string;
 }
 
-const ProjectDetailHeader: React.FC<ProjectDetailHeaderProps> = ({ title, subtitle, liveLink }) => {
+const ProjectDetailHeader: React.FC<ProjectDetailHeaderProps> = ({ title, subtitle, liveLink, logo }) => {
     return (
         <div className="mb-12 text-center">
             <motion.div
@@ -29,6 +30,15 @@ const ProjectDetailHeader: React.FC<ProjectDetailHeaderProps> = ({ title, subtit
             </motion.div>
 
             <div className="flex flex-col items-center justify-center text-center">
+                {logo && (
+                    <motion.img
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        src={logo}
+                        alt={title}
+                        className="h-8 md:h-10 w-auto object-contain mb-4"
+                    />
+                )}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

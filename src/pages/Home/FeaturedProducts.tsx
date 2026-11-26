@@ -66,7 +66,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-7xl mx-auto">
                     {featuredItems.map((product, idx) => (
-                        <Link key={idx} to={`/product/${product.id}`} className="block">
+                        <Link key={idx} to={`/clients/${product.id}`} className="block">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ projectIds }) => {
                                 className="group bg-white dark:bg-neutral-950/70 rounded-2xl md:rounded-3xl p-2 md:p-2.5 pb-3 border border-slate-200/90 dark:border-white/[0.08] hover:border-slate-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md backdrop-blur-md transition-all duration-300 h-full"
                             >
                                 {/* Image Frame */}
-                                <div className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-2.5 md:mb-3 border border-slate-100 dark:border-white/[0.06]">
+                                <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-2.5 md:mb-3 border border-slate-100 dark:border-white/[0.06]">
                                     <img
                                         src={product.image}
                                         alt={product.title}

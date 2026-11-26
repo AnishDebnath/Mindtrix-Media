@@ -3,26 +3,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 // ponytail: local carousel product images
-import tphCover from '@/assets/products/the photographer house/cover.png';
-import tphGallery from '@/assets/products/the photographer house/gallery.png';
-import tphBooking from '@/assets/products/the photographer house/booking.png';
-import tphHome from '@/assets/products/the photographer house/home.png';
+import tphCover from '@/assets/projects/the-photographer-house/cover.png';
+import tphGallery from '@/assets/projects/the-photographer-house/wedding-gallery.png';
+import tphBooking from '@/assets/projects/the-photographer-house/booking-enquiry.png';
+import tphHome from '@/assets/projects/the-photographer-house/homepage-hero.png';
 
-import charuCover from '@/assets/products/charu enterprise/cover.png';
-import charuEcommerceCover from '@/assets/products/charu enterprise ecommerce/cover.png';
-import jewelleryCover from '@/assets/products/jewellery ecommerce/cover.png';
-import ecommerceCover from '@/assets/products/ecommerce/cover.png';
+const charuCover = ""; // import charuCover from '@/assets/products/charu enterprise/cover.png';
+const charuEcommerceCover = ""; // import charuEcommerceCover from '@/assets/products/charu enterprise ecommerce/cover.png';
+const jewelleryCover = ""; // import jewelleryCover from '@/assets/products/jewellery ecommerce/cover.png';
+const ecommerceCover = ""; // import ecommerceCover from '@/assets/products/ecommerce/cover.png';
 
-import jewelleryCrmHome from '@/assets/products/gold crm/home.png';
-import crmBilling from '@/assets/products/gold crm/billing.png';
-import crmSettings from '@/assets/products/gold crm/settings.png';
-import crmHr from '@/assets/products/gold crm/hr payroll.png';
+const jewelleryCrmHome = ""; // import jewelleryCrmHome from '@/assets/products/gold crm/home.png';
+const crmBilling = ""; // import crmBilling from '@/assets/products/gold crm/billing.png';
+const crmSettings = ""; // import crmSettings from '@/assets/products/gold crm/settings.png';
+const crmHr = ""; // import crmHr from '@/assets/products/gold crm/hr payroll.png';
 
-import carRentalHome from '@/assets/products/car rental erp/home.png';
-import carRentalCar from '@/assets/products/car rental erp/car.png';
-import carRentalDriver from '@/assets/products/car rental erp/driver.png';
-import carRentalAccounts from '@/assets/products/car rental erp/accounts.png';
-import carRentalAudit from '@/assets/products/car rental erp/audit.png';
+const carRentalHome = ""; // import carRentalHome from '@/assets/products/car rental erp/home.png';
+const carRentalCar = ""; // import carRentalCar from '@/assets/products/car rental erp/car.png';
+const carRentalDriver = ""; // import carRentalDriver from '@/assets/products/car rental erp/driver.png';
+const carRentalAccounts = ""; // import carRentalAccounts from '@/assets/products/car rental erp/accounts.png';
+const carRentalAudit = ""; // import carRentalAudit from '@/assets/products/car rental erp/audit.png';
 
 interface CarouselItem {
     id: string | number;

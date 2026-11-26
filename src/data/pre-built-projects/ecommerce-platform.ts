@@ -1,10 +1,10 @@
 // ponytail: local product assets
-import coverImg from "@/assets/products/ecommerce/cover.png";
-import homeImg from "@/assets/products/ecommerce/home.png";
-import categoryImg from "@/assets/products/ecommerce/category.png";
-import cartImg from "@/assets/products/ecommerce/cart.png";
-import grid1Img from "@/assets/products/ecommerce/grid1.png";
-import grid2Img from "@/assets/products/ecommerce/grid2.png";
+const coverImg = ""; // import coverImg from "@/assets/products/ecommerce/cover.png";
+const homeImg = ""; // import homeImg from "@/assets/products/ecommerce/home.png";
+const categoryImg = ""; // import categoryImg from "@/assets/products/ecommerce/category.png";
+const cartImg = ""; // import cartImg from "@/assets/products/ecommerce/cart.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/ecommerce/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/ecommerce/grid2.png";
 
 export const ecommercePlatform = {
     id: "ecommerce-platform",

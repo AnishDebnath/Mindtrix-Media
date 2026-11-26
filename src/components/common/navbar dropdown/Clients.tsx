@@ -159,7 +159,7 @@ export const Clients: React.FC<ClientsProps> = ({ onClose, isMobile = false }) =
                     {projectList.map((item) => (
                         <motion.div key={item.id} whileHover={{ x: 2 }} whileTap={{ scale: 0.99 }} transition={{ duration: 0.15 }}>
                             <Link
-                                to={`/product/${item.id}`}
+                                to={`/clients/${item.id}`}
                                 onClick={onClose}
                                 className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all group/item ${isMobile
                                         ? 'bg-slate-50 dark:bg-[#141414] border border-slate-100 dark:border-white/[0.06] text-slate-800 dark:text-neutral-200 hover:border-primary/40'

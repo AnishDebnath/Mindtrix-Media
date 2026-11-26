@@ -75,6 +75,7 @@ const AppContent: React.FC<{ darkMode: boolean; toggleTheme: () => void }> = ({ 
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/clients" element={<Clients />} />
+                <Route path="/pre-built" element={<Clients />} />
                 <Route path="/clients/:id" element={<ProductDetail />} />
                 <Route path="/products" element={<Product />} />
                 <Route path="/product" element={<Product />} />

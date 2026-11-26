@@ -74,12 +74,13 @@ const ProductDetail: React.FC = () => {
                     title={product.title}
                     subtitle={product.subtitle}
                     liveLink={product.liveLink}
+                    logo={(product as any).logo}
                 />
 
                 {/* Main Hero Image with Parallax */}
                 <motion.div
                     style={{ scale: heroScale, opacity: heroOpacity }}
-                    className="aspect-[4/3] w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
+                    className="aspect-video w-full rounded-[1.5rem] overflow-hidden shadow-2xl mb-16 md:mb-24 ring-1 ring-slate-900/5 dark:ring-white/10"
                 >
                     <img src={product.image} alt={product.title} className="w-full h-full object-cover will-change-transform" />
                 </motion.div>
@@ -106,7 +107,7 @@ const ProductDetail: React.FC = () => {
                         </ul>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 gap-y-10 mb-14 border-y border-slate-200 dark:border-white/10 py-10 md:py-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14 border-y border-slate-200 dark:border-white/10 py-8 md:py-12">
                         <div className="flex flex-col text-left">
                             <h3 className="flex items-center gap-3 text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
                                 <span className="w-6 h-[1px] bg-primary inline-block"></span>Client</h3>
@@ -155,7 +156,7 @@ const ProductDetail: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className={`aspect-[4/3] w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
+                                    className={`aspect-video w-full rounded-[1.2rem] overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 ${block.className}`}
                                 >
                                     <img src={block.src} alt={block.alt} loading="lazy" className="w-full h-auto" />
                                 </motion.div>
@@ -170,7 +171,7 @@ const ProductDetail: React.FC = () => {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true, margin: "-50px" }}
                                             transition={{ delay: i * 0.2 }}
-                                            className="rounded-[1.2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 dark:ring-white/10 aspect-square"
+                                            className="rounded-[1.2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 dark:ring-white/10 aspect-video"
                                         >
                                             <img src={img} alt="" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                                         </motion.div>
@@ -215,8 +216,8 @@ const ProductDetail: React.FC = () => {
                                 className="group bg-white dark:bg-neutral-950/70 backdrop-blur-md rounded-2xl md:rounded-3xl p-2 pb-3 border border-slate-200/90 dark:border-white/[0.08] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-300"
                             >
                                 <div
-                                    onClick={() => navigate(`/product/${p.id}`)}
-                                    className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-3 border border-slate-100 dark:border-slate-800 cursor-pointer"
+                                    onClick={() => navigate(`/clients/${p.id}`)}
+                                    className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-slate-100 mb-3 border border-slate-100 dark:border-slate-800 cursor-pointer"
                                 >
                                     <img
                                         src={p.image}
@@ -231,6 +232,9 @@ const ProductDetail: React.FC = () => {
 
                                 <div className="px-2 flex justify-between items-end gap-3">
                                     <div className="min-w-0 flex-1">
+                                        {(p as any).logo && (
+                                            <img src={(p as any).logo} alt={p.client} className="h-5 w-auto object-contain mb-1.5" />
+                                        )}
                                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-0.5 leading-tight truncate">{p.title.split(':')[0]}</h3>
                                         <p className="text-slate-600 dark:text-slate-400 font-medium text-sm truncate">{p.client}</p>
                                     </div>

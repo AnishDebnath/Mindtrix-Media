@@ -1,10 +1,10 @@
 // ponytail: local product assets
-import coverImg from "@/assets/products/charu enterprise/cover.png";
-import homeImg from "@/assets/products/charu enterprise/home.png";
-import aboutImg from "@/assets/products/charu enterprise/about.png";
-import contactImg from "@/assets/products/charu enterprise/contact.png";
-import grid1Img from "@/assets/products/charu enterprise/grid1.png";
-import grid2Img from "@/assets/products/charu enterprise/grid2.png";
+const coverImg = ""; // import coverImg from "@/assets/products/charu enterprise/cover.png";
+const homeImg = ""; // import homeImg from "@/assets/products/charu enterprise/home.png";
+const aboutImg = ""; // import aboutImg from "@/assets/products/charu enterprise/about.png";
+const contactImg = ""; // import contactImg from "@/assets/products/charu enterprise/contact.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/charu enterprise/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/charu enterprise/grid2.png";
 
 export const digitalBusinessCard = {
     id: "digital-business-card",

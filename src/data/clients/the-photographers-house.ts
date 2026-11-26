@@ -1,21 +1,33 @@
 // ponytail: local product assets
-import coverImg from "@/assets/products/the photographer house/cover.png";
-import homeImg from "@/assets/products/the photographer house/home.png";
-import galleryImg from "@/assets/products/the photographer house/gallery.png";
-import bookingImg from "@/assets/products/the photographer house/booking.png";
-import grid1Img from "@/assets/products/the photographer house/grid1.png";
-import grid2Img from "@/assets/products/the photographer house/grid2.png";
+import coverImg from "@/assets/projects/the-photographer-house/cover.png";
+import logoImg from "@/assets/brand logo/the-photographer-house.png";
+import homepageHeroImg from "@/assets/projects/the-photographer-house/homepage-hero.png";
+import homepageOverviewImg from "@/assets/projects/the-photographer-house/homepage-overview.png";
+import weddingGalleryImg from "@/assets/projects/the-photographer-house/wedding-gallery.png";
+import cinematicFilmsImg from "@/assets/projects/the-photographer-house/cinematic-films.png";
+import servicesCatalogueImg from "@/assets/projects/the-photographer-house/services-catalogue.png";
+import portfolioDirectoryImg from "@/assets/projects/the-photographer-house/portfolio-directory.png";
+import responsiveDesignImg from "@/assets/projects/the-photographer-house/responsive-design.png";
+import bookingEnquiryImg from "@/assets/projects/the-photographer-house/booking-enquiry.png";
 
 export const thePhotographersHouse = {
     id: "the-photographers-house",
-    title: "Photographer Portfolio with Booking Feature",
+    title: "Photography Portfolio Website Design with Online Booking",
     category: "Customized",
     image: coverImg,
+    logo: logoImg,
     client: "The Photographer House",
-    industry: "Photography & Creative Services",
-    subtitle: "A professional portfolio with booking feature designed for photographers to showcase organized work collections and attract new clients.",
-    description: "A modern photography portfolio website built to help professional photographers showcase their work in a structured folder-based gallery view while accepting future booking requests online. The platform enables photographers to present projects professionally, improve client trust, and simplify the booking process through a single digital destination.",
-    services: ["UI/UX Design", "Gallery View Style", "Booking Feature", "Customized Template", "Responsive Web Design"],
+    industry: "Photography & Cinematography",
+    subtitle: "A custom photography portfolio website for a Kolkata studio, featuring organised galleries, cinematic films, service pages, and an online booking enquiry flow.",
+    description: "Mindtrix Media designed and developed a custom photography portfolio website for The Photographer House, a Kolkata-based photography and cinematography studio. The website brings wedding photography, pre-wedding shoots, films, event coverage, jewellery photography, photo albums, client reviews, and booking enquiries together in one professional digital experience.",
+    services: [
+        "Custom Website Design",
+        "UI/UX Design",
+        "Photography Portfolio Development",
+        "Gallery & Project Organisation",
+        "Online Booking Enquiry Form",
+        "Responsive Web Development"
+    ],
     liveLink: "https://thephotographerhouse.com/",
     liveLabel: "View Live",
     buyLink: "/contact?project=photographer-portfolio",
@@ -26,54 +38,87 @@ export const thePhotographersHouse = {
     content: [
         {
             type: "text",
-            body: "Professional photographers often struggle to present their complete body of work in an organized manner. Social media platforms compress image quality, limit presentation flexibility, and make it difficult for potential clients to explore specific project categories. Our client wanted a dedicated online portfolio where all photography projects could be showcased professionally, making it easier to share work with prospects and convert visitors into paying clients."
+            body: "The Photographer House is a Kolkata-based photography and cinematography studio offering wedding photography, pre-wedding shoots, cinematic wedding films, event coverage, jewellery photography, product shoots, milestone celebrations, and bespoke photo albums. Mindtrix Media created a custom website that gives the studio a central place to present its creative work, explain its services, and receive photography booking enquiries online."
         },
         {
             type: "image",
-            src: homeImg,
-            alt: "Photography Portfolio Homepage"
+            src: homepageHeroImg,
+            alt: "The Photographer House photography portfolio website homepage hero"
         },
         {
             type: "text",
             title: "The Challenge",
-            body: "The client needed more than a traditional portfolio website. They required a centralized platform where photography projects could be organized into folder-like collections, allowing visitors to browse work based on categories, events, or project types. Instead of displaying hundreds of images in a random gallery layout, the website needed a structured navigation system that helped potential clients quickly discover relevant work. Additionally, the client wanted an integrated booking solution so interested visitors could request future photography sessions directly through the website."
+            body: "The studio needed a professional website that could organise a large and varied body of photography work without overwhelming visitors. Potential clients needed an easy way to explore relevant galleries, including weddings, receptions, engagements, pre-wedding shoots, haldi ceremonies, rice ceremonies, baby shoots, birthdays, and jewellery photography. The website also needed to make it simple for visitors to understand the services offered and submit an enquiry for an upcoming event or commercial project."
         },
         {
             type: "image",
-            src: galleryImg,
-            alt: "Folder Based Photography Gallery"
+            src: homepageOverviewImg,
+            alt: "The Photographer House homepage overview and featured sections"
         },
         {
             type: "text",
-            title: "Research & Strategy",
-            body: "After understanding the photographer's workflow and client acquisition process, we discovered that prospective clients primarily wanted to view specific project categories before making a booking decision. To address this, we designed a folder-based gallery architecture that mimics familiar file management systems. This approach allows visitors to navigate wedding shoots, portraits, events, commercial projects, and other photography categories effortlessly while maintaining a clean and professional browsing experience."
+            title: "Our Approach",
+            body: "We planned the website around the journey a prospective photography client typically takes. The experience begins with the studio's visual identity and featured work, then guides visitors to portfolio categories, cinematic films, service information, client reviews, frequently asked questions, and booking options. This structure gives visitors useful context before they make contact, while helping search engines understand the site's photography, cinematography, location, and service relevance."
         },
         {
             type: "image",
-            src: bookingImg,
-            alt: "Photography Booking System"
+            src: portfolioDirectoryImg,
+            alt: "Structured photography portfolio directory"
+        },
+        {
+            type: "text",
+            title: "Portfolio and Gallery Experience",
+            body: "The portfolio was designed as a structured browsing experience rather than a single, unorganised image feed. Visitors can explore work by project type and open dedicated galleries to view selected photography collections. This makes the site more useful for couples looking for wedding or pre-wedding inspiration, families planning a milestone celebration, and brands searching for jewellery or product photography."
+        },
+        {
+            type: "image",
+            src: weddingGalleryImg,
+            alt: "Category-based wedding photography portfolio and gallery"
         },
         {
             type: "text",
             title: "The Solution",
-            body: "We developed a fully responsive photography portfolio platform featuring organized project folders, optimized image galleries, and a streamlined booking workflow. Visitors can browse categorized photography collections, open dedicated project folders, and explore related images without feeling overwhelmed. The integrated booking system allows potential clients to submit inquiries, discuss project requirements, and schedule future sessions directly from the website. The result is a professional digital presence that strengthens credibility, improves user experience, and helps generate qualified photography leads."
+            body: "Mindtrix Media developed a responsive photography portfolio website with dedicated pages for the studio's portfolio, films, services, albums, story, client reviews, special moments, and booking. The platform combines visual storytelling with practical information, allowing prospective clients to browse the work, learn about photography packages and creative services, and share the details of their required shoot through an online enquiry form."
+        },
+        {
+            type: "image",
+            src: cinematicFilmsImg,
+            alt: "Cinematic wedding films showcase"
+        },
+        {
+            type: "image",
+            src: servicesCatalogueImg,
+            alt: "Photography and cinematography services catalogue"
+        },
+        {
+            type: "text",
+            title: "Online Booking Enquiry Flow",
+            body: "The booking page allows visitors to submit the key details needed to begin a photography enquiry. Clients can share their name, phone number, email address, event duration, event date, shoot type, location, and message. This gives The Photographer House a clear starting point for responding to wedding, event, commercial, and portrait photography enquiries."
+        },
+        {
+            type: "image",
+            src: bookingEnquiryImg,
+            alt: "Photography booking enquiry form for events and shoots"
         },
         {
             type: "text",
             title: "Key Features",
-            body: "The platform includes folder-based project organization, high-quality image galleries, mobile-responsive design, booking request forms, project categorization, fast-loading image optimization, SEO-friendly architecture, easy portfolio management, and a user-focused navigation experience. These features help photographers showcase their work effectively while providing potential clients with a seamless browsing and inquiry process."
+            body: "The website includes category-based photography galleries, individual project views, a cinematic film library, photography and cinematography service pages, photo album presentation, client reviews, frequently asked questions, direct phone and email access, social-media links, contact details, and an online booking enquiry form. The experience is designed to work across mobile, tablet, and desktop devices."
+        },
+        {
+            type: "image",
+            src: responsiveDesignImg,
+            alt: "Responsive design across mobile, tablet, and desktop"
+        },
+        {
+            type: "text",
+            title: "Frequently Asked Questions",
+            body: "What did Mindtrix Media build for The Photographer House? We designed and developed a custom photography portfolio website with organised galleries, service pages, films, reviews, and an online booking enquiry flow. Who is the website for? It is designed for couples, families, event planners, and brands looking for photography or cinematography services. What services can visitors explore? Visitors can view wedding photography, pre-wedding shoots, cinematic films, event coverage, jewellery photography, product shoots, baby shoots, photo albums, and more. Can visitors make a photography enquiry online? Yes. The booking form allows potential clients to submit event and shoot requirements directly through the website."
         },
         {
             type: "results",
-            title: "Results & Impact",
-            body: "The final website transformed the photographer's online presence into a professional portfolio and lead-generation platform. Instead of sending scattered social media links, the client can now share a single website that presents work in an organized and trustworthy manner. Potential clients can quickly explore relevant projects, evaluate the photographer's expertise, and submit booking requests, resulting in a more efficient client acquisition process and stronger brand credibility."
-        },
-        {
-            type: "grid",
-            images: [
-                grid1Img,
-                grid2Img
-            ]
+            title: "Project Outcome",
+            body: "The Photographer House now has one central digital platform for presenting its photography, films, services, albums, client feedback, and booking information. The website makes it easier for potential clients to browse relevant work, understand the studio's offering, and send an enquiry with the details required for a follow-up conversation."
         }
     ]
 };

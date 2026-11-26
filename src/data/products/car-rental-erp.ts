@@ -1,12 +1,12 @@
 // ponytail: local product assets
-import homeImg from "@/assets/products/car rental erp/home.png";
-import carImg from "@/assets/products/car rental erp/car.png";
-import driverImg from "@/assets/products/car rental erp/driver.png";
-import accountsImg from "@/assets/products/car rental erp/accounts.png";
-import userImg from "@/assets/products/car rental erp/user.png";
-import auditImg from "@/assets/products/car rental erp/audit.png";
-import grid1Img from "@/assets/products/car rental erp/grid1.png";
-import grid2Img from "@/assets/products/car rental erp/grid2.png";
+const homeImg = ""; // import homeImg from "@/assets/products/car rental erp/home.png";
+const carImg = ""; // import carImg from "@/assets/products/car rental erp/car.png";
+const driverImg = ""; // import driverImg from "@/assets/products/car rental erp/driver.png";
+const accountsImg = ""; // import accountsImg from "@/assets/products/car rental erp/accounts.png";
+const userImg = ""; // import userImg from "@/assets/products/car rental erp/user.png";
+const auditImg = ""; // import auditImg from "@/assets/products/car rental erp/audit.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/car rental erp/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/car rental erp/grid2.png";
 
 export const carRentalErp = {
     id: "car-rental-erp",

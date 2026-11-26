@@ -1,11 +1,11 @@
 // ponytail: local product assets
-import homeImg from "@/assets/products/gold crm/home.png";
-import hrPayrollImg from "@/assets/products/gold crm/hr payroll.png";
-import billingImg from "@/assets/products/gold crm/billing.png";
-import accountsImg from "@/assets/products/gold crm/accounts.png";
-import settingsImg from "@/assets/products/gold crm/settings.png";
-import grid1Img from "@/assets/products/gold crm/grid1.png";
-import grid2Img from "@/assets/products/gold crm/grid2.png";
+const homeImg = ""; // import homeImg from "@/assets/products/gold crm/home.png";
+const hrPayrollImg = ""; // import hrPayrollImg from "@/assets/products/gold crm/hr payroll.png";
+const billingImg = ""; // import billingImg from "@/assets/products/gold crm/billing.png";
+const accountsImg = ""; // import accountsImg from "@/assets/products/gold crm/accounts.png";
+const settingsImg = ""; // import settingsImg from "@/assets/products/gold crm/settings.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/gold crm/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/gold crm/grid2.png";
 
 export const jewelleryCrmSystem = {
     id: "jewellery-crm-system",

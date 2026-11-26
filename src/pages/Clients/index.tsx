@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import ProjectHeader from './ProjectHeader';
@@ -15,7 +15,11 @@ const CTA = lazy(() => import('../../components/sections/CTA'));
 
 const ProductPage: React.FC = () => {
     const [searchParams] = useSearchParams();
-    const initialCategory = searchParams.get('category');
+    const location = useLocation();
+    const navigate = useNavigate();
+    const initialCategory = location.pathname === '/pre-built'
+        ? categories[1]
+        : searchParams.get('category');
 
     // Check if the query category exists in our categories list
     const validInitialCategory = initialCategory && categories.includes(initialCategory)
@@ -23,6 +27,11 @@ const ProductPage: React.FC = () => {
         : categories[0];
 
     const [activeCategory, setActiveCategory] = useState(validInitialCategory);
+
+    const handleCategoryChange = (category: string) => {
+        setActiveCategory(category);
+        navigate(category === categories[1] ? '/pre-built' : '/clients', { replace: true });
+    };
 
     useSEO({
         title: 'Clients & Case Studies | Engineered Projects — Mindtrix Media',
@@ -43,11 +52,17 @@ const ProductPage: React.FC = () => {
 
     // Update state if URL changes - e.g. when clicking a link from another page
     useEffect(() => {
+        if (location.pathname === '/pre-built') {
+            setActiveCategory(categories[1]);
+            return;
+        }
         const categoryFromUrl = searchParams.get('category');
         if (categoryFromUrl && categories.includes(categoryFromUrl)) {
             setActiveCategory(categoryFromUrl);
+        } else {
+            setActiveCategory(categories[0]);
         }
-    }, [searchParams]);
+    }, [searchParams, location.pathname]);
 
     const filteredProducts = products.filter(p =>
         activeCategory === "Clients"
@@ -61,7 +76,7 @@ const ProductPage: React.FC = () => {
                 <ProjectHeader />
                 <ProjectFilter
                     activeCategory={activeCategory}
-                    setActiveCategory={setActiveCategory}
+                    setActiveCategory={handleCategoryChange}
                 />
 
                 <motion.div

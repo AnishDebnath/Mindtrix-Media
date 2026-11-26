@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProductCardProps> = ({ product, index }) => {
 
                     {/* Left/Right Visual Box: Gradient Frame + Floating UI Preview Window */}
                     <div
-                        onClick={() => navigate(`/product/${product.id}`)}
+                        onClick={() => navigate(`/clients/${product.id}`)}
                         className={`w-full lg:w-[46%] rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-5 flex items-center justify-center relative overflow-hidden cursor-pointer group ${
                             isAlternate
                                 ? 'bg-gradient-to-br from-secondary/20 via-amber-100/70 to-primary/15 dark:from-secondary/15 dark:via-neutral-900 dark:to-primary/10'
@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProductCardProps> = ({ product, index }) => {
 
                         {/* Floating Inner Image Frame (Clean Image Only) */}
                         <div className="relative z-10 w-full max-w-[440px] bg-white dark:bg-neutral-950 rounded-xl md:rounded-2xl border border-slate-200/90 dark:border-white/10 shadow-xl overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
-                            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-black">
+                            <div className="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-black">
                                 <img
                                     src={product.image}
                                     alt={product.title}
@@ -59,13 +59,18 @@ const ProjectCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     {/* Right/Left Details Content */}
                     <div className="w-full lg:w-[54%] p-4 sm:p-5 md:p-6 flex flex-col justify-center items-start text-left">
                         {/* Category/Client Label */}
-                        <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                            {product.client}
-                        </span>
+                        <div className="flex items-center gap-2.5 mb-2">
+                            {(product as any).logo && (
+                                <img src={(product as any).logo} alt={product.client} className="h-6 w-auto object-contain" />
+                            )}
+                            <span className="text-xs font-bold text-primary uppercase tracking-wider">
+                                {product.client}
+                            </span>
+                        </div>
 
                         {/* Title */}
                         <h3
-                            onClick={() => navigate(`/product/${product.id}`)}
+                            onClick={() => navigate(`/clients/${product.id}`)}
                             className="cursor-pointer text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2.5 tracking-tight leading-tight hover:text-primary transition-colors"
                         >
                             {product.title.split(':')[0]}

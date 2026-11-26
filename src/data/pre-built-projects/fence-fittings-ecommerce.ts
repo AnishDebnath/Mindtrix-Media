@@ -1,12 +1,12 @@
 // ponytail: local product assets
-import coverImg from "@/assets/products/charu enterprise ecommerce/cover.png";
-import homeImg from "@/assets/products/charu enterprise ecommerce/home.png";
-import categoryImg from "@/assets/products/charu enterprise ecommerce/category.png";
-import productDetailImg from "@/assets/products/charu enterprise ecommerce/product detail.png";
-import wholesaleImg from "@/assets/products/charu enterprise ecommerce/wholesale.png";
-import contactImg from "@/assets/products/charu enterprise ecommerce/contact.png";
-import grid1Img from "@/assets/products/charu enterprise ecommerce/grid1.png";
-import grid2Img from "@/assets/products/charu enterprise ecommerce/grid2.png";
+const coverImg = ""; // import coverImg from "@/assets/products/charu enterprise ecommerce/cover.png";
+const homeImg = ""; // import homeImg from "@/assets/products/charu enterprise ecommerce/home.png";
+const categoryImg = ""; // import categoryImg from "@/assets/products/charu enterprise ecommerce/category.png";
+const productDetailImg = ""; // import productDetailImg from "@/assets/products/charu enterprise ecommerce/product detail.png";
+const wholesaleImg = ""; // import wholesaleImg from "@/assets/products/charu enterprise ecommerce/wholesale.png";
+const contactImg = ""; // import contactImg from "@/assets/products/charu enterprise ecommerce/contact.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/charu enterprise ecommerce/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/charu enterprise ecommerce/grid2.png";
 
 export const fenceFittingsEcommerce = {
     id: "fence-fittings-ecommerce",

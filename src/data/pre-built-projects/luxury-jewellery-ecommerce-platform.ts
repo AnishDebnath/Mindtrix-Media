@@ -1,12 +1,12 @@
 // ponytail: local product assets
-import coverImg from "@/assets/products/jewellery ecommerce/cover.png";
-import homeImg from "@/assets/products/jewellery ecommerce/home.png";
-import categoryImg from "@/assets/products/jewellery ecommerce/category.png";
-import loginImg from "@/assets/products/jewellery ecommerce/login.png";
-import productDetailImg from "@/assets/products/jewellery ecommerce/product detail.png";
-import cartImg from "@/assets/products/jewellery ecommerce/cart.png";
-import grid1Img from "@/assets/products/jewellery ecommerce/grid1.png";
-import grid2Img from "@/assets/products/jewellery ecommerce/grid2.png";
+const coverImg = ""; // import coverImg from "@/assets/products/jewellery ecommerce/cover.png";
+const homeImg = ""; // import homeImg from "@/assets/products/jewellery ecommerce/home.png";
+const categoryImg = ""; // import categoryImg from "@/assets/products/jewellery ecommerce/category.png";
+const loginImg = ""; // import loginImg from "@/assets/products/jewellery ecommerce/login.png";
+const productDetailImg = ""; // import productDetailImg from "@/assets/products/jewellery ecommerce/product detail.png";
+const cartImg = ""; // import cartImg from "@/assets/products/jewellery ecommerce/cart.png";
+const grid1Img = ""; // import grid1Img from "@/assets/products/jewellery ecommerce/grid1.png";
+const grid2Img = ""; // import grid2Img from "@/assets/products/jewellery ecommerce/grid2.png";
 
 export const luxuryJewelleryEcommercePlatform = {
     id: "luxury-jewellery-ecommerce-platform",
