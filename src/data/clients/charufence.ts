@@ -9,7 +9,7 @@ import shippingProcessImg from "@/assets/projects/charufence/shipping-process.pn
 import contactQuoteImg from "@/assets/projects/charufence/contact-quote.png";
 
 export const charuFence = {
-    id: "charu-fence",
+    id: "charufence",
     title: "Industrial Fence Fittings Website & Product Catalogue",
     category: "Customized",
     image: coverImg,

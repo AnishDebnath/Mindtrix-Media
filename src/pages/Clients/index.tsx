@@ -5,6 +5,7 @@ import ProjectCard from './ProjectCard';
 import ProjectHeader from './ProjectHeader';
 import ProjectFilter from './ProjectFilter';
 import { products, categories } from '../../data/products';
+import { clientProjects } from '../../data/clients';
 import useSEO from '../../utils/useSEO';
 
 // Lazy Components
@@ -64,11 +65,9 @@ const ProductPage: React.FC = () => {
         }
     }, [searchParams, location.pathname]);
 
-    const filteredProducts = products.filter(p =>
-        activeCategory === "Clients"
-            ? p.category === "Customized"
-            : p.category === "Prebuilt"
-    );
+    const filteredProducts = activeCategory === "Clients"
+        ? clientProjects
+        : products.filter(p => p.category === "Prebuilt");
 
     return (
         <div className="pt-28 md:pt-36 2xl:pt-40 pb-0 relative">
